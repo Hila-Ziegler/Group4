@@ -36,7 +36,6 @@ Create PROCEDURE dbo.Get_all_Requests
 AS
 SELECT * FROM dbo.Requests
 
-
 Create PROCEDURE dbo.Get_all_BookInWaitlist
 AS
 SELECT * FROM dbo.BookInWaitlist
@@ -58,7 +57,7 @@ AS
 INSERT INTO dbo.Copies
 Values (@copyNumber	,@serialNumber, @status )
 
-CREATE PROCEDURE dbo.Teachers @id VARCHAR(50), @name VARCHAR(50),@password VARCHAR(100),@archive BIT
+CREATE PROCEDURE dbo.SP_add_Teachers @id VARCHAR(50), @name VARCHAR(50),@password VARCHAR(100),@archive BIT
 AS
 INSERT INTO dbo.Teachers
 Values (@id , @name ,@password ,@archive )
@@ -88,10 +87,10 @@ AS
 INSERT INTO dbo.Requests
 Values (@type,@startDT,@id,@endDT,@status ,@photoAddress)
 
-CREATE PROCEDURE dbo.SP_add_BookInWaitlist @startDate DATETIME ,@id VARCHAR(50), @name VARCHAR(50), @serialNumber VARCHAR(50) 
+CREATE PROCEDURE dbo.SP_add_BookInWaitlist @startDate DATETIME ,@id VARCHAR(50), @serialNumber VARCHAR(50) 
 AS
 INSERT INTO dbo.BookInWaitlist
-Values (@startDate ,@id , @name , @serialNumber)
+Values (@startDate ,@id , @serialNumber)
 
 --Update records
 
@@ -159,43 +158,54 @@ type=@type, endDT=@endDT, status=@status, photoAddress=@photoAddress
 WHERE startDT=@startDT AND id=@id
 
 --Delete record
-
+--DROP PROCEDURE dbo.SP_delete_Books
 CREATE PROCEDURE dbo.SP_delete_Books
 AS
-DROP TABLE dbo.Books
-
+DELETE FROM dbo.Books
+WHERE serialNumber IS NOT NULL
+--DROP PROCEDURE dbo.SP_delete_Copies
 CREATE PROCEDURE dbo.SP_delete_Copies
 AS
-DROP TABLE dbo.Copies
-
+DELETE FROM dbo.Copies
+WHERE serialNumber IS NOT NULL
+--DROP PROCEDURE dbo.SP_delete_Librarians
 CREATE PROCEDURE dbo.SP_delete_Librarians
 AS
-DROP TABLE dbo.Librarians
-
+DELETE FROM dbo.Librarians
+WHERE id IS NOT NULL
+--DROP PROCEDURE dbo.SP_delete_Teachers
 CREATE PROCEDURE dbo.SP_delete_Teachers
 AS
-DROP TABLE dbo.Teachers
-
+DELETE FROM dbo.Teachers
+WHERE id IS NOT NULL
+--DROP PROCEDURE dbo.SP_delete_Students
 CREATE PROCEDURE dbo.SP_delete_Students
 AS
-DROP TABLE dbo.Students
-
+DELETE FROM dbo.Students
+WHERE id IS NOT NULL
+--DROP PROCEDURE dbo.SP_delete_BookHistory
 CREATE PROCEDURE dbo.SP_delete_BookHistory
 AS
-DROP TABLE dbo.BookHistory
-
+DELETE FROM dbo.BookHistory
+WHERE id IS NOT NULL
+--DROP PROCEDURE dbo.SP_delete_Events
 CREATE PROCEDURE dbo.SP_delete_Events
 AS
-DROP TABLE dbo.Events
-
+DELETE FROM dbo.Events
+WHERE date IS NOT NULL
+--DROP PROCEDURE dbo.SP_delete_Registrations
 CREATE PROCEDURE dbo.SP_delete_Registrations
 AS
-DROP TABLE dbo.Registrations
+DELETE FROM dbo.Registrations
+WHERE id IS NOT NULL
 
+--DROP PROCEDURE dbo.SP_delete_Requests
 CREATE PROCEDURE dbo.SP_delete_Requests
 AS
-DROP TABLE dbo.Requests
-
+DELETE FROM dbo.Requests
+WHERE id IS NOT NULL
+--DROP PROCEDURE dbo.SP_delete_BookInWaitlist
 CREATE PROCEDURE dbo.SP_delete_BookInWaitlist
 AS
-DROP TABLE dbo.BookInWaitlist
+DELETE FROM dbo.BookInWaitlist
+WHERE id IS NOT NULL
