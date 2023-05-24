@@ -5,11 +5,11 @@ namespace Group4
 {
     public class Request
     {
-        private string Type;
+        private RequestType Type;
         private DateTime StartDT;
         private string ID;
         private DateTime EndDT;
-        private string Status;
+        private Status Status;
         private string PhotoAddress;
         //public System.Collections.Generic.List<Order> orders;
 
