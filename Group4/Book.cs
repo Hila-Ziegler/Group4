@@ -11,7 +11,7 @@ namespace Group4
         private string Title;
         private string author;
         private int PublishYear;
-        private string Language; //enum
+        private Language Language; //enum
         private float Rating;
         private bool Archive;
         //public System.Collections.Generic.List<Order> orders;

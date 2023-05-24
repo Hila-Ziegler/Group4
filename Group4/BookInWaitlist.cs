@@ -1,7 +1,7 @@
 using System;
 using System.Data.SqlClient;
 
-namespace Group_4
+namespace Group4
 {
     public class BookInWaitlist
     {
