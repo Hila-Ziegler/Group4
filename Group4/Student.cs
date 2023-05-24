@@ -8,7 +8,7 @@ namespace Group4
         private string Id;
         private string Name;
         private int Age;
-        private string Club;
+        private Club Club;
         private int YearlyGoal;
         private string Password;
         private bool Archive;

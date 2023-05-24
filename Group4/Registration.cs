@@ -1,11 +1,11 @@
-using System;
+﻿using System;
 using System.Data.SqlClient;
 
 namespace Group4
 {
     public class Registration
     {
-        private string ID; 
+        private string ID;
         private DateTime EventDate;
         private string GuestName;
         private bool ShowedUp;

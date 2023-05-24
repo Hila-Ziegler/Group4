@@ -1,4 +1,4 @@
-
+﻿
 using System;
 using System.Data.SqlClient;
 
@@ -9,7 +9,7 @@ namespace Group4
         private string Id;
         private string Name;
         private string Password;
-        private bool Archive; 
+        private bool Archive;
         //public System.Collections.Generic.List<Order> orders;
 
 
@@ -18,7 +18,7 @@ namespace Group4
             this.Id = id;
             this.Name = name;
             this.Password = password;
-            this.Archive = archive; 
+            this.Archive = archive;
             if (is_new)
             {
                 this.create_librarian();
@@ -63,7 +63,7 @@ namespace Group4
 
         public void set_archive(bool archive)
         {
-            this.Archive = archive; 
+            this.Archive = archive;
         }
 
 
