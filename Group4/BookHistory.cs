@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Data.SqlClient;
 
 namespace Group4
@@ -10,7 +10,7 @@ namespace Group4
         private string ID;
         private DateTime StartDate;
         private DateTime EndDate;
-        private int Rate; 
+        private int Rate;
         //public System.Collections.Generic.List<Order> orders;
 
 
