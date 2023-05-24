@@ -1,70 +1,62 @@
 --Get Tables
 
-Create Procedure dbo.Get_all_Librarians
+Create PROCEDURE dbo.Get_all_Librarians
 AS
-Select*from dbo.Librarians
+SELECT * FROM dbo.Librarians
 
-
-Create Procedure dbo.Get_all_Books
+Create PROCEDURE dbo.Get_all_Books
 AS
-Select*from dbo.Books
+SELECT * FROM dbo.Books
 
-Create Procedure dbo.Get_all_Copies
+Create PROCEDURE dbo.Get_all_Copies
 AS
-Select*from dbo.Copies
+SELECT * FROM dbo.Copies
 
-
-Create Procedure dbo.Get_all_Teachers
+Create PROCEDURE dbo.Get_all_Teachers
 AS
-Select*from dbo.Teachers
+SELECT * FROM dbo.Teachers
 
-Create Procedure dbo.Get_all_Students
+Create PROCEDURE dbo.Get_all_Students
 AS
-Select*from dbo.Students
+SELECT * FROM dbo.Students
 
-
-Create Procedure dbo.Get_all_BookHistories
+Create PROCEDURE dbo.Get_all_BookHistories
 AS
-Select*from dbo.BookHistory
+SELECT * FROM dbo.BookHistory
 
-Create Procedure dbo.Get_all_Events
+Create PROCEDURE dbo.Get_all_Events
 AS
-Select*from dbo.Events
+SELECT * FROM dbo.Events
 
-
-Create Procedure dbo.Get_all_Registrations
+Create PROCEDURE dbo.Get_all_Registrations
 AS
-Select*from dbo.Registrations
+SELECT * FROM dbo.Registrations
 
-Create Procedure dbo.Get_all_Requests
+Create PROCEDURE dbo.Get_all_Requests
 AS
-Select*from dbo.Requests
+SELECT * FROM dbo.Requests
 
 
-Create Procedure dbo.Get_all_BookInWaitlist
+Create PROCEDURE dbo.Get_all_BookInWaitlist
 AS
-Select*from dbo.BookInWaitlist
+SELECT * FROM dbo.BookInWaitlist
 
 --Create new record
-
 
 CREATE PROCEDURE dbo.SP_add_Librarians @id VARCHAR(50), @name VARCHAR(50), @password VARCHAR(100), @archive BIT 
 AS
 INSERT INTO dbo.Librarians
 Values (@id, @name, @password, @archive)
 
-
 CREATE PROCEDURE dbo.SP_add_Books @serialNumber VARCHAR(50), @title VARCHAR(50), @author VARCHAR(50), @publishYear INT ,@language VARCHAR(50) , @rating FLOAT , @arcive BIT  
 AS
 INSERT INTO dbo.Books
 Values (@serialNumber, @title, @author, @publishYear,@language, @rating, @arcive)
 
-
 CREATE PROCEDURE dbo.SP_add_Copies @copyNumber	INTEGER ,@serialNumber	VARCHAR(50), @status BIT 
 AS
 INSERT INTO dbo.Copies
 Values (@copyNumber	,@serialNumber, @status )
-
 
 CREATE PROCEDURE dbo.Teachers @id VARCHAR(50), @name VARCHAR(50),@password VARCHAR(100),@archive BIT
 AS
@@ -76,24 +68,20 @@ AS
 INSERT INTO dbo.Students
 Values (@id ,@name,@age,@club ,@yearlyGoal,@password,@archive )
 
-
 CREATE PROCEDURE dbo.SP_add_BookHistory @copyNumber	INTEGER,@serialNumber VARCHAR(50), @id	VARCHAR(50), @startDate	DATETIME,@endDate DATETIME,@rate INTEGER
 AS
 INSERT INTO dbo.BookHistory
 Values (@copyNumber	,@serialNumber , @id, @startDate,@endDate ,@rate )
-
 
 CREATE PROCEDURE dbo.SP_add_Events 	@guestType	VARCHAR(50),@date DATETIME,	@price	DECIMAL,@guestSpeakerName VARCHAR(50),@maxGuests INTEGER,@currentlyRegistered INTEGER
 AS
 INSERT INTO dbo.Events
 Values (@guestType,@date,@price,@guestSpeakerName ,@maxGuests,@currentlyRegistered)
 
-
 CREATE PROCEDURE dbo.SP_add_Registrations @id VARCHAR(50),@eventDate DATETIME ,@guestSpeakerName VARCHAR(50),@showedUp	BIT,@review	VARCHAR(50),@rating	INTEGER
 AS
 INSERT INTO dbo.Registrations
 Values (@id ,@eventDate  ,@guestSpeakerName,@showedUp,@review	,@rating)
-
 
 CREATE PROCEDURE dbo.SP_add_Requests @type	VARCHAR(50),@startDT DATETIME ,@id	VARCHAR(50),@endDT	DATETIME,@status VARCHAR(50),@photoAddress	NVARCHAR(260)
 AS
@@ -104,9 +92,6 @@ CREATE PROCEDURE dbo.SP_add_BookInWaitlist @startDate DATETIME ,@id VARCHAR(50),
 AS
 INSERT INTO dbo.BookInWaitlist
 Values (@startDate ,@id , @name , @serialNumber)
-
-
-
 
 --Update records
 
@@ -173,9 +158,7 @@ SET
 type=@type, endDT=@endDT, status=@status, photoAddress=@photoAddress 
 WHERE startDT=@startDT AND id=@id
 
-
 --Delete record
-
 
 CREATE PROCEDURE dbo.SP_delete_Books
 AS
