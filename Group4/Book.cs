@@ -1,4 +1,4 @@
-
+﻿
 
 using System;
 using System.Data.SqlClient;
@@ -79,36 +79,36 @@ namespace Group4
 
         public string set_sNumber(string serialNumber)
         {
-             this.SerialNumber = serialNumber ;
+            this.SerialNumber = serialNumber;
         }
         public string set_author(string author)
         {
-             this.author = author;
+            this.author = author;
         }
 
         public string set_title(string title)
         {
-             this.Title = title;
+            this.Title = title;
         }
 
         public int set_PYear(int publishYear)
         {
-             this.PublishYear = publishYear;
+            this.PublishYear = publishYear;
         }
 
-        public string set_lang( string language)
+        public string set_lang(string language)
         {
-             this.Language = language ;
+            this.Language = language;
         }
 
-        public float set_rating( float rating)
+        public float set_rating(float rating)
         {
-             this.Rating = rating;
+            this.Rating = rating;
         }
 
-        public bool set_archive( bool archive)
+        public bool set_archive(bool archive)
         {
-             this.Archive = archive;
+            this.Archive = archive;
         }
 
         /// <summary>

@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Data.SqlClient;
 
 namespace Group4
@@ -46,7 +46,7 @@ namespace Group4
 
         public void set_serialNum(string serialNum)
         {
-            this.SerialNum = serialNum; 
+            this.SerialNum = serialNum;
         }
 
         public void set_status(bool status)

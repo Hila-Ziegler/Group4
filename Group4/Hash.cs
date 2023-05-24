@@ -22,6 +22,6 @@ namespace Group4
                 return builder.ToString();
             }
         }
-        
+
     }
 }

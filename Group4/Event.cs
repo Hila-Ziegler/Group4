@@ -1,11 +1,11 @@
-using System;
+﻿using System;
 using System.Data.SqlClient;
 
 namespace Group4
 {
     public class Event
     {
-        private string GuestType; //enum
+        private GuestType GuestType; //enum
         private DateTime Date;
         private float Price;
         private string GuestName;
