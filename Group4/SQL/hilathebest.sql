@@ -177,10 +177,42 @@ WHERE startDT=@startDT AND id=@id
 --Delete record
 
 
-CREATE PROCEDURE dbo.SP_delete_worker @id integer
+CREATE PROCEDURE dbo.SP_delete_Books
 AS
-Delete from  dbo.Workers
-WHERE workerId=@id
+DROP TABLE dbo.Books
 
+CREATE PROCEDURE dbo.SP_delete_Copies
+AS
+DROP TABLE dbo.Copies
 
+CREATE PROCEDURE dbo.SP_delete_Librarians
+AS
+DROP TABLE dbo.Librarians
 
+CREATE PROCEDURE dbo.SP_delete_Teachers
+AS
+DROP TABLE dbo.Teachers
+
+CREATE PROCEDURE dbo.SP_delete_Students
+AS
+DROP TABLE dbo.Students
+
+CREATE PROCEDURE dbo.SP_delete_BookHistory
+AS
+DROP TABLE dbo.BookHistory
+
+CREATE PROCEDURE dbo.SP_delete_Events
+AS
+DROP TABLE dbo.Events
+
+CREATE PROCEDURE dbo.SP_delete_Registrations
+AS
+DROP TABLE dbo.Registrations
+
+CREATE PROCEDURE dbo.SP_delete_Requests
+AS
+DROP TABLE dbo.Requests
+
+CREATE PROCEDURE dbo.SP_delete_BookInWaitlist
+AS
+DROP TABLE dbo.BookInWaitlist
