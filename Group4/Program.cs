@@ -14,9 +14,12 @@ namespace Group4
         [STAThread]
         static void Main()
         {
-            Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            
+            //Application.EnableVisualStyles();
+            //Application.SetCompatibleTextRenderingDefault(false);
+            //Application.Run(new Form1());
+            string a = Hash.GetHash("hils");
+            Console.WriteLine(a);
             
         }
     }
