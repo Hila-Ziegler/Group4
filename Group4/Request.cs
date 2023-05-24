@@ -1,120 +1,94 @@
-
-
 using System;
 using System.Data.SqlClient;
 
 namespace Group4
 {
-    public class Book
+    public class Request
     {
-        private string SerialNumber;
-        private string Title;
-        private string author;
-        private int PublishYear;
-        private Language Language; //enum
-        private float Rating;
-        private bool Archive;
+        private string Type;
+        private DateTime StartDT;
+        private string ID;
+        private DateTime EndDT;
+        private string Status;
+        private string PhotoAddress;
         //public System.Collections.Generic.List<Order> orders;
 
 
-        public Book(string serialNumber, string title, string author, int publishYear, string language, float rating, bool archive, bool is_new)
+        public Request(string type, DateTime startDT, string id, DateTime endDT, string status, string photoAddress, bool is_new)
         {
-            this.SerialNumber = serialNumber;
-            this.Title = title;
-            this.author = author;
-            this.PublishYear = publishYear;
-            this.Language = language;
-            this.Rating = rating;
-            this.Archive = archive;
+            this.Type = type;
+            this.StartDT = startDT;
+            this.ID = id;
+            this.EndDT = endDT;
+            this.Status = status;
+            this.PhotoAddress = photoAddress;
+
             if (is_new)
             {
-                this.create_Book();
-                Program.Books.Add(this);
+                this.create_request();
+                Program.requests.Add(this);
 
             }
         }
 
-        //getters
-
-        public string get_sNumber()
+        public string get_type()
         {
-            return this.SerialNumber;
+            return this.Type;
         }
-        public string get_author()
+        public DateTime get_startDT()
         {
-            return this.author;
+            return this.StartDT;
         }
 
-        public string get_title()
+        public string get_id()
         {
-            return this.Title;
+            return this.ID;
         }
 
-        public int get_PYear()
+        public DateTime get_endDT()
         {
-            return this.PublishYear;
+            return this.EndDT;
         }
 
-        public string get_lang()
+        public string get_status()
         {
-            return this.Language;
+            return this.Status;
         }
 
-        public float get_rating()
+        public string get_photoAddress()
         {
-            return this.Rating;
+            return this.PhotoAddress;
         }
 
-        public bool get_archive()
+        public void set_type(string type)
         {
-            return this.Archive;
-        }
-        //setters
-
-
-        public void set_name(string name)
-        {
-            this.WorkerName = name;
+            this.Type = type;
         }
 
-        public string set_sNumber(string serialNumber)
+        public void set_startDT(DateTime startDT)
         {
-             this.SerialNumber = serialNumber ;
-        }
-        public string set_author(string author)
-        {
-             this.author = author;
+            this.StartDT = startDT;
         }
 
-        public string set_title(string title)
+        public void set_id(string id)
         {
-             this.Title = title;
+            this.ID = id;
         }
 
-        public int set_PYear(int publishYear)
+        public void set_endDT(DateTime endDT)
         {
-             this.PublishYear = publishYear;
+            this.EndDT = endDT;
         }
 
-        public string set_lang( string language)
+        public void set_status(string status)
         {
-             this.Language = language ;
+            this.Status = status;
         }
 
-        public float set_rating( float rating)
+        public void set_photoAddress(string photoAddress)
         {
-             this.Rating = rating;
+            this.PhotoAddress = photoAddress;
         }
-
-        public bool set_archive( bool archive)
-        {
-             this.Archive = archive;
-        }
-
-        /// <summary>
-        /// later on
-        /// </summary>
-
 
         public System.Collections.Generic.List<Order> Orders // get and set for the whole list
         {
@@ -171,7 +145,7 @@ namespace Group4
 
 
 
-        public void create_Book()
+        public void create_request()
         {
             SqlCommand c = new SqlCommand();
             c.CommandText = "EXECUTE SP_add_worker @id, @name, @title";

@@ -1,119 +1,71 @@
-
-
 using System;
 using System.Data.SqlClient;
 
 namespace Group4
 {
-    public class Book
+    public class Teacher
     {
-        private string SerialNumber;
-        private string Title;
-        private string author;
-        private int PublishYear;
-        private Language Language; //enum
-        private float Rating;
+        private string Id;
+        private string Name;
+        private string Password;
         private bool Archive;
         //public System.Collections.Generic.List<Order> orders;
 
 
-        public Book(string serialNumber, string title, string author, int publishYear, string language, float rating, bool archive, bool is_new)
+        public Teacher(string id, string name, string password,bool archive, bool is_new)
         {
-            this.SerialNumber = serialNumber;
-            this.Title = title;
-            this.author = author;
-            this.PublishYear = publishYear;
-            this.Language = language;
-            this.Rating = rating;
+            this.Id = id;
+            this.Name = name;
+            this.Password = password;
             this.Archive = archive;
+
             if (is_new)
             {
-                this.create_Book();
-                Program.Books.Add(this);
+                this.create_teacher();
+                Program.teachers.Add(this);
 
             }
         }
 
-        //getters
-
-        public string get_sNumber()
+        public string get_name()
         {
-            return this.SerialNumber;
+            return this.Name;
         }
-        public string get_author()
+        public string get_ID()
         {
-            return this.author;
+            return this.Id;
         }
 
-        public string get_title()
-        {
-            return this.Title;
-        }
-
-        public int get_PYear()
-        {
-            return this.PublishYear;
-        }
-
-        public string get_lang()
-        {
-            return this.Language;
-        }
-
-        public float get_rating()
-        {
-            return this.Rating;
-        }
-
-        public bool get_archive()
+        public string get_archive()
         {
             return this.Archive;
         }
-        //setters
 
+        private string get_password()
+        {
+            return this.Password;
+        }
+
+        public void set_ID(string id)
+        {
+            this.ID = id;
+        }
 
         public void set_name(string name)
         {
-            this.WorkerName = name;
+            this.Name = name; //;
         }
 
-        public string set_sNumber(string serialNumber)
+        private void set_password(string password)
         {
-             this.SerialNumber = serialNumber ;
-        }
-        public string set_author(string author)
-        {
-             this.author = author;
+            this.Password = password;
         }
 
-        public string set_title(string title)
+        public void set_archive(bool archive)
         {
-             this.Title = title;
+            this.Archive = archive;
         }
 
-        public int set_PYear(int publishYear)
-        {
-             this.PublishYear = publishYear;
-        }
-
-        public string set_lang( string language)
-        {
-             this.Language = language ;
-        }
-
-        public float set_rating( float rating)
-        {
-             this.Rating = rating;
-        }
-
-        public bool set_archive( bool archive)
-        {
-             this.Archive = archive;
-        }
-
-        /// <summary>
-        /// later on
-        /// </summary>
 
 
         public System.Collections.Generic.List<Order> Orders // get and set for the whole list
@@ -171,7 +123,7 @@ namespace Group4
 
 
 
-        public void create_Book()
+        public void create_teacher()
         {
             SqlCommand c = new SqlCommand();
             c.CommandText = "EXECUTE SP_add_worker @id, @name, @title";

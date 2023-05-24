@@ -1,119 +1,59 @@
-
-
 using System;
 using System.Data.SqlClient;
 
 namespace Group4
 {
-    public class Book
+    public class BookInWaitlist
     {
-        private string SerialNumber;
-        private string Title;
-        private string author;
-        private int PublishYear;
-        private Language Language; //enum
-        private float Rating;
-        private bool Archive;
+        private DateTime StartDT;
+        private string ID;
+        private string SerialNum;
         //public System.Collections.Generic.List<Order> orders;
 
 
-        public Book(string serialNumber, string title, string author, int publishYear, string language, float rating, bool archive, bool is_new)
+        public BookInWaitlist(DateTime startDT, string id, string serialNum, bool is_new)
         {
-            this.SerialNumber = serialNumber;
-            this.Title = title;
-            this.author = author;
-            this.PublishYear = publishYear;
-            this.Language = language;
-            this.Rating = rating;
-            this.Archive = archive;
+            this.StartDT = startDT;
+            this.ID = id;
+            this.SerialNum = serialNum;
+
             if (is_new)
             {
-                this.create_Book();
-                Program.Books.Add(this);
+                this.create_bookInWaitlist();
+                Program.booksInWaitlist.Add(this);
 
             }
         }
 
-        //getters
-
-        public string get_sNumber()
+        public DateTime get_startDT()
         {
-            return this.SerialNumber;
+            return this.StartDT;
         }
-        public string get_author()
+        public string get_id()
         {
-            return this.author;
+            return this.ID;
         }
 
-        public string get_title()
+        public string get_serialNum()
         {
-            return this.Title;
+            return this.SerialNum;
         }
 
-        public int get_PYear()
+        public void set_startDT(DateTime startDT)
         {
-            return this.PublishYear;
+            this.StartDT = startDT;
         }
 
-        public string get_lang()
+        public void set_id(string id)
         {
-            return this.Language;
+            this.ID = id;
         }
 
-        public float get_rating()
+        public void set_serialNum(string serialNum)
         {
-            return this.Rating;
+            this.SerialNum = serialNum;
         }
 
-        public bool get_archive()
-        {
-            return this.Archive;
-        }
-        //setters
-
-
-        public void set_name(string name)
-        {
-            this.WorkerName = name;
-        }
-
-        public string set_sNumber(string serialNumber)
-        {
-             this.SerialNumber = serialNumber ;
-        }
-        public string set_author(string author)
-        {
-             this.author = author;
-        }
-
-        public string set_title(string title)
-        {
-             this.Title = title;
-        }
-
-        public int set_PYear(int publishYear)
-        {
-             this.PublishYear = publishYear;
-        }
-
-        public string set_lang( string language)
-        {
-             this.Language = language ;
-        }
-
-        public float set_rating( float rating)
-        {
-             this.Rating = rating;
-        }
-
-        public bool set_archive( bool archive)
-        {
-             this.Archive = archive;
-        }
-
-        /// <summary>
-        /// later on
-        /// </summary>
 
 
         public System.Collections.Generic.List<Order> Orders // get and set for the whole list
@@ -171,7 +111,7 @@ namespace Group4
 
 
 
-        public void create_Book()
+        public void create_bookInWaitlist()
         {
             SqlCommand c = new SqlCommand();
             c.CommandText = "EXECUTE SP_add_worker @id, @name, @title";

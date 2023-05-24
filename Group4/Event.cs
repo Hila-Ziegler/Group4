@@ -1,120 +1,94 @@
-
-
 using System;
 using System.Data.SqlClient;
 
 namespace Group4
 {
-    public class Book
+    public class Event
     {
-        private string SerialNumber;
-        private string Title;
-        private string author;
-        private int PublishYear;
-        private Language Language; //enum
-        private float Rating;
-        private bool Archive;
+        private string GuestType; //enum
+        private DateTime Date;
+        private float Price;
+        private string GuestName;
+        private int maxGuests;
+        private int currentlyRegistered;
         //public System.Collections.Generic.List<Order> orders;
 
 
-        public Book(string serialNumber, string title, string author, int publishYear, string language, float rating, bool archive, bool is_new)
+        public Event(string guestType, DateTime date, float price, string guestName, int maxGuests, int currentlyRegistered, bool is_new)
         {
-            this.SerialNumber = serialNumber;
-            this.Title = title;
-            this.author = author;
-            this.PublishYear = publishYear;
-            this.Language = language;
-            this.Rating = rating;
-            this.Archive = archive;
+            this.GuestType = guestType;
+            this.Date = date;
+            this.Price = price;
+            this.GuestName = guestName;
+            this.MaxGuests = maxGuests;
+            this.currentlyRegistered = currentlyRegistered;
+
             if (is_new)
             {
-                this.create_Book();
-                Program.Books.Add(this);
+                this.create_event();
+                Program.events.Add(this);
 
             }
         }
 
-        //getters
-
-        public string get_sNumber()
+        public string get_guestType()
         {
-            return this.SerialNumber;
+            return this.GuestType;
         }
-        public string get_author()
+        public DateTime get_date()
         {
-            return this.author;
+            return this.Date;
         }
 
-        public string get_title()
+        public float get_price()
         {
-            return this.Title;
+            return this.Price;
         }
 
-        public int get_PYear()
+        public string get_guestName()
         {
-            return this.PublishYear;
+            return this.GuestName;
         }
 
-        public string get_lang()
+        public int get_maxGuests()
         {
-            return this.Language;
+            return this.maxGuests;
         }
 
-        public float get_rating()
+        public int get_currentlyRegistered()
         {
-            return this.Rating;
+            return this.currentlyRegistered;
         }
 
-        public bool get_archive()
+        public void set_guestType(string guestType)
         {
-            return this.Archive;
-        }
-        //setters
-
-
-        public void set_name(string name)
-        {
-            this.WorkerName = name;
+            this.GuestType = guestType;
         }
 
-        public string set_sNumber(string serialNumber)
+        public void set_date(DateTime date)
         {
-             this.SerialNumber = serialNumber ;
-        }
-        public string set_author(string author)
-        {
-             this.author = author;
+            this.Date = date;
         }
 
-        public string set_title(string title)
+        public void set_price(float price)
         {
-             this.Title = title;
+            this.Price = price;
         }
 
-        public int set_PYear(int publishYear)
+        public void set_guestName(string guestName)
         {
-             this.PublishYear = publishYear;
+            this.GuestName = guestName;
         }
 
-        public string set_lang( string language)
+        public void set_maxGuests(int maxGuests)
         {
-             this.Language = language ;
+            this.maxGuests = maxGuests;
         }
 
-        public float set_rating( float rating)
+        public void set_currentlyRegistered(int currentlyRegistered)
         {
-             this.Rating = rating;
+            this.currentlyRegistered = currentlyRegistered;
         }
-
-        public bool set_archive( bool archive)
-        {
-             this.Archive = archive;
-        }
-
-        /// <summary>
-        /// later on
-        /// </summary>
-
 
         public System.Collections.Generic.List<Order> Orders // get and set for the whole list
         {
@@ -171,7 +145,7 @@ namespace Group4
 
 
 
-        public void create_Book()
+        public void create_event()
         {
             SqlCommand c = new SqlCommand();
             c.CommandText = "EXECUTE SP_add_worker @id, @name, @title";

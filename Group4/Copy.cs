@@ -1,119 +1,59 @@
-
-
 using System;
 using System.Data.SqlClient;
 
 namespace Group4
 {
-    public class Book
+    public class Copy
     {
-        private string SerialNumber;
-        private string Title;
-        private string author;
-        private int PublishYear;
-        private Language Language; //enum
-        private float Rating;
-        private bool Archive;
+        private int CopyNum;
+        private string SerialNum;
+        private bool Status;
         //public System.Collections.Generic.List<Order> orders;
 
 
-        public Book(string serialNumber, string title, string author, int publishYear, string language, float rating, bool archive, bool is_new)
+        public Copy(int copyNum, string serialNum, bool status, bool is_new)
         {
-            this.SerialNumber = serialNumber;
-            this.Title = title;
-            this.author = author;
-            this.PublishYear = publishYear;
-            this.Language = language;
-            this.Rating = rating;
-            this.Archive = archive;
+            this.CopyNum = copyNum;
+            this.SerialNum = serialNum;
+            this.Status = status;
+
             if (is_new)
             {
-                this.create_Book();
-                Program.Books.Add(this);
+                this.create_copy();
+                Program.copies.Add(this);
 
             }
         }
 
-        //getters
-
-        public string get_sNumber()
+        public string get_copyNum()
         {
-            return this.SerialNumber;
+            return this.CopyNum;
         }
-        public string get_author()
+        public string get_serialNum()
         {
-            return this.author;
+            return this.SerialNum;
         }
 
-        public string get_title()
+        public string get_status()
         {
-            return this.Title;
+            return this.Status;
         }
 
-        public int get_PYear()
+        public void set_copyNum(int copyNum)
         {
-            return this.PublishYear;
+            this.CopyNum = copyNum;
         }
 
-        public string get_lang()
+        public void set_serialNum(string serialNum)
         {
-            return this.Language;
+            this.SerialNum = serialNum; 
         }
 
-        public float get_rating()
+        public void set_status(bool status)
         {
-            return this.Rating;
+            this.Status = status;
         }
 
-        public bool get_archive()
-        {
-            return this.Archive;
-        }
-        //setters
-
-
-        public void set_name(string name)
-        {
-            this.WorkerName = name;
-        }
-
-        public string set_sNumber(string serialNumber)
-        {
-             this.SerialNumber = serialNumber ;
-        }
-        public string set_author(string author)
-        {
-             this.author = author;
-        }
-
-        public string set_title(string title)
-        {
-             this.Title = title;
-        }
-
-        public int set_PYear(int publishYear)
-        {
-             this.PublishYear = publishYear;
-        }
-
-        public string set_lang( string language)
-        {
-             this.Language = language ;
-        }
-
-        public float set_rating( float rating)
-        {
-             this.Rating = rating;
-        }
-
-        public bool set_archive( bool archive)
-        {
-             this.Archive = archive;
-        }
-
-        /// <summary>
-        /// later on
-        /// </summary>
 
 
         public System.Collections.Generic.List<Order> Orders // get and set for the whole list
@@ -171,7 +111,7 @@ namespace Group4
 
 
 
-        public void create_Book()
+        public void create_copy()
         {
             SqlCommand c = new SqlCommand();
             c.CommandText = "EXECUTE SP_add_worker @id, @name, @title";

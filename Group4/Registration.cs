@@ -1,120 +1,94 @@
-
-
 using System;
 using System.Data.SqlClient;
 
 namespace Group4
 {
-    public class Book
+    public class Registration
     {
-        private string SerialNumber;
-        private string Title;
-        private string author;
-        private int PublishYear;
-        private Language Language; //enum
-        private float Rating;
-        private bool Archive;
+        private string ID; 
+        private DateTime EventDate;
+        private string GuestName;
+        private bool ShowedUp;
+        private string Review;
+        private int Rating;
         //public System.Collections.Generic.List<Order> orders;
 
 
-        public Book(string serialNumber, string title, string author, int publishYear, string language, float rating, bool archive, bool is_new)
+        public Registration(string id, DateTime eventDate, string guestName, bool showedUp, string review, int rating, bool is_new)
         {
-            this.SerialNumber = serialNumber;
-            this.Title = title;
-            this.author = author;
-            this.PublishYear = publishYear;
-            this.Language = language;
+            this.ID = id;
+            this.EventDate = eventDate;
+            this.GuestName = guestName;
+            this.ShowedUp = showedUp;
+            this.Review = review;
             this.Rating = rating;
-            this.Archive = archive;
+
             if (is_new)
             {
-                this.create_Book();
-                Program.Books.Add(this);
+                this.create_registration();
+                Program.registrations.Add(this);
 
             }
         }
 
-        //getters
-
-        public string get_sNumber()
+        public string get_id()
         {
-            return this.SerialNumber;
+            return this.ID;
         }
-        public string get_author()
+        public DateTime get_eventDate()
         {
-            return this.author;
+            return this.EventDate;
         }
 
-        public string get_title()
+        public float get_guestName()
         {
-            return this.Title;
+            return this.GuestName;
         }
 
-        public int get_PYear()
+        public string get_showedUp()
         {
-            return this.PublishYear;
+            return this.ShowedUp;
         }
 
-        public string get_lang()
+        public int get_review()
         {
-            return this.Language;
+            return this.Review;
         }
 
-        public float get_rating()
+        public int get_rating()
         {
             return this.Rating;
         }
 
-        public bool get_archive()
+        public void set_id(string id)
         {
-            return this.Archive;
-        }
-        //setters
-
-
-        public void set_name(string name)
-        {
-            this.WorkerName = name;
+            this.ID = id;
         }
 
-        public string set_sNumber(string serialNumber)
+        public void set_eventDate(DateTime eventDate)
         {
-             this.SerialNumber = serialNumber ;
-        }
-        public string set_author(string author)
-        {
-             this.author = author;
+            this.EventDate = eventDate;
         }
 
-        public string set_title(string title)
+        public void set_guestName(string guestName)
         {
-             this.Title = title;
+            this.GuestName = guestName;
         }
 
-        public int set_PYear(int publishYear)
+        public void set_showedUp(bool showedUp)
         {
-             this.PublishYear = publishYear;
+            this.ShowedUp = showedUp;
         }
 
-        public string set_lang( string language)
+        public void set_review(string review)
         {
-             this.Language = language ;
+            this.Review = review;
         }
 
-        public float set_rating( float rating)
+        public void set_rating(int rating)
         {
-             this.Rating = rating;
+            this.Rating = rating;
         }
-
-        public bool set_archive( bool archive)
-        {
-             this.Archive = archive;
-        }
-
-        /// <summary>
-        /// later on
-        /// </summary>
-
 
         public System.Collections.Generic.List<Order> Orders // get and set for the whole list
         {
@@ -171,7 +145,7 @@ namespace Group4
 
 
 
-        public void create_Book()
+        public void create_registration()
         {
             SqlCommand c = new SqlCommand();
             c.CommandText = "EXECUTE SP_add_worker @id, @name, @title";
