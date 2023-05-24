@@ -15,11 +15,9 @@ namespace Group4
         static void Main()
         {
             
-            //Application.EnableVisualStyles();
-            //Application.SetCompatibleTextRenderingDefault(false);
-            //Application.Run(new Form1());
-            string a = Hash.GetHash("hils");
-            Console.WriteLine(a);
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
+            Application.Run(new Form1());
             
         }
     }
