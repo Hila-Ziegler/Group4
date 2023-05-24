@@ -5,7 +5,7 @@ namespace Group4
 {
     public class Request
     {
-        private string Type;
+        private RequestType Type;
         private DateTime StartDT;
         private string ID;
         private DateTime EndDT;
