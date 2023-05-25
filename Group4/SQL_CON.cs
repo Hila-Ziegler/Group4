@@ -6,14 +6,14 @@ using System.Data.SqlClient;//חשוב!
 using System.Windows.Forms;//עבור ההודעות!
 using System.Data;
 
-string Username = "ofirwij"
-
-namespace Example_Project
+namespace Group4
 {
     class SQL_CON
     {
          SqlConnection conn;
-         
+        string Username = "ofirwij"
+
+
         public SQL_CON(){
             conn = new SqlConnection("Data Source=dbcourse.database.windows.net;Initial Catalog=SADM_4;Persist Security Info=True;User ID="+Username+"@bgufbm.onmicrosoft.com;Authentication=ActiveDirectoryPassword");//update this!!
         }

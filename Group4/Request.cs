@@ -7,21 +7,23 @@ namespace Group4
     {
         private RequestType Type;
         private DateTime StartDT;
-        private string ID;
+        private Student Student;
         private DateTime EndDT;
         private Status Status;
         private string PhotoAddress;
+        private Librarian Librarian;
         //public System.Collections.Generic.List<Order> orders;
 
-
-        public Request(string type, DateTime startDT, string id, DateTime endDT, string status, string photoAddress, bool is_new)
+        //Update to have librarian id
+        public Request(string type, DateTime startDT, Student stud, DateTime endDT, string status, string photoAddress,Librarian lib , bool is_new)
         {
-            this.Type = type;
+            this.Type = (RequestType)Enum.Parse(typeof(RequestType), type);
             this.StartDT = startDT;
-            this.ID = id;
+            this.Student = stud;
             this.EndDT = endDT;
-            this.Status = status;
+            this.Status = (Status)Enum.Parse(typeof(Status), status);
             this.PhotoAddress = photoAddress;
+            this.Librarian = lib;
 
             if (is_new)
             {
@@ -31,7 +33,7 @@ namespace Group4
             }
         }
 
-        public string get_type()
+        public RequestType get_type()
         {
             return this.Type;
         }
@@ -50,7 +52,7 @@ namespace Group4
             return this.EndDT;
         }
 
-        public string get_status()
+        public Status get_status()
         {
             return this.Status;
         }

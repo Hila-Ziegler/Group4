@@ -5,7 +5,7 @@ namespace Group4
 {
     public class Registration
     {
-        private string ID;
+        private Student Student;
         private DateTime EventDate;
         private string GuestName;
         private bool ShowedUp;
@@ -14,9 +14,9 @@ namespace Group4
         //public System.Collections.Generic.List<Order> orders;
 
 
-        public Registration(string id, DateTime eventDate, string guestName, bool showedUp, string review, int rating, bool is_new)
+        public Registration(Student Student, DateTime eventDate, string guestName, bool showedUp, string review, int rating, bool is_new)
         {
-            this.ID = id;
+            this.Student = Student;
             this.EventDate = eventDate;
             this.GuestName = guestName;
             this.ShowedUp = showedUp;
@@ -31,16 +31,16 @@ namespace Group4
             }
         }
 
-        public string get_id()
+        public Student get_student()
         {
-            return this.ID;
+            return this.Student;
         }
         public DateTime get_eventDate()
         {
             return this.EventDate;
         }
 
-        public float get_guestName()
+        public string get_guestName()
         {
             return this.GuestName;
         }

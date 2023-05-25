@@ -14,7 +14,8 @@ namespace Group4
         private Language Language; //enum
         private float Rating;
         private bool Archive;
-        //public System.Collections.Generic.List<Order> orders;
+        public System.Collections.Generic.List<Copy> Copies;
+        public System.Collections.Generic.List<BookHistory> History;
 
 
         public Book(string serialNumber, string title, string author, int publishYear, string language, float rating, bool archive, bool is_new)
@@ -23,13 +24,15 @@ namespace Group4
             this.Title = title;
             this.author = author;
             this.PublishYear = publishYear;
-            this.Language = language;
+            this.Language = (Language)Enum.Parse(typeof(Language), language);
             this.Rating = rating;
             this.Archive = archive;
+            this.Copies = new System.Collections.Generic.List<Copy>();
+            this.History = new System.Collections.Generic.List<BookHistory>();
             if (is_new)
             {
                 this.create_Book();
-                Program.Books.Add(this);
+                Program.books.Add(this);
 
             }
         }

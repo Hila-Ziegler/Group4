@@ -6,19 +6,19 @@ namespace Group4
     public class BookHistory
     {
         private int CopyNum;
-        private string SerialNum;
-        private string ID;
+        private Book Book;
+        private Student Student;
         private DateTime StartDate;
         private DateTime EndDate;
         private int Rate;
         //public System.Collections.Generic.List<Order> orders;
 
 
-        public BookHistory(int copyNum, string serialNum, string id, DateTime startDate, DateTime endDate, bool is_new)
+        public BookHistory(int copyNum, Book Book, Student Student, DateTime startDate, DateTime endDate, bool is_new)
         {
             this.CopyNum = copyNum;
-            this.SerialNum = serialNum;
-            this.ID = id;
+            this.Book = Book;
+            this.Student = Student;
             this.StartDate = startDate;
             this.EndDate = endDate;
 
@@ -30,18 +30,18 @@ namespace Group4
             }
         }
 
-        public string get_copyNum()
+        public int get_copyNum()
         {
             return this.CopyNum;
         }
-        public string get_serialNum()
+        public Book get_book()
         {
-            return this.SerialNum;
+            return this.Book;
         }
 
-        public string get_id()
+        public Student get_student()
         {
-            return this.ID;
+            return this.Student;
         }
 
         public DateTime get_StartDate()
@@ -64,14 +64,14 @@ namespace Group4
             this.CopyNum = copyNum;
         }
 
-        public void set_SerialNum(string serialNum)
+        public void set_Book(Book Book)
         {
-            this.SerialNum = serialNum;
+            this.Book = Book;
         }
 
-        public void set_id(string id)
+        public void set_Student(Student Student)
         {
-            this.ID = id;
+            this.Student = Student;
         }
 
         public void set_startDate(DateTime startDate)

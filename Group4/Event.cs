@@ -9,19 +9,22 @@ namespace Group4
         private DateTime Date;
         private float Price;
         private string GuestName;
-        private int maxGuests;
-        private int currentlyRegistered;
+        private int MaxGuests;
+        private int CurrentlyRegistered;
+        private Teacher Organizer;
+        public System.Collections.Generic.List<Student> Registered;
         //public System.Collections.Generic.List<Order> orders;
 
 
         public Event(string guestType, DateTime date, float price, string guestName, int maxGuests, int currentlyRegistered, bool is_new)
         {
-            this.GuestType = guestType;
+            this.GuestType = (GuestType)Enum.Parse(typeof(GuestType),guestType);
             this.Date = date;
             this.Price = price;
             this.GuestName = guestName;
             this.MaxGuests = maxGuests;
-            this.currentlyRegistered = currentlyRegistered;
+            this.CurrentlyRegistered = currentlyRegistered;
+            this.Registered = new System.Collections.Generic.List<Student>();
 
             if (is_new)
             {
@@ -31,7 +34,7 @@ namespace Group4
             }
         }
 
-        public string get_guestType()
+        public GuestType get_guestType()
         {
             return this.GuestType;
         }
@@ -52,15 +55,15 @@ namespace Group4
 
         public int get_maxGuests()
         {
-            return this.maxGuests;
+            return this.MaxGuests;
         }
 
         public int get_currentlyRegistered()
         {
-            return this.currentlyRegistered;
+            return this.CurrentlyRegistered;
         }
 
-        public void set_guestType(string guestType)
+        public void set_guestType(GuestType guestType)
         {
             this.GuestType = guestType;
         }
