@@ -59,6 +59,12 @@
     <Compile Include="Librarian.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReadBook.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReadBook.Designer.cs">
+      <DependentUpon>ReadBook.cs</DependentUpon>
+    </Compile>
     <Compile Include="Registration.cs" />
     <Compile Include="Request.cs" />
     <Compile Include="RequestType.cs" />
@@ -76,6 +82,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="ReadBook.resx">
+      <DependentUpon>ReadBook.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
