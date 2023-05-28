@@ -16,7 +16,6 @@ namespace Group4
             this.CopyNum = copyNum;
             this.SerialNum = serialNum;
             this.Status = status;
-
             if (is_new)
             {
                 this.create_copy();
@@ -25,7 +24,7 @@ namespace Group4
             }
         }
 
-        public string get_copyNum()
+        public int get_copyNum()
         {
             return this.CopyNum;
         }
@@ -34,7 +33,7 @@ namespace Group4
             return this.SerialNum;
         }
 
-        public string get_status()
+        public bool get_status()
         {
             return this.Status;
         }

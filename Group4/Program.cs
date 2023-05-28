@@ -14,22 +14,23 @@ namespace Group4
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
-        public static System.Collections.Generic.List<Librarian> Librarins;
-        public static System.Collections.Generic.List<Book> Books;
-        public static System.Collections.Generic.List<Copy> Copies;
-        public static System.Collections.Generic.List<Teacher> Teachers;
-        public static System.Collections.Generic.List<Student> Students;
-        public static System.Collections.Generic.List<BookHistory> BookHistories;
-        public static System.Collections.Generic.List<Registration> Registrations;
-        public static System.Collections.Generic.List<Request> Requests;
-        public static System.Collections.Generic.List<BookInWaitlist> BookInWaitlists;
-        public static System.Collections.Generic.List<BookInWaitlist> BooksInWaitlist;
+        public static System.Collections.Generic.List<Librarian> librarians;
+        public static System.Collections.Generic.List<Book> books;
+        public static System.Collections.Generic.List<Copy> copies;
+        public static System.Collections.Generic.List<Teacher> teachers;
+        public static System.Collections.Generic.List<Student> students;
+        public static System.Collections.Generic.List<BookHistory> bookHistories;
+        public static System.Collections.Generic.List<Registration> registrations;
+        public static System.Collections.Generic.List<Request> requests;
+        public static System.Collections.Generic.List<BookInWaitlist> bookInWaitlists;
+        public static System.Collections.Generic.List<BookInWaitlist> booksInWaitlist;
+        public static System.Collections.Generic.List<Event> events;
         [STAThread]
 
         //שיטה שמחפשת עובד ברשימה לפי תעודת זהות
-        public static Book seekbook(string serialNumber)
+        public static Book seekBook(string serialNumber)
         {
-            foreach (Book b in Books)
+            foreach (Book b in books)
             {
                 if (b.get_sNumber() == serialNumber)
                     return b;
@@ -39,9 +40,9 @@ namespace Group4
 
         public static Teacher seekTeacher(string id)
         {
-            foreach (Teacher t in Teachers)
+            foreach (Teacher t in teachers)
             {
-                if (t.getID() == id)
+                if (t.get_ID() == id)
                     return t;
             }
             return null;
@@ -49,9 +50,9 @@ namespace Group4
 
         public static Student seekStudent(string id)
         {
-            foreach (Student s in Students)
+            foreach (Student s in students)
             {
-                if (s.getID() == id)
+                if (s.get_ID() == id)
                     return s;
             }
             return null;
@@ -59,14 +60,24 @@ namespace Group4
 
         public static Librarian seekLibrarian(string id)
         {
-            foreach (Librarian l in Librarians)
+            foreach (Librarian l in librarians)
             {
-                if (l.getID() == id)
+                if (l.get_ID() == id)
                     return l;
             }
             return null;
         }
 
+        //date, guestSpeakerName
+        public static Event seekEvent(DateTime date, string guestName)
+        {
+            foreach (Event e in events)
+            {
+                if (e.get_guestName() == guestName && e.get_date() == date)
+                    return e;
+            }
+            return null;
+        }
 
 
 
@@ -82,8 +93,6 @@ namespace Group4
             init_Registrations();
             init_BookHistories();
             init_Requests();
-            // init_workers();//אתחול הרשימה של העובדים
-            //init_orders();//אתחול הרשימה של ההזמנות
         }
 
 
@@ -94,13 +103,13 @@ namespace Group4
             SQL_CON SC = new SQL_CON();
             SqlDataReader rdr = SC.execute_query(c);
 
-            Books = new List<Book>();
+            books = new List<Book>();
 
             while (rdr.Read())
             {
-                Language l = (Language)Enum.Parse(typeof(Language), rdr.GetValue(4).ToString())
+                Language l = (Language)Enum.Parse(typeof(Language), rdr.GetValue(4).ToString());
                 Book b = new Book(rdr.GetValue(0).ToString(), rdr.GetValue(1).ToString(), rdr.GetValue(2).ToString(), int.Parse(rdr.GetValue(3).ToString()), l, float.Parse(rdr.GetValue(5).ToString()), bool.Parse(rdr.GetValue(6).ToString()), false);
-                Books.Add(b);
+                books.Add(b);
             }
         }
 
@@ -110,46 +119,47 @@ namespace Group4
             c.CommandText = "EXECUTE dbo.Get_all_Librarians";
             SQL_CON SC = new SQL_CON();
             SqlDataReader rdr = SC.execute_query(c);
-            Librarins = new List<Order>();
+            librarians = new List<Librarian>();
             while (rdr.Read())
             {
                 //Librarin l = new Librarin(seekWorker(rdr.GetValue(0).ToString(), int.Parse(rdr.GetValue(1).ToString()), DateTime.Parse((rdr.GetValue(2).ToString())), int.Parse(rdr.GetValue(3).ToString()), false);
-                Librarian l = new Librarian(rdr.GetValue(0).ToString(), rdr.GetValue(1).ToString(), rdr.GetValue(2).ToString(), bool.Parse(rdr.GetValue(3).ToString(), false);
-                Librarins.Add(l);
+                Librarian l = new Librarian(rdr.GetValue(0).ToString(), rdr.GetValue(1).ToString(), rdr.GetValue(2).ToString(), bool.Parse(rdr.GetValue(3).ToString()), false);
+                librarians.Add(l);
                 //seekWorker(rdr.GetValue(0).ToString()).AddOrders(o);
             }
         }
-        //come back later
         public static void init_Copies()//מילוי המערך מתוך בסיס הנתונים
         {
             SqlCommand c = new SqlCommand();
-            c.CommandText = "EXECUTE dbo.Get_all_Books";
+            c.CommandText = "EXECUTE dbo.Get_all_Copies";
             SQL_CON SC = new SQL_CON();
             SqlDataReader rdr = SC.execute_query(c);
 
-            Books = new List<Book>();
+            books = new List<Book>();
 
             while (rdr.Read())
             {
-                Language l = (Language)Enum.Parse(typeof(Language), rdr.GetValue(4).ToString())
-                Book b = new Book(rdr.GetValue(0).ToString(), rdr.GetValue(1).ToString(), rdr.GetValue(2).ToString(), int.Parse(rdr.GetValue(3).ToString()), l, float.Parse(rdr.GetValue(5).ToString()), bool.Parse(rdr.GetValue(6).ToString()), false);
-                Books.Add(b);
+                Language l = (Language)Enum.Parse(typeof(Language), rdr.GetValue(4).ToString());
+                Copy co = new Copy(int.Parse(rdr.GetValue(0).ToString()), rdr.GetValue(1).ToString(), bool.Parse(rdr.GetValue(2).ToString()),  false);
+                copies.Add(co);
+                Book b = seekBook(co.get_serialNum());
+                b.Copies.Add(co);
             }
         }
 
         public static void init_Teachers()//מילוי המערך מתוך בסיס הנתונים
         {
             SqlCommand c = new SqlCommand();
-            c.CommandText = "EXECUTE dbo.Get_all_Books";
+            c.CommandText = "EXECUTE dbo.Get_all_Teachers";
             SQL_CON SC = new SQL_CON();
             SqlDataReader rdr = SC.execute_query(c);
 
-            Teachers = new List<Teacher>();
+            teachers = new List<Teacher>();
 
             while (rdr.Read())
             {
                 Teacher t = new Teacher(rdr.GetValue(0).ToString(), rdr.GetValue(1).ToString(), rdr.GetValue(2).ToString(), bool.Parse(rdr.GetValue(3).ToString()), false);
-                Teachers.Add(t);
+                teachers.Add(t);
             }
         }
 
@@ -160,97 +170,105 @@ namespace Group4
             SQL_CON SC = new SQL_CON();
             SqlDataReader rdr = SC.execute_query(c);
 
-            Students = new List<Student>();
+            students = new List<Student>();
 
             while (rdr.Read())
             {
                 Student s = new Student(rdr.GetValue(0).ToString(), rdr.GetValue(1).ToString(), int.Parse(rdr.GetValue(2).ToString()), rdr.GetValue(3).ToString(), int.Parse(rdr.GetValue(4).ToString()), rdr.GetValue(5).ToString(), bool.Parse(rdr.GetValue(6).ToString()), false);
-                Students.Add(s);
+                students.Add(s);
             }
         }
-
+        
         public static void init_BookHistories()//מילוי המערך מתוך בסיס הנתונים
         {
             SqlCommand c = new SqlCommand();
-            c.CommandText = "EXECUTE dbo.Get_all_Books";
+            c.CommandText = "EXECUTE dbo.Get_all_BookHistories";
             SQL_CON SC = new SQL_CON();
             SqlDataReader rdr = SC.execute_query(c);
 
-            Books = new List<Book>();
+            books = new List<Book>();
 
             while (rdr.Read())
             {
-                Language l = (Language)Enum.Parse(typeof(Language), rdr.GetValue(4).ToString())
-                Book b = new Book(rdr.GetValue(0).ToString(), rdr.GetValue(1).ToString(), rdr.GetValue(2).ToString(), int.Parse(rdr.GetValue(3).ToString()), l, float.Parse(rdr.GetValue(5).ToString()), bool.Parse(rdr.GetValue(6).ToString()), false);
-                Books.Add(b);
+                Book b = seekBook(rdr.GetValue(1).ToString());
+                Student s = seekStudent(rdr.GetValue(2).ToString());
+                BookHistory bh = new BookHistory(int.Parse(rdr.GetValue(0).ToString()), b, s, DateTime.Parse(rdr.GetValue(3).ToString()), DateTime.Parse(rdr.GetValue(4).ToString()), false);
+                b.History.Add(bh);
+                s.History.Add(bh);
             }
         }
 
         public static void init_Events()//מילוי המערך מתוך בסיס הנתונים
         {
             SqlCommand c = new SqlCommand();
-            c.CommandText = "EXECUTE dbo.Get_all_Books";
+            c.CommandText = "EXECUTE dbo.Get_all_Events";
             SQL_CON SC = new SQL_CON();
             SqlDataReader rdr = SC.execute_query(c);
 
-            Books = new List<Book>();
+            events = new List<Event>();
 
             while (rdr.Read())
             {
-                Language l = (Language)Enum.Parse(typeof(Language), rdr.GetValue(4).ToString())
-                Book b = new Book(rdr.GetValue(0).ToString(), rdr.GetValue(1).ToString(), rdr.GetValue(2).ToString(), int.Parse(rdr.GetValue(3).ToString()), l, float.Parse(rdr.GetValue(5).ToString()), bool.Parse(rdr.GetValue(6).ToString()), false);
-                Books.Add(b);
+                Language l = (Language)Enum.Parse(typeof(Language), rdr.GetValue(4).ToString());
+                Event e = new Event(rdr.GetValue(0).ToString(),DateTime.Parse(rdr.GetValue(1).ToString()),float.Parse(rdr.GetValue(2).ToString()),rdr.GetValue(3).ToString(), int.Parse(rdr.GetValue(4).ToString()),int.Parse(rdr.GetValue(5).ToString()), false);
+                events.Add(e);
             }
         }
 
         public static void init_Registrations()//מילוי המערך מתוך בסיס הנתונים
         {
             SqlCommand c = new SqlCommand();
-            c.CommandText = "EXECUTE dbo.Get_all_Books";
+            c.CommandText = "EXECUTE dbo.Get_all_Registrations";
             SQL_CON SC = new SQL_CON();
             SqlDataReader rdr = SC.execute_query(c);
 
-            Books = new List<Book>();
+            books = new List<Book>();
 
             while (rdr.Read())
             {
-                Language l = (Language)Enum.Parse(typeof(Language), rdr.GetValue(4).ToString())
-                Book b = new Book(rdr.GetValue(0).ToString(), rdr.GetValue(1).ToString(), rdr.GetValue(2).ToString(), int.Parse(rdr.GetValue(3).ToString()), l, float.Parse(rdr.GetValue(5).ToString()), bool.Parse(rdr.GetValue(6).ToString()), false);
-                Books.Add(b);
+                Student s = seekStudent(rdr.GetValue(0).ToString());
+                Registration r = new Registration(s, DateTime.Parse(rdr.GetValue(1).ToString()),rdr.GetValue(2).ToString(),bool.Parse(rdr.GetValue(3).ToString()),rdr.GetValue(4).ToString(), int.Parse(rdr.GetValue(5).ToString()), false);
+                Event e = seekEvent(DateTime.Parse(rdr.GetValue(1).ToString()), rdr.GetValue(2).ToString());
+                e.Registered.Add(s);
             }
         }
+
+
 
         public static void init_Requests()//מילוי המערך מתוך בסיס הנתונים
         {
             SqlCommand c = new SqlCommand();
-            c.CommandText = "EXECUTE dbo.Get_all_Books";
+            c.CommandText = "EXECUTE dbo.Get_all_Requests";
             SQL_CON SC = new SQL_CON();
             SqlDataReader rdr = SC.execute_query(c);
 
-            Books = new List<Book>();
+            requests = new List<Request>();
 
             while (rdr.Read())
             {
-                Language l = (Language)Enum.Parse(typeof(Language), rdr.GetValue(4).ToString())
-                Book b = new Book(rdr.GetValue(0).ToString(), rdr.GetValue(1).ToString(), rdr.GetValue(2).ToString(), int.Parse(rdr.GetValue(3).ToString()), l, float.Parse(rdr.GetValue(5).ToString()), bool.Parse(rdr.GetValue(6).ToString()), false);
-                Books.Add(b);
+                Student s = seekStudent(rdr.GetValue(2).ToString());
+                Librarian l = seekLibrarian(rdr.GetValue(6).ToString());
+                Request r = new Request(rdr.GetValue(0).ToString(), DateTime.Parse(rdr.GetValue(1).ToString()), s, DateTime.Parse(rdr.GetValue(3).ToString()), rdr.GetValue(4).ToString(), rdr.GetValue(5).ToString(), l, false);
+                l.requests.Add(r);
+                s.requests.Add(r);
             }
         }
-
+        //come back later
         public static void init_BooksInWaitlist()//מילוי המערך מתוך בסיס הנתונים
         {
             SqlCommand c = new SqlCommand();
-            c.CommandText = "EXECUTE dbo.Get_all_Books";
+            c.CommandText = "EXECUTE dbo.Get_all_BookInWaitlist";
             SQL_CON SC = new SQL_CON();
             SqlDataReader rdr = SC.execute_query(c);
 
-            Books = new List<Book>();
+            booksInWaitlist = new List<BookInWaitlist>();
 
             while (rdr.Read())
             {
-                Language l = (Language)Enum.Parse(typeof(Language), rdr.GetValue(4).ToString())
-                Book b = new Book(rdr.GetValue(0).ToString(), rdr.GetValue(1).ToString(), rdr.GetValue(2).ToString(), int.Parse(rdr.GetValue(3).ToString()), l, float.Parse(rdr.GetValue(5).ToString()), bool.Parse(rdr.GetValue(6).ToString()), false);
-                Books.Add(b);
+                Student s = seekStudent(rdr.GetValue(1).ToString());
+                Book bo = seekBook(rdr.GetValue(2).ToString());
+                BookInWaitlist b = new BookInWaitlist(DateTime.Parse(rdr.GetValue(0).ToString()), s, bo, false);
+                booksInWaitlist.Add(b);
             }
         }
 
@@ -258,8 +276,9 @@ namespace Group4
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            initLists()
-            Application.Run(new Form1());
+            initLists();
+            Console.WriteLine("lists made successfully");
+            //Application.Run(new Form1());
 
         }
     }

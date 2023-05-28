@@ -12,7 +12,8 @@ namespace Group4
         private int YearlyGoal;
         private string Password;
         private bool Archive;
-        //public System.Collections.Generic.List<Order> orders;
+        public System.Collections.Generic.List<BookHistory> History;
+        public System.Collections.Generic.List<Request> requests;
 
 
         public Student(string id, string name, int age, string club, int yearlyGoal, string password, bool archive, bool is_new)
@@ -20,10 +21,12 @@ namespace Group4
             this.Id = id;
             this.Name = name;
             this.Age = age;
-            this.Club = club;
+            this.Club = (Club)Enum.Parse(typeof(Club), club);
             this.YearlyGoal = yearlyGoal;
             this.Password = password;
             this.Archive = archive;
+            this.History = new System.Collections.Generic.List<BookHistory>();
+            this.requests = new System.Collections.Generic.List<Request>();
 
             if (is_new)
             {

@@ -10,7 +10,7 @@ namespace Group4
         private string Name;
         private string Password;
         private bool Archive;
-        //public System.Collections.Generic.List<Order> orders;
+        public System.Collections.Generic.List<Request> requests;
 
 
         public Librarian(string id, string name, string password, bool archive, bool is_new)
@@ -19,6 +19,7 @@ namespace Group4
             this.Name = name;
             this.Password = password;
             this.Archive = archive;
+            this.requests = new System.Collections.Generic.List<Request>();
             if (is_new)
             {
                 this.create_librarian();

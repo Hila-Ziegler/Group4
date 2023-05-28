@@ -9,6 +9,7 @@ namespace Group4
         private string Name;
         private string Password;
         private bool Archive;
+        public System.Collections.Generic.List<Student> Events;
         //public System.Collections.Generic.List<Order> orders;
 
 
@@ -18,6 +19,7 @@ namespace Group4
             this.Name = name;
             this.Password = password;
             this.Archive = archive;
+            this.Events = new System.Collections.Generic.List<Event>();
 
             if (is_new)
             {

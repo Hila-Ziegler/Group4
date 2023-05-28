@@ -14,7 +14,8 @@ namespace Group4
         private Language Language; //enum
         private float Rating;
         private bool Archive;
-        //public System.Collections.Generic.List<Order> orders;
+        public System.Collections.Generic.List<Copy> Copies;
+        public System.Collections.Generic.List<BookHistory> History;
 
 
         public Book(string serialNumber, string title, string author, int publishYear, string language, float rating, bool archive, bool is_new)
@@ -23,13 +24,15 @@ namespace Group4
             this.Title = title;
             this.author = author;
             this.PublishYear = publishYear;
-            this.Language = language;
+            this.Language = (Language)Enum.Parse(typeof(Language), language);
             this.Rating = rating;
             this.Archive = archive;
+            this.Copies = new System.Collections.Generic.List<Copy>();
+            this.History = new System.Collections.Generic.List<BookHistory>();
             if (is_new)
             {
                 this.create_Book();
-                Program.Books.Add(this);
+                Program.books.Add(this);
 
             }
         }
@@ -55,7 +58,7 @@ namespace Group4
             return this.PublishYear;
         }
 
-        public string get_lang()
+        public Language get_lang()
         {
             return this.Language;
         }
@@ -174,10 +177,14 @@ namespace Group4
         public void create_Book()
         {
             SqlCommand c = new SqlCommand();
-            c.CommandText = "EXECUTE SP_add_worker @id, @name, @title";
-            c.Parameters.AddWithValue("@id", this.WorkerId);
-            c.Parameters.AddWithValue("@name", this.WorkerName);
-            c.Parameters.AddWithValue("@title", this.workerTitle.ToString());
+            c.CommandText = "EXECUTE dbo.SP_add_Books @serialNumber, @title, @author, @publishYear, @language, @rating, @arcive";
+            c.Parameters.AddWithValue("@serialNumber", this.SerialNumber);
+            c.Parameters.AddWithValue("@title", this.Title);
+            c.Parameters.AddWithValue("@author", this.author);
+            c.Parameters.AddWithValue("@publishYear", this.PublishYear);
+            c.Parameters.AddWithValue("@language", this.Language);
+            c.Parameters.AddWithValue("@rating", this.Rating);
+            c.Parameters.AddWithValue("@arcive", this.Archive);
             SQL_CON SC = new SQL_CON();
             SC.execute_non_query(c);
         }

@@ -1,8 +1,11 @@
-namespace Group4;
-class Program
+namespace Group4
 {
-    static void Main(string[] args)
+    class Test
     {
-        Console.WriteLine("Hello, World!");
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Hello, World!");
+        }
     }
 }
+
