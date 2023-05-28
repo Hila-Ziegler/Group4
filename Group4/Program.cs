@@ -210,7 +210,7 @@ namespace Group4
             while (rdr.Read())
             {
                 Language l = (Language)Enum.Parse(typeof(Language), rdr.GetValue(4).ToString());
-                Event e = new Event(rdr.GetValue(0).ToString(),DateTime.Parse(rdr.GetValue(1).ToString()),float.Parse(rdr.GetValue(2).ToString()),rdr.GetValue(3).ToString(), int.Parse(rdr.GetValue(4).ToString()),int.Parse(rdr.GetValue(5).ToString()), false));
+                Event e = new Event(rdr.GetValue(0).ToString(),DateTime.Parse(rdr.GetValue(1).ToString()),float.Parse(rdr.GetValue(2).ToString()),rdr.GetValue(3).ToString(), int.Parse(rdr.GetValue(4).ToString()),int.Parse(rdr.GetValue(5).ToString()), false);
                 events.Add(e);
             }
         }
@@ -227,7 +227,7 @@ namespace Group4
             while (rdr.Read())
             {
                 Student s = seekStudent(rdr.GetValue(0).ToString());
-                Registration r = new Registration(s, DateTime.Parse(rdr.GetValue(1).ToString()),rdr.GetValue(2).ToString(),bool.Parse(rdr.GetValue(3).ToString()),rdr.GetValue(4).ToString(), int.Parse(rdr.GetValue(5).ToString()), false)) ));
+                Registration r = new Registration(s, DateTime.Parse(rdr.GetValue(1).ToString()),rdr.GetValue(2).ToString(),bool.Parse(rdr.GetValue(3).ToString()),rdr.GetValue(4).ToString(), int.Parse(rdr.GetValue(5).ToString()), false);
                 Event e = seekEvent(DateTime.Parse(rdr.GetValue(1).ToString()), rdr.GetValue(2).ToString());
                 e.Registered.Add(s);
             }
@@ -257,17 +257,18 @@ namespace Group4
         public static void init_BooksInWaitlist()//מילוי המערך מתוך בסיס הנתונים
         {
             SqlCommand c = new SqlCommand();
-            c.CommandText = "EXECUTE dbo.Get_all_Books";
+            c.CommandText = "EXECUTE dbo.Get_all_BookInWaitlist";
             SQL_CON SC = new SQL_CON();
             SqlDataReader rdr = SC.execute_query(c);
 
-            books = new List<Book>();
+            booksInWaitlist = new List<BookInWaitlist>();
 
             while (rdr.Read())
             {
-                Language l = (Language)Enum.Parse(typeof(Language), rdr.GetValue(4).ToString())
-                Book b = new Book(rdr.GetValue(0).ToString(), rdr.GetValue(1).ToString(), rdr.GetValue(2).ToString(), int.Parse(rdr.GetValue(3).ToString()), l, float.Parse(rdr.GetValue(5).ToString()), bool.Parse(rdr.GetValue(6).ToString()), false);
-                books.Add(b);
+                Student s = seekStudent(rdr.GetValue(1).ToString());
+                Book bo = seekBook(rdr.GetValue(2).ToString());
+                BookInWaitlist b = new BookInWaitlist(DateTime.Parse(rdr.GetValue(0).ToString()), s, bo, false);
+                booksInWaitlist.Add(b);
             }
         }
 
@@ -275,8 +276,9 @@ namespace Group4
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            initLists()
-            Application.Run(new Form1());
+            initLists();
+            Console.WriteLine("lists made successfully");
+            //Application.Run(new Form1());
 
         }
     }

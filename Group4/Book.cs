@@ -58,7 +58,7 @@ namespace Group4
             return this.PublishYear;
         }
 
-        public string get_lang()
+        public Language get_lang()
         {
             return this.Language;
         }
@@ -177,10 +177,14 @@ namespace Group4
         public void create_Book()
         {
             SqlCommand c = new SqlCommand();
-            c.CommandText = "EXECUTE SP_add_worker @id, @name, @title";
-            c.Parameters.AddWithValue("@id", this.WorkerId);
-            c.Parameters.AddWithValue("@name", this.WorkerName);
-            c.Parameters.AddWithValue("@title", this.workerTitle.ToString());
+            c.CommandText = "EXECUTE dbo.SP_add_Books @serialNumber, @title, @author, @publishYear, @language, @rating, @arcive";
+            c.Parameters.AddWithValue("@serialNumber", this.SerialNumber);
+            c.Parameters.AddWithValue("@title", this.Title);
+            c.Parameters.AddWithValue("@author", this.author);
+            c.Parameters.AddWithValue("@publishYear", this.PublishYear);
+            c.Parameters.AddWithValue("@language", this.Language);
+            c.Parameters.AddWithValue("@rating", this.Rating);
+            c.Parameters.AddWithValue("@arcive", this.Archive);
             SQL_CON SC = new SQL_CON();
             SC.execute_non_query(c);
         }

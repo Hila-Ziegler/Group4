@@ -6,16 +6,15 @@ namespace Group4
     public class BookInWaitlist
     {
         private DateTime StartDT;
-        private string ID;
-        private string SerialNum;
-        //public System.Collections.Generic.List<Order> orders;
+        private Student student;
+        private Book book;
 
 
-        public BookInWaitlist(DateTime startDT, string id, string serialNum, bool is_new)
+        public BookInWaitlist(DateTime startDT, Student s, Book book, bool is_new)
         {
             this.StartDT = startDT;
-            this.ID = id;
-            this.SerialNum = serialNum;
+            this.student = s;
+            this.book = book;
 
             if (is_new)
             {
@@ -29,14 +28,14 @@ namespace Group4
         {
             return this.StartDT;
         }
-        public string get_id()
+        public Student get_Student()
         {
-            return this.ID;
+            return this.student;
         }
 
-        public string get_serialNum()
+        public Book get_Book()
         {
-            return this.SerialNum;
+            return this.book;
         }
 
         public void set_startDT(DateTime startDT)
@@ -44,14 +43,14 @@ namespace Group4
             this.StartDT = startDT;
         }
 
-        public void set_id(string id)
+        public void set_student(Student s)
         {
-            this.ID = id;
+            this.student = s;
         }
 
-        public void set_serialNum(string serialNum)
+        public void set_book(Book b)
         {
-            this.SerialNum = serialNum;
+            this.book = b;
         }
 
 

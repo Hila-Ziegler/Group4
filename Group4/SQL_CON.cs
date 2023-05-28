@@ -11,7 +11,7 @@ namespace Group4
     class SQL_CON
     {
          SqlConnection conn;
-        string Username = "ofirwij"
+        string Username = "ofirwij";
 
 
         public SQL_CON(){
