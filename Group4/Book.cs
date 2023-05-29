@@ -18,13 +18,13 @@ namespace Group4
         public System.Collections.Generic.List<BookHistory> History;
 
 
-        public Book(string serialNumber, string title, string author, int publishYear, string language, float rating, bool archive, bool is_new)
+        public Book(string serialNumber, string title, string author, int publishYear, Language language, float rating, bool archive, bool is_new)
         {
             this.SerialNumber = serialNumber;
             this.Title = title;
             this.author = author;
             this.PublishYear = publishYear;
-            this.Language = (Language)Enum.Parse(typeof(Language), language);
+            this.Language = language;
             this.Rating = rating;
             this.Archive = archive;
             this.Copies = new System.Collections.Generic.List<Copy>();
@@ -182,7 +182,7 @@ namespace Group4
             c.Parameters.AddWithValue("@title", this.Title);
             c.Parameters.AddWithValue("@author", this.author);
             c.Parameters.AddWithValue("@publishYear", this.PublishYear);
-            c.Parameters.AddWithValue("@language", this.Language);
+            c.Parameters.AddWithValue("@language", this.Language.ToString());
             c.Parameters.AddWithValue("@rating", this.Rating);
             c.Parameters.AddWithValue("@arcive", this.Archive);
             SQL_CON SC = new SQL_CON();

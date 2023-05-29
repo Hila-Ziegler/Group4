@@ -13,9 +13,8 @@ namespace Group4
          SqlConnection conn;
         string Username = "ofirwij";
 
-
         public SQL_CON(){
-            conn = new SqlConnection("Data Source=dbcourse.database.windows.net;Initial Catalog=SADM_4;Persist Security Info=True;User ID="+Username+"@bgufbm.onmicrosoft.com;Authentication=ActiveDirectoryPassword");//update this!!
+            conn = new SqlConnection("Data Source=dbcourse.database.windows.net;Initial Catalog=SADM_4;Persist Security Info=True;User ID="+Username+"@bgufbm.onmicrosoft.com;Password=fqv88154;Authentication=\"Active Directory Password\"");//update this!!
         }
 
         public void execute_non_query(SqlCommand cmd){

@@ -64,18 +64,19 @@ CREATE TABLE dbo.BookHistory (
 		REFERENCES Students (id)
 )
 
-
+--DROP TABLE dbo.Events
 CREATE TABLE dbo.Events (
 	guestType			VARCHAR(50),	
 	date				DATETIME NOT NULL,
 	price				DECIMAL,  --Is this the right data type to use collaborating with c#?
 	guestSpeakerName	VARCHAR(50) NOT NULL,
+	status				VARCHAR(50),
 	maxGuests			INTEGER,
 	currentlyRegistered	INTEGER,
 	CONSTRAINT PK_Event PRIMARY KEY (date, guestSpeakerName)
 )
 
-
+--DROP TABLE dbo.Registrations
 CREATE TABLE dbo.Registrations (
 	id					VARCHAR(50) NOT NULL,
 	eventDate			DATETIME NOT NULL,
@@ -90,17 +91,20 @@ CREATE TABLE dbo.Registrations (
 		REFERENCES Students (id)
 )
 
-
+--DROP TABLE dbo.Requests
 CREATE TABLE dbo.Requests (
 	type			VARCHAR(50),
 	startDT			DATETIME NOT NULL,
-	id				VARCHAR(50) NOT NULL,
+	sid				VARCHAR(50) NOT NULL,
+	lid				VARCHAR(50) NOT NULL,
 	endDT			DATETIME,
 	status			VARCHAR(50),
 	photoAddress	NVARCHAR(260), --CHECK THIS DATA TYPE WITH LIEL
-	CONSTRAINT PK_Request PRIMARY KEY (startDT, id),
-	CONSTRAINT FK_Request_To_Student FOREIGN KEY (id)
-		REFERENCES Students (id)
+	CONSTRAINT PK_Request PRIMARY KEY (startDT, sid, lid),
+	CONSTRAINT FK_Request_To_Student FOREIGN KEY (sid)
+		REFERENCES Students (id),
+	CONSTRAINT FK_Request_To_Librarian FOREIGN KEY (lid)
+		REFERENCES Librarians (id)
 )
 
 
