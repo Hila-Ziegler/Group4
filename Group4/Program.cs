@@ -22,7 +22,6 @@ namespace Group4
         public static System.Collections.Generic.List<BookHistory> bookHistories;
         public static System.Collections.Generic.List<Registration> registrations;
         public static System.Collections.Generic.List<Request> requests;
-        public static System.Collections.Generic.List<BookInWaitlist> bookInWaitlists;
         public static System.Collections.Generic.List<BookInWaitlist> booksInWaitlist;
         public static System.Collections.Generic.List<Event> events;
         [STAThread]
@@ -274,10 +273,12 @@ namespace Group4
 
         static void Main()
         {
-            Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
-            initLists();
-            Console.WriteLine("lists made successfully");
+            //Application.EnableVisualStyles();
+            //Application.SetCompatibleTextRenderingDefault(false);
+            init_Books();
+            Console.WriteLine("Books made successfully");
+            //initLists();
+           // Console.WriteLine("lists made successfully");
             //Application.Run(new Form1());
 
         }
