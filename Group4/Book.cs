@@ -17,7 +17,7 @@ namespace Group4
         //public System.Collections.Generic.List<Order> orders;
 
 
-        public Book(string serialNumber, string title, string author, int publishYear, string language, float rating, bool archive, bool is_new)
+        public Book(string serialNumber, string title, string author, int publishYear, Language language, float rating, bool archive, bool is_new)
         {
             this.SerialNumber = serialNumber;
             this.Title = title;
