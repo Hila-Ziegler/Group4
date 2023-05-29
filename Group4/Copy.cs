@@ -6,19 +6,18 @@ namespace Group4
     public class Copy
     {
         private int CopyNum;
-        private string SerialNum;
+        private Book book;
         private bool Status;
-        //public System.Collections.Generic.List<Order> orders;
 
 
-        public Copy(int copyNum, string serialNum, bool status, bool is_new)
+        public Copy(int copyNum, Book book, bool status, bool is_new)
         {
             this.CopyNum = copyNum;
-            this.SerialNum = serialNum;
+            this.book = book;
             this.Status = status;
             if (is_new)
             {
-                this.create_copy();
+                this.create_Copy();
                 Program.copies.Add(this);
 
             }
@@ -28,9 +27,9 @@ namespace Group4
         {
             return this.CopyNum;
         }
-        public string get_serialNum()
+        public Book get_book()
         {
-            return this.SerialNum;
+            return this.book;
         }
 
         public bool get_status()
@@ -43,9 +42,9 @@ namespace Group4
             this.CopyNum = copyNum;
         }
 
-        public void set_serialNum(string serialNum)
+        public void set_book(Book b)
         {
-            this.SerialNum = serialNum;
+            this.book = b;
         }
 
         public void set_status(bool status)
@@ -54,90 +53,24 @@ namespace Group4
         }
 
 
-
-        public System.Collections.Generic.List<Order> Orders // get and set for the whole list
-        {
-            get
-            {
-                if (orders == null)
-                    orders = new System.Collections.Generic.List<Order>();
-                return orders;
-            }
-            set
-            {
-                RemoveAllOrders();
-                if (value != null)
-                {
-                    foreach (Order oOrder in value)
-                        AddOrders(oOrder);
-                }
-            }
-        }
-
-        public void AddOrders(Order newOrder)
-        {
-            if (newOrder == null)
-                return;
-            if (this.orders == null)
-                this.orders = new System.Collections.Generic.List<Order>();
-            if (!this.orders.Contains(newOrder))
-            {
-                this.orders.Add(newOrder);
-                newOrder.Worker = this;
-            }
-        }
-        public void RemoveOrders(Order oldOrder)
-        {
-            if (oldOrder == null)
-                return;
-            if (this.orders != null)
-                if (this.orders.Contains(oldOrder))
-                {
-                    this.orders.Remove(oldOrder);
-                    oldOrder.Worker = null;
-                }
-        }
-
-        public void RemoveAllOrders()
-        {
-            if (orders != null)
-            {
-                foreach (Order order in orders)
-                    order.Worker = null;
-                orders.Clear();
-            }
-        }
-
-
-
-        public void create_copy()
+        public void create_Copy()
         {
             SqlCommand c = new SqlCommand();
-            c.CommandText = "EXECUTE SP_add_worker @id, @name, @title";
-            c.Parameters.AddWithValue("@id", this.WorkerId);
-            c.Parameters.AddWithValue("@name", this.WorkerName);
-            c.Parameters.AddWithValue("@title", this.workerTitle.ToString());
+            c.CommandText = "EXECUTE dbo.SP_add_Copies @copyNumber ,@serialNumber , @status";
+            c.Parameters.AddWithValue("@copyNumber", this.CopyNum);
+            c.Parameters.AddWithValue("@serialNumber", this.book.get_sNumber());
+            c.Parameters.AddWithValue("@status", this.Status);
             SQL_CON SC = new SQL_CON();
             SC.execute_non_query(c);
         }
 
-        public void Update_worker()
+        public void update_Copy()
         {
             SqlCommand c = new SqlCommand();
-            c.CommandText = "EXECUTE dbo.SP_Update_worker  @id, @name, @title";
-            c.Parameters.AddWithValue("@id", this.WorkerId);
-            c.Parameters.AddWithValue("@name", this.WorkerName);
-            c.Parameters.AddWithValue("@title", this.workerTitle.ToString());
-            SQL_CON SC = new SQL_CON();
-            SC.execute_non_query(c);
-        }
-
-        public void Delete_worker()
-        {
-            Program.Workers.Remove(this);
-            SqlCommand c = new SqlCommand();
-            c.CommandText = "EXECUTE dbo.SP_delete_worker @id";
-            c.Parameters.AddWithValue("@id", this.WorkerId);
+            c.CommandText = "EXECUTE dbo.SP_Update_Copy @copyNumber, @serialNumber, @status";
+            c.Parameters.AddWithValue("@copyNumber", this.CopyNum);
+            c.Parameters.AddWithValue("@serialNumber", this.book.get_sNumber());
+            c.Parameters.AddWithValue("@status", this.Status);
             SQL_CON SC = new SQL_CON();
             SC.execute_non_query(c);
         }
