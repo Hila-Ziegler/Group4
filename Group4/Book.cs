@@ -75,100 +75,94 @@ namespace Group4
         //setters
 
 
-        public void set_name(string name)
-        {
-            this.WorkerName = name;
-        }
-
-        public string set_sNumber(string serialNumber)
+        public void set_sNumber(string serialNumber)
         {
             this.SerialNumber = serialNumber;
         }
-        public string set_author(string author)
+        public void set_author(string author)
         {
             this.author = author;
         }
 
-        public string set_title(string title)
+        public void set_title(string title)
         {
             this.Title = title;
         }
 
-        public int set_PYear(int publishYear)
+        public void set_PYear(int publishYear)
         {
             this.PublishYear = publishYear;
         }
 
-        public string set_lang(string language)
+        public void set_lang(Language language)
         {
             this.Language = language;
         }
 
-        public float set_rating(float rating)
+        public void set_rating(float rating)
         {
             this.Rating = rating;
         }
 
-        public bool set_archive(bool archive)
+        public void set_archive(bool archive)
         {
             this.Archive = archive;
         }
 
-        /// <summary>
-        /// later on
-        /// </summary>
 
-
-        public System.Collections.Generic.List<Order> Orders // get and set for the whole list
+        public void addCopy(Copy c)
         {
-            get
+            if (c == null)
+                return;
+            if (!this.Copies.Contains(c))
             {
-                if (orders == null)
-                    orders = new System.Collections.Generic.List<Order>();
-                return orders;
-            }
-            set
-            {
-                RemoveAllOrders();
-                if (value != null)
-                {
-                    foreach (Order oOrder in value)
-                        AddOrders(oOrder);
-                }
+                this.Copies.Add(c);
             }
         }
-
-        public void AddOrders(Order newOrder)
+        public void removeCopy(Copy c)
         {
-            if (newOrder == null)
+            if (c == null)
                 return;
-            if (this.orders == null)
-                this.orders = new System.Collections.Generic.List<Order>();
-            if (!this.orders.Contains(newOrder))
-            {
-                this.orders.Add(newOrder);
-                newOrder.Worker = this;
-            }
-        }
-        public void RemoveOrders(Order oldOrder)
-        {
-            if (oldOrder == null)
-                return;
-            if (this.orders != null)
-                if (this.orders.Contains(oldOrder))
+            if (this.Copies != null)
+                if (this.Copies.Contains(c))
                 {
-                    this.orders.Remove(oldOrder);
-                    oldOrder.Worker = null;
+                    this.Copies.Remove(c);
                 }
         }
 
-        public void RemoveAllOrders()
+        public void removeAllCopies()
         {
-            if (orders != null)
+            if (Copies != null)
             {
-                foreach (Order order in orders)
-                    order.Worker = null;
-                orders.Clear();
+                Copies.Clear();
+            }
+        }
+
+        public void addBookHistory(BookHistory bh)
+        {
+            if (bh == null)
+                return;
+            if (!this.History.Contains(bh))
+            {
+                this.History.Add(bh);
+            }
+        }
+        public void removeBookHistory(BookHistory bh)
+        {
+            if (bh == null)
+                return;
+            if (this.History != null)
+                if (this.History.Contains(bh))
+                {
+                    this.History.Remove(bh);
+                }
+        }
+
+        public void removeAllBookHistories()
+        {
+            if (History != null)
+            {
+                History.Clear();
             }
         }
 
@@ -189,23 +183,17 @@ namespace Group4
             SC.execute_non_query(c);
         }
 
-        public void Update_worker()
+        public void Update_Book()
         {
             SqlCommand c = new SqlCommand();
-            c.CommandText = "EXECUTE dbo.SP_Update_worker  @id, @name, @title";
-            c.Parameters.AddWithValue("@id", this.WorkerId);
-            c.Parameters.AddWithValue("@name", this.WorkerName);
-            c.Parameters.AddWithValue("@title", this.workerTitle.ToString());
-            SQL_CON SC = new SQL_CON();
-            SC.execute_non_query(c);
-        }
-
-        public void Delete_worker()
-        {
-            Program.Workers.Remove(this);
-            SqlCommand c = new SqlCommand();
-            c.CommandText = "EXECUTE dbo.SP_delete_worker @id";
-            c.Parameters.AddWithValue("@id", this.WorkerId);
+            c.CommandText = "EXECUTE dbo.SP_Update_Book @serialNumber, @title , @author, @publishYear , @language, @rating, @arcive";
+            c.Parameters.AddWithValue("@serialNumber", this.SerialNumber);
+            c.Parameters.AddWithValue("@title", this.Title);
+            c.Parameters.AddWithValue("@author", this.author);
+            c.Parameters.AddWithValue("@publishYear", this.PublishYear);
+            c.Parameters.AddWithValue("@language", this.Language.ToString());
+            c.Parameters.AddWithValue("@rating", this.Rating);
+            c.Parameters.AddWithValue("@arcive", this.Archive);
             SQL_CON SC = new SQL_CON();
             SC.execute_non_query(c);
         }

@@ -139,9 +139,9 @@ namespace Group4
             while (rdr.Read())
             {
                 Language l = (Language)Enum.Parse(typeof(Language), rdr.GetValue(4).ToString());
-                Copy co = new Copy(int.Parse(rdr.GetValue(0).ToString()), rdr.GetValue(1).ToString(), bool.Parse(rdr.GetValue(2).ToString()),  false);
+                Book b = seekBook(rdr.GetValue(1).ToString());
+                Copy co = new Copy(int.Parse(rdr.GetValue(0).ToString()), b, bool.Parse(rdr.GetValue(2).ToString()),  false);
                 copies.Add(co);
-                Book b = seekBook(co.get_serialNum());
                 b.Copies.Add(co);
             }
         }
