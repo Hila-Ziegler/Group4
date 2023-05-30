@@ -23,7 +23,7 @@ namespace Group4
 
             if (is_new)
             {
-                this.create_bookHistory();
+                this.create_BookHistory();
                 Program.bookHistories.Add(this);
 
             }

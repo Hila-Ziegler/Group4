@@ -11,7 +11,7 @@ namespace Group4
         private bool ShowedUp;
         private string Review;
         private int Rating;
-        //public System.Collections.Generic.List<Order> orders;
+        private Event Event;
 
 
         public Registration(Student Student, DateTime eventDate, string guestName, bool showedUp, string review, int rating, bool is_new)
@@ -25,7 +25,7 @@ namespace Group4
 
             if (is_new)
             {
-                this.create_registration();
+                this.create_Registration();
                 Program.registrations.Add(this);
 
             }
@@ -45,12 +45,12 @@ namespace Group4
             return this.GuestName;
         }
 
-        public string get_showedUp()
+        public bool get_showedUp()
         {
             return this.ShowedUp;
         }
 
-        public int get_review()
+        public string get_review()
         {
             return this.Review;
         }
@@ -60,9 +60,9 @@ namespace Group4
             return this.Rating;
         }
 
-        public void set_id(string id)
+        public void set_Student(Student s)
         {
-            this.ID = id;
+            this.Student = s;
         }
 
         public void set_eventDate(DateTime eventDate)
@@ -90,89 +90,30 @@ namespace Group4
             this.Rating = rating;
         }
 
-        public System.Collections.Generic.List<Order> Orders // get and set for the whole list
-        {
-            get
-            {
-                if (orders == null)
-                    orders = new System.Collections.Generic.List<Order>();
-                return orders;
-            }
-            set
-            {
-                RemoveAllOrders();
-                if (value != null)
-                {
-                    foreach (Order oOrder in value)
-                        AddOrders(oOrder);
-                }
-            }
-        }
-
-        public void AddOrders(Order newOrder)
-        {
-            if (newOrder == null)
-                return;
-            if (this.orders == null)
-                this.orders = new System.Collections.Generic.List<Order>();
-            if (!this.orders.Contains(newOrder))
-            {
-                this.orders.Add(newOrder);
-                newOrder.Worker = this;
-            }
-        }
-        public void RemoveOrders(Order oldOrder)
-        {
-            if (oldOrder == null)
-                return;
-            if (this.orders != null)
-                if (this.orders.Contains(oldOrder))
-                {
-                    this.orders.Remove(oldOrder);
-                    oldOrder.Worker = null;
-                }
-        }
-
-        public void RemoveAllOrders()
-        {
-            if (orders != null)
-            {
-                foreach (Order order in orders)
-                    order.Worker = null;
-                orders.Clear();
-            }
-        }
-
-
-
-        public void create_registration()
+        public void create_Registration()
         {
             SqlCommand c = new SqlCommand();
-            c.CommandText = "EXECUTE SP_add_worker @id, @name, @title";
-            c.Parameters.AddWithValue("@id", this.WorkerId);
-            c.Parameters.AddWithValue("@name", this.WorkerName);
-            c.Parameters.AddWithValue("@title", this.workerTitle.ToString());
+            c.CommandText = "EXECUTE dbo.SP_add_Registrations @id , @eventDate, @guestSpeakerName, @showedUp, @review, @rating";
+            c.Parameters.AddWithValue("@id", this.Student.get_ID());
+            c.Parameters.AddWithValue("@eventDate", this.EventDate);
+            c.Parameters.AddWithValue("@guestSpeakerName", this.GuestName);
+            c.Parameters.AddWithValue("@showedUp", this.ShowedUp);
+            c.Parameters.AddWithValue("@review", this.Review);
+            c.Parameters.AddWithValue("@rating", this.Rating);
             SQL_CON SC = new SQL_CON();
             SC.execute_non_query(c);
         }
 
-        public void Update_worker()
+        public void update_Registration()
         {
             SqlCommand c = new SqlCommand();
-            c.CommandText = "EXECUTE dbo.SP_Update_worker  @id, @name, @title";
-            c.Parameters.AddWithValue("@id", this.WorkerId);
-            c.Parameters.AddWithValue("@name", this.WorkerName);
-            c.Parameters.AddWithValue("@title", this.workerTitle.ToString());
-            SQL_CON SC = new SQL_CON();
-            SC.execute_non_query(c);
-        }
-
-        public void Delete_worker()
-        {
-            Program.Workers.Remove(this);
-            SqlCommand c = new SqlCommand();
-            c.CommandText = "EXECUTE dbo.SP_delete_worker @id";
-            c.Parameters.AddWithValue("@id", this.WorkerId);
+            c.CommandText = "EXECUTE dbo.SP_Update_Registration @id , @eventDate, @guestSpeakerName, @showedUp, @review, @rating";
+            c.Parameters.AddWithValue("@id", this.Student.get_ID());
+            c.Parameters.AddWithValue("@eventDate", this.EventDate);
+            c.Parameters.AddWithValue("@guestSpeakerName", this.GuestName);
+            c.Parameters.AddWithValue("@showedUp", this.ShowedUp);
+            c.Parameters.AddWithValue("@review", this.Review);
+            c.Parameters.AddWithValue("@rating", this.Rating);
             SQL_CON SC = new SQL_CON();
             SC.execute_non_query(c);
         }

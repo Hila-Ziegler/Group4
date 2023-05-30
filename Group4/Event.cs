@@ -12,7 +12,7 @@ namespace Group4
         private Status status; //enum
         private int MaxGuests;
         private int CurrentlyRegistered;
-        private Teacher Organizer;
+        private Teacher Teacher;
         public System.Collections.Generic.List<Student> Registered;
         //public System.Collections.Generic.List<Order> orders;
 
@@ -30,7 +30,7 @@ namespace Group4
 
             if (is_new)
             {
-                this.create_event();
+                this.create_Event();
                 Program.events.Add(this);
 
             }
@@ -65,6 +65,11 @@ namespace Group4
             return this.CurrentlyRegistered;
         }
 
+        public Teacher get_Teacher()
+        {
+            return this.Teacher;
+        }
+
         public void set_guestType(GuestType guestType)
         {
             this.GuestType = guestType;
@@ -87,100 +92,50 @@ namespace Group4
 
         public void set_maxGuests(int maxGuests)
         {
-            this.maxGuests = maxGuests;
+            this.MaxGuests = maxGuests;
         }
 
         public void set_currentlyRegistered(int currentlyRegistered)
         {
-            this.currentlyRegistered = currentlyRegistered;
+            this.CurrentlyRegistered = currentlyRegistered;
         }
 
-        public System.Collections.Generic.List<Order> Orders // get and set for the whole list
+        public void set_Teacher(Teacher t)
         {
-            get
-            {
-                if (orders == null)
-                    orders = new System.Collections.Generic.List<Order>();
-                return orders;
-            }
-            set
-            {
-                RemoveAllOrders();
-                if (value != null)
-                {
-                    foreach (Order oOrder in value)
-                        AddOrders(oOrder);
-                }
-            }
+            this.Teacher = t;
         }
 
-        public void AddOrders(Order newOrder)
-        {
-            if (newOrder == null)
-                return;
-            if (this.orders == null)
-                this.orders = new System.Collections.Generic.List<Order>();
-            if (!this.orders.Contains(newOrder))
-            {
-                this.orders.Add(newOrder);
-                newOrder.Worker = this;
-            }
-        }
-        public void RemoveOrders(Order oldOrder)
-        {
-            if (oldOrder == null)
-                return;
-            if (this.orders != null)
-                if (this.orders.Contains(oldOrder))
-                {
-                    this.orders.Remove(oldOrder);
-                    oldOrder.Worker = null;
-                }
-        }
-
-        public void RemoveAllOrders()
-        {
-            if (orders != null)
-            {
-                foreach (Order order in orders)
-                    order.Worker = null;
-                orders.Clear();
-            }
-        }
-
-
-
-        public void create_event()
+       
+        public void create_Event()
         {
             SqlCommand c = new SqlCommand();
-            c.CommandText = "EXECUTE SP_add_worker @id, @name, @title";
-            c.Parameters.AddWithValue("@id", this.WorkerId);
-            c.Parameters.AddWithValue("@name", this.WorkerName);
-            c.Parameters.AddWithValue("@title", this.workerTitle.ToString());
+            c.CommandText = "EXECUTE dbo.SP_add_Events @guestType,@date,@price,@guestSpeakerName , @status,@maxGuests,@currentlyRegistered";
+            c.Parameters.AddWithValue("@guestType", this.GuestType.ToString());
+            c.Parameters.AddWithValue("@date", this.Date);
+            c.Parameters.AddWithValue("@price", this.Price);
+            c.Parameters.AddWithValue("@guestSpeakerName", this.GuestName);
+            c.Parameters.AddWithValue("@status", this.status.ToString());
+            c.Parameters.AddWithValue("@maxGuests", this.MaxGuests);
+            c.Parameters.AddWithValue("@currentlyRegistered", this.CurrentlyRegistered);
             SQL_CON SC = new SQL_CON();
             SC.execute_non_query(c);
         }
 
-        public void Update_worker()
+        public void update_Event()
         {
             SqlCommand c = new SqlCommand();
-            c.CommandText = "EXECUTE dbo.SP_Update_worker  @id, @name, @title";
-            c.Parameters.AddWithValue("@id", this.WorkerId);
-            c.Parameters.AddWithValue("@name", this.WorkerName);
-            c.Parameters.AddWithValue("@title", this.workerTitle.ToString());
+            c.CommandText = "EXECUTE dbo.SP_Update_Event @guestType,@date,@price,@guestSpeakerName , @status,@maxGuests,@currentlyRegistered";
+            c.Parameters.AddWithValue("@guestType", this.GuestType.ToString());
+            c.Parameters.AddWithValue("@date", this.Date);
+            c.Parameters.AddWithValue("@price", this.Price);
+            c.Parameters.AddWithValue("@guestSpeakerName", this.GuestName);
+            c.Parameters.AddWithValue("@status", this.status.ToString());
+            c.Parameters.AddWithValue("@maxGuests", this.MaxGuests);
+            c.Parameters.AddWithValue("@currentlyRegistered", this.CurrentlyRegistered);
             SQL_CON SC = new SQL_CON();
             SC.execute_non_query(c);
         }
 
-        public void Delete_worker()
-        {
-            Program.Workers.Remove(this);
-            SqlCommand c = new SqlCommand();
-            c.CommandText = "EXECUTE dbo.SP_delete_worker @id";
-            c.Parameters.AddWithValue("@id", this.WorkerId);
-            SQL_CON SC = new SQL_CON();
-            SC.execute_non_query(c);
-        }
 
     }
 }

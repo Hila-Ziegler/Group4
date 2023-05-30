@@ -76,6 +76,7 @@ namespace Group4
             if (!this.Events.Contains(e))
             {
                 this.Events.Add(e);
+                e.set_Teacher(this);
             }
         }
         public void removeEvent(Event e)
