@@ -173,7 +173,8 @@ namespace Group4
 
             while (rdr.Read())
             {
-                Student s = new Student(rdr.GetValue(0).ToString(), rdr.GetValue(1).ToString(), int.Parse(rdr.GetValue(2).ToString()), rdr.GetValue(3).ToString(), int.Parse(rdr.GetValue(4).ToString()), rdr.GetValue(5).ToString(), bool.Parse(rdr.GetValue(6).ToString()), false);
+                Club cl = (Club)Enum.Parse(typeof(Club), rdr.GetValue(3).ToString());
+                Student s = new Student(rdr.GetValue(0).ToString(), rdr.GetValue(1).ToString(), int.Parse(rdr.GetValue(2).ToString()), cl, int.Parse(rdr.GetValue(4).ToString()), rdr.GetValue(5).ToString(), bool.Parse(rdr.GetValue(6).ToString()), false);
                 students.Add(s);
             }
         }
