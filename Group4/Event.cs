@@ -9,6 +9,7 @@ namespace Group4
         private DateTime Date;
         private float Price;
         private string GuestName;
+        private Status status; //enum
         private int MaxGuests;
         private int CurrentlyRegistered;
         private Teacher Organizer;
@@ -16,15 +17,16 @@ namespace Group4
         //public System.Collections.Generic.List<Order> orders;
 
 
-        public Event(string guestType, DateTime date, float price, string guestName, int maxGuests, int currentlyRegistered, bool is_new)
+        public Event(GuestType guestType, DateTime date, float price, string guestName, Status status, int maxGuests, int currentlyRegistered, bool is_new)
         {
-            this.GuestType = (GuestType)Enum.Parse(typeof(GuestType),guestType);
+            this.GuestType = guestType;
             this.Date = date;
             this.Price = price;
             this.GuestName = guestName;
             this.MaxGuests = maxGuests;
             this.CurrentlyRegistered = currentlyRegistered;
             this.Registered = new System.Collections.Generic.List<Student>();
+            this.status = status;
 
             if (is_new)
             {

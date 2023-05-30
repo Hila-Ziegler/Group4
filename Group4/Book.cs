@@ -183,7 +183,7 @@ namespace Group4
             SC.execute_non_query(c);
         }
 
-        public void Update_Book()
+        public void update_Book()
         {
             SqlCommand c = new SqlCommand();
             c.CommandText = "EXECUTE dbo.SP_Update_Book @serialNumber, @title , @author, @publishYear , @language, @rating, @arcive";

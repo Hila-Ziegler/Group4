@@ -173,7 +173,8 @@ namespace Group4
 
             while (rdr.Read())
             {
-                Student s = new Student(rdr.GetValue(0).ToString(), rdr.GetValue(1).ToString(), int.Parse(rdr.GetValue(2).ToString()), rdr.GetValue(3).ToString(), int.Parse(rdr.GetValue(4).ToString()), rdr.GetValue(5).ToString(), bool.Parse(rdr.GetValue(6).ToString()), false);
+                Club cl = (Club)Enum.Parse(typeof(Club), rdr.GetValue(3).ToString());
+                Student s = new Student(rdr.GetValue(0).ToString(), rdr.GetValue(1).ToString(), int.Parse(rdr.GetValue(2).ToString()), cl, int.Parse(rdr.GetValue(4).ToString()), rdr.GetValue(5).ToString(), bool.Parse(rdr.GetValue(6).ToString()), false);
                 students.Add(s);
             }
         }
@@ -208,8 +209,10 @@ namespace Group4
 
             while (rdr.Read())
             {
-                Language l = (Language)Enum.Parse(typeof(Language), rdr.GetValue(4).ToString());
-                Event e = new Event(rdr.GetValue(0).ToString(),DateTime.Parse(rdr.GetValue(1).ToString()),float.Parse(rdr.GetValue(2).ToString()),rdr.GetValue(3).ToString(), int.Parse(rdr.GetValue(4).ToString()),int.Parse(rdr.GetValue(5).ToString()), false);
+                Language l = (Language)Enum.Parse(typeof(Language), rdr.GetValue(5).ToString());
+                GuestType g = (GuestType)Enum.Parse(typeof(GuestType), rdr.GetValue(0).ToString());
+                Status s = (Status)Enum.Parse(typeof(Status), rdr.GetValue(4).ToString());
+                Event e = new Event(g, DateTime.Parse(rdr.GetValue(1).ToString()),float.Parse(rdr.GetValue(2).ToString()),rdr.GetValue(3).ToString(), s, int.Parse(rdr.GetValue(5).ToString()), int.Parse(rdr.GetValue(6).ToString()), false);
                 events.Add(e);
             }
         }
@@ -247,7 +250,9 @@ namespace Group4
             {
                 Student s = seekStudent(rdr.GetValue(2).ToString());
                 Librarian l = seekLibrarian(rdr.GetValue(6).ToString());
-                Request r = new Request(rdr.GetValue(0).ToString(), DateTime.Parse(rdr.GetValue(1).ToString()), s, DateTime.Parse(rdr.GetValue(3).ToString()), rdr.GetValue(4).ToString(), rdr.GetValue(5).ToString(), l, false);
+                RequestType rt = (RequestType)Enum.Parse(typeof(RequestType), rdr.GetValue(0).ToString());
+                Status st = (Status)Enum.Parse(typeof(Status), rdr.GetValue(5).ToString());
+                Request r = new Request(rt, DateTime.Parse(rdr.GetValue(1).ToString()), s, l, DateTime.Parse(rdr.GetValue(3).ToString()), st, rdr.GetValue(6).ToString(), false);
                 l.requests.Add(r);
                 s.requests.Add(r);
             }
