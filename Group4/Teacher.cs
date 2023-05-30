@@ -43,7 +43,7 @@ namespace Group4
             return this.Archive;
         }
 
-        private string get_password()
+        public string get_password()
         {
             return this.Password;
         }

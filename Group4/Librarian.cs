@@ -42,10 +42,10 @@ namespace Group4
             return this.Archive;
         }
 
-      //  private string get_password()
-      //  {
-        //    return this.Password;
-       // }
+        public string get_password()
+        {
+            return this.Password;
+        }
 
         public void set_ID(string id)
         {
