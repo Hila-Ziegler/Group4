@@ -95,7 +95,7 @@ namespace Group4
             this.YearlyGoal = yearlyGoal;
         }
 
-        private void set_password(string password)
+        public void set_password(string password)
         {
             this.Password = Hash.GetHash(password);
         }

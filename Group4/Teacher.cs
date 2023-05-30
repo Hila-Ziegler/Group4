@@ -9,8 +9,7 @@ namespace Group4
         private string Name;
         private string Password;
         private bool Archive;
-        public System.Collections.Generic.List<Student> Events;
-        //public System.Collections.Generic.List<Order> orders;
+        public System.Collections.Generic.List<Event> Events;
 
 
         public Teacher(string id, string name, string password,bool archive, bool is_new)
@@ -38,7 +37,7 @@ namespace Group4
             return this.Id;
         }
 
-        public string get_archive()
+        public bool get_archive()
         {
             return this.Archive;
         }
@@ -50,7 +49,7 @@ namespace Group4
 
         public void set_ID(string id)
         {
-            this.ID = id;
+            this.Id = id;
         }
 
         public void set_name(string name)
@@ -58,9 +57,9 @@ namespace Group4
             this.Name = name; //;
         }
 
-        private void set_password(string password)
+        public void set_password(string password)
         {
-            this.Password = password;
+            this.Password = Hash.GetHash(password);
         }
 
         public void set_archive(bool archive)
@@ -70,68 +69,43 @@ namespace Group4
 
 
 
-        public System.Collections.Generic.List<Order> Orders // get and set for the whole list
+        public void addEvent(Event e)
         {
-            get
+            if (e == null)
+                return;
+            if (!this.Events.Contains(e))
             {
-                if (orders == null)
-                    orders = new System.Collections.Generic.List<Order>();
-                return orders;
-            }
-            set
-            {
-                RemoveAllOrders();
-                if (value != null)
-                {
-                    foreach (Order oOrder in value)
-                        AddOrders(oOrder);
-                }
+                this.Events.Add(e);
+                e.set_Teacher(this);
             }
         }
-
-        public void AddOrders(Order newOrder)
+        public void removeEvent(Event e)
         {
-            if (newOrder == null)
+            if (e == null)
                 return;
-            if (this.orders == null)
-                this.orders = new System.Collections.Generic.List<Order>();
-            if (!this.orders.Contains(newOrder))
-            {
-                this.orders.Add(newOrder);
-                newOrder.Worker = this;
-            }
-        }
-        public void RemoveOrders(Order oldOrder)
-        {
-            if (oldOrder == null)
-                return;
-            if (this.orders != null)
-                if (this.orders.Contains(oldOrder))
+            if (this.Events != null)
+                if (this.Events.Contains(e))
                 {
-                    this.orders.Remove(oldOrder);
-                    oldOrder.Worker = null;
+                    this.Events.Remove(e);
                 }
         }
 
-        public void RemoveAllOrders()
+        public void removeAllEvents()
         {
-            if (orders != null)
+            if (this.Events != null)
             {
-                foreach (Order order in orders)
-                    order.Worker = null;
-                orders.Clear();
+                this.Events.Clear();
             }
         }
-
-
 
         public void create_teacher()
         {
             SqlCommand c = new SqlCommand();
-            c.CommandText = "EXECUTE SP_add_worker @id, @name, @title";
-            c.Parameters.AddWithValue("@id", this.WorkerId);
-            c.Parameters.AddWithValue("@name", this.WorkerName);
-            c.Parameters.AddWithValue("@title", this.workerTitle.ToString());
+            c.CommandText = "EXECUTE dbo.SP_add_Teachers @id , @name ,@password ,@archive";
+            c.Parameters.AddWithValue("@id", this.Id);
+            c.Parameters.AddWithValue("@name", this.Name);
+            c.Parameters.AddWithValue("@password", this.Password);
+            c.Parameters.AddWithValue("@archive", this.Archive);
             SQL_CON SC = new SQL_CON();
             SC.execute_non_query(c);
         }
@@ -139,20 +113,11 @@ namespace Group4
         public void Update_worker()
         {
             SqlCommand c = new SqlCommand();
-            c.CommandText = "EXECUTE dbo.SP_Update_worker  @id, @name, @title";
-            c.Parameters.AddWithValue("@id", this.WorkerId);
-            c.Parameters.AddWithValue("@name", this.WorkerName);
-            c.Parameters.AddWithValue("@title", this.workerTitle.ToString());
-            SQL_CON SC = new SQL_CON();
-            SC.execute_non_query(c);
-        }
-
-        public void Delete_worker()
-        {
-            Program.Workers.Remove(this);
-            SqlCommand c = new SqlCommand();
-            c.CommandText = "EXECUTE dbo.SP_delete_worker @id";
-            c.Parameters.AddWithValue("@id", this.WorkerId);
+            c.CommandText = "EXECUTE dbo.SP_Update_Teacher  @id , @name ,@password ,@archive";
+            c.Parameters.AddWithValue("@id", this.Id);
+            c.Parameters.AddWithValue("@name", this.Name);
+            c.Parameters.AddWithValue("@password", this.Password);
+            c.Parameters.AddWithValue("@archive", this.Archive);
             SQL_CON SC = new SQL_CON();
             SC.execute_non_query(c);
         }

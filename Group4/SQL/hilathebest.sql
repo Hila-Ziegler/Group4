@@ -71,21 +71,21 @@ CREATE PROCEDURE dbo.SP_add_BookHistory @copyNumber	INTEGER,@serialNumber VARCHA
 AS
 INSERT INTO dbo.BookHistory
 Values (@copyNumber	,@serialNumber , @id, @startDate,@endDate ,@rate )
-
-CREATE PROCEDURE dbo.SP_add_Events 	@guestType	VARCHAR(50),@date DATETIME,	@price	DECIMAL,@guestSpeakerName VARCHAR(50),@maxGuests INTEGER,@currentlyRegistered INTEGER
+--DROP PROCEDURE dbo.SP_add_Events
+CREATE PROCEDURE dbo.SP_add_Events 	@guestType	VARCHAR(50),@date DATETIME,	@price	DECIMAL,@guestSpeakerName VARCHAR(50),@status VARCHAR(50), @maxGuests INTEGER,@currentlyRegistered INTEGER
 AS
 INSERT INTO dbo.Events
-Values (@guestType,@date,@price,@guestSpeakerName ,@maxGuests,@currentlyRegistered)
+Values (@guestType,@date,@price,@guestSpeakerName , @status,@maxGuests,@currentlyRegistered)
 
 CREATE PROCEDURE dbo.SP_add_Registrations @id VARCHAR(50),@eventDate DATETIME ,@guestSpeakerName VARCHAR(50),@showedUp	BIT,@review	VARCHAR(50),@rating	INTEGER
 AS
 INSERT INTO dbo.Registrations
 Values (@id ,@eventDate  ,@guestSpeakerName,@showedUp,@review	,@rating)
-
-CREATE PROCEDURE dbo.SP_add_Requests @type	VARCHAR(50),@startDT DATETIME ,@id	VARCHAR(50),@endDT	DATETIME,@status VARCHAR(50),@photoAddress	NVARCHAR(260)
+--Drop Procedure dbo.SP_add_Requests
+CREATE PROCEDURE dbo.SP_add_Requests @type	VARCHAR(50),@startDT DATETIME ,@sid	VARCHAR(50), @lid VARCHAR(50),@endDT	DATETIME,@status VARCHAR(50),@photoAddress	NVARCHAR(260)
 AS
 INSERT INTO dbo.Requests
-Values (@type,@startDT,@id,@endDT,@status ,@photoAddress)
+Values (@type,@startDT,@sid,@lid,@endDT,@status ,@photoAddress)
 
 CREATE PROCEDURE dbo.SP_add_BookInWaitlist @startDate DATETIME ,@id VARCHAR(50), @serialNumber VARCHAR(50) 
 AS
@@ -149,13 +149,13 @@ Update dbo.Registrations
 SET
 showedUp=@showedUp, review=@review, rating=@rating
 WHERE id=@id AND eventDate=@eventDate AND guestSpeakerName=@guestSpeakerName
-
-CREATE PROCEDURE dbo.SP_Update_Request @type VARCHAR(50),@startDT DATETIME ,@id	VARCHAR(50),@endDT	DATETIME,@status VARCHAR(50),@photoAddress	NVARCHAR(260)
+--DROP PROCEDURE dbo.SP_Update_Request
+CREATE PROCEDURE dbo.SP_Update_Request @type VARCHAR(50),@startDT DATETIME ,@sid	VARCHAR(50),@lid VARCHAR(50),@endDT	DATETIME,@status VARCHAR(50),@photoAddress	NVARCHAR(260)
 AS
 Update dbo.Requests
 SET
 type=@type, endDT=@endDT, status=@status, photoAddress=@photoAddress 
-WHERE startDT=@startDT AND id=@id
+WHERE startDT=@startDT AND sid=@sid AND lid=@lid
 
 --Delete record
 --DROP PROCEDURE dbo.SP_delete_Books
