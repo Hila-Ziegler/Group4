@@ -54,10 +54,10 @@ namespace Group4
 
         public void set_name(string name)
         {
-            this.Name = name; //;
+            this.Name = name;
         }
 
-        private void set_password(string password)
+        public void set_password(string password)
         {
             this.Password = Hash.GetHash(password);
         }
