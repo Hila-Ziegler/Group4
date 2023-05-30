@@ -278,13 +278,14 @@ namespace Group4
 
         static void Main()
         {
-            //Application.EnableVisualStyles();
-            //Application.SetCompatibleTextRenderingDefault(false);
-            init_Books();
-            Console.WriteLine("Books made successfully");
-            //initLists();
-           // Console.WriteLine("lists made successfully");
-            //Application.Run(new Form1());
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
+           // init_Books();
+           // Console.WriteLine("Books made successfully");
+
+            initLists();
+            Console.WriteLine("lists made successfully");
+            Application.Run(new userEntrancecs());
 
         }
     }
