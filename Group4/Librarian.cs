@@ -17,7 +17,7 @@ namespace Group4
         {
             this.Id = id;
             this.Name = name;
-            this.Password = password;
+            this.Password = Hash.GetHash(password);
             this.Archive = archive;
             this.requests = new System.Collections.Generic.List<Request>();
             if (is_new)
@@ -37,19 +37,19 @@ namespace Group4
             return this.Id;
         }
 
-        public string get_archive()
+        public bool get_archive()
         {
             return this.Archive;
         }
 
-        private string get_password()
-        {
-            return this.Password;
-        }
+      //  private string get_password()
+      //  {
+        //    return this.Password;
+       // }
 
         public void set_ID(string id)
         {
-            this.ID = id;
+            this.Id = id;
         }
 
         public void set_name(string name)
@@ -59,7 +59,7 @@ namespace Group4
 
         private void set_password(string password)
         {
-            this.Password = password;
+            this.Password = Hash.GetHash(password);
         }
 
         public void set_archive(bool archive)
@@ -69,68 +69,15 @@ namespace Group4
 
 
 
-        public System.Collections.Generic.List<Order> Orders // get and set for the whole list
-        {
-            get
-            {
-                if (orders == null)
-                    orders = new System.Collections.Generic.List<Order>();
-                return orders;
-            }
-            set
-            {
-                RemoveAllOrders();
-                if (value != null)
-                {
-                    foreach (Order oOrder in value)
-                        AddOrders(oOrder);
-                }
-            }
-        }
-
-        public void AddOrders(Order newOrder)
-        {
-            if (newOrder == null)
-                return;
-            if (this.orders == null)
-                this.orders = new System.Collections.Generic.List<Order>();
-            if (!this.orders.Contains(newOrder))
-            {
-                this.orders.Add(newOrder);
-                newOrder.Worker = this;
-            }
-        }
-        public void RemoveOrders(Order oldOrder)
-        {
-            if (oldOrder == null)
-                return;
-            if (this.orders != null)
-                if (this.orders.Contains(oldOrder))
-                {
-                    this.orders.Remove(oldOrder);
-                    oldOrder.Worker = null;
-                }
-        }
-
-        public void RemoveAllOrders()
-        {
-            if (orders != null)
-            {
-                foreach (Order order in orders)
-                    order.Worker = null;
-                orders.Clear();
-            }
-        }
-
-
-
         public void create_librarian()
         {
             SqlCommand c = new SqlCommand();
-            c.CommandText = "EXECUTE SP_add_worker @id, @name, @title";
-            c.Parameters.AddWithValue("@id", this.WorkerId);
-            c.Parameters.AddWithValue("@name", this.WorkerName);
-            c.Parameters.AddWithValue("@title", this.workerTitle.ToString());
+            c.CommandText = "EXECUTE dbo.SP_add_Librarians @id, @name, @password, @archive";
+            c.Parameters.AddWithValue("@id", this.Id);
+            c.Parameters.AddWithValue("@name", this.Name);
+            c.Parameters.AddWithValue("@password", this.Password);
+            c.Parameters.AddWithValue("@archive", this.Archive);
+
             SQL_CON SC = new SQL_CON();
             SC.execute_non_query(c);
         }
@@ -138,23 +85,17 @@ namespace Group4
         public void Update_worker()
         {
             SqlCommand c = new SqlCommand();
-            c.CommandText = "EXECUTE dbo.SP_Update_worker  @id, @name, @title";
-            c.Parameters.AddWithValue("@id", this.WorkerId);
-            c.Parameters.AddWithValue("@name", this.WorkerName);
-            c.Parameters.AddWithValue("@title", this.workerTitle.ToString());
+            c.CommandText = "EXECUTE dbo.SP_Update_Librarians  @id, @name, @password, @archive";
+            c.Parameters.AddWithValue("@id", this.Id);
+            c.Parameters.AddWithValue("@name", this.Name);
+            c.Parameters.AddWithValue("@password", this.Password);
+            c.Parameters.AddWithValue("@archive", this.Archive);
+
             SQL_CON SC = new SQL_CON();
             SC.execute_non_query(c);
         }
 
-        public void Delete_worker()
-        {
-            Program.Workers.Remove(this);
-            SqlCommand c = new SqlCommand();
-            c.CommandText = "EXECUTE dbo.SP_delete_worker @id";
-            c.Parameters.AddWithValue("@id", this.WorkerId);
-            SQL_CON SC = new SQL_CON();
-            SC.execute_non_query(c);
-        }
+
 
     }
 }
