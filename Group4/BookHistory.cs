@@ -11,7 +11,6 @@ namespace Group4
         private DateTime StartDate;
         private DateTime EndDate;
         private int Rate;
-        //public System.Collections.Generic.List<Order> orders;
 
 
         public BookHistory(int copyNum, Book Book, Student Student, DateTime startDate, DateTime endDate, bool is_new)
@@ -89,89 +88,30 @@ namespace Group4
             this.Rate = rate;
         }
 
-        public System.Collections.Generic.List<Order> Orders // get and set for the whole list
-        {
-            get
-            {
-                if (orders == null)
-                    orders = new System.Collections.Generic.List<Order>();
-                return orders;
-            }
-            set
-            {
-                RemoveAllOrders();
-                if (value != null)
-                {
-                    foreach (Order oOrder in value)
-                        AddOrders(oOrder);
-                }
-            }
-        }
-
-        public void AddOrders(Order newOrder)
-        {
-            if (newOrder == null)
-                return;
-            if (this.orders == null)
-                this.orders = new System.Collections.Generic.List<Order>();
-            if (!this.orders.Contains(newOrder))
-            {
-                this.orders.Add(newOrder);
-                newOrder.Worker = this;
-            }
-        }
-        public void RemoveOrders(Order oldOrder)
-        {
-            if (oldOrder == null)
-                return;
-            if (this.orders != null)
-                if (this.orders.Contains(oldOrder))
-                {
-                    this.orders.Remove(oldOrder);
-                    oldOrder.Worker = null;
-                }
-        }
-
-        public void RemoveAllOrders()
-        {
-            if (orders != null)
-            {
-                foreach (Order order in orders)
-                    order.Worker = null;
-                orders.Clear();
-            }
-        }
-
-
-
-        public void create_bookHistory()
+        public void create_BookHistory()
         {
             SqlCommand c = new SqlCommand();
-            c.CommandText = "EXECUTE SP_add_worker @id, @name, @title";
-            c.Parameters.AddWithValue("@id", this.WorkerId);
-            c.Parameters.AddWithValue("@name", this.WorkerName);
-            c.Parameters.AddWithValue("@title", this.workerTitle.ToString());
+            c.CommandText = "EXECUTE SP_add_BookHistory @copyNumber	, @serialNumber, @id, @startDate, @endDate, @rate";
+            c.Parameters.AddWithValue("@copyNumber", this.CopyNum);
+            c.Parameters.AddWithValue("@serialNumber", this.Book.get_sNumber());
+            c.Parameters.AddWithValue("@id", this.Student.get_ID());
+            c.Parameters.AddWithValue("@startDate", this.StartDate);
+            c.Parameters.AddWithValue("@endDate", this.EndDate);
+            c.Parameters.AddWithValue("@rate", this.Rate);
             SQL_CON SC = new SQL_CON();
             SC.execute_non_query(c);
         }
 
-        public void Update_worker()
+        public void update_BookHistory()
         {
             SqlCommand c = new SqlCommand();
-            c.CommandText = "EXECUTE dbo.SP_Update_worker  @id, @name, @title";
-            c.Parameters.AddWithValue("@id", this.WorkerId);
-            c.Parameters.AddWithValue("@name", this.WorkerName);
-            c.Parameters.AddWithValue("@title", this.workerTitle.ToString());
-            SQL_CON SC = new SQL_CON();
-            SC.execute_non_query(c);
-        }
-
-        public void Delete_worker()
-        {
-            Program.Workers.Remove(this);
-            SqlCommand c = new SqlCommand();
-            c.CommandText = "EXECUTE dbo.SP_delete_worker @id";
-            c.Parameters.AddWithValue("@id", this.WorkerId);
+            c.CommandText = "EXECUTE dbo.SP_Update_BookHistory @copyNumber	, @serialNumber, @id, @startDate, @endDate, @rate";
+            c.Parameters.AddWithValue("@copyNumber", this.CopyNum);
+            c.Parameters.AddWithValue("@serialNumber", this.Book.get_sNumber());
+            c.Parameters.AddWithValue("@id", this.Student.get_ID());
+            c.Parameters.AddWithValue("@startDate", this.StartDate);
+            c.Parameters.AddWithValue("@endDate", this.EndDate);
+            c.Parameters.AddWithValue("@rate", this.Rate);
             SQL_CON SC = new SQL_CON();
             SC.execute_non_query(c);
         }
