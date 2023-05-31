@@ -82,7 +82,7 @@ namespace Group4
             SC.execute_non_query(c);
         }
 
-        public void Update_worker()
+        public void update_librarian()
         {
             SqlCommand c = new SqlCommand();
             c.CommandText = "EXECUTE dbo.SP_Update_Librarians  @id, @name, @password, @archive";
@@ -95,7 +95,25 @@ namespace Group4
             SC.execute_non_query(c);
         }
 
+        public void handle_time_extention()
+        { 
+        // צריך להוסיף שדה של שם ספר במחלקת בקשה על מנת לבצע את השיטה
+        
+        }
 
+        public void handle_alternative_book()
+        { 
+        // צריך להוסיף שדה של שם ספר במחלקת בקשה על מנת לבצע את השיטה
+        
+        }
+
+        public void add_new_book()
+        { 
+        
+        
+        } 
 
     }
+
+
 }

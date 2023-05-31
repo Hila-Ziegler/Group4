@@ -12,7 +12,7 @@ namespace Group4
         private Status status; //enum
         private int MaxGuests;
         private int CurrentlyRegistered;
-        private Teacher Teacher;
+        private Teacher Teacher; // האם רק מורה פותח אירוע ולא גם ספרנית
         public System.Collections.Generic.List<Student> Registered;
         //public System.Collections.Generic.List<Order> orders;
 
