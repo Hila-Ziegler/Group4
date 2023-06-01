@@ -26,6 +26,20 @@ namespace Group4
         public static System.Collections.Generic.List<Event> events;
         [STAThread]
 
+
+        public static DateTime ToDateTime(string s)
+        {
+            //DateTime dt = DateTime dt = 01 / 01 / 0001 0:00:00;
+            DateTime dt = new DateTime(0001, 01, 01, 0, 00, 00);
+            if (!String.IsNullOrEmpty(s))
+            {
+                dt = DateTime.Parse(s);
+            }
+
+            return dt;
+        }
+
+
         //שיטה שמחפשת עובד ברשימה לפי תעודת זהות
         public static Book seekBook(string serialNumber)
         {
@@ -67,13 +81,22 @@ namespace Group4
             return null;
         }
 
-        //date, guestSpeakerName
         public static Event seekEvent(DateTime date, string guestName)
         {
             foreach (Event e in events)
             {
                 if (e.get_guestName() == guestName && e.get_date() == date)
                     return e;
+            }
+            return null;
+        }
+
+        public static Copy seekCopy(Book b, int copynum)
+        {
+            foreach (Copy c in copies)
+            {
+                if (c.get_book() == b && c.get_copyNum() == copynum)
+                    return c;
             }
             return null;
         }
@@ -134,11 +157,10 @@ namespace Group4
             SQL_CON SC = new SQL_CON();
             SqlDataReader rdr = SC.execute_query(c);
 
-            books = new List<Book>();
+            copies = new List<Copy>();
 
             while (rdr.Read())
             {
-                Language l = (Language)Enum.Parse(typeof(Language), rdr.GetValue(4).ToString());
                 Book b = seekBook(rdr.GetValue(1).ToString());
                 Copy co = new Copy(int.Parse(rdr.GetValue(0).ToString()), b, bool.Parse(rdr.GetValue(2).ToString()),  false);
                 copies.Add(co);
@@ -165,7 +187,7 @@ namespace Group4
         public static void init_Students()//מילוי המערך מתוך בסיס הנתונים
         {
             SqlCommand c = new SqlCommand();
-            c.CommandText = "EXECUTE dbo.Get_all_Books";
+            c.CommandText = "EXECUTE dbo.Get_all_Students";
             SQL_CON SC = new SQL_CON();
             SqlDataReader rdr = SC.execute_query(c);
 
@@ -186,7 +208,7 @@ namespace Group4
             SQL_CON SC = new SQL_CON();
             SqlDataReader rdr = SC.execute_query(c);
 
-            books = new List<Book>();
+            bookHistories = new List<BookHistory>();
 
             while (rdr.Read())
             {
@@ -195,6 +217,7 @@ namespace Group4
                 BookHistory bh = new BookHistory(int.Parse(rdr.GetValue(0).ToString()), b, s, DateTime.Parse(rdr.GetValue(3).ToString()), DateTime.Parse(rdr.GetValue(4).ToString()), false);
                 b.History.Add(bh);
                 s.History.Add(bh);
+                bookHistories.Add(bh);
             }
         }
 
@@ -224,7 +247,7 @@ namespace Group4
             SQL_CON SC = new SQL_CON();
             SqlDataReader rdr = SC.execute_query(c);
 
-            books = new List<Book>();
+            registrations = new List<Registration>();
 
             while (rdr.Read())
             {
@@ -232,6 +255,7 @@ namespace Group4
                 Registration r = new Registration(s, DateTime.Parse(rdr.GetValue(1).ToString()),rdr.GetValue(2).ToString(),bool.Parse(rdr.GetValue(3).ToString()),rdr.GetValue(4).ToString(), int.Parse(rdr.GetValue(5).ToString()), false);
                 Event e = seekEvent(DateTime.Parse(rdr.GetValue(1).ToString()), rdr.GetValue(2).ToString());
                 e.Registered.Add(s);
+                registrations.Add(r);
             }
         }
 
@@ -249,17 +273,21 @@ namespace Group4
             while (rdr.Read())
             {
                 Student s = seekStudent(rdr.GetValue(2).ToString());
-                Librarian l = seekLibrarian(rdr.GetValue(6).ToString());
+                Librarian l = seekLibrarian(rdr.GetValue(3).ToString());
                 RequestType rt = (RequestType)Enum.Parse(typeof(RequestType), rdr.GetValue(0).ToString());
                 Status st = (Status)Enum.Parse(typeof(Status), rdr.GetValue(5).ToString());
-                Request r = new Request(rt, DateTime.Parse(rdr.GetValue(1).ToString()), s, l, DateTime.Parse(rdr.GetValue(3).ToString()), st, rdr.GetValue(6).ToString(), false);
+                Copy co = seekCopy(seekBook(rdr.GetValue(7).ToString()),int.Parse(rdr.GetValue(8).ToString()));
+                DateTime sdt = ToDateTime((rdr.GetValue(1).ToString()));
+                DateTime edt = ToDateTime(rdr.GetValue(4).ToString());
+                Request r = new Request(rt, sdt, s, l, edt, st, rdr.GetValue(6).ToString(),co, false);
                 l.requests.Add(r);
                 s.requests.Add(r);
+                requests.Add(r);
             }
         }
-        //come back later
+        //come back later, model like you need to by presentation!
         public static void init_BooksInWaitlist()//מילוי המערך מתוך בסיס הנתונים
-        {
+        {   
             SqlCommand c = new SqlCommand();
             c.CommandText = "EXECUTE dbo.Get_all_BookInWaitlist";
             SQL_CON SC = new SQL_CON();

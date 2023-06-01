@@ -46,13 +46,42 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AreYouSure.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AreYouSure.Designer.cs">
+      <DependentUpon>AreYouSure.cs</DependentUpon>
+    </Compile>
     <Compile Include="Book.cs" />
+    <Compile Include="BookCrud.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BookCrud.Designer.cs">
+      <DependentUpon>BookCrud.cs</DependentUpon>
+    </Compile>
     <Compile Include="BookHistory.cs" />
     <Compile Include="BookInWaitlist.cs" />
     <Compile Include="Club.cs" />
     <Compile Include="Copy.cs" />
+    <Compile Include="CopyCrud.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CopyCrud.Designer.cs">
+      <DependentUpon>CopyCrud.cs</DependentUpon>
+    </Compile>
     <Compile Include="Event.cs" />
-    <Compile Include="Genre.cs" />
+    <Compile Include="ManageBooks.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManageBooks.Designer.cs">
+      <DependentUpon>ManageBooks.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LibrarianChooseAction.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LibrarianChooseAction.Designer.cs">
+      <DependentUpon>LibrarianChooseAction.cs</DependentUpon>
+    </Compile>
     <Compile Include="GuestType.cs" />
     <Compile Include="Hash.cs" />
     <Compile Include="Language.cs" />
@@ -78,6 +107,21 @@
     <Compile Include="userEntrancecs.Designer.cs">
       <DependentUpon>userEntrancecs.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AreYouSure.resx">
+      <DependentUpon>AreYouSure.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BookCrud.resx">
+      <DependentUpon>BookCrud.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CopyCrud.resx">
+      <DependentUpon>CopyCrud.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManageBooks.resx">
+      <DependentUpon>ManageBooks.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LibrarianChooseAction.resx">
+      <DependentUpon>LibrarianChooseAction.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>

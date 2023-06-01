@@ -24,20 +24,27 @@ namespace Group4
 
         private void btnEnter_Click(object sender, EventArgs e)
         {
-            if(txtUserName.Text !=  null || txtPassword != null)
+            Console.WriteLine("Clicked");
+            if(txtUserName.Text !=  null || txtPassword.Text != null)
             {
+                Console.WriteLine(txtUserName.Text);
+                Console.WriteLine(txtPassword.Text);
+                Console.WriteLine(Hash.GetHash(txtPassword.Text));
                 foreach (Librarian L in Program.librarians)
                 {
-                    if (txtUserName.Text == L.get_ID().ToString() && txtPassword.Text == L.get_password())
+                    Console.WriteLine("Lib test");
+                    Console.WriteLine(L.get_password());
+                    if (txtUserName.Text == L.get_ID() && Hash.GetHash(txtPassword.Text) == L.get_password())
                     {
                         // show new form for librarians
+                        Console.WriteLine("It's a match!");
                         this.Hide();
                     }
                 }
                 // foreach Librarian end
                 foreach (Teacher T in Program.teachers)
                 {
-                    if (txtUserName.Text == T.get_ID().ToString() && txtPassword.Text == T.get_password())
+                    if (txtUserName.Text == T.get_ID() && Hash.GetHash(txtPassword.Text) == T.get_password())
                     {
                         // show new form for Teacher
                         librarianStartPage1 form2 = new librarianStartPage1();
@@ -48,7 +55,7 @@ namespace Group4
                 // foreach Teacher end
                 foreach (Student S in Program.students)
                 {
-                    if (txtUserName.Text == S.get_ID().ToString() && txtPassword.Text == S.get_password())
+                    if (txtUserName.Text == S.get_ID() && Hash.GetHash(txtPassword.Text) == S.get_password())
                     {
                         // show new form for Teacher
                         this.Hide();

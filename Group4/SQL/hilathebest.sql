@@ -82,10 +82,10 @@ AS
 INSERT INTO dbo.Registrations
 Values (@id ,@eventDate  ,@guestSpeakerName,@showedUp,@review	,@rating)
 --Drop Procedure dbo.SP_add_Requests
-CREATE PROCEDURE dbo.SP_add_Requests @type	VARCHAR(50),@startDT DATETIME ,@sid	VARCHAR(50), @lid VARCHAR(50),@endDT	DATETIME,@status VARCHAR(50),@photoAddress	NVARCHAR(260)
+CREATE PROCEDURE dbo.SP_add_Requests @type	VARCHAR(50),@startDT DATETIME ,@sid	VARCHAR(50), @lid VARCHAR(50),@endDT	DATETIME,@status VARCHAR(50),@photoAddress	NVARCHAR(260), @serialNum VARCHAR(50), @copyNum INTEGER
 AS
 INSERT INTO dbo.Requests
-Values (@type,@startDT,@sid,@lid,@endDT,@status ,@photoAddress)
+Values (@type,@startDT,@sid,@lid,@endDT,@status ,@photoAddress, @serialNum, @copyNum)
 
 CREATE PROCEDURE dbo.SP_add_BookInWaitlist @startDate DATETIME ,@id VARCHAR(50), @serialNumber VARCHAR(50) 
 AS
@@ -150,11 +150,11 @@ SET
 showedUp=@showedUp, review=@review, rating=@rating
 WHERE id=@id AND eventDate=@eventDate AND guestSpeakerName=@guestSpeakerName
 --DROP PROCEDURE dbo.SP_Update_Request
-CREATE PROCEDURE dbo.SP_Update_Request @type VARCHAR(50),@startDT DATETIME ,@sid	VARCHAR(50),@lid VARCHAR(50),@endDT	DATETIME,@status VARCHAR(50),@photoAddress	NVARCHAR(260)
+CREATE PROCEDURE dbo.SP_Update_Request @type VARCHAR(50),@startDT DATETIME ,@sid	VARCHAR(50),@lid VARCHAR(50),@endDT	DATETIME,@status VARCHAR(50),@photoAddress	NVARCHAR(260), @serialNum VARCHAR(50), @copyNum INTEGER
 AS
 Update dbo.Requests
 SET
-type=@type, endDT=@endDT, status=@status, photoAddress=@photoAddress 
+type=@type, endDT=@endDT, status=@status, photoAddress=@photoAddress, serialNumber=@serialNum, copyNumber=@copyNum
 WHERE startDT=@startDT AND sid=@sid AND lid=@lid
 
 --Delete record

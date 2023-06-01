@@ -75,5 +75,6 @@ namespace Group4
             SC.execute_non_query(c);
         }
 
+        // שיטת מחיקה?
     }
 }

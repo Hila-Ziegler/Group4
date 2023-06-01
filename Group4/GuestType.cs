@@ -4,11 +4,12 @@ namespace Group4
 {
     public enum GuestType
     {
-        author,
-        publisher,
-        player,
-        lecturer,
-        priest,
-        representative
+        Author,
+        Actor,
+        Publisher,
+        Player,
+        Lecturer,
+        Priest,
+        Representative
     }
 }

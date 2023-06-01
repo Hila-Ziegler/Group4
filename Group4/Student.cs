@@ -23,13 +23,14 @@ namespace Group4
             this.Age = age;
             this.Club = club;
             this.YearlyGoal = yearlyGoal;
-            this.Password = Hash.GetHash(password);
+            this.Password = password;
             this.Archive = archive;
             this.History = new System.Collections.Generic.List<BookHistory>();
             this.requests = new System.Collections.Generic.List<Request>();
 
             if (is_new)
             {
+                this.Password = Hash.GetHash(password);
                 this.create_student();
                 Program.students.Add(this);
 

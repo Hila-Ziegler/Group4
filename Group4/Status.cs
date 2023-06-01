@@ -5,12 +5,13 @@ namespace Group4
 {
     public enum Status
     {
-        approved,
-        submitted,
-        [Description("in process")]
-        inProcess,
-        [Description("waiting for librarian response")]
-        waitingForLibrarianResponse,
-        declined
+        Approved,
+        Submitted,
+        [Description("In process")]
+        InProcess,
+        [Description("Waiting for librarian response")]
+        WaitingForLibrarianResponse,
+        Declined,
+        Open
     }
 }
