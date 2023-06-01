@@ -46,7 +46,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\..\..\..\..\OneDrive\שולחן העבודה\איוונה\לימודים\ניתוצ - פרוייקט\Group4.cs" />
     <Compile Include="AreYouSure.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -63,6 +62,7 @@
     <Compile Include="BookHistory.cs" />
     <Compile Include="BookInWaitlist.cs" />
     <Compile Include="Club.cs" />
+    <Compile Include="Copy.cs" />
     <Compile Include="CopyCrud.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -82,7 +82,6 @@
     <Compile Include="LibrarianChooseAction.Designer.cs">
       <DependentUpon>LibrarianChooseAction.cs</DependentUpon>
     </Compile>
-    <Compile Include="Genre.cs" />
     <Compile Include="GuestType.cs" />
     <Compile Include="Hash.cs" />
     <Compile Include="Language.cs" />

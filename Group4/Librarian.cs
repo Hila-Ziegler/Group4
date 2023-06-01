@@ -17,11 +17,12 @@ namespace Group4
         {
             this.Id = id;
             this.Name = name;
-            this.Password = Hash.GetHash(password);
+            this.Password = password;
             this.Archive = archive;
             this.requests = new System.Collections.Generic.List<Request>();
             if (is_new)
             {
+                this.Password = Hash.GetHash(password);
                 this.create_librarian();
                 Program.librarians.Add(this);
 

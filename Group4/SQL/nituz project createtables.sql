@@ -100,6 +100,9 @@ CREATE TABLE dbo.Requests (
 	endDT			DATETIME,
 	status			VARCHAR(50),
 	photoAddress	NVARCHAR(260), --CHECK THIS DATA TYPE WITH LIEL
+	serialNumber	VARCHAR(50),
+	copyNumber		INTEGER,
+
 	CONSTRAINT PK_Request PRIMARY KEY (startDT, sid, lid),
 	CONSTRAINT FK_Request_To_Student FOREIGN KEY (sid)
 		REFERENCES Students (id),

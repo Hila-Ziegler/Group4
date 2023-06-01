@@ -66,21 +66,21 @@ INSERT INTO Teachers
 -- insert into Students
 INSERT INTO Students
 	VALUES
-		('275733109', 'Jane Read', '12', 'The Bookies', '5', '5e5545d38a68148a2d5bd5ec9a89e327', '0'), --student1
-		('383306250', 'Dora Winifred', '10', 'The Book Marks', '2', '213ee683360d88249109c2f92789dbc3', '0'), -- student2
-		('374857920', 'Buster Baxter', '11', 'Book Besties', '3', '77ac55ee71f97b3173812f6aeccffab2', '0'),
-		('323966969', 'Adil Akyuz', '9', 'Sequel Chasers', '10', '2cbf6421343088d12f3b7686a988fd4d', '0'),
-		('487451253', 'Phineas Flynn', '12', 'The Bookies', '7', 'ae59761161b5f3a9a2b6bf2f1da27dfc', '0'),
-		('209662432', 'Ferbs Fletcher', '9', 'Book Besties', '5', 'ba1da70938663f4dc4fe42b03df375d2', '0'),
-		('265571602', 'Candace Flynn', '12', 'The Bookies', '5', 'df80b6b5332e5067cf0b506cf9907f18', '0'),
-		('204539542', 'Isabella Garcia', '7', 'Sequel Chasers', '4', 'aa69e441afdf8f24e52e17f455de6b26', '0'),
-		('382528055', 'Baljeet Tjinder', '8', 'Book Besties', '3', 'ff13fb4c40a11640f8b1ae9eae2cb2a6', '0'),
-		('480945291', 'Vanessa Doofenshmirtz', '8', 'The Bookies', '7', '8377f167cd3e19422cc3b784545fefd6', '0'),
-		('407123244', 'Django Brown', '12', 'The Bookies', '2', '06e4ea228d9074e48f35b79fd99f15b2', '0'),
-		('436881234', 'Peter Griffin', '11', 'The Book Marks', '3', '728f6b13f3ad20d35321d541a2848e9e', '0'),
-		('217392528', 'Mickey McFinnigan', '8', 'Sequel Chasers', '3', '8e5d878d642eb114a8915a152dc0facb', '0'),
-		('364876836', 'Carter Pewterschmidt', '10', 'The Book Marks', '8', 'a6951ceaf40b140f4f0b308680992681', '0'),
-		('336015350', 'Dylan Flannigan', '12', 'The Bookies', '5', '82027888c5bb8fc395411cb6804a066c', '0');
+		('275733109', 'Jane Read', '12', 'TheBookies', '5', '5e5545d38a68148a2d5bd5ec9a89e327', '0'), --student1
+		('383306250', 'Dora Winifred', '10', 'TheBookMarks', '2', '213ee683360d88249109c2f92789dbc3', '0'), -- student2
+		('374857920', 'Buster Baxter', '11', 'BookBesties', '3', '77ac55ee71f97b3173812f6aeccffab2', '0'),
+		('323966969', 'Adil Akyuz', '9', 'SequelChasers', '10', '2cbf6421343088d12f3b7686a988fd4d', '0'),
+		('487451253', 'Phineas Flynn', '12', 'TheBookies', '7', 'ae59761161b5f3a9a2b6bf2f1da27dfc', '0'),
+		('209662432', 'Ferbs Fletcher', '9', 'BookBesties', '5', 'ba1da70938663f4dc4fe42b03df375d2', '0'),
+		('265571602', 'Candace Flynn', '12', 'TheBookies', '5', 'df80b6b5332e5067cf0b506cf9907f18', '0'),
+		('204539542', 'Isabella Garcia', '7', 'SequelChasers', '4', 'aa69e441afdf8f24e52e17f455de6b26', '0'),
+		('382528055', 'Baljeet Tjinder', '8', 'BookBesties', '3', 'ff13fb4c40a11640f8b1ae9eae2cb2a6', '0'),
+		('480945291', 'Vanessa Doofenshmirtz', '8', 'TheBookies', '7', '8377f167cd3e19422cc3b784545fefd6', '0'),
+		('407123244', 'Django Brown', '12', 'TheBookies', '2', '06e4ea228d9074e48f35b79fd99f15b2', '0'),
+		('436881234', 'Peter Griffin', '11', 'TheBookMarks', '3', '728f6b13f3ad20d35321d541a2848e9e', '0'),
+		('217392528', 'Mickey McFinnigan', '8', 'SequelChasers', '3', '8e5d878d642eb114a8915a152dc0facb', '0'),
+		('364876836', 'Carter Pewterschmidt', '10', 'TheBookMarks', '8', 'a6951ceaf40b140f4f0b308680992681', '0'),
+		('336015350', 'Dylan Flannigan', '12', 'TheBookies', '5', '82027888c5bb8fc395411cb6804a066c', '0');
 
 
 -- insert into BookHistory
@@ -147,22 +147,22 @@ INSERT INTO Registrations
 -- insert into Requests
 INSERT INTO Requests
 	VALUES
-	('Time Extention', CONVERT(datetime, '14/09/2022 10:10:40', 103), '275733109', '216678793', CONVERT(datetime, '16/09/2022 14:10:30', 103), 'Approved', ''),
-	('Time Extention', CONVERT(datetime, '15/09/2022 15:10:35', 103), '336015350', '216678793', CONVERT(datetime, '17/09/2022 15:10:35', 103), 'Declined', ''),
-	('Time Extention', CONVERT(datetime, '11/11/2022 13:21:41', 103), '275733109', '216678793', '', 'In process', ''),
-	('Time Extention', CONVERT(datetime, '11/12/2022 12:11:10', 103), '336015350', '216678793', '', 'In process', ''),
-	('Time Extention', CONVERT(datetime, '18/09/2022 14:14:23', 103), '204539542', '216678793', '', 'In process', ''),
-	('Alternative Book', CONVERT(datetime, '17/10/2022 11:11:40', 103), '275733109', '216678793', CONVERT(datetime, '23/10/2022 11:11:40', 103), 'Declined', 'C:\Documents\Requests\Summer2022.pdf'),
-	('Time Extention', CONVERT(datetime, '22/12/2022 09:10:33', 103), '275733109', '216678793', '', 'In process', ''),
-	('Time Extention', CONVERT(datetime, '28/01/2022 09:34:12', 103), '336015350', '216678793', '', 'In process', ''),
-	('Alternative Book', CONVERT(datetime, '22/03/2022 11:10:10', 103), '275733109', '216678793', '', 'In process', 'C:\Documents\Newsletters\Summer2018.pdf'),
-	('Time Extention', CONVERT(datetime, '29/03/2022 14:10:47', 103), '204539542', '216678793', CONVERT(datetime, '03/04/2022 11:11:35', 103), 'Approved', ''),
-	('Time Extention', CONVERT(datetime, '19/10/2022 10:10:40', 103), '336015350', '216678793', '', 'In process', ''),
-	('Time Extention', CONVERT(datetime, '23/05/2022 14:33:23', 103), '275733109', '216678793', '', 'In process', ''),
-	('Time Extention', CONVERT(datetime, '20/03/2022 11:45:45', 103), '336015350', '216678793', '', 'In process', ''),
-	('Time Extention', CONVERT(datetime, '23/12/2022 08:10:00', 103), '204539542', '216678793', '', 'In process', ''),
-	('Alternative Book', CONVERT(datetime, '12/12/2022 11:05:32', 103), '217392528', '216678793', CONVERT(datetime, '12/12/2022 18:05:32', 103), 'Approved', ''),
-	('Time Extention', CONVERT(datetime, '02/02/2022 12:45:13', 103), '480945291', '216678793', '', 'In process', '');
+	('TimeExtention', CONVERT(datetime, '14/09/2022 10:10:40', 103), '275733109', '216678793', CONVERT(datetime, '16/09/2022 14:10:30', 103), 'Approved', '', 'R5gL6ZaC', '1'),
+	('TimeExtention', CONVERT(datetime, '15/09/2022 15:10:35', 103), '336015350', '216678793', CONVERT(datetime, '17/09/2022 15:10:35', 103), 'Declined', '', '2zbXhPWG', '1'),
+	('TimeExtention', CONVERT(datetime, '11/11/2022 13:21:41', 103), '275733109', '216678793', '', 'In process', '', 'axMxHwGW', '1'),
+	('TimeExtention', CONVERT(datetime, '11/12/2022 12:11:10', 103), '336015350', '216678793', '', 'In process', '', 'vhR6uwAn', '2'),
+	('TimeExtention', CONVERT(datetime, '18/09/2022 14:14:23', 103), '204539542', '216678793', '', 'In process', '', 'R5gL6ZaC', '2'),
+	('AlternativeBook', CONVERT(datetime, '17/10/2022 11:11:40', 103), '275733109', '216678793', CONVERT(datetime, '23/10/2022 11:11:40', 103), 'Declined', 'C:\Documents\Requests\Summer2022.pdf', 'rXbp43Rh', '4'),
+	('TimeExtention', CONVERT(datetime, '22/12/2022 09:10:33', 103), '275733109', '216678793', '', 'In process', '', 'vhR6uwAn', '1'),
+	('TimeExtention', CONVERT(datetime, '28/01/2022 09:34:12', 103), '336015350', '216678793', '', 'In process', '', 'R5gL6ZaC', '3'),
+	('AlternativeBook', CONVERT(datetime, '22/03/2022 11:10:10', 103), '275733109', '216678793', '', 'In process', 'C:\Documents\Newsletters\Summer2018.pdf', 'vhR6uwAn', '3'),
+	('TimeExtention', CONVERT(datetime, '29/03/2022 14:10:47', 103), '204539542', '216678793', CONVERT(datetime, '03/04/2022 11:11:35', 103), 'Approved', '', 'SUoFHA92', '1'),
+	('TimeExtention', CONVERT(datetime, '19/10/2022 10:10:40', 103), '336015350', '216678793', '', 'In process', '', '5kReQmoD', '1'),
+	('TimeExtention', CONVERT(datetime, '23/05/2022 14:33:23', 103), '275733109', '216678793', '', 'In process', '', 'R5gL6ZaC', '0'),
+	('TimeExtention', CONVERT(datetime, '20/03/2022 11:45:45', 103), '336015350', '216678793', '', 'In process', '', '2zbXhPWG', '2'),
+	('TimeExtention', CONVERT(datetime, '23/12/2022 08:10:00', 103), '204539542', '216678793', '', 'In process', '', 'rXbp43Rh', '1'),
+	('AlternativeBook', CONVERT(datetime, '12/12/2022 11:05:32', 103), '217392528', '216678793', CONVERT(datetime, '12/12/2022 18:05:32', 103), 'Approved', '','rXbp43Rh', '2'),
+	('TimeExtention', CONVERT(datetime, '02/02/2022 12:45:13', 103), '480945291', '216678793', '', 'In process', '', 'rXbp43Rh', '3');
 
 
 -- insert into BookInWaitlist
