@@ -82,7 +82,6 @@
     <Compile Include="LibrarianChooseAction.Designer.cs">
       <DependentUpon>LibrarianChooseAction.cs</DependentUpon>
     </Compile>
-    <Compile Include="Genre.cs" />
     <Compile Include="GuestType.cs" />
     <Compile Include="Hash.cs" />
     <Compile Include="Language.cs" />

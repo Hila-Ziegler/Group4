@@ -12,9 +12,10 @@ namespace Group4
         private DateTime EndDT;
         private Status Status;
         private string PhotoAddress;
+        private Copy copy;
        
 
-        public Request(RequestType type, DateTime startDT, Student stud, Librarian lib, DateTime endDT, Status status, string photoAddress , bool is_new)
+        public Request(RequestType type, DateTime startDT, Student stud, Librarian lib, DateTime endDT, Status status, string photoAddress , Copy c, bool is_new)
         {
             this.Type = type;
             this.StartDT = startDT;
@@ -23,6 +24,7 @@ namespace Group4
             this.EndDT = endDT;
             this.Status = status;
             this.PhotoAddress = photoAddress;
+            this.copy = c;
             
 
             if (is_new)
@@ -106,7 +108,7 @@ namespace Group4
         public void create_Request()
         {
             SqlCommand c = new SqlCommand();
-            c.CommandText = "EXECUTE dbo.SP_add_Requests @type, @startDT, @sid, @lib, @endDT, @status, @photoAddress";
+            c.CommandText = "EXECUTE dbo.SP_add_Requests @type, @startDT, @sid, @lib, @endDT, @status, @photoAddress, @serialNum, @copyNum";
             c.Parameters.AddWithValue("@type", this.Type.ToString());
             c.Parameters.AddWithValue("@startDT", this.StartDT);
             c.Parameters.AddWithValue("@sid", this.Student.get_ID());
@@ -114,6 +116,8 @@ namespace Group4
             c.Parameters.AddWithValue("@endDT", this.EndDT);
             c.Parameters.AddWithValue("@status", this.Status.ToString());
             c.Parameters.AddWithValue("@photoAddress", this.PhotoAddress);
+            c.Parameters.AddWithValue("@serialNum", this.copy.get_book().get_sNumber());
+            c.Parameters.AddWithValue("@copyNum", this.copy.get_copyNum());
             SQL_CON SC = new SQL_CON();
             SC.execute_non_query(c);
         }
@@ -121,7 +125,7 @@ namespace Group4
         public void update_Request()
         {
             SqlCommand c = new SqlCommand();
-            c.CommandText = "EXECUTE dbo.SP_Update_Request @type, @startDT, @sid, @lib, @endDT, @status, @photoAddress";
+            c.CommandText = "EXECUTE dbo.SP_Update_Request @type, @startDT, @sid, @lib, @endDT, @status, @photoAddress, @serialNum, @copyNum";
             c.Parameters.AddWithValue("@type", this.Type.ToString());
             c.Parameters.AddWithValue("@startDT", this.StartDT);
             c.Parameters.AddWithValue("@sid", this.Student.get_ID());
@@ -129,6 +133,8 @@ namespace Group4
             c.Parameters.AddWithValue("@endDT", this.EndDT);
             c.Parameters.AddWithValue("@status", this.Status.ToString());
             c.Parameters.AddWithValue("@photoAddress", this.PhotoAddress);
+            c.Parameters.AddWithValue("@serialNum", this.copy.get_book().get_sNumber());
+            c.Parameters.AddWithValue("@copyNum", this.copy.get_copyNum());
             SQL_CON SC = new SQL_CON();
             SC.execute_non_query(c);
         }

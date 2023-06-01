@@ -5,9 +5,9 @@ namespace Group4
 {
     public enum RequestType
     {
-        [Description("time extention")]
-        timeExtention,
-        [Description("alternative book")]
-        alternativeBook
+        [Description("Time Extention")]
+        TimeExtention,
+        [Description("Alternative Book")]
+        AlternativeBook
     }
 }
