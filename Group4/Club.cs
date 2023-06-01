@@ -5,13 +5,18 @@ namespace Group4
 {
     public enum Club
     {
-        [Description("the burning books")]
-        theBurningBooks,
-        [Description("uni book")]
-        uniBook,
-        [Description("gary hamburgary")]
-        garyHamburgary,
-        [Description("dumbledore's army")]
-        dumbledoresArmy,
+        [Description("The Bookies")]
+        TheBookies,
+        [Description("The Book Marks")]
+        TheBookMarks,
+        [Description("Book Besties")]
+        BookBesties,
+        [Description("Sequel Chasers")]
+        SequelChasers,
+        /*        TheBookies,
+                TheBookMarks,
+                BookBesties,
+                SequelChasers*/
+
     }
 }

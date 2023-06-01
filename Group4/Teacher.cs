@@ -22,6 +22,7 @@ namespace Group4
 
             if (is_new)
             {
+                this.Password = Hash.GetHash(password);
                 this.create_teacher();
                 Program.teachers.Add(this);
 
