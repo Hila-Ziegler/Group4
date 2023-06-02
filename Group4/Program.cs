@@ -29,7 +29,6 @@ namespace Group4
 
         public static DateTime ToDateTime(string s)
         {
-            //DateTime dt = DateTime dt = 01 / 01 / 0001 0:00:00;
             DateTime dt = new DateTime(0001, 01, 01, 0, 00, 00);
             if (!String.IsNullOrEmpty(s))
             {
@@ -308,9 +307,6 @@ namespace Group4
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-           // init_Books();
-           // Console.WriteLine("Books made successfully");
-
             initLists();
             Console.WriteLine("lists made successfully");
             Application.Run(new userEntrancecs());
