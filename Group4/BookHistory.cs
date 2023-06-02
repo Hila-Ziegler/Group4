@@ -20,6 +20,7 @@ namespace Group4
             this.Student = Student;
             this.StartDate = startDate;
             this.EndDate = endDate;
+            this.Rate = 0;
 
             if (is_new)
             {
@@ -95,8 +96,9 @@ namespace Group4
             c.Parameters.AddWithValue("@copyNumber", this.CopyNum);
             c.Parameters.AddWithValue("@serialNumber", this.Book.get_sNumber());
             c.Parameters.AddWithValue("@id", this.Student.get_ID());
-            c.Parameters.AddWithValue("@startDate", this.StartDate);
-            c.Parameters.AddWithValue("@endDate", this.EndDate);
+            //Issue with making new entry in DateTime
+            c.Parameters.AddWithValue("@startDate", this.StartDate.ToString());
+            c.Parameters.AddWithValue("@endDate", this.EndDate.ToString());
             c.Parameters.AddWithValue("@rate", this.Rate);
             SQL_CON SC = new SQL_CON();
             SC.execute_non_query(c);
