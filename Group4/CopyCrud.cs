@@ -12,9 +12,106 @@ namespace Group4
 {
     public partial class CopyCrud : Form
     {
-        public CopyCrud()
+        //Issue with making new entry in DateTime
+        private Copy copy;
+        private System.Collections.Generic.List<BookHistory> history;
+        public CopyCrud(Copy c)
         {
+            this.copy = c;
+            this.history = this.getCopyHistory();
             InitializeComponent();
+        }
+        private System.Collections.Generic.List<BookHistory> getCopyHistory()
+        {
+            System.Collections.Generic.List<BookHistory> ans = new System.Collections.Generic.List<BookHistory>();
+            foreach (BookHistory bh in Program.bookHistories)
+            {
+                if (bh.get_copyNum() == copy.get_copyNum() && bh.get_book() == copy.get_book())
+                {
+                    ans.Add(bh);
+                }
+            }
+
+            return ans;
+        }
+
+        public void updateBookHistory()
+        {
+            this.dataGridView1.DataSource = null;
+            this.dataGridView1.DataSource = this.history;
+            int i = 0;
+            foreach (BookHistory bh in this.history)
+            {
+                {
+                    if (i < dataGridView1.Rows.Count)
+                    {
+                        this.dataGridView1.Rows[i].Cells[0].Value = bh.get_StartDate();
+                        this.dataGridView1.Rows[i].Cells[1].Value = bh.get_EndDate();
+                        this.dataGridView1.Rows[i].Cells[2].Value = bh.get_student().get_name();
+                        this.dataGridView1.Rows[i].Cells[3].Value = bh.get_student().get_ID();
+                        this.dataGridView1.Rows[i].Cells[4].Value = bh.get_rate();
+                    }
+                    else
+                    {
+                        dataGridView1.Rows.Add(bh.get_StartDate(), bh.get_EndDate(), bh.get_student().get_name(), bh.get_student().get_ID(), bh.get_rate());
+                    }
+                    i++;
+                }
+
+            }
+            dataGridView1.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void CopyCrud_Load(object sender, EventArgs e)
+        {
+            if (copy != null)
+            {
+                Book b = copy.get_book();
+                CopyCrudTitle.Text = b.get_title();
+                CopyCrudCopyNum.Text = copy.get_copyNum().ToString();
+
+               
+            }
+
+        }
+
+        private void copyCrudMenu_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
+
+        private void toolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            LibrarianChooseAction form6 = new LibrarianChooseAction();
+            form6.Show();
+            this.Hide();
+        }
+
+        private void MenuManageBooks_Click(object sender, EventArgs e)
+        {
+            ManageBooks form7 = new ManageBooks();
+            form7.Show();
+            this.Hide();
+
+        }
+
+        private void StartBorrow_Click(object sender, EventArgs e)
+        {
+            Student st = Program.seekStudent(StID.Text);
+            DateTime startDate = DateTime.Now;
+            DateTime endDate = new DateTime();
+            //Issue with making new entry in DateTime
+            BookHistory bh = new BookHistory(this.copy.get_copyNum(), this.copy.get_book(), st, startDate, endDate, true);
+            Program.bookHistories.Add(bh);
+            this.history.Add(bh);
+            st.addBookHistory(bh);
+            copy.get_book().addBookHistory(bh);
+            this.updateBookHistory();
         }
     }
 }

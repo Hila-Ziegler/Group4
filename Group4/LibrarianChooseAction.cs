@@ -16,5 +16,12 @@ namespace Group4
         {
             InitializeComponent();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            ManageBooks form3 = new ManageBooks();
+            form3.Show();
+            this.Hide();
+        }
     }
 }
