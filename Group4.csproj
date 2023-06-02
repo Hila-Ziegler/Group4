@@ -46,81 +46,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AreYouSure.cs">
+    <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AreYouSure.Designer.cs">
-      <DependentUpon>AreYouSure.cs</DependentUpon>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Book.cs" />
-    <Compile Include="BookCrud.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="BookCrud.Designer.cs">
-      <DependentUpon>BookCrud.cs</DependentUpon>
-    </Compile>
-    <Compile Include="BookHistory.cs" />
-    <Compile Include="BookInWaitlist.cs" />
-    <Compile Include="Club.cs" />
-    <Compile Include="Copy.cs" />
-    <Compile Include="CopyCrud.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="CopyCrud.Designer.cs">
-      <DependentUpon>CopyCrud.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Event.cs" />
-    <Compile Include="ManageBooks.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ManageBooks.Designer.cs">
-      <DependentUpon>ManageBooks.cs</DependentUpon>
-    </Compile>
-    <Compile Include="LibrarianChooseAction.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="LibrarianChooseAction.Designer.cs">
-      <DependentUpon>LibrarianChooseAction.cs</DependentUpon>
-    </Compile>
-    <Compile Include="GuestType.cs" />
     <Compile Include="Hash.cs" />
-    <Compile Include="Language.cs" />
-    <Compile Include="Librarian.cs" />
-    <Compile Include="librarianStartPage1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="librarianStartPage1.Designer.cs">
-      <DependentUpon>librarianStartPage1.cs</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Registration.cs" />
-    <Compile Include="Request.cs" />
-    <Compile Include="RequestType.cs" />
-    <Compile Include="SQL_CON.cs" />
-    <Compile Include="Status.cs" />
-    <Compile Include="Student.cs" />
-    <Compile Include="Teacher.cs" />
-    <Compile Include="userEntrancecs.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="userEntrancecs.Designer.cs">
-      <DependentUpon>userEntrancecs.cs</DependentUpon>
-    </Compile>
-    <EmbeddedResource Include="AreYouSure.resx">
-      <DependentUpon>AreYouSure.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="BookCrud.resx">
-      <DependentUpon>BookCrud.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="CopyCrud.resx">
-      <DependentUpon>CopyCrud.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ManageBooks.resx">
-      <DependentUpon>ManageBooks.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="LibrarianChooseAction.resx">
-      <DependentUpon>LibrarianChooseAction.cs</DependentUpon>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -131,9 +67,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="userEntrancecs.resx">
-      <DependentUpon>userEntrancecs.cs</DependentUpon>
-    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

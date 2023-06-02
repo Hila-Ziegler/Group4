@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace Group4
 {
-    public partial class Form1 : Form
+    public partial class librarianStartPage1 : Form
     {
-        public Form1()
+        public librarianStartPage1()
         {
             InitializeComponent();
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }
