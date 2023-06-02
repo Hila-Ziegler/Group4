@@ -38,6 +38,8 @@ namespace Group4
                     {
                         // show new form for librarians
                         Console.WriteLine("It's a match!");
+                        LibrarianChooseAction form1 = new LibrarianChooseAction();
+                        form1.Show();
                         this.Hide();
                     }
                 }

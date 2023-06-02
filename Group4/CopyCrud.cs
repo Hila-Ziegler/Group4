@@ -16,5 +16,35 @@ namespace Group4
         {
             InitializeComponent();
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void CopyCrud_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void copyCrudMenu_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
+
+        private void toolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            LibrarianChooseAction form6 = new LibrarianChooseAction();
+            form6.Show();
+            this.Hide();
+        }
+
+        private void MenuManageBooks_Click(object sender, EventArgs e)
+        {
+            ManageBooks form7 = new ManageBooks();
+            form7.Show();
+            this.Hide();
+
+        }
     }
 }
