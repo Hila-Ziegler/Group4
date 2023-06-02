@@ -45,13 +45,23 @@ namespace Group4
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-
+            if (e.ColumnIndex == dataGridView1.Columns["CopyNum"].Index)
+            {
+                int i = e.RowIndex;
+                int copyNum = int.Parse(dataGridView1.Rows[i].Cells[0].Value.ToString());
+                Copy c = null;
+                foreach (Copy co in copies)
+                {
+                    if (co.get_copyNum() == copyNum){
+                        c = co;
+                    }
+                }
+                CopyCrud form11 = new CopyCrud(c);
+                form11.Show();
+                this.Hide();
+            }
         }
 
-        private void dataGridView1_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
 
         private System.Collections.Generic.List<Copy> filterCopyList(System.Collections.Generic.List<Copy> li)
         {
@@ -88,7 +98,6 @@ namespace Group4
 
             }
             dataGridView1.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
-            Console.WriteLine("Copy list updated");
         }
 
         private void BookCrud_Load(object sender, EventArgs e)
@@ -162,11 +171,9 @@ namespace Group4
             if (this.b != null)
             {
                 Copy c = new Copy(copies.Count()+1, b, false, true);
-                c.create_Copy();
                 b.addCopy(c);
                 this.copies.Add(c);
                 Program.copies.Add(c);
-                Console.WriteLine("Copy Created");
                 this.update_CopyList();
 
             }

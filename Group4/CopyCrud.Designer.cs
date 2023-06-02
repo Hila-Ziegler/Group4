@@ -29,9 +29,9 @@ namespace Group4
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.CopyCrudTitle = new System.Windows.Forms.Label();
+            this.CopyCrudCopyNum = new System.Windows.Forms.Label();
+            this.StartBorrow = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
@@ -52,42 +52,43 @@ namespace Group4
             this.copyCrudMenu.SuspendLayout();
             this.SuspendLayout();
             // 
-            // label1
+            // CopyCrudTitle
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(564, 58);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(88, 42);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Title";
+            this.CopyCrudTitle.AutoSize = true;
+            this.CopyCrudTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CopyCrudTitle.Location = new System.Drawing.Point(564, 58);
+            this.CopyCrudTitle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.CopyCrudTitle.Name = "CopyCrudTitle";
+            this.CopyCrudTitle.Size = new System.Drawing.Size(88, 42);
+            this.CopyCrudTitle.TabIndex = 1;
+            this.CopyCrudTitle.Text = "Title";
             // 
-            // label2
+            // CopyCrudCopyNum
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(733, 55);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(266, 46);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Copy Number";
+            this.CopyCrudCopyNum.AutoSize = true;
+            this.CopyCrudCopyNum.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CopyCrudCopyNum.Location = new System.Drawing.Point(733, 55);
+            this.CopyCrudCopyNum.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.CopyCrudCopyNum.Name = "CopyCrudCopyNum";
+            this.CopyCrudCopyNum.Size = new System.Drawing.Size(266, 46);
+            this.CopyCrudCopyNum.TabIndex = 2;
+            this.CopyCrudCopyNum.Text = "Copy Number";
             // 
-            // button1
+            // StartBorrow
             // 
-            this.button1.Location = new System.Drawing.Point(509, 623);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(100, 28);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "Start Borrow";
-            this.button1.UseVisualStyleBackColor = true;
+            this.StartBorrow.Location = new System.Drawing.Point(509, 623);
+            this.StartBorrow.Margin = new System.Windows.Forms.Padding(4);
+            this.StartBorrow.Name = "StartBorrow";
+            this.StartBorrow.Size = new System.Drawing.Size(100, 28);
+            this.StartBorrow.TabIndex = 3;
+            this.StartBorrow.Text = "Start Borrow";
+            this.StartBorrow.UseVisualStyleBackColor = true;
+            this.StartBorrow.Click += new System.EventHandler(this.StartBorrow_Click);
             // 
             // button2
             // 
             this.button2.Location = new System.Drawing.Point(935, 623);
-            this.button2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button2.Margin = new System.Windows.Forms.Padding(4);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(100, 28);
             this.button2.TabIndex = 4;
@@ -97,7 +98,7 @@ namespace Group4
             // button3
             // 
             this.button3.Location = new System.Drawing.Point(1408, 759);
-            this.button3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button3.Margin = new System.Windows.Forms.Padding(4);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(100, 28);
             this.button3.TabIndex = 5;
@@ -114,7 +115,7 @@ namespace Group4
             this.StudentID,
             this.Rating});
             this.dataGridView1.Location = new System.Drawing.Point(400, 279);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.Size = new System.Drawing.Size(725, 185);
@@ -169,7 +170,7 @@ namespace Group4
             // StName
             // 
             this.StName.Location = new System.Drawing.Point(400, 574);
-            this.StName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.StName.Margin = new System.Windows.Forms.Padding(4);
             this.StName.Name = "StName";
             this.StName.Size = new System.Drawing.Size(132, 22);
             this.StName.TabIndex = 8;
@@ -177,7 +178,7 @@ namespace Group4
             // StID
             // 
             this.StID.Location = new System.Drawing.Point(572, 574);
-            this.StID.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.StID.Margin = new System.Windows.Forms.Padding(4);
             this.StID.Name = "StID";
             this.StID.Size = new System.Drawing.Size(132, 22);
             this.StID.TabIndex = 9;
@@ -242,12 +243,12 @@ namespace Group4
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.StartBorrow);
+            this.Controls.Add(this.CopyCrudCopyNum);
+            this.Controls.Add(this.CopyCrudTitle);
             this.Controls.Add(this.copyCrudMenu);
             this.MainMenuStrip = this.copyCrudMenu;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "CopyCrud";
             this.Text = "CopyCrud";
             this.Load += new System.EventHandler(this.CopyCrud_Load);
@@ -261,9 +262,9 @@ namespace Group4
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label CopyCrudTitle;
+        private System.Windows.Forms.Label CopyCrudCopyNum;
+        private System.Windows.Forms.Button StartBorrow;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.DataGridView dataGridView1;
