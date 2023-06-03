@@ -15,6 +15,7 @@ namespace Group4
         private Book b = null;
         private string sn = "";
         public System.Collections.Generic.List<Copy> copies = null;
+        private  int serialNumLength= 8;
 
         public BookCrud(string s)
         {
@@ -102,8 +103,16 @@ namespace Group4
 
         private void BookCrud_Load(object sender, EventArgs e)
         {
-            if (sn != null)
+            if (sn != null )
             {
+                ISBNTextBox.Hide();
+                AuthorTextBox.Hide();
+                PublishYearTextBox.Hide();
+                languageTextBox.Hide();
+                CreateNewBook.Hide();
+                Titlelbl.Hide();
+                TitleTextBox.Hide();
+
                 this.b = Program.seekBook(sn);
                 lb_ISBN_value.Text = sn;
                 lb_AuthorValue.Text = b.get_author();
@@ -113,6 +122,15 @@ namespace Group4
                 BookCrudTitle.Text = b.get_title();
 
                 this.update_CopyList();
+            }
+            else
+            {
+                BookCrudUpdateBTN.Hide();
+                BookCrudDeleteBTN.Hide();
+                bookCrudAddNewCopy.Hide();
+                dataGridView1.Hide();
+                BookCrudTitle.Hide();
+                Ratinglbl.Hide();
             }
 
 
@@ -177,6 +195,69 @@ namespace Group4
                 this.update_CopyList();
 
             }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            if (this.checkIfValid())
+            {
+                Language l = (Language)Enum.Parse(typeof(Language), languageTextBox.Text);
+                Book b = new Book(ISBNTextBox.Text, TitleTextBox.Text, AuthorTextBox.Text, int.Parse(PublishYearTextBox.Text), l, 0, false, true);
+                Copy c = new Copy(1, b, false, true);
+                b.Copies.Add(c);
+
+                BookCrud form12 = new BookCrud(b.get_sNumber());
+                form12.Show();
+                this.Hide();
+            }
+        }
+
+        private bool checkIfValid()
+        {
+            BookCrudErrorWindow bc;
+            if (ISBNTextBox.Text == "" || PublishYearTextBox.Text == "" || languageTextBox.Text == "" || TitleTextBox.Text == "" || AuthorTextBox.Text == "")
+            {
+                String s = $"Not all required information entered, \nPlease try again";
+                bc = new BookCrudErrorWindow(s, this);
+                bc.Show();
+                return false;
+            }
+
+
+            if (ISBNTextBox.Text.Length > serialNumLength)
+            {
+                // Error Window
+                String s = $"Serial number is longer than expected, \nPlease enter a valid number of characters,\nmax allowed length is: {serialNumLength}";
+                bc = new BookCrudErrorWindow(s,this);
+                bc.Show();
+                return false;
+            }
+            else if (int.Parse(PublishYearTextBox.Text) > DateTime.Now.Year)
+            {
+                //Error Window
+                String s = $"Publish year cannot exceed current year, \nPlease enter a valid year";
+                bc = new BookCrudErrorWindow(s,this);
+                bc.Show();
+                return false;
+            }
+            string ans = languageTextBox.Text.Substring(0, 1).ToUpper() + languageTextBox.Text.Substring(1).ToLower();
+            languageTextBox.Text = ans;
+            string langOptions = "";
+            foreach (Language lang in Enum.GetValues(typeof(Language)))
+            {
+                langOptions = langOptions + lang.ToString() + ", ";
+                if (ans == lang.ToString())
+                {
+                    return true;
+                }
+            
+            }
+            langOptions = langOptions.Substring(0, langOptions.Length - 2) + ".";
+            //Error Window
+            String st = $"Unavailable language, \nPlease try again,\nAvailable langueges: {langOptions}";
+            bc = new BookCrudErrorWindow(st,this);
+            bc.Show();
+            return false;
         }
     }
 }
