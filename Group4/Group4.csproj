@@ -59,6 +59,12 @@
     <Compile Include="BookCrud.Designer.cs">
       <DependentUpon>BookCrud.cs</DependentUpon>
     </Compile>
+    <Compile Include="BookCrudErrorWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BookCrudErrorWindow.Designer.cs">
+      <DependentUpon>BookCrudErrorWindow.cs</DependentUpon>
+    </Compile>
     <Compile Include="BookHistory.cs" />
     <Compile Include="BookInWaitlist.cs" />
     <Compile Include="Club.cs" />
@@ -112,6 +118,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="BookCrud.resx">
       <DependentUpon>BookCrud.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BookCrudErrorWindow.resx">
+      <DependentUpon>BookCrudErrorWindow.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CopyCrud.resx">
       <DependentUpon>CopyCrud.cs</DependentUpon>
