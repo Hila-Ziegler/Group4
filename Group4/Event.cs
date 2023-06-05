@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Data.SqlClient;
+using System.Linq;
 
 namespace Group4
 {
@@ -134,6 +135,19 @@ namespace Group4
             c.Parameters.AddWithValue("@currentlyRegistered", this.CurrentlyRegistered);
             SQL_CON SC = new SQL_CON();
             SC.execute_non_query(c);
+        }
+        public int checkCurrentlyRegistered()
+        {
+            return this.Registered.Count();// האם מפה לעשות  UPDET לכמות המשתתפים?
+
+        }
+        public bool isQuantityExceeded()
+        {
+            if (checkCurrentlyRegistered() < MaxGuests)
+            {
+                return false;
+            }
+            return true;
         }
 
 
