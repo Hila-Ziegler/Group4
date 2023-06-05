@@ -10,21 +10,24 @@ using System.Windows.Forms;
 
 namespace Group4
 {
-    public partial class LibrarianChooseAction : Form
+    public partial class EventCrud : Form
     {
-        public LibrarianChooseAction()
+        public EventCrud()
         {
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void BookCrudTitle_Click(object sender, EventArgs e)
         {
-            ManageBooks form3 = new ManageBooks();
-            form3.Show();
-            this.Hide();
+
         }
 
-        private void Action_Click(object sender, EventArgs e)
+        private void Titlelbl_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void EventCrud_Load(object sender, EventArgs e)
         {
 
         }
