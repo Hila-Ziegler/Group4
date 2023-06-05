@@ -33,6 +33,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.TitleText = new System.Windows.Forms.Label();
             this.Action = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnBooks
@@ -73,9 +74,10 @@
             this.TitleText.Location = new System.Drawing.Point(27, 29);
             this.TitleText.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.TitleText.Name = "TitleText";
-            this.TitleText.Size = new System.Drawing.Size(783, 69);
+            this.TitleText.Size = new System.Drawing.Size(252, 69);
             this.TitleText.TabIndex = 6;
-            this.TitleText.Text = "Student Managment System";
+            this.TitleText.Text = "Student ";
+            this.TitleText.Click += new System.EventHandler(this.TitleText_Click);
             // 
             // Action
             // 
@@ -88,11 +90,22 @@
             this.Action.TabIndex = 7;
             this.Action.Text = "Please choose an action:";
             // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Microsoft YaHei UI", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(645, 280);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(200, 57);
+            this.button1.TabIndex = 8;
+            this.button1.Text = "Event";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
             // StudentChooseAction
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(979, 535);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.Action);
             this.Controls.Add(this.TitleText);
             this.Controls.Add(this.label1);
@@ -100,6 +113,7 @@
             this.Controls.Add(this.btnBooks);
             this.Name = "StudentChooseAction";
             this.Text = "StudentChooseAction";
+            this.Load += new System.EventHandler(this.StudentChooseAction_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -111,5 +125,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label TitleText;
         private System.Windows.Forms.Label Action;
+        private System.Windows.Forms.Button button1;
     }
 }

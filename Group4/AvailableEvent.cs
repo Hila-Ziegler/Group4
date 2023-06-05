@@ -21,5 +21,12 @@ namespace Group4
         {
 
         }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            EventCrud formEventCrud = new EventCrud();
+            formEventCrud.Show();
+            this.Hide();
+        }
     }
 }
