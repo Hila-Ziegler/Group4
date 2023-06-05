@@ -49,9 +49,13 @@ namespace Group4
                     if (txtUserName.Text == T.get_ID() && Hash.GetHash(txtPassword.Text) == T.get_password())
                     {
                         // show new form for Teacher
-                        librarianStartPage1 form2 = new librarianStartPage1();
-                        form2.Show();
+
+                        //librarianStartPage1 form2 = new librarianStartPage1();
+                        //form2.Show();
                         this.Hide();
+
+                        
+
                     }
                 }
                 // foreach Teacher end
@@ -59,7 +63,9 @@ namespace Group4
                 {
                     if (txtUserName.Text == S.get_ID() && Hash.GetHash(txtPassword.Text) == S.get_password())
                     {
-                        // show new form for Teacher
+
+                        StudentChooseAction formStudentChooseAction = new StudentChooseAction(S.get_name());
+                        formStudentChooseAction.Show();
                         this.Hide();
                     }
                 }

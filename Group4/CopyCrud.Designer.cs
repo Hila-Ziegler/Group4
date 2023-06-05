@@ -32,7 +32,7 @@ namespace Group4
             this.CopyCrudTitle = new System.Windows.Forms.Label();
             this.CopyCrudCopyNum = new System.Windows.Forms.Label();
             this.StartBorrow = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.endBorrow1 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.StartDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -56,7 +56,7 @@ namespace Group4
             // 
             this.CopyCrudTitle.AutoSize = true;
             this.CopyCrudTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CopyCrudTitle.Location = new System.Drawing.Point(564, 58);
+            this.CopyCrudTitle.Location = new System.Drawing.Point(325, 54);
             this.CopyCrudTitle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.CopyCrudTitle.Name = "CopyCrudTitle";
             this.CopyCrudTitle.Size = new System.Drawing.Size(88, 42);
@@ -67,7 +67,7 @@ namespace Group4
             // 
             this.CopyCrudCopyNum.AutoSize = true;
             this.CopyCrudCopyNum.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CopyCrudCopyNum.Location = new System.Drawing.Point(733, 55);
+            this.CopyCrudCopyNum.Location = new System.Drawing.Point(888, 54);
             this.CopyCrudCopyNum.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.CopyCrudCopyNum.Name = "CopyCrudCopyNum";
             this.CopyCrudCopyNum.Size = new System.Drawing.Size(266, 46);
@@ -85,15 +85,16 @@ namespace Group4
             this.StartBorrow.UseVisualStyleBackColor = true;
             this.StartBorrow.Click += new System.EventHandler(this.StartBorrow_Click);
             // 
-            // button2
+            // endBorrow1
             // 
-            this.button2.Location = new System.Drawing.Point(935, 623);
-            this.button2.Margin = new System.Windows.Forms.Padding(4);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(100, 28);
-            this.button2.TabIndex = 4;
-            this.button2.Text = "End Borrow";
-            this.button2.UseVisualStyleBackColor = true;
+            this.endBorrow1.Location = new System.Drawing.Point(935, 623);
+            this.endBorrow1.Margin = new System.Windows.Forms.Padding(4);
+            this.endBorrow1.Name = "endBorrow1";
+            this.endBorrow1.Size = new System.Drawing.Size(100, 28);
+            this.endBorrow1.TabIndex = 4;
+            this.endBorrow1.Text = "End Borrow";
+            this.endBorrow1.UseVisualStyleBackColor = true;
+            this.endBorrow1.Click += new System.EventHandler(this.button2_Click);
             // 
             // button3
             // 
@@ -174,6 +175,7 @@ namespace Group4
             this.StName.Name = "StName";
             this.StName.Size = new System.Drawing.Size(132, 22);
             this.StName.TabIndex = 8;
+            this.StName.TextChanged += new System.EventHandler(this.StName_TextChanged);
             // 
             // StID
             // 
@@ -182,6 +184,7 @@ namespace Group4
             this.StID.Name = "StID";
             this.StID.Size = new System.Drawing.Size(132, 22);
             this.StID.TabIndex = 9;
+            this.StID.TextChanged += new System.EventHandler(this.StID_TextChanged);
             // 
             // label4
             // 
@@ -192,6 +195,7 @@ namespace Group4
             this.label4.Size = new System.Drawing.Size(102, 17);
             this.label4.TabIndex = 10;
             this.label4.Text = "Student Name:";
+            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // label5
             // 
@@ -202,6 +206,7 @@ namespace Group4
             this.label5.Size = new System.Drawing.Size(78, 17);
             this.label5.TabIndex = 11;
             this.label5.Text = "Student ID:";
+            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // copyCrudMenu
             // 
@@ -234,7 +239,7 @@ namespace Group4
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1584, 823);
+            this.ClientSize = new System.Drawing.Size(1584, 854);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.StID);
@@ -242,7 +247,7 @@ namespace Group4
             this.Controls.Add(this.label3);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.endBorrow1);
             this.Controls.Add(this.StartBorrow);
             this.Controls.Add(this.CopyCrudCopyNum);
             this.Controls.Add(this.CopyCrudTitle);
@@ -265,7 +270,7 @@ namespace Group4
         private System.Windows.Forms.Label CopyCrudTitle;
         private System.Windows.Forms.Label CopyCrudCopyNum;
         private System.Windows.Forms.Button StartBorrow;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button endBorrow1;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridViewTextBoxColumn StartDate;

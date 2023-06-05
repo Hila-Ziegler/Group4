@@ -23,5 +23,10 @@ namespace Group4
             form3.Show();
             this.Hide();
         }
+
+        private void Action_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
