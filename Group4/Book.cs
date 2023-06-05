@@ -2,6 +2,7 @@
 
 using System;
 using System.Data.SqlClient;
+using System.Linq;
 
 namespace Group4
 {
@@ -197,6 +198,29 @@ namespace Group4
             SQL_CON SC = new SQL_CON();
             SC.execute_non_query(c);
         }
+
+        public int countCopies()
+        {
+            return this.Copies.Count();
+        }
+
+        public float calculateAverageRating()
+        {
+            float count=0;
+            float ratingSum=0;
+            foreach (BookHistory bh in this.History)
+            {
+                if (bh.get_EndDate() != new DateTime())
+                {
+                    count+=1;
+                    ratingSum += bh.get_rate();
+
+                }
+            }
+
+            return ratingSum/count;
+        }
+
 
     }
 }

@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace Group4
 {
-    public partial class librarianStartPage1 : Form
+    public partial class AvailableEvent : Form
     {
-        public librarianStartPage1()
+        public AvailableEvent()
         {
             InitializeComponent();
+        }
+
+        private void BookCrudTitle_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
