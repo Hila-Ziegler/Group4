@@ -12,7 +12,6 @@ namespace Group4
 {
     public partial class CopyCrud : Form
     {
-        //Issue with making new entry in DateTime
         private Copy copy;
         private System.Collections.Generic.List<BookHistory> history;
         public CopyCrud(Copy c)
@@ -46,7 +45,20 @@ namespace Group4
                     if (i < dataGridView1.Rows.Count)
                     {
                         this.dataGridView1.Rows[i].Cells[0].Value = bh.get_StartDate();
-                        this.dataGridView1.Rows[i].Cells[1].Value = bh.get_EndDate();
+                        if (bh.get_StartDate() == bh.get_EndDate())
+                        {
+                            this.dataGridView1.Rows[i].Cells[1].Value = DBNull.Value;
+                            StartBorrow.Visible = false;
+                            StName.Visible = false;
+                            label4.Visible = false;
+                            StID.Visible = false;
+                            label5.Visible = false;
+                            endBorrow1.Visible = true;
+                        }
+                        else
+                        {
+                            this.dataGridView1.Rows[i].Cells[1].Value = bh.get_EndDate();
+                        }
                         this.dataGridView1.Rows[i].Cells[2].Value = bh.get_student().get_name();
                         this.dataGridView1.Rows[i].Cells[3].Value = bh.get_student().get_ID();
                         this.dataGridView1.Rows[i].Cells[4].Value = bh.get_rate();
@@ -69,13 +81,16 @@ namespace Group4
 
         private void CopyCrud_Load(object sender, EventArgs e)
         {
+            if (this.copy.get_status() == false)
+            {
+                endBorrow1.Visible = false;
+            }
             if (copy != null)
             {
                 Book b = copy.get_book();
                 CopyCrudTitle.Text = b.get_title();
                 CopyCrudCopyNum.Text = copy.get_copyNum().ToString();
-
-               
+                this.updateBookHistory();
             }
 
         }
@@ -104,14 +119,41 @@ namespace Group4
         {
             Student st = Program.seekStudent(StID.Text);
             DateTime startDate = DateTime.Now;
-            DateTime endDate = new DateTime();
-            //Issue with making new entry in DateTime
+            DateTime endDate = DateTime.Now;
             BookHistory bh = new BookHistory(this.copy.get_copyNum(), this.copy.get_book(), st, startDate, endDate, true);
-            Program.bookHistories.Add(bh);
             this.history.Add(bh);
             st.addBookHistory(bh);
             copy.get_book().addBookHistory(bh);
+            this.copy.set_status(true);
+            this.copy.update_Copy();
             this.updateBookHistory();
+        }
+        // needs to be written
+        private void button2_Click(object sender, EventArgs e)
+        {
+            //Student st = Program.seekStudent(StID.Text);
+           // DateTime endDate = DateTime.Now;
+            
+        }
+
+        private void StID_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void StName_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -123,6 +123,7 @@
             this.homePageToolStripMenuItem.Name = "homePageToolStripMenuItem";
             this.homePageToolStripMenuItem.Size = new System.Drawing.Size(100, 24);
             this.homePageToolStripMenuItem.Text = "Home Page";
+            this.homePageToolStripMenuItem.Click += new System.EventHandler(this.homePageToolStripMenuItem_Click);
             // 
             // StudentBookHistory
             // 
@@ -136,6 +137,7 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "StudentBookHistory";
             this.Text = "StudentBookHistory";
+            this.Load += new System.EventHandler(this.StudentBookHistory_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();

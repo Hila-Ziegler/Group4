@@ -58,6 +58,7 @@
             this.homePageToolStripMenuItem.Name = "homePageToolStripMenuItem";
             this.homePageToolStripMenuItem.Size = new System.Drawing.Size(100, 24);
             this.homePageToolStripMenuItem.Text = "Home Page";
+            this.homePageToolStripMenuItem.Click += new System.EventHandler(this.homePageToolStripMenuItem_Click);
             // 
             // dataGridView1
             // 
@@ -129,6 +130,7 @@
             this.CreateNewEvent.TabIndex = 7;
             this.CreateNewEvent.Text = "Create New Event";
             this.CreateNewEvent.UseVisualStyleBackColor = true;
+            this.CreateNewEvent.Click += new System.EventHandler(this.CreateNewEvent_Click);
             // 
             // ShowPastEvents
             // 

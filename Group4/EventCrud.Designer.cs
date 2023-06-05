@@ -82,12 +82,14 @@
             this.homePageToolStripMenuItem.Name = "homePageToolStripMenuItem";
             this.homePageToolStripMenuItem.Size = new System.Drawing.Size(100, 24);
             this.homePageToolStripMenuItem.Text = "Home Page";
+            this.homePageToolStripMenuItem.Click += new System.EventHandler(this.homePageToolStripMenuItem_Click);
             // 
             // backToolStripMenuItem
             // 
             this.backToolStripMenuItem.Name = "backToolStripMenuItem";
-            this.backToolStripMenuItem.Size = new System.Drawing.Size(54, 24);
-            this.backToolStripMenuItem.Text = "Back";
+            this.backToolStripMenuItem.Size = new System.Drawing.Size(121, 24);
+            this.backToolStripMenuItem.Text = "AvailableEvent";
+            this.backToolStripMenuItem.Click += new System.EventHandler(this.backToolStripMenuItem_Click);
             // 
             // BookCrudTitle
             // 
