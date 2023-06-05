@@ -105,7 +105,7 @@ CREATE PROCEDURE dbo.SP_Update_Book @serialNumber VARCHAR(50), @title VARCHAR(50
 AS
 Update dbo.Books
 SET
-serialNumber=@serialNumber, title=@title, author=@author, language=@language, rating=@rating ,archive=@arcive
+serialNumber=@serialNumber, title=@title, author=@author, language=@language, rating=@rating ,archive=@arcive, publishYear=@publishYear
 WHERE serialNumber=@serialNumber
 
 CREATE PROCEDURE dbo.SP_Update_Copy @copyNumber	INTEGER ,@serialNumber	VARCHAR(50), @status BIT 

@@ -34,8 +34,6 @@ namespace Group4
             this.BookCrudUpdateBTN = new System.Windows.Forms.Button();
             this.BookCrudDeleteBTN = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.CopyNum = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.Status = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -56,6 +54,12 @@ namespace Group4
             this.CreateNewBook = new System.Windows.Forms.Button();
             this.Titlelbl = new System.Windows.Forms.Label();
             this.TitleTextBox = new System.Windows.Forms.TextBox();
+            this.btnUpdateBook = new System.Windows.Forms.Button();
+            this.updateScreenratinglbl = new System.Windows.Forms.Label();
+            this.ISBNUpdateScreen = new System.Windows.Forms.Label();
+            this.CopyNum = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.Borrowed = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.BringBackFromArchieve = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -92,6 +96,7 @@ namespace Group4
             this.BookCrudUpdateBTN.TabIndex = 6;
             this.BookCrudUpdateBTN.Text = "Update";
             this.BookCrudUpdateBTN.UseVisualStyleBackColor = true;
+            this.BookCrudUpdateBTN.Click += new System.EventHandler(this.BookCrudUpdateBTN_Click);
             // 
             // BookCrudDeleteBTN
             // 
@@ -102,13 +107,14 @@ namespace Group4
             this.BookCrudDeleteBTN.TabIndex = 7;
             this.BookCrudDeleteBTN.Text = "Delete";
             this.BookCrudDeleteBTN.UseVisualStyleBackColor = true;
+            this.BookCrudDeleteBTN.Click += new System.EventHandler(this.BookCrudDeleteBTN_Click);
             // 
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.CopyNum,
-            this.Status});
+            this.Borrowed});
             this.dataGridView1.Location = new System.Drawing.Point(512, 415);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView1.Name = "dataGridView1";
@@ -116,22 +122,6 @@ namespace Group4
             this.dataGridView1.Size = new System.Drawing.Size(320, 185);
             this.dataGridView1.TabIndex = 8;
             this.dataGridView1.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            // 
-            // CopyNum
-            // 
-            this.CopyNum.HeaderText = "Copy Number";
-            this.CopyNum.MinimumWidth = 6;
-            this.CopyNum.Name = "CopyNum";
-            this.CopyNum.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.CopyNum.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.CopyNum.Width = 125;
-            // 
-            // Status
-            // 
-            this.Status.HeaderText = "Status";
-            this.Status.MinimumWidth = 6;
-            this.Status.Name = "Status";
-            this.Status.Width = 125;
             // 
             // label3
             // 
@@ -321,11 +311,68 @@ namespace Group4
             this.TitleTextBox.Size = new System.Drawing.Size(128, 22);
             this.TitleTextBox.TabIndex = 28;
             // 
+            // btnUpdateBook
+            // 
+            this.btnUpdateBook.Location = new System.Drawing.Point(609, 315);
+            this.btnUpdateBook.Name = "btnUpdateBook";
+            this.btnUpdateBook.Size = new System.Drawing.Size(85, 54);
+            this.btnUpdateBook.TabIndex = 29;
+            this.btnUpdateBook.Text = "Update Book";
+            this.btnUpdateBook.UseVisualStyleBackColor = true;
+            this.btnUpdateBook.Click += new System.EventHandler(this.btnUpdateBook_Click);
+            // 
+            // updateScreenratinglbl
+            // 
+            this.updateScreenratinglbl.AutoSize = true;
+            this.updateScreenratinglbl.Location = new System.Drawing.Point(652, 247);
+            this.updateScreenratinglbl.Name = "updateScreenratinglbl";
+            this.updateScreenratinglbl.Size = new System.Drawing.Size(0, 17);
+            this.updateScreenratinglbl.TabIndex = 30;
+            this.updateScreenratinglbl.Click += new System.EventHandler(this.label1_Click_1);
+            // 
+            // ISBNUpdateScreen
+            // 
+            this.ISBNUpdateScreen.AutoSize = true;
+            this.ISBNUpdateScreen.Location = new System.Drawing.Point(652, 111);
+            this.ISBNUpdateScreen.Name = "ISBNUpdateScreen";
+            this.ISBNUpdateScreen.Size = new System.Drawing.Size(0, 17);
+            this.ISBNUpdateScreen.TabIndex = 31;
+            // 
+            // CopyNum
+            // 
+            this.CopyNum.HeaderText = "Copy Number";
+            this.CopyNum.MinimumWidth = 6;
+            this.CopyNum.Name = "CopyNum";
+            this.CopyNum.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.CopyNum.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.CopyNum.Width = 125;
+            // 
+            // Borrowed
+            // 
+            this.Borrowed.HeaderText = "Borrowed";
+            this.Borrowed.MinimumWidth = 6;
+            this.Borrowed.Name = "Borrowed";
+            this.Borrowed.Width = 125;
+            // 
+            // BringBackFromArchieve
+            // 
+            this.BringBackFromArchieve.Location = new System.Drawing.Point(862, 127);
+            this.BringBackFromArchieve.Name = "BringBackFromArchieve";
+            this.BringBackFromArchieve.Size = new System.Drawing.Size(128, 52);
+            this.BringBackFromArchieve.TabIndex = 32;
+            this.BringBackFromArchieve.Text = "Return From Archieve";
+            this.BringBackFromArchieve.UseVisualStyleBackColor = true;
+            this.BringBackFromArchieve.Click += new System.EventHandler(this.BringBackFromArchieve_Click);
+            // 
             // BookCrud
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1475, 743);
+            this.Controls.Add(this.BringBackFromArchieve);
+            this.Controls.Add(this.ISBNUpdateScreen);
+            this.Controls.Add(this.updateScreenratinglbl);
+            this.Controls.Add(this.btnUpdateBook);
             this.Controls.Add(this.TitleTextBox);
             this.Controls.Add(this.Titlelbl);
             this.Controls.Add(this.CreateNewBook);
@@ -375,8 +422,6 @@ namespace Group4
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label Ratinglbl;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.DataGridViewButtonColumn CopyNum;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Status;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem BookCrudHomePage;
         private System.Windows.Forms.Label lb_ISBN_value;
@@ -392,5 +437,11 @@ namespace Group4
         private System.Windows.Forms.Button CreateNewBook;
         private System.Windows.Forms.Label Titlelbl;
         private System.Windows.Forms.TextBox TitleTextBox;
+        private System.Windows.Forms.Button btnUpdateBook;
+        private System.Windows.Forms.Label updateScreenratinglbl;
+        private System.Windows.Forms.Label ISBNUpdateScreen;
+        private System.Windows.Forms.DataGridViewButtonColumn CopyNum;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Borrowed;
+        private System.Windows.Forms.Button BringBackFromArchieve;
     }
 }

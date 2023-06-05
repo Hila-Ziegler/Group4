@@ -22,10 +22,22 @@ namespace Group4
             System.Collections.Generic.List<Copy> allCopies = Program.copies;
             this.copies = Program.copies;
             this.sn = s;
-            this.copies = this.filterCopyList(allCopies);
+            this.copies = this.filterCopyList(allCopies, s);
 
             InitializeComponent();
         }
+
+        public BookCrud(String s, Book b)
+        {
+            System.Collections.Generic.List<Copy> allCopies = Program.copies;
+            this.copies = Program.copies;
+            this.b = b;
+            this.sn = s;
+            this.copies = this.filterCopyList(allCopies, b.get_sNumber());
+
+            InitializeComponent();
+        }
+
 
         private void label1_Click(object sender, EventArgs e)
         {
@@ -64,7 +76,7 @@ namespace Group4
         }
 
 
-        private System.Collections.Generic.List<Copy> filterCopyList(System.Collections.Generic.List<Copy> li)
+        private System.Collections.Generic.List<Copy> filterCopyList(System.Collections.Generic.List<Copy> li,String sn)
         {
             System.Collections.Generic.List<Copy> ans = new System.Collections.Generic.List<Copy>();
             foreach (Copy c in li)
@@ -103,8 +115,10 @@ namespace Group4
 
         private void BookCrud_Load(object sender, EventArgs e)
         {
-            if (sn != null )
+
+            if (sn != "update" && sn != null )
             {
+                BringBackFromArchieve.Hide();
                 ISBNTextBox.Hide();
                 AuthorTextBox.Hide();
                 PublishYearTextBox.Hide();
@@ -112,6 +126,7 @@ namespace Group4
                 CreateNewBook.Hide();
                 Titlelbl.Hide();
                 TitleTextBox.Hide();
+                btnUpdateBook.Hide();
 
                 this.b = Program.seekBook(sn);
                 lb_ISBN_value.Text = sn;
@@ -122,15 +137,45 @@ namespace Group4
                 BookCrudTitle.Text = b.get_title();
 
                 this.update_CopyList();
+                if (b.get_archive())
+                {
+                    dataGridView1.Hide();
+                    bookCrudAddNewCopy.Hide();
+                    BringBackFromArchieve.Show();
+                }
+            }
+            else if (sn == "update")
+            {
+                BringBackFromArchieve.Hide();
+                Titlelbl.Hide();
+                ISBNTextBox.Hide();
+                TitleTextBox.Hide();
+                lb_AuthorValue.Hide();
+                lb_PublishYearValue.Hide();
+                lb_LangueageValue.Hide();
+                CreateNewBook.Hide();
+                BookCrudUpdateBTN.Hide();
+                BookCrudDeleteBTN.Hide();
+                bookCrudAddNewCopy.Hide();
+                dataGridView1.Hide();
+                BookCrudTitle.Text = b.get_title();
+                AuthorTextBox.Text = b.get_author();
+                PublishYearTextBox.Text = b.get_PYear().ToString();
+                languageTextBox.Text = b.get_lang().ToString();
+                updateScreenratinglbl.Text = b.get_rating().ToString();
+                ISBNUpdateScreen.Text = b.get_sNumber();
+
             }
             else
             {
+                BringBackFromArchieve.Hide();
                 BookCrudUpdateBTN.Hide();
                 BookCrudDeleteBTN.Hide();
                 bookCrudAddNewCopy.Hide();
                 dataGridView1.Hide();
                 BookCrudTitle.Hide();
                 Ratinglbl.Hide();
+                btnUpdateBook.Hide();
             }
 
 
@@ -258,6 +303,46 @@ namespace Group4
             bc = new BookCrudErrorWindow(st,this);
             bc.Show();
             return false;
+        }
+
+        private void BookCrudUpdateBTN_Click(object sender, EventArgs e)
+        {
+            BookCrud update = new BookCrud("update", b);
+            update.Show();
+            this.Hide();
+        }
+
+        private void btnUpdateBook_Click(object sender, EventArgs e)
+        {
+            this.b.set_author(AuthorTextBox.Text);
+            this.b.set_PYear(int.Parse(PublishYearTextBox.Text));
+            this.b.set_lang((Language)Enum.Parse(typeof (Language), languageTextBox.Text));
+            this.b.update_Book();
+            BookCrud updated = new BookCrud(b.get_sNumber());
+            updated.Show();
+            this.Hide();
+
+        }
+
+        private void label1_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BookCrudDeleteBTN_Click(object sender, EventArgs e)
+        {
+            AreYouSure form14 = new AreYouSure(b,this);
+            form14.Show();
+        }
+
+        private void BringBackFromArchieve_Click(object sender, EventArgs e)
+        {
+            this.b.set_archive(false);
+            this.b.update_Book();
+            this.Hide();
+            ManageBooks form16 = new ManageBooks();
+            form16.Show();
+
         }
     }
 }
