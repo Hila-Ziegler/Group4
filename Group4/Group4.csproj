@@ -46,6 +46,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AdminActions.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminActions.Designer.cs">
+      <DependentUpon>AdminActions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminGridView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminGridView.Designer.cs">
+      <DependentUpon>AdminGridView.cs</DependentUpon>
+    </Compile>
     <Compile Include="AreYouSure.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -81,6 +93,12 @@
     </Compile>
     <Compile Include="EventCrud.Designer.cs">
       <DependentUpon>EventCrud.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LibrarianCrud.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LibrarianCrud.Designer.cs">
+      <DependentUpon>LibrarianCrud.cs</DependentUpon>
     </Compile>
     <Compile Include="ManageBooks.cs">
       <SubType>Form</SubType>
@@ -130,13 +148,31 @@
     <Compile Include="AvailableEvent.Designer.cs">
       <DependentUpon>AvailableEvent.cs</DependentUpon>
     </Compile>
+    <Compile Include="StudentCrud.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StudentCrud.Designer.cs">
+      <DependentUpon>StudentCrud.cs</DependentUpon>
+    </Compile>
     <Compile Include="Teacher.cs" />
+    <Compile Include="TeacherCrud.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TeacherCrud.Designer.cs">
+      <DependentUpon>TeacherCrud.cs</DependentUpon>
+    </Compile>
     <Compile Include="userEntrancecs.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="userEntrancecs.Designer.cs">
       <DependentUpon>userEntrancecs.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AdminActions.resx">
+      <DependentUpon>AdminActions.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminGridView.resx">
+      <DependentUpon>AdminGridView.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AreYouSure.resx">
       <DependentUpon>AreYouSure.cs</DependentUpon>
     </EmbeddedResource>
@@ -151,6 +187,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="EventCrud.resx">
       <DependentUpon>EventCrud.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LibrarianCrud.resx">
+      <DependentUpon>LibrarianCrud.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ManageBooks.resx">
       <DependentUpon>ManageBooks.cs</DependentUpon>
@@ -178,6 +217,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AvailableEvent.resx">
       <DependentUpon>AvailableEvent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StudentCrud.resx">
+      <DependentUpon>StudentCrud.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TeacherCrud.resx">
+      <DependentUpon>TeacherCrud.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="userEntrancecs.resx">
       <DependentUpon>userEntrancecs.cs</DependentUpon>
