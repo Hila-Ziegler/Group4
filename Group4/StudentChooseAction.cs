@@ -12,9 +12,20 @@ namespace Group4
 {
     public partial class StudentChooseAction : Form
     {
-        public StudentChooseAction()
+        string st = "";
+        public StudentChooseAction(string s)
         {
+            st = s;
             InitializeComponent();
+        }
+
+        private void TitleText_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void StudentChooseAction_Load(object sender, EventArgs e)
+        {
+            TitleText.Text = $"Welcome {st}";
         }
     }
 }

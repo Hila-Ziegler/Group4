@@ -18,14 +18,14 @@ namespace Group4
         //public System.Collections.Generic.List<Order> orders;
 
 
-        public Event(GuestType guestType, DateTime date, float price, string guestName, Status status, int maxGuests, int currentlyRegistered, bool is_new)
+        public Event(GuestType guestType, DateTime date, float price, string guestName, Status status, int maxGuests, bool is_new)
         {
             this.GuestType = guestType;
             this.Date = date;
             this.Price = price;
             this.GuestName = guestName;
             this.MaxGuests = maxGuests;
-            this.CurrentlyRegistered = currentlyRegistered;
+            this.CurrentlyRegistered = 0;
             this.Registered = new System.Collections.Generic.List<Student>();
             this.status = status;
 

@@ -16,5 +16,12 @@ namespace Group4
         {
             InitializeComponent();
         }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            StudentBorrow formStudentBorrow = new StudentBorrow();
+            formStudentBorrow.Show();
+            this.Hide();
+        }
     }
 }
