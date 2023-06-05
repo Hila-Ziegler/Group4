@@ -57,12 +57,13 @@ namespace Group4
             this.Action.Size = new System.Drawing.Size(281, 29);
             this.Action.TabIndex = 1;
             this.Action.Text = "Please choose an action:";
+            this.Action.Click += new System.EventHandler(this.Action_Click);
             // 
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.Location = new System.Drawing.Point(292, 321);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(156, 57);
             this.button1.TabIndex = 2;
@@ -74,7 +75,7 @@ namespace Group4
             // 
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.Location = new System.Drawing.Point(579, 321);
-            this.button2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button2.Margin = new System.Windows.Forms.Padding(4);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(167, 57);
             this.button2.TabIndex = 3;
@@ -102,7 +103,7 @@ namespace Group4
             this.Controls.Add(this.button1);
             this.Controls.Add(this.Action);
             this.Controls.Add(this.TitleText);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "LibrarianChooseAction";
             this.Text = "Library Managment System";
             this.ResumeLayout(false);

@@ -10,23 +10,22 @@ using System.Windows.Forms;
 
 namespace Group4
 {
-    public partial class LibrarianChooseAction : Form
+    public partial class StudentChooseAction : Form
     {
-        public LibrarianChooseAction()
+        string st = "";
+        public StudentChooseAction(string s)
         {
+            st = s;
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void TitleText_Click(object sender, EventArgs e)
         {
-            ManageBooks form3 = new ManageBooks();
-            form3.Show();
-            this.Hide();
         }
 
-        private void Action_Click(object sender, EventArgs e)
+        private void StudentChooseAction_Load(object sender, EventArgs e)
         {
-
+            TitleText.Text = $"Welcome {st}";
         }
     }
 }

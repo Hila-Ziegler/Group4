@@ -10,23 +10,18 @@ using System.Windows.Forms;
 
 namespace Group4
 {
-    public partial class LibrarianChooseAction : Form
+    public partial class StudentBookHistory : Form
     {
-        public LibrarianChooseAction()
+        public StudentBookHistory()
         {
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            ManageBooks form3 = new ManageBooks();
-            form3.Show();
+            StudentBorrow formStudentBorrow = new StudentBorrow();
+            formStudentBorrow.Show();
             this.Hide();
-        }
-
-        private void Action_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }
