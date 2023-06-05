@@ -31,6 +31,7 @@ namespace Group4
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+
             EventCrud formEventCrud = new EventCrud(st);
             formEventCrud.Show();
             this.Hide();
@@ -47,5 +48,6 @@ namespace Group4
             formStudentChooseAction.Show();
             this.Hide();
         }
+
     }
 }

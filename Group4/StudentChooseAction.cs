@@ -12,12 +12,16 @@ namespace Group4
 {
     public partial class StudentChooseAction : Form
     {
+
         String st = "";
+
         public StudentChooseAction(string s)
         {
+            st = s;
             InitializeComponent();
             this.st = s;
         }
+
 
         private void btnBooks_Click(object sender, EventArgs e)
         {
@@ -31,11 +35,14 @@ namespace Group4
             AvailableEvent formAvailableEvent = new AvailableEvent(st);
             formAvailableEvent.Show();
             this.Hide();
+
         }
 
         private void StudentChooseAction_Load(object sender, EventArgs e)
         {
+
             tlxWalcome.Text = $"Welcome {st}";
 ;        }
+
     }
 }

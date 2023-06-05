@@ -41,6 +41,7 @@ namespace Group4
             this.label2 = new System.Windows.Forms.Label();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.ManageBooksHomePagemenu = new System.Windows.Forms.ToolStripMenuItem();
+            this.BookManagmentGoToArchieve = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -160,11 +161,22 @@ namespace Group4
             this.ManageBooksHomePagemenu.Text = "Home Page";
             this.ManageBooksHomePagemenu.Click += new System.EventHandler(this.ManageBooksHomePagemenu_Click);
             // 
+            // BookManagmentGoToArchieve
+            // 
+            this.BookManagmentGoToArchieve.Location = new System.Drawing.Point(795, 101);
+            this.BookManagmentGoToArchieve.Name = "BookManagmentGoToArchieve";
+            this.BookManagmentGoToArchieve.Size = new System.Drawing.Size(117, 23);
+            this.BookManagmentGoToArchieve.TabIndex = 6;
+            this.BookManagmentGoToArchieve.Text = "View Archive";
+            this.BookManagmentGoToArchieve.UseVisualStyleBackColor = true;
+            this.BookManagmentGoToArchieve.Click += new System.EventHandler(this.BookManagmentGoToArchieve_Click);
+            // 
             // ManageBooks
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1389, 772);
+            this.Controls.Add(this.BookManagmentGoToArchieve);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.AddNewBook);
             this.Controls.Add(this.dataGridView1);
@@ -197,5 +209,6 @@ namespace Group4
         private System.Windows.Forms.DataGridViewTextBoxColumn Language;
         private System.Windows.Forms.DataGridViewTextBoxColumn Copies;
         private System.Windows.Forms.DataGridViewTextBoxColumn PublishYear;
+        private System.Windows.Forms.Button BookManagmentGoToArchieve;
     }
 }
