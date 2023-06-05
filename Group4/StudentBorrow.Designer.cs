@@ -52,6 +52,16 @@
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
+            // RequestTimeExtention
+            // 
+            RequestTimeExtention.Location = new System.Drawing.Point(32, 317);
+            RequestTimeExtention.Margin = new System.Windows.Forms.Padding(4);
+            RequestTimeExtention.Name = "RequestTimeExtention";
+            RequestTimeExtention.Size = new System.Drawing.Size(166, 28);
+            RequestTimeExtention.TabIndex = 39;
+            RequestTimeExtention.Text = "Request Time Extention";
+            RequestTimeExtention.UseVisualStyleBackColor = true;
+            // 
             // BookCrudTitle
             // 
             this.BookCrudTitle.AutoSize = true;
@@ -187,16 +197,6 @@
             this.RateButton.Text = "Rate Book";
             this.RateButton.UseVisualStyleBackColor = true;
             // 
-            // RequestTimeExtention
-            // 
-            RequestTimeExtention.Location = new System.Drawing.Point(32, 317);
-            RequestTimeExtention.Margin = new System.Windows.Forms.Padding(4);
-            RequestTimeExtention.Name = "RequestTimeExtention";
-            RequestTimeExtention.Size = new System.Drawing.Size(166, 28);
-            RequestTimeExtention.TabIndex = 39;
-            RequestTimeExtention.Text = "Request Time Extention";
-            RequestTimeExtention.UseVisualStyleBackColor = true;
-            // 
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
@@ -229,6 +229,7 @@
             this.bookHistoryToolStripMenuItem.Name = "bookHistoryToolStripMenuItem";
             this.bookHistoryToolStripMenuItem.Size = new System.Drawing.Size(108, 24);
             this.bookHistoryToolStripMenuItem.Text = "Book History";
+            this.bookHistoryToolStripMenuItem.Click += new System.EventHandler(this.bookHistoryToolStripMenuItem_Click);
             // 
             // label2
             // 
@@ -267,6 +268,7 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "StudentBorrow";
             this.Text = "StudentBorrow";
+            this.Load += new System.EventHandler(this.StudentBorrow_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);

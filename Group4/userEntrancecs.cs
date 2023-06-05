@@ -63,6 +63,7 @@ namespace Group4
                 {
                     if (txtUserName.Text == S.get_ID() && Hash.GetHash(txtPassword.Text) == S.get_password())
                     {
+
                         StudentChooseAction formStudentChooseAction = new StudentChooseAction(S.get_name());
                         formStudentChooseAction.Show();
                         this.Hide();

@@ -31,20 +31,23 @@
             this.btnBooks = new System.Windows.Forms.Button();
             this.btnEvent = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.TitleText = new System.Windows.Forms.Label();
+            this.tlxWalcome = new System.Windows.Forms.Label();
             this.Action = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+
+            this.btnMessages = new System.Windows.Forms.Button();
+
             this.SuspendLayout();
             // 
             // btnBooks
             // 
             this.btnBooks.Font = new System.Drawing.Font("Microsoft YaHei UI", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBooks.Location = new System.Drawing.Point(151, 280);
+            this.btnBooks.Location = new System.Drawing.Point(111, 280);
             this.btnBooks.Name = "btnBooks";
-            this.btnBooks.Size = new System.Drawing.Size(195, 57);
+            this.btnBooks.Size = new System.Drawing.Size(235, 57);
             this.btnBooks.TabIndex = 3;
             this.btnBooks.Text = "BookHistory";
             this.btnBooks.UseVisualStyleBackColor = true;
+            this.btnBooks.Click += new System.EventHandler(this.btnBooks_Click);
             // 
             // btnEvent
             // 
@@ -55,6 +58,7 @@
             this.btnEvent.TabIndex = 4;
             this.btnEvent.Text = "Event";
             this.btnEvent.UseVisualStyleBackColor = true;
+            this.btnEvent.Click += new System.EventHandler(this.btnEvent_Click);
             // 
             // label1
             // 
@@ -67,17 +71,18 @@
             this.label1.TabIndex = 5;
             this.label1.Text = "The library is a brand, when you\'ve got a card in your hand";
             // 
-            // TitleText
+            // tlxWalcome
             // 
-            this.TitleText.AutoSize = true;
-            this.TitleText.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TitleText.Location = new System.Drawing.Point(27, 29);
-            this.TitleText.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.TitleText.Name = "TitleText";
-            this.TitleText.Size = new System.Drawing.Size(252, 69);
-            this.TitleText.TabIndex = 6;
-            this.TitleText.Text = "Student ";
-            this.TitleText.Click += new System.EventHandler(this.TitleText_Click);
+
+            this.tlxWalcome.AutoSize = true;
+            this.tlxWalcome.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tlxWalcome.Location = new System.Drawing.Point(27, 29);
+            this.tlxWalcome.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.tlxWalcome.Name = "tlxWalcome";
+            this.tlxWalcome.Size = new System.Drawing.Size(296, 69);
+            this.tlxWalcome.TabIndex = 6;
+            this.tlxWalcome.Text = "Welcome ";
+
             // 
             // Action
             // 
@@ -90,24 +95,28 @@
             this.Action.TabIndex = 7;
             this.Action.Text = "Please choose an action:";
             // 
-            // button1
+
+            // btnMessages
             // 
-            this.button1.Font = new System.Drawing.Font("Microsoft YaHei UI", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(645, 280);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(200, 57);
-            this.button1.TabIndex = 8;
-            this.button1.Text = "Event";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnMessages.Font = new System.Drawing.Font("Microsoft YaHei UI", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMessages.Location = new System.Drawing.Point(630, 280);
+            this.btnMessages.Name = "btnMessages";
+            this.btnMessages.Size = new System.Drawing.Size(200, 57);
+            this.btnMessages.TabIndex = 8;
+            this.btnMessages.Text = "Messages";
+            this.btnMessages.UseVisualStyleBackColor = true;
+
             // 
             // StudentChooseAction
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(979, 535);
-            this.Controls.Add(this.button1);
+
+            this.ClientSize = new System.Drawing.Size(934, 450);
+            this.Controls.Add(this.btnMessages);
+
             this.Controls.Add(this.Action);
-            this.Controls.Add(this.TitleText);
+            this.Controls.Add(this.tlxWalcome);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnEvent);
             this.Controls.Add(this.btnBooks);
@@ -123,8 +132,9 @@
         private System.Windows.Forms.Button btnBooks;
         private System.Windows.Forms.Button btnEvent;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label TitleText;
+        private System.Windows.Forms.Label tlxWalcome;
         private System.Windows.Forms.Label Action;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnMessages;
+
     }
 }
