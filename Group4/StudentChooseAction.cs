@@ -12,9 +12,37 @@ namespace Group4
 {
     public partial class StudentChooseAction : Form
     {
-        public StudentChooseAction()
+
+        String st = "";
+
+        public StudentChooseAction(string s)
         {
+            st = s;
             InitializeComponent();
+            this.st = s;
         }
+
+
+        private void btnBooks_Click(object sender, EventArgs e)
+        {
+            StudentBookHistory formStudentBookHistory = new StudentBookHistory(st);
+            formStudentBookHistory.Show();
+            this.Hide();
+        }
+
+        private void btnEvent_Click(object sender, EventArgs e)
+        {
+            AvailableEvent formAvailableEvent = new AvailableEvent(st);
+            formAvailableEvent.Show();
+            this.Hide();
+
+        }
+
+        private void StudentChooseAction_Load(object sender, EventArgs e)
+        {
+
+            tlxWalcome.Text = $"Welcome {st}";
+;        }
+
     }
 }

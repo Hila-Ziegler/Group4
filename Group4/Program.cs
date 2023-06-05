@@ -234,7 +234,7 @@ namespace Group4
                 Language l = (Language)Enum.Parse(typeof(Language), rdr.GetValue(5).ToString());
                 GuestType g = (GuestType)Enum.Parse(typeof(GuestType), rdr.GetValue(0).ToString());
                 Status s = (Status)Enum.Parse(typeof(Status), rdr.GetValue(4).ToString());
-                Event e = new Event(g, DateTime.Parse(rdr.GetValue(1).ToString()),float.Parse(rdr.GetValue(2).ToString()),rdr.GetValue(3).ToString(), s, int.Parse(rdr.GetValue(5).ToString()), int.Parse(rdr.GetValue(6).ToString()), false);
+                Event e = new Event(g, DateTime.Parse(rdr.GetValue(1).ToString()),float.Parse(rdr.GetValue(2).ToString()),rdr.GetValue(3).ToString(), s, int.Parse(rdr.GetValue(5).ToString()), false);
                 events.Add(e);
             }
         }
