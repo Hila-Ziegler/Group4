@@ -25,7 +25,7 @@ namespace Group4
 
         private void btnBooks_Click(object sender, EventArgs e)
         {
-            StudentBookHistory formStudentBookHistory = new StudentBookHistory();
+            StudentBookHistory formStudentBookHistory = new StudentBookHistory(st);
             formStudentBookHistory.Show();
             this.Hide();
         }
