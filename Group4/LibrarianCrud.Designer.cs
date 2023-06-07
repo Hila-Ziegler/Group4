@@ -33,11 +33,11 @@ namespace Group4
             this.ISBNUpdateScreen = new System.Windows.Forms.Label();
             this.updateScreenratinglbl = new System.Windows.Forms.Label();
             this.btnUpdate = new System.Windows.Forms.Button();
-            this.TitleTextBox = new System.Windows.Forms.TextBox();
+            this.NameTextBox = new System.Windows.Forms.TextBox();
             this.Namelbl = new System.Windows.Forms.Label();
             this.Createbtn = new System.Windows.Forms.Button();
-            this.AuthorTextBox = new System.Windows.Forms.TextBox();
-            this.ISBNTextBox = new System.Windows.Forms.TextBox();
+            this.PasswordTextBox = new System.Windows.Forms.TextBox();
+            this.IDTextBox = new System.Windows.Forms.TextBox();
             this.lb_ISBN_value = new System.Windows.Forms.Label();
             this.IDlbl = new System.Windows.Forms.Label();
             this.Passwordlbl = new System.Windows.Forms.Label();
@@ -80,12 +80,12 @@ namespace Group4
             this.btnUpdate.Text = "Update ";
             this.btnUpdate.UseVisualStyleBackColor = true;
             // 
-            // TitleTextBox
+            // NameTextBox
             // 
-            this.TitleTextBox.Location = new System.Drawing.Point(341, 92);
-            this.TitleTextBox.Name = "TitleTextBox";
-            this.TitleTextBox.Size = new System.Drawing.Size(128, 22);
-            this.TitleTextBox.TabIndex = 52;
+            this.NameTextBox.Location = new System.Drawing.Point(341, 92);
+            this.NameTextBox.Name = "NameTextBox";
+            this.NameTextBox.Size = new System.Drawing.Size(128, 22);
+            this.NameTextBox.TabIndex = 52;
             // 
             // Namelbl
             // 
@@ -106,19 +106,19 @@ namespace Group4
             this.Createbtn.Text = "Create";
             this.Createbtn.UseVisualStyleBackColor = true;
             // 
-            // AuthorTextBox
+            // PasswordTextBox
             // 
-            this.AuthorTextBox.Location = new System.Drawing.Point(341, 156);
-            this.AuthorTextBox.Name = "AuthorTextBox";
-            this.AuthorTextBox.Size = new System.Drawing.Size(128, 22);
-            this.AuthorTextBox.TabIndex = 47;
+            this.PasswordTextBox.Location = new System.Drawing.Point(341, 156);
+            this.PasswordTextBox.Name = "PasswordTextBox";
+            this.PasswordTextBox.Size = new System.Drawing.Size(128, 22);
+            this.PasswordTextBox.TabIndex = 47;
             // 
-            // ISBNTextBox
+            // IDTextBox
             // 
-            this.ISBNTextBox.Location = new System.Drawing.Point(341, 125);
-            this.ISBNTextBox.Name = "ISBNTextBox";
-            this.ISBNTextBox.Size = new System.Drawing.Size(128, 22);
-            this.ISBNTextBox.TabIndex = 46;
+            this.IDTextBox.Location = new System.Drawing.Point(341, 125);
+            this.IDTextBox.Name = "IDTextBox";
+            this.IDTextBox.Size = new System.Drawing.Size(128, 22);
+            this.IDTextBox.TabIndex = 46;
             // 
             // lb_ISBN_value
             // 
@@ -189,11 +189,11 @@ namespace Group4
             this.Controls.Add(this.ISBNUpdateScreen);
             this.Controls.Add(this.updateScreenratinglbl);
             this.Controls.Add(this.btnUpdate);
-            this.Controls.Add(this.TitleTextBox);
+            this.Controls.Add(this.NameTextBox);
             this.Controls.Add(this.Namelbl);
             this.Controls.Add(this.Createbtn);
-            this.Controls.Add(this.AuthorTextBox);
-            this.Controls.Add(this.ISBNTextBox);
+            this.Controls.Add(this.PasswordTextBox);
+            this.Controls.Add(this.IDTextBox);
             this.Controls.Add(this.lb_ISBN_value);
             this.Controls.Add(this.IDlbl);
             this.Controls.Add(this.Passwordlbl);
@@ -202,6 +202,7 @@ namespace Group4
             this.Controls.Add(this.NameTitle);
             this.Name = "LibrarianCrud";
             this.Text = "LibrarianCrud";
+            this.Load += new System.EventHandler(this.LibrarianCrud_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -213,11 +214,11 @@ namespace Group4
         private System.Windows.Forms.Label ISBNUpdateScreen;
         private System.Windows.Forms.Label updateScreenratinglbl;
         private System.Windows.Forms.Button btnUpdate;
-        private System.Windows.Forms.TextBox TitleTextBox;
+        private System.Windows.Forms.TextBox NameTextBox;
         private System.Windows.Forms.Label Namelbl;
         private System.Windows.Forms.Button Createbtn;
-        private System.Windows.Forms.TextBox AuthorTextBox;
-        private System.Windows.Forms.TextBox ISBNTextBox;
+        private System.Windows.Forms.TextBox PasswordTextBox;
+        private System.Windows.Forms.TextBox IDTextBox;
         private System.Windows.Forms.Label lb_ISBN_value;
         private System.Windows.Forms.Label IDlbl;
         private System.Windows.Forms.Label Passwordlbl;

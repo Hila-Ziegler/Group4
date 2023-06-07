@@ -13,10 +13,41 @@ namespace Group4
     public partial class LibrarianCrud : Form
     {
         private Librarian l;
+        private string s;
         public LibrarianCrud(Librarian l)
         {
             this.l = l;
             InitializeComponent();
+        }
+        public LibrarianCrud(string s)
+        {
+            this.s = s;
+            InitializeComponent();
+        }
+
+        private void LibrarianCrud_Load(object sender, EventArgs e)
+        {
+            if (l != null)
+            {
+                Passwordlbl.Hide();
+                PasswordTextBox.Hide();
+                BringBackFromArchieve.Hide();
+                btnUpdate.Hide();
+                Createbtn.Hide();
+
+
+            }
+            else
+            {
+                if (s == "update")
+                {
+                    IDTextBox.Hide();
+                }
+                else
+                {
+
+                }
+            }
         }
     }
 }
