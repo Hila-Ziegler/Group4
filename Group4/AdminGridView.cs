@@ -40,7 +40,6 @@ namespace Group4
         }
         private void loadGrid()
         {
-            this.dataGridView1.DataSource = null;
             if (this.libs != null)
             {
                 this.loadLibrarians();

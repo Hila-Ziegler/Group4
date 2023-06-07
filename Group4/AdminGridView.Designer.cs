@@ -82,7 +82,7 @@ namespace Group4
             // 
             this.backBTN.Location = new System.Drawing.Point(26, 60);
             this.backBTN.Name = "backBTN";
-            this.backBTN.Size = new System.Drawing.Size(75, 23);
+            this.backBTN.Size = new System.Drawing.Size(81, 39);
             this.backBTN.TabIndex = 5;
             this.backBTN.Text = "Go Back";
             this.backBTN.UseVisualStyleBackColor = true;

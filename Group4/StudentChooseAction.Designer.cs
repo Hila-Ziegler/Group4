@@ -33,9 +33,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.tlxWalcome = new System.Windows.Forms.Label();
             this.Action = new System.Windows.Forms.Label();
-
             this.btnMessages = new System.Windows.Forms.Button();
-
             this.SuspendLayout();
             // 
             // btnBooks
@@ -73,7 +71,6 @@
             // 
             // tlxWalcome
             // 
-
             this.tlxWalcome.AutoSize = true;
             this.tlxWalcome.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tlxWalcome.Location = new System.Drawing.Point(27, 29);
@@ -82,7 +79,6 @@
             this.tlxWalcome.Size = new System.Drawing.Size(296, 69);
             this.tlxWalcome.TabIndex = 6;
             this.tlxWalcome.Text = "Welcome ";
-
             // 
             // Action
             // 
@@ -95,7 +91,6 @@
             this.Action.TabIndex = 7;
             this.Action.Text = "Please choose an action:";
             // 
-
             // btnMessages
             // 
             this.btnMessages.Font = new System.Drawing.Font("Microsoft YaHei UI", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -105,16 +100,14 @@
             this.btnMessages.TabIndex = 8;
             this.btnMessages.Text = "Messages";
             this.btnMessages.UseVisualStyleBackColor = true;
-
+            this.btnMessages.Click += new System.EventHandler(this.btnMessages_Click);
             // 
             // StudentChooseAction
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-
             this.ClientSize = new System.Drawing.Size(934, 450);
             this.Controls.Add(this.btnMessages);
-
             this.Controls.Add(this.Action);
             this.Controls.Add(this.tlxWalcome);
             this.Controls.Add(this.label1);
