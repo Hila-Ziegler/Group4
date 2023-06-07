@@ -68,6 +68,7 @@ namespace Group4
             this.Studentsbtn.TabIndex = 3;
             this.Studentsbtn.Text = "Students";
             this.Studentsbtn.UseVisualStyleBackColor = true;
+            this.Studentsbtn.Click += new System.EventHandler(this.Studentsbtn_Click);
             // 
             // Teachersbtn
             // 
@@ -79,6 +80,7 @@ namespace Group4
             this.Teachersbtn.TabIndex = 4;
             this.Teachersbtn.Text = "Teachers";
             this.Teachersbtn.UseVisualStyleBackColor = true;
+            this.Teachersbtn.Click += new System.EventHandler(this.Teachersbtn_Click);
             // 
             // Librariansbtn
             // 
@@ -90,6 +92,7 @@ namespace Group4
             this.Librariansbtn.TabIndex = 5;
             this.Librariansbtn.Text = "Librarians";
             this.Librariansbtn.UseVisualStyleBackColor = true;
+            this.Librariansbtn.Click += new System.EventHandler(this.Librariansbtn_Click);
             // 
             // AdminActions
             // 

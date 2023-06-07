@@ -12,8 +12,10 @@ namespace Group4
 {
     public partial class LibrarianCrud : Form
     {
-        public LibrarianCrud()
+        private Librarian l;
+        public LibrarianCrud(Librarian l)
         {
+            this.l = l;
             InitializeComponent();
         }
     }

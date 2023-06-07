@@ -16,5 +16,26 @@ namespace Group4
         {
             InitializeComponent();
         }
+
+        private void Studentsbtn_Click(object sender, EventArgs e)
+        {
+            AdminGridView form14 = new AdminGridView("s");
+            form14.Show();
+            this.Hide();
+        }
+
+        private void Teachersbtn_Click(object sender, EventArgs e)
+        {
+            AdminGridView form14 = new AdminGridView("t");
+            form14.Show();
+            this.Hide();
+        }
+
+        private void Librariansbtn_Click(object sender, EventArgs e)
+        {
+            AdminGridView form14 = new AdminGridView("l");
+            form14.Show();
+            this.Hide();
+        }
     }
 }

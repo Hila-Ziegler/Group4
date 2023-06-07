@@ -12,8 +12,10 @@ namespace Group4
 {
     public partial class StudentCrud : Form
     {
-        public StudentCrud()
+        private Student s;
+        public StudentCrud(Student s)
         {
+            this.s = s;
             InitializeComponent();
         }
     }

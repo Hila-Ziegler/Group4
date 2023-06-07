@@ -40,7 +40,6 @@ namespace Group4
                     if (txtUserName.Text == L.get_ID() && Hash.GetHash(txtPassword.Text) == L.get_password())
                     {
                         // show new form for librarians
-                        Console.WriteLine("It's a match!");
                         LibrarianChooseAction form1 = new LibrarianChooseAction();
                         form1.Show();
                         this.Hide();
@@ -51,10 +50,7 @@ namespace Group4
                 {
                     if (txtUserName.Text == T.get_ID() && Hash.GetHash(txtPassword.Text) == T.get_password())
                     {
-                        // show new form for Teacher
 
-                        //librarianStartPage1 form2 = new librarianStartPage1();
-                        //form2.Show();
                         this.Hide();
 
                         

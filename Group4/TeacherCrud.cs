@@ -12,8 +12,10 @@ namespace Group4
 {
     public partial class TeacherCrud : Form
     {
-        public TeacherCrud()
+        private Teacher t;
+        public TeacherCrud(Teacher t)
         {
+            this.t = t;
             InitializeComponent();
         }
     }
