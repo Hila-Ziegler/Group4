@@ -1,6 +1,6 @@
 ﻿namespace Group4
 {
-    partial class StudentBorrow
+    partial class StudentBorrowActinos
     {
         /// <summary>
         /// Required designer variable.
@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.Button RequestTimeExtention;
+            Syncfusion.Windows.Forms.Tools.CustomImageCollection customImageCollection1 = new Syncfusion.Windows.Forms.Tools.CustomImageCollection();
+            Syncfusion.Windows.Forms.Tools.ResetButton resetButton1 = new Syncfusion.Windows.Forms.Tools.ResetButton();
             this.BookCrudTitle = new System.Windows.Forms.Label();
             this.Titlelbl = new System.Windows.Forms.Label();
             this.lb_ISBN_value = new System.Windows.Forms.Label();
@@ -42,19 +44,18 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.SuggestAlternativeBook = new System.Windows.Forms.Button();
-            this.RateButton = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.homeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.bookHistoryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label2 = new System.Windows.Forms.Label();
+            this.RatingStars = new Syncfusion.Windows.Forms.Tools.RatingControl();
             RequestTimeExtention = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // RequestTimeExtention
             // 
-            RequestTimeExtention.Location = new System.Drawing.Point(32, 317);
+            RequestTimeExtention.Location = new System.Drawing.Point(113, 304);
             RequestTimeExtention.Margin = new System.Windows.Forms.Padding(4);
             RequestTimeExtention.Name = "RequestTimeExtention";
             RequestTimeExtention.Size = new System.Drawing.Size(166, 28);
@@ -72,6 +73,7 @@
             this.BookCrudTitle.Size = new System.Drawing.Size(88, 42);
             this.BookCrudTitle.TabIndex = 1;
             this.BookCrudTitle.Text = "Title";
+            this.BookCrudTitle.Click += new System.EventHandler(this.BookCrudTitle_Click);
             // 
             // Titlelbl
             // 
@@ -79,7 +81,7 @@
             this.Titlelbl.Location = new System.Drawing.Point(207, 83);
             this.Titlelbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Titlelbl.Name = "Titlelbl";
-            this.Titlelbl.Size = new System.Drawing.Size(33, 16);
+            this.Titlelbl.Size = new System.Drawing.Size(35, 17);
             this.Titlelbl.TabIndex = 38;
             this.Titlelbl.Text = "Title";
             // 
@@ -89,7 +91,7 @@
             this.lb_ISBN_value.Location = new System.Drawing.Point(370, 113);
             this.lb_ISBN_value.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lb_ISBN_value.Name = "lb_ISBN_value";
-            this.lb_ISBN_value.Size = new System.Drawing.Size(0, 16);
+            this.lb_ISBN_value.Size = new System.Drawing.Size(0, 17);
             this.lb_ISBN_value.TabIndex = 37;
             // 
             // lb_RatingValue
@@ -98,7 +100,7 @@
             this.lb_RatingValue.Location = new System.Drawing.Point(370, 249);
             this.lb_RatingValue.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lb_RatingValue.Name = "lb_RatingValue";
-            this.lb_RatingValue.Size = new System.Drawing.Size(0, 16);
+            this.lb_RatingValue.Size = new System.Drawing.Size(0, 17);
             this.lb_RatingValue.TabIndex = 36;
             // 
             // lb_LangueageValue
@@ -107,7 +109,7 @@
             this.lb_LangueageValue.Location = new System.Drawing.Point(370, 214);
             this.lb_LangueageValue.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lb_LangueageValue.Name = "lb_LangueageValue";
-            this.lb_LangueageValue.Size = new System.Drawing.Size(0, 16);
+            this.lb_LangueageValue.Size = new System.Drawing.Size(0, 17);
             this.lb_LangueageValue.TabIndex = 35;
             // 
             // lb_PublishYearValue
@@ -116,7 +118,7 @@
             this.lb_PublishYearValue.Location = new System.Drawing.Point(370, 177);
             this.lb_PublishYearValue.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lb_PublishYearValue.Name = "lb_PublishYearValue";
-            this.lb_PublishYearValue.Size = new System.Drawing.Size(0, 16);
+            this.lb_PublishYearValue.Size = new System.Drawing.Size(0, 17);
             this.lb_PublishYearValue.TabIndex = 34;
             // 
             // lb_AuthorValue
@@ -125,7 +127,7 @@
             this.lb_AuthorValue.Location = new System.Drawing.Point(370, 147);
             this.lb_AuthorValue.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lb_AuthorValue.Name = "lb_AuthorValue";
-            this.lb_AuthorValue.Size = new System.Drawing.Size(0, 16);
+            this.lb_AuthorValue.Size = new System.Drawing.Size(0, 17);
             this.lb_AuthorValue.TabIndex = 33;
             // 
             // label7
@@ -134,17 +136,17 @@
             this.label7.Location = new System.Drawing.Point(207, 113);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(38, 16);
+            this.label7.Size = new System.Drawing.Size(39, 17);
             this.label7.TabIndex = 32;
             this.label7.Text = "ISBN";
             // 
             // Ratinglbl
             // 
             this.Ratinglbl.AutoSize = true;
-            this.Ratinglbl.Location = new System.Drawing.Point(207, 249);
+            this.Ratinglbl.Location = new System.Drawing.Point(208, 249);
             this.Ratinglbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Ratinglbl.Name = "Ratinglbl";
-            this.Ratinglbl.Size = new System.Drawing.Size(46, 16);
+            this.Ratinglbl.Size = new System.Drawing.Size(49, 17);
             this.Ratinglbl.TabIndex = 31;
             this.Ratinglbl.Text = "Rating";
             // 
@@ -154,7 +156,7 @@
             this.label5.Location = new System.Drawing.Point(207, 214);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(68, 16);
+            this.label5.Size = new System.Drawing.Size(72, 17);
             this.label5.TabIndex = 30;
             this.label5.Text = "Language";
             // 
@@ -164,7 +166,7 @@
             this.label4.Location = new System.Drawing.Point(207, 177);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(83, 16);
+            this.label4.Size = new System.Drawing.Size(88, 17);
             this.label4.TabIndex = 29;
             this.label4.Text = "Publish Year";
             // 
@@ -174,36 +176,18 @@
             this.label3.Location = new System.Drawing.Point(207, 147);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(45, 16);
+            this.label3.Size = new System.Drawing.Size(50, 17);
             this.label3.TabIndex = 28;
             this.label3.Text = "Author";
             // 
             // SuggestAlternativeBook
             // 
-            this.SuggestAlternativeBook.Location = new System.Drawing.Point(252, 317);
+            this.SuggestAlternativeBook.Location = new System.Drawing.Point(437, 304);
             this.SuggestAlternativeBook.Name = "SuggestAlternativeBook";
             this.SuggestAlternativeBook.Size = new System.Drawing.Size(213, 28);
             this.SuggestAlternativeBook.TabIndex = 41;
             this.SuggestAlternativeBook.Text = "Suggest Alternative Book";
             this.SuggestAlternativeBook.UseVisualStyleBackColor = true;
-            // 
-            // RateButton
-            // 
-            this.RateButton.Location = new System.Drawing.Point(511, 317);
-            this.RateButton.Margin = new System.Windows.Forms.Padding(4);
-            this.RateButton.Name = "RateButton";
-            this.RateButton.Size = new System.Drawing.Size(100, 28);
-            this.RateButton.TabIndex = 40;
-            this.RateButton.Text = "Rate Book";
-            this.RateButton.UseVisualStyleBackColor = true;
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(511, 277);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 24);
-            this.comboBox1.TabIndex = 42;
             // 
             // menuStrip1
             // 
@@ -242,15 +226,25 @@
             this.label2.TabIndex = 44;
             this.label2.Text = "The library is a brand, when you\'ve got a card in your hand";
             // 
-            // StudentBorrow
+            // RatingStars
+            // 
+            this.RatingStars.Images = customImageCollection1;
+            this.RatingStars.Location = new System.Drawing.Point(277, 249);
+            this.RatingStars.Name = "RatingStars";
+            this.RatingStars.ResetButton = resetButton1;
+            this.RatingStars.Size = new System.Drawing.Size(181, 33);
+            this.RatingStars.TabIndex = 45;
+            this.RatingStars.Text = "RatingStars";
+            this.RatingStars.Click += new System.EventHandler(this.ratingControl1_Click);
+            // 
+            // StudentBorrowActinos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.RatingStars);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.SuggestAlternativeBook);
-            this.Controls.Add(this.RateButton);
             this.Controls.Add(RequestTimeExtention);
             this.Controls.Add(this.Titlelbl);
             this.Controls.Add(this.lb_ISBN_value);
@@ -266,7 +260,7 @@
             this.Controls.Add(this.BookCrudTitle);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
-            this.Name = "StudentBorrow";
+            this.Name = "StudentBorrowActinos";
             this.Text = "StudentBorrow";
             this.Load += new System.EventHandler(this.StudentBorrow_Load);
             this.menuStrip1.ResumeLayout(false);
@@ -291,11 +285,10 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button SuggestAlternativeBook;
-        private System.Windows.Forms.Button RateButton;
-        private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem homeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem bookHistoryToolStripMenuItem;
         private System.Windows.Forms.Label label2;
+        private Syncfusion.Windows.Forms.Tools.RatingControl RatingStars;
     }
 }

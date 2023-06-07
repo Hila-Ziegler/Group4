@@ -74,7 +74,5 @@ namespace Group4
             SQL_CON SC = new SQL_CON();
             SC.execute_non_query(c);
         }
-
-        // שיטת מחיקה?
     }
 }
