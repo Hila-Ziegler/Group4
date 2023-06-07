@@ -45,7 +45,7 @@ namespace Group4
                     if (i < dataGridView1.Rows.Count)
                     {
                         this.dataGridView1.Rows[i].Cells[0].Value = bh.get_StartDate();
-                        if (bh.get_StartDate() == bh.get_EndDate())
+                        if (bh.get_StartDate() == bh.get_EndDate() && this.copy.get_status() == true)
                         {
                             this.dataGridView1.Rows[i].Cells[1].Value = DBNull.Value;
                             StartBorrow.Visible = false;
@@ -58,6 +58,12 @@ namespace Group4
                         else
                         {
                             this.dataGridView1.Rows[i].Cells[1].Value = bh.get_EndDate();
+                            StartBorrow.Visible = true;
+                            StName.Visible = true;
+                            label4.Visible = true;
+                            StID.Visible = true;
+                            label5.Visible = true;
+                            endBorrow1.Visible = false;
                         }
                         this.dataGridView1.Rows[i].Cells[2].Value = bh.get_student().get_name();
                         this.dataGridView1.Rows[i].Cells[3].Value = bh.get_student().get_ID();
@@ -128,17 +134,26 @@ namespace Group4
             this.copy.update_Copy();
             this.updateBookHistory();
         }
-        // needs to be written
+
         private void button2_Click(object sender, EventArgs e)
         {
-            //Student st = Program.seekStudent(StID.Text);
-           // DateTime endDate = DateTime.Now;
-            
+            Student st = Program.seekStudent(StID.Text);
+            foreach (BookHistory bh in this.history)
+            {
+                if (bh.get_StartDate() == bh.get_EndDate())
+                {
+                   bh.set_endDate(DateTime.Now);
+                }
+            }
+            this.copy.set_status(false);
+            this.copy.update_Copy();
+            this.updateBookHistory();
+           
         }
 
         private void StID_TextChanged(object sender, EventArgs e)
         {
-
+           
         }
 
         private void StName_TextChanged(object sender, EventArgs e)
@@ -152,6 +167,16 @@ namespace Group4
         }
 
         private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
         {
 
         }

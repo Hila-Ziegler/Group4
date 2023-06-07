@@ -35,6 +35,7 @@
             this.ISBN = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.StartDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.EndDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Rate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.homePageToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -62,6 +63,7 @@
             this.label1.Size = new System.Drawing.Size(319, 42);
             this.label1.TabIndex = 6;
             this.label1.Text = "Your Book History";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // dataGridView1
             // 
@@ -70,12 +72,13 @@
             this.Title,
             this.ISBN,
             this.StartDate,
-            this.EndDate});
-            this.dataGridView1.Location = new System.Drawing.Point(125, 203);
+            this.EndDate,
+            this.Rate});
+            this.dataGridView1.Location = new System.Drawing.Point(86, 203);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(554, 150);
+            this.dataGridView1.Size = new System.Drawing.Size(678, 150);
             this.dataGridView1.TabIndex = 7;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
@@ -106,6 +109,13 @@
             this.EndDate.MinimumWidth = 6;
             this.EndDate.Name = "EndDate";
             this.EndDate.Width = 125;
+            // 
+            // Rate
+            // 
+            this.Rate.HeaderText = "Rate";
+            this.Rate.MinimumWidth = 6;
+            this.Rate.Name = "Rate";
+            this.Rate.Width = 125;
             // 
             // menuStrip1
             // 
@@ -151,11 +161,12 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem homePageToolStripMenuItem;
         private System.Windows.Forms.DataGridViewButtonColumn Title;
         private System.Windows.Forms.DataGridViewTextBoxColumn ISBN;
         private System.Windows.Forms.DataGridViewTextBoxColumn StartDate;
         private System.Windows.Forms.DataGridViewTextBoxColumn EndDate;
-        private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem homePageToolStripMenuItem;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Rate;
     }
 }
