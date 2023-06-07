@@ -84,11 +84,34 @@ namespace Group4
                 }
             }
 
+        private bool checkIfValid()
+        {
+            if (NameTextBox.Text != "")
+            {
+                if (this.s != "update" && IDTextBox.Text != "")
+                {
+                    if (IDTextBox.Text.Any(x => !char.IsDigit(x)))
+                    {
+                        return false;
+                    }
+                    return true;
+
+                }
+                return true;
+
+            }
+            return false;
+        }
+
         private void UpdateBTN_Click(object sender, EventArgs e)
         {
-            LibrarianCrud form17 = new LibrarianCrud("update", this.l);
-            form17.Show();
-            this.Hide();
+            if (this.checkIfValid())
+            {
+                LibrarianCrud form17 = new LibrarianCrud("update", this.l);
+                form17.Show();
+                this.Hide();
+            }
+
         }
 
         private void DeleteBTN_Click(object sender, EventArgs e)
@@ -102,17 +125,21 @@ namespace Group4
         private void Createbtn_Click(object sender, EventArgs e)
         {
             //if input check passed
-            Librarian lib = new Librarian(IDTextBox.Text, NameTextBox.Text, Hash.GetHash(PasswordTextBox.Text), false, true);
-            LibrarianCrud form20 = new LibrarianCrud(lib);
-            form20.Show();
-            this.Hide();
+            if (this.checkIfValid())
+            {
+                Librarian lib = new Librarian(IDTextBox.Text, NameTextBox.Text, Hash.GetHash(PasswordTextBox.Text), false, true);
+                LibrarianCrud form20 = new LibrarianCrud(lib);
+                form20.Show();
+                this.Hide();
+            }
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
             if (PasswordTextBox.Text != "")
             {
-                l.set_password(Hash.GetHash(PasswordTextBox.Text));
+                string newPassword = Hash.GetHash(PasswordTextBox.Text);
+                l.set_password(newPassword);
             }
             l.set_name(NameTextBox.Text);
             l.update_librarian();
@@ -128,6 +155,20 @@ namespace Group4
             this.l.update_librarian();
             LibrarianCrud form21 = new LibrarianCrud(this.l);
             form21.Show();
+            this.Hide();
+        }
+
+        private void homepageToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AdminActions form24 = new AdminActions();
+            form24.Show();
+            this.Hide();
+        }
+
+        private void manageStudentsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AdminGridView form25 = new AdminGridView("l");
+            form25.Show();
             this.Hide();
         }
     }
