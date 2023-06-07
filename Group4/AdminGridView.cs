@@ -161,5 +161,34 @@ namespace Group4
                 }
             }
         }
+
+        private void Createbtn_Click(object sender, EventArgs e)
+        {
+            if (this.type == "s")
+            {
+                StudentCrud form22 = new StudentCrud(null);
+                form22.Show();
+                this.Hide();
+            }
+            else if (this.type == "l")
+            {
+                LibrarianCrud form23 = new LibrarianCrud(null);
+                form23.Show();
+                this.Hide();
+            }
+            else
+            {
+                TeacherCrud form24 = new TeacherCrud(null);
+                form24.Show();
+                this.Hide();
+            }
+        }
+
+        private void homepageToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AdminActions form16 = new AdminActions();
+            form16.Show();
+            this.Hide();
+        }
     }
 }

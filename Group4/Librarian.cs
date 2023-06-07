@@ -86,7 +86,7 @@ namespace Group4
         public void update_librarian()
         {
             SqlCommand c = new SqlCommand();
-            c.CommandText = "EXECUTE dbo.SP_Update_Librarians  @id, @name, @password, @archive";
+            c.CommandText = "EXECUTE dbo.SP_Update_Librarian  @id, @name, @password, @archive";
             c.Parameters.AddWithValue("@id", this.Id);
             c.Parameters.AddWithValue("@name", this.Name);
             c.Parameters.AddWithValue("@password", this.Password);
