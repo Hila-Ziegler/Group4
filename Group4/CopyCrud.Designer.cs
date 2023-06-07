@@ -87,7 +87,7 @@ namespace Group4
             // 
             // endBorrow1
             // 
-            this.endBorrow1.Location = new System.Drawing.Point(935, 623);
+            this.endBorrow1.Location = new System.Drawing.Point(924, 623);
             this.endBorrow1.Margin = new System.Windows.Forms.Padding(4);
             this.endBorrow1.Name = "endBorrow1";
             this.endBorrow1.Size = new System.Drawing.Size(100, 28);
@@ -121,6 +121,7 @@ namespace Group4
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.Size = new System.Drawing.Size(725, 185);
             this.dataGridView1.TabIndex = 6;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // StartDate
             // 
@@ -155,6 +156,7 @@ namespace Group4
             this.Rating.HeaderText = "Rating";
             this.Rating.MinimumWidth = 6;
             this.Rating.Name = "Rating";
+            this.Rating.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.Rating.Width = 125;
             // 
             // label3
@@ -167,6 +169,7 @@ namespace Group4
             this.label3.Size = new System.Drawing.Size(177, 29);
             this.label3.TabIndex = 7;
             this.label3.Text = "Borrow History ";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // StName
             // 
@@ -273,11 +276,6 @@ namespace Group4
         private System.Windows.Forms.Button endBorrow1;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn StartDate;
-        private System.Windows.Forms.DataGridViewTextBoxColumn EndDate;
-        private System.Windows.Forms.DataGridViewTextBoxColumn StudentName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn StudentID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Rating;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox StName;
         private System.Windows.Forms.TextBox StID;
@@ -286,5 +284,10 @@ namespace Group4
         private System.Windows.Forms.MenuStrip copyCrudMenu;
         private System.Windows.Forms.ToolStripMenuItem MenuHomePage;
         private System.Windows.Forms.ToolStripMenuItem MenuManageBooks;
+        private System.Windows.Forms.DataGridViewTextBoxColumn StartDate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn EndDate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn StudentName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn StudentID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Rating;
     }
 }

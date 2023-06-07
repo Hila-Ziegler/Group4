@@ -31,7 +31,7 @@ namespace Group4
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            StudentBorrow formStudentBorrow = new StudentBorrow(st);
+            StudentBorrowActinos formStudentBorrow = new StudentBorrowActinos(st);
             formStudentBorrow.Show();
             this.Hide();
         }
@@ -43,5 +43,9 @@ namespace Group4
             this.Hide();
         }
 
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

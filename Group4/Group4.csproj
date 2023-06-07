@@ -33,6 +33,30 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Syncfusion.Grid.Base, Version=21.2460.9.0, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+      <HintPath>..\packages\Syncfusion.Grid.Base.21.2.9\lib\net46\Syncfusion.Grid.Base.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.Grid.Windows, Version=21.2460.9.0, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+      <HintPath>..\packages\Syncfusion.Grid.Windows.21.2.9\lib\net46\Syncfusion.Grid.Windows.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.Licensing, Version=21.2460.9.0, Culture=neutral, PublicKeyToken=632609b4d040f6b4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Syncfusion.Licensing.21.2.9\lib\net46\Syncfusion.Licensing.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.Shared.Base, Version=21.2460.9.0, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+      <HintPath>..\packages\Syncfusion.Shared.Base.21.2.9\lib\net46\Syncfusion.Shared.Base.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.Shared.Windows, Version=21.2460.9.0, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+      <HintPath>..\packages\Syncfusion.Shared.Windows.21.2.9\lib\net46\Syncfusion.Shared.Windows.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.SpellChecker.Base, Version=21.2460.9.0, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+      <HintPath>..\packages\Syncfusion.SpellChecker.Base.21.2.9\lib\net46\Syncfusion.SpellChecker.Base.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.Tools.Base, Version=21.2460.9.0, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+      <HintPath>..\packages\Syncfusion.Tools.Base.21.2.9\lib\net46\Syncfusion.Tools.Base.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.Tools.Windows, Version=21.2460.9.0, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+      <HintPath>..\packages\Syncfusion.Tools.Windows.21.2.9\lib\net46\Syncfusion.Tools.Windows.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -100,6 +124,12 @@
     <Compile Include="EventCrud.Designer.cs">
       <DependentUpon>EventCrud.cs</DependentUpon>
     </Compile>
+    <Compile Include="IncorrectInformation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IncorrectInformation.Designer.cs">
+      <DependentUpon>IncorrectInformation.cs</DependentUpon>
+    </Compile>
     <Compile Include="LibrarianCrud.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -130,17 +160,23 @@
     <Compile Include="SQL_CON.cs" />
     <Compile Include="Status.cs" />
     <Compile Include="Student.cs" />
+    <Compile Include="studentAllMessagescs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="studentAllMessagescs.Designer.cs">
+      <DependentUpon>studentAllMessagescs.cs</DependentUpon>
+    </Compile>
     <Compile Include="StudentBookHistory.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="StudentBookHistory.Designer.cs">
       <DependentUpon>StudentBookHistory.cs</DependentUpon>
     </Compile>
-    <Compile Include="StudentBorrow.cs">
+    <Compile Include="StudentBorrowActinos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="StudentBorrow.Designer.cs">
-      <DependentUpon>StudentBorrow.cs</DependentUpon>
+    <Compile Include="StudentBorrowActinos.Designer.cs">
+      <DependentUpon>StudentBorrowActinos.cs</DependentUpon>
     </Compile>
     <Compile Include="StudentChooseAction.cs">
       <SubType>Form</SubType>
@@ -197,6 +233,9 @@
     <EmbeddedResource Include="EventCrud.resx">
       <DependentUpon>EventCrud.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="IncorrectInformation.resx">
+      <DependentUpon>IncorrectInformation.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="LibrarianCrud.resx">
       <DependentUpon>LibrarianCrud.cs</DependentUpon>
     </EmbeddedResource>
@@ -215,11 +254,14 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="studentAllMessagescs.resx">
+      <DependentUpon>studentAllMessagescs.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="StudentBookHistory.resx">
       <DependentUpon>StudentBookHistory.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="StudentBorrow.resx">
-      <DependentUpon>StudentBorrow.cs</DependentUpon>
+    <EmbeddedResource Include="StudentBorrowActinos.resx">
+      <DependentUpon>StudentBorrowActinos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="StudentChooseAction.resx">
       <DependentUpon>StudentChooseAction.cs</DependentUpon>
@@ -236,6 +278,7 @@
     <EmbeddedResource Include="userEntrancecs.resx">
       <DependentUpon>userEntrancecs.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

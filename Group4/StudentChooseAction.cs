@@ -44,5 +44,11 @@ namespace Group4
             tlxWalcome.Text = $"Welcome {st}";
 ;        }
 
+        private void btnMessages_Click(object sender, EventArgs e)
+        {
+            studentAllMessagescs  formstudentAllMessagescs = new studentAllMessagescs(st);
+            formstudentAllMessagescs.Show();
+            this.Hide();
+        }
     }
 }
