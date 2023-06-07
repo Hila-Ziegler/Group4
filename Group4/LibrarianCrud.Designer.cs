@@ -30,15 +30,13 @@ namespace Group4
         private void InitializeComponent()
         {
             this.BringBackFromArchieve = new System.Windows.Forms.Button();
-            this.ISBNUpdateScreen = new System.Windows.Forms.Label();
-            this.updateScreenratinglbl = new System.Windows.Forms.Label();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.NameTextBox = new System.Windows.Forms.TextBox();
             this.Namelbl = new System.Windows.Forms.Label();
             this.Createbtn = new System.Windows.Forms.Button();
             this.PasswordTextBox = new System.Windows.Forms.TextBox();
             this.IDTextBox = new System.Windows.Forms.TextBox();
-            this.lb_ISBN_value = new System.Windows.Forms.Label();
+            this.lb_ID_value = new System.Windows.Forms.Label();
             this.IDlbl = new System.Windows.Forms.Label();
             this.Passwordlbl = new System.Windows.Forms.Label();
             this.DeleteBTN = new System.Windows.Forms.Button();
@@ -54,22 +52,7 @@ namespace Group4
             this.BringBackFromArchieve.TabIndex = 56;
             this.BringBackFromArchieve.Text = "Return From Archieve";
             this.BringBackFromArchieve.UseVisualStyleBackColor = true;
-            // 
-            // ISBNUpdateScreen
-            // 
-            this.ISBNUpdateScreen.AutoSize = true;
-            this.ISBNUpdateScreen.Location = new System.Drawing.Point(261, 92);
-            this.ISBNUpdateScreen.Name = "ISBNUpdateScreen";
-            this.ISBNUpdateScreen.Size = new System.Drawing.Size(0, 17);
-            this.ISBNUpdateScreen.TabIndex = 55;
-            // 
-            // updateScreenratinglbl
-            // 
-            this.updateScreenratinglbl.AutoSize = true;
-            this.updateScreenratinglbl.Location = new System.Drawing.Point(261, 159);
-            this.updateScreenratinglbl.Name = "updateScreenratinglbl";
-            this.updateScreenratinglbl.Size = new System.Drawing.Size(0, 17);
-            this.updateScreenratinglbl.TabIndex = 54;
+            this.BringBackFromArchieve.Click += new System.EventHandler(this.BringBackFromArchieve_Click);
             // 
             // btnUpdate
             // 
@@ -79,6 +62,7 @@ namespace Group4
             this.btnUpdate.TabIndex = 53;
             this.btnUpdate.Text = "Update ";
             this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // NameTextBox
             // 
@@ -105,6 +89,7 @@ namespace Group4
             this.Createbtn.TabIndex = 50;
             this.Createbtn.Text = "Create";
             this.Createbtn.UseVisualStyleBackColor = true;
+            this.Createbtn.Click += new System.EventHandler(this.Createbtn_Click);
             // 
             // PasswordTextBox
             // 
@@ -120,14 +105,14 @@ namespace Group4
             this.IDTextBox.Size = new System.Drawing.Size(128, 22);
             this.IDTextBox.TabIndex = 46;
             // 
-            // lb_ISBN_value
+            // lb_ID_value
             // 
-            this.lb_ISBN_value.AutoSize = true;
-            this.lb_ISBN_value.Location = new System.Drawing.Point(273, 125);
-            this.lb_ISBN_value.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lb_ISBN_value.Name = "lb_ISBN_value";
-            this.lb_ISBN_value.Size = new System.Drawing.Size(0, 17);
-            this.lb_ISBN_value.TabIndex = 45;
+            this.lb_ID_value.AutoSize = true;
+            this.lb_ID_value.Location = new System.Drawing.Point(338, 127);
+            this.lb_ID_value.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lb_ID_value.Name = "lb_ID_value";
+            this.lb_ID_value.Size = new System.Drawing.Size(0, 17);
+            this.lb_ID_value.TabIndex = 45;
             // 
             // IDlbl
             // 
@@ -158,6 +143,7 @@ namespace Group4
             this.DeleteBTN.TabIndex = 35;
             this.DeleteBTN.Text = "Delete";
             this.DeleteBTN.UseVisualStyleBackColor = true;
+            this.DeleteBTN.Click += new System.EventHandler(this.DeleteBTN_Click);
             // 
             // UpdateBTN
             // 
@@ -168,6 +154,7 @@ namespace Group4
             this.UpdateBTN.TabIndex = 34;
             this.UpdateBTN.Text = "Update";
             this.UpdateBTN.UseVisualStyleBackColor = true;
+            this.UpdateBTN.Click += new System.EventHandler(this.UpdateBTN_Click);
             // 
             // NameTitle
             // 
@@ -186,15 +173,13 @@ namespace Group4
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.BringBackFromArchieve);
-            this.Controls.Add(this.ISBNUpdateScreen);
-            this.Controls.Add(this.updateScreenratinglbl);
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.NameTextBox);
             this.Controls.Add(this.Namelbl);
             this.Controls.Add(this.Createbtn);
             this.Controls.Add(this.PasswordTextBox);
             this.Controls.Add(this.IDTextBox);
-            this.Controls.Add(this.lb_ISBN_value);
+            this.Controls.Add(this.lb_ID_value);
             this.Controls.Add(this.IDlbl);
             this.Controls.Add(this.Passwordlbl);
             this.Controls.Add(this.DeleteBTN);
@@ -211,15 +196,13 @@ namespace Group4
         #endregion
 
         private System.Windows.Forms.Button BringBackFromArchieve;
-        private System.Windows.Forms.Label ISBNUpdateScreen;
-        private System.Windows.Forms.Label updateScreenratinglbl;
         private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.TextBox NameTextBox;
         private System.Windows.Forms.Label Namelbl;
         private System.Windows.Forms.Button Createbtn;
         private System.Windows.Forms.TextBox PasswordTextBox;
         private System.Windows.Forms.TextBox IDTextBox;
-        private System.Windows.Forms.Label lb_ISBN_value;
+        private System.Windows.Forms.Label lb_ID_value;
         private System.Windows.Forms.Label IDlbl;
         private System.Windows.Forms.Label Passwordlbl;
         private System.Windows.Forms.Button DeleteBTN;

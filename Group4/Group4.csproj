@@ -52,6 +52,12 @@
     <Compile Include="AdminActions.Designer.cs">
       <DependentUpon>AdminActions.cs</DependentUpon>
     </Compile>
+    <Compile Include="AdminConfirmDelete.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminConfirmDelete.Designer.cs">
+      <DependentUpon>AdminConfirmDelete.cs</DependentUpon>
+    </Compile>
     <Compile Include="AdminGridView.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -169,6 +175,9 @@
     </Compile>
     <EmbeddedResource Include="AdminActions.resx">
       <DependentUpon>AdminActions.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminConfirmDelete.resx">
+      <DependentUpon>AdminConfirmDelete.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AdminGridView.resx">
       <DependentUpon>AdminGridView.cs</DependentUpon>
