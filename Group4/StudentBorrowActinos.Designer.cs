@@ -29,8 +29,6 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.Button RequestTimeExtention;
-            Syncfusion.Windows.Forms.Tools.CustomImageCollection customImageCollection1 = new Syncfusion.Windows.Forms.Tools.CustomImageCollection();
-            Syncfusion.Windows.Forms.Tools.ResetButton resetButton1 = new Syncfusion.Windows.Forms.Tools.ResetButton();
             this.BookCrudTitle = new System.Windows.Forms.Label();
             this.Titlelbl = new System.Windows.Forms.Label();
             this.lb_ISBN_value = new System.Windows.Forms.Label();
@@ -48,7 +46,6 @@
             this.homeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.bookHistoryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label2 = new System.Windows.Forms.Label();
-            this.RatingStars = new Syncfusion.Windows.Forms.Tools.RatingControl();
             RequestTimeExtention = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -197,21 +194,21 @@
             this.bookHistoryToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(800, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(800, 30);
             this.menuStrip1.TabIndex = 43;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // homeToolStripMenuItem
             // 
             this.homeToolStripMenuItem.Name = "homeToolStripMenuItem";
-            this.homeToolStripMenuItem.Size = new System.Drawing.Size(100, 24);
+            this.homeToolStripMenuItem.Size = new System.Drawing.Size(100, 26);
             this.homeToolStripMenuItem.Text = "Home Page";
             this.homeToolStripMenuItem.Click += new System.EventHandler(this.homeToolStripMenuItem_Click);
             // 
             // bookHistoryToolStripMenuItem
             // 
             this.bookHistoryToolStripMenuItem.Name = "bookHistoryToolStripMenuItem";
-            this.bookHistoryToolStripMenuItem.Size = new System.Drawing.Size(108, 24);
+            this.bookHistoryToolStripMenuItem.Size = new System.Drawing.Size(108, 26);
             this.bookHistoryToolStripMenuItem.Text = "Book History";
             this.bookHistoryToolStripMenuItem.Click += new System.EventHandler(this.bookHistoryToolStripMenuItem_Click);
             // 
@@ -226,23 +223,11 @@
             this.label2.TabIndex = 44;
             this.label2.Text = "The library is a brand, when you\'ve got a card in your hand";
             // 
-            // RatingStars
-            // 
-            this.RatingStars.Images = customImageCollection1;
-            this.RatingStars.Location = new System.Drawing.Point(277, 249);
-            this.RatingStars.Name = "RatingStars";
-            this.RatingStars.ResetButton = resetButton1;
-            this.RatingStars.Size = new System.Drawing.Size(181, 33);
-            this.RatingStars.TabIndex = 45;
-            this.RatingStars.Text = "RatingStars";
-            this.RatingStars.Click += new System.EventHandler(this.ratingControl1_Click);
-            // 
             // StudentBorrowActinos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.RatingStars);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.SuggestAlternativeBook);
             this.Controls.Add(RequestTimeExtention);
@@ -289,6 +274,5 @@
         private System.Windows.Forms.ToolStripMenuItem homeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem bookHistoryToolStripMenuItem;
         private System.Windows.Forms.Label label2;
-        private Syncfusion.Windows.Forms.Tools.RatingControl RatingStars;
     }
 }
