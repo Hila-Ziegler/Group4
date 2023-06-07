@@ -4,7 +4,7 @@ namespace Group4
 {
     public enum Language
     {
-        Hebrew,
-        English
+        Hebrew = 1,
+        English = 2
     }
 }
