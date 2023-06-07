@@ -308,7 +308,6 @@ namespace Group4
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             initLists();
-            Console.WriteLine("lists made successfully");
             Application.Run(new userEntrancecs());
 
         }
