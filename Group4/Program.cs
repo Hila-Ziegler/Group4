@@ -50,6 +50,16 @@ namespace Group4
             return null;
         }
 
+        public static Request SeekRequest(DateTime DT, Librarian l, Student s)
+        {
+            foreach (Request r in requests)
+            {
+                if (r.get_startDT() == DT && r.get_Librarian().get_ID() == l.get_ID() && r.get_Student().get_ID() == s.get_ID())
+                    return r;
+            }
+            return null;
+        }
+
         public static Teacher seekTeacher(string id)
         {
             foreach (Teacher t in teachers)
