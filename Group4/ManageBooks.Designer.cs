@@ -42,6 +42,7 @@ namespace Group4
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.ManageBooksHomePagemenu = new System.Windows.Forms.ToolStripMenuItem();
             this.BookManagmentGoToArchieve = new System.Windows.Forms.Button();
+            this.btnShowActiveBooks = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -171,11 +172,22 @@ namespace Group4
             this.BookManagmentGoToArchieve.UseVisualStyleBackColor = true;
             this.BookManagmentGoToArchieve.Click += new System.EventHandler(this.BookManagmentGoToArchieve_Click);
             // 
+            // btnShowActiveBooks
+            // 
+            this.btnShowActiveBooks.Location = new System.Drawing.Point(556, 101);
+            this.btnShowActiveBooks.Name = "btnShowActiveBooks";
+            this.btnShowActiveBooks.Size = new System.Drawing.Size(184, 23);
+            this.btnShowActiveBooks.TabIndex = 7;
+            this.btnShowActiveBooks.Text = "Show active books";
+            this.btnShowActiveBooks.UseVisualStyleBackColor = true;
+            this.btnShowActiveBooks.Click += new System.EventHandler(this.btnShowActiveBooks_Click);
+            // 
             // ManageBooks
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1389, 772);
+            this.Controls.Add(this.btnShowActiveBooks);
             this.Controls.Add(this.BookManagmentGoToArchieve);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.AddNewBook);
@@ -210,5 +222,6 @@ namespace Group4
         private System.Windows.Forms.DataGridViewTextBoxColumn Copies;
         private System.Windows.Forms.DataGridViewTextBoxColumn PublishYear;
         private System.Windows.Forms.Button BookManagmentGoToArchieve;
+        private System.Windows.Forms.Button btnShowActiveBooks;
     }
 }
