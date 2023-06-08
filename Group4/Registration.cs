@@ -15,7 +15,7 @@ namespace Group4
         private string oldDate;
 
 
-        public Registration(Student Student, DateTime eventDate, string guestName, bool showedUp, string review, int rating, bool is_new)
+        public Registration(Student Student, DateTime eventDate, string guestName, bool showedUp, string review, int rating, string oldDate ,bool is_new)
         {
             this.Student = Student;
             this.EventDate = eventDate;
@@ -23,6 +23,7 @@ namespace Group4
             this.ShowedUp = showedUp;
             this.Review = review;
             this.Rating = rating;
+            this.oldDate = oldDate;
 
             if (is_new)
             {
