@@ -13,7 +13,7 @@ namespace Group4
     public partial class StudentChooseAction : Form
     {
 
-        String st = "";
+       // String st = "";
         Student student = null;
 
         public StudentChooseAction(Student stud)
@@ -27,14 +27,14 @@ namespace Group4
 
         private void btnBooks_Click(object sender, EventArgs e)
         {
-            StudentBookHistory formStudentBookHistory = new StudentBookHistory(st);
+            StudentBookHistory formStudentBookHistory = new StudentBookHistory(student);
             formStudentBookHistory.Show();
             this.Hide();
         }
 
         private void btnEvent_Click(object sender, EventArgs e)
         {
-            AvailableEvent formAvailableEvent = new AvailableEvent(st,student);
+            AvailableEvent formAvailableEvent = new AvailableEvent(student);
             formAvailableEvent.Show();
             this.Hide();
 
@@ -48,8 +48,15 @@ namespace Group4
 
         private void btnMessages_Click(object sender, EventArgs e)
         {
-            studentAllMessagescs  formstudentAllMessagescs = new studentAllMessagescs(st);
+            studentAllMessagescs  formstudentAllMessagescs = new studentAllMessagescs(student);
             formstudentAllMessagescs.Show();
+            this.Hide();
+        }
+
+        private void readingGoalsbtn_Click(object sender, EventArgs e)
+        {
+            ReadingGoals form30 = new ReadingGoals(this.student);
+            form30.Show();
             this.Hide();
         }
     }

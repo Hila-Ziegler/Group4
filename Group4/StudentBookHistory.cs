@@ -12,14 +12,16 @@ namespace Group4
 {
     public partial class StudentBookHistory : Form
     {
-        string st = "";
+        //string st = "";
+        Student student;
         public System.Collections.Generic.List<BookHistory> History = null;
 
-        public StudentBookHistory(string s)
+        public StudentBookHistory(Student stud)
         {
             System.Collections.Generic.List<BookHistory> AllBookHistory = Program.bookHistories;
-            this.st = s;
-            this.History = this.filterStudentBookHistory(AllBookHistory, st);
+            //  this.st = s;
+             student = stud;
+            this.History = this.filterStudentBookHistory(AllBookHistory);
             InitializeComponent();
         }
         public StudentBookHistory()
@@ -27,12 +29,12 @@ namespace Group4
             InitializeComponent();
         }
 
-        private System.Collections.Generic.List<BookHistory> filterStudentBookHistory(System.Collections.Generic.List<BookHistory> li, String sn)
+        private System.Collections.Generic.List<BookHistory> filterStudentBookHistory(System.Collections.Generic.List<BookHistory> li)
         {
             System.Collections.Generic.List<BookHistory> ans = new System.Collections.Generic.List<BookHistory>();
             foreach (BookHistory bh in li)
             {
-                if (bh.get_student().get_name() == sn)
+                if (bh.get_student().get_ID() == student.get_ID())
                 {
                     ans.Add(bh);
                 }
@@ -83,7 +85,7 @@ namespace Group4
                int i = e.RowIndex;
                string sn = dataGridView1.Rows[i].Cells[1].Value.ToString();
                Book b = Program.seekBook(sn);
-               StudentBorrowActinos formStudentBorrow = new StudentBorrowActinos(st,b);
+               StudentBorrowActinos formStudentBorrow = new StudentBorrowActinos(b, student);
                formStudentBorrow.Show();
                this.Hide();
             }
@@ -92,7 +94,7 @@ namespace Group4
 
         private void homePageToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            StudentChooseAction formStudentChooseAction = new StudentChooseAction(st);
+            StudentChooseAction formStudentChooseAction = new StudentChooseAction(student);
             formStudentChooseAction.Show();
             this.Hide();
         }

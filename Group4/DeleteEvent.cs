@@ -10,31 +10,30 @@ using System.Windows.Forms;
 
 namespace Group4
 {
-    public partial class LibrarianChooseAction : Form
+    public partial class DeleteEvent : Form
     {
-        Librarian l = null;
-        public LibrarianChooseAction(Librarian l)
+        EventCrud ec;
+        Event e;
+        Teacher t;
+        public DeleteEvent(EventCrud ec, Teacher t)
         {
-            this.l = l;
+            this.ec = ec;
+            this.e = this.ec.getEvent();
+            this.t = t;
             InitializeComponent();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            ManageBooks form3 = new ManageBooks(l);
-            form3.Show();
+            this.e.delete_Event();
+            this.ec.Hide();
+            AvailableEvent ae = new AvailableEvent(t);
+            ae.Show();
             this.Hide();
-        }
-
-        private void Action_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            ManageRequests formManageRequests = new ManageRequests(l);
-            formManageRequests.Show();
             this.Hide();
         }
     }

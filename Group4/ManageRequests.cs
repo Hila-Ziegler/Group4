@@ -12,11 +12,11 @@ namespace Group4
 {
     public partial class ManageRequests : Form
     {
-        Librarian l = null;
+        Librarian librarian = null;
 
         public ManageRequests(Librarian l)
         {
-            this.l = l;
+            this.librarian = l;
             InitializeComponent();
         }
 
@@ -40,6 +40,13 @@ namespace Group4
         private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void homePageToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            LibrarianChooseAction formLibrarianChooseAction = new LibrarianChooseAction(librarian);
+            formLibrarianChooseAction.Show();
+            this.Hide();
         }
     }
 }

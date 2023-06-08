@@ -34,6 +34,7 @@
             this.tlxWalcome = new System.Windows.Forms.Label();
             this.Action = new System.Windows.Forms.Label();
             this.btnMessages = new System.Windows.Forms.Button();
+            this.readingGoalsbtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnBooks
@@ -43,7 +44,7 @@
             this.btnBooks.Name = "btnBooks";
             this.btnBooks.Size = new System.Drawing.Size(235, 57);
             this.btnBooks.TabIndex = 3;
-            this.btnBooks.Text = "BookHistory";
+            this.btnBooks.Text = "Book History";
             this.btnBooks.UseVisualStyleBackColor = true;
             this.btnBooks.Click += new System.EventHandler(this.btnBooks_Click);
             // 
@@ -54,7 +55,7 @@
             this.btnEvent.Name = "btnEvent";
             this.btnEvent.Size = new System.Drawing.Size(200, 57);
             this.btnEvent.TabIndex = 4;
-            this.btnEvent.Text = "Event";
+            this.btnEvent.Text = "Events";
             this.btnEvent.UseVisualStyleBackColor = true;
             this.btnEvent.Click += new System.EventHandler(this.btnEvent_Click);
             // 
@@ -102,11 +103,23 @@
             this.btnMessages.UseVisualStyleBackColor = true;
             this.btnMessages.Click += new System.EventHandler(this.btnMessages_Click);
             // 
+            // readingGoalsbtn
+            // 
+            this.readingGoalsbtn.Font = new System.Drawing.Font("Microsoft YaHei UI", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.readingGoalsbtn.Location = new System.Drawing.Point(630, 177);
+            this.readingGoalsbtn.Name = "readingGoalsbtn";
+            this.readingGoalsbtn.Size = new System.Drawing.Size(200, 83);
+            this.readingGoalsbtn.TabIndex = 9;
+            this.readingGoalsbtn.Text = "Reading Goals";
+            this.readingGoalsbtn.UseVisualStyleBackColor = true;
+            this.readingGoalsbtn.Click += new System.EventHandler(this.readingGoalsbtn_Click);
+            // 
             // StudentChooseAction
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(934, 450);
+            this.Controls.Add(this.readingGoalsbtn);
             this.Controls.Add(this.btnMessages);
             this.Controls.Add(this.Action);
             this.Controls.Add(this.tlxWalcome);
@@ -128,6 +141,6 @@
         private System.Windows.Forms.Label tlxWalcome;
         private System.Windows.Forms.Label Action;
         private System.Windows.Forms.Button btnMessages;
-
+        private System.Windows.Forms.Button readingGoalsbtn;
     }
 }

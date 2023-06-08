@@ -13,6 +13,7 @@ namespace Group4
     public partial class EventCrud : Form
     {
         string st = "";
+
         Student s = null;
         Teacher t = null;
         Event ev = null;
@@ -21,6 +22,7 @@ namespace Group4
             this.st = st;
             this.t = t;
             InitializeComponent();
+
         }
         public EventCrud(Student s, Event ev)
         {
@@ -48,6 +50,10 @@ namespace Group4
 
         private void setValuesFromEvent()
         {
+            if(ev == null)
+            {
+                return;
+            }
             lb_Date_value.Text = ev.get_date().ToString();
             lb_MaxAttendanceValue.Text = ev.get_maxGuests().ToString();
             if (ev.get_Status().ToString() == "Open")
@@ -61,15 +67,16 @@ namespace Group4
             lb_CurrentAttendanceValue.Text = ev.get_currentlyRegistered().ToString();
             GuestTypeValue.Text = ev.get_guestType().ToString();
             SpeakerName.Text = ev.get_guestName();
+            eventsPriceValuelbl.Text = ev.get_price().ToString();
         }
 
         private void setValuesForUpdate()
         {
-            EventDatePicker.Text = ev.get_date().ToString();
+            EventDatePicker.Value = ev.get_date();
             GuestNameTextBox.Text = ev.get_guestName();
             numericMaxAttendance.Minimum = ev.get_currentlyRegistered();
-            //numericMaxAttendance set value
-            if(ev.get_Status().ToString() == "Open")
+            numericMaxAttendance.Value = ev.get_maxGuests();
+            if (ev.get_Status().ToString() == "Open")
             {
                 OpenForRegistrationCheckBox.Checked = true;
             }
@@ -92,12 +99,27 @@ namespace Group4
                 GuestName.Hide();
                 GuestNameTextBox.Hide();
                 EventDatePicker.Hide();
+                GuestTypeComboBox.Hide();
+                numericMaxAttendance.Hide();
+                OpenForRegistrationCheckBox.Hide();
+                numericPrice.Hide();
+                EventPricelbl.Hide();
+                eventsPriceValuelbl.Hide();
+
+                if(this.ev.Registered.Contains(this.s) || this.ev.get_currentlyRegistered() >= this.ev.get_maxGuests())
+                {
+                    RegisterBTN.Hide();
+                }
 
                 this.setValuesFromEvent();
             }
             else if (t != null)
             {
                 RegisterBTN.Hide();
+                homePageToolStripMenuItem.Visible = false;
+
+
+                //homePageToolStripMenuItem hide homepage button
                 if (st == "update")
                 {
                     CreateNewEvent.Hide();
@@ -105,8 +127,19 @@ namespace Group4
                     DeleteEvent.Hide();
                     SpeakerName.Hide();
                     CurrentAtten.Hide();
+                    CreateNewEvent.Hide();
+
 
                     this.setValuesForUpdate();
+
+                }
+                else if(st == "new")
+                {
+                    updateEventbtn.Hide();
+                    SpeakerName.Hide();
+                    RegisterBTN.Hide();
+                    UpdateEvent.Hide();
+                    DeleteEvent.Hide();
 
                 }
                 else
@@ -115,6 +148,11 @@ namespace Group4
                     GuestName.Hide();
                     GuestNameTextBox.Hide();
                     EventDatePicker.Hide();
+                    GuestTypeComboBox.Hide();
+                    numericMaxAttendance.Hide();
+                    OpenForRegistrationCheckBox.Hide();
+                    numericPrice.Hide();
+                    CreateNewEvent.Hide();
 
                     this.setValuesFromEvent();
                 }
@@ -137,16 +175,93 @@ namespace Group4
 
         private void homePageToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            StudentChooseAction formStudentChooseAction = new StudentChooseAction(st);
+            if (s != null)
+            {
+            StudentChooseAction formStudentChooseAction = new StudentChooseAction(s);
             formStudentChooseAction.Show();
             this.Hide();
+            }
+/*            else if (t != null) מה לעשות עם המורה האם להכין מסך ראשי שיוביל לאירועים או ש
+            {
+                StudentChooseAction formStudentChooseAction = new StudentChooseAction(t);
+                formStudentChooseAction.Show();
+                this.Hide();
+            }*/
+
         }
 
         private void backToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            AvailableEvent formAvailableEvent = new AvailableEvent(st);
+            if (t != null)
+            {
+            AvailableEvent formAvailableEvent = new AvailableEvent(t);
             formAvailableEvent.Show();
             this.Hide();
+            }
+            else if (s != null)
+            {
+                AvailableEvent formAvailableEvent = new AvailableEvent(s);
+                formAvailableEvent.Show();
+                this.Hide();
+            }
+
+        }
+
+        private void CreateNewEvent_Click(object sender, EventArgs e)
+        {
+            GuestType gt = (GuestType)Enum.Parse(typeof(GuestType),GuestTypeComboBox.Text);
+            DateTime dt = DateTime.Parse(EventDatePicker.Value.ToString());
+            Status st = OpenForRegistrationCheckBox.Checked ? (Status)Enum.Parse(typeof(Status),"Open"): (Status)Enum.Parse(typeof(Status), "Closed"); 
+            Event newE = new Event(gt, dt, float.Parse(numericPrice.Value.ToString()), GuestNameTextBox.Text, st, int.Parse(numericMaxAttendance.Value.ToString()), true);
+            t.addEvent(newE);
+            EventCrud form24 = new EventCrud("",this.t,newE);
+            form24.Show();
+            this.Hide();
+        }
+
+        private void DeleteEvent_Click(object sender, EventArgs e)
+        {
+            //testing
+            DeleteEvent form25 = new DeleteEvent(this,this.t);
+            form25.Show();
+
+        }
+
+        public Event getEvent()
+        {
+            return this.ev;
+        }
+
+        private void UpdateEvent_Click(object sender, EventArgs e)
+        {
+            EventCrud form24 = new EventCrud("update", this.t, this.ev);
+            form24.Show();
+            this.Hide();
+        }
+
+        private void updateEventbtn_Click(object sender, EventArgs e)
+        {
+            this.ev.set_guestName(GuestNameTextBox.Text);
+            this.ev.set_date(DateTime.Parse(EventDatePicker.Value.ToString()));
+            this.ev.set_guestType((GuestType)Enum.Parse(typeof(GuestType), GuestTypeComboBox.Text));
+            this.ev.set_maxGuests(int.Parse(numericMaxAttendance.Value.ToString()));
+            this.ev.set_price(float.Parse(numericPrice.Value.ToString()));
+            this.ev.set_Status(OpenForRegistrationCheckBox.Checked ? (Status)Enum.Parse(typeof(Status), "Open") : (Status)Enum.Parse(typeof(Status), "Closed"));
+            this.ev.update_Event();
+
+            EventCrud form24 = new EventCrud("", this.t, this.ev);
+            form24.Show();
+            this.Hide();
+        }
+
+        private void RegisterBTN_Click(object sender, EventArgs e)
+        {
+            this.ev.set_currentlyRegistered(this.ev.get_currentlyRegistered() + 1);
+            this.ev.Registered.Add(this.s);
+            EventCrud form24 = new EventCrud(this.s, this.ev);
+            form24.Show();
+            this.Hide();
+
         }
     }
 }
