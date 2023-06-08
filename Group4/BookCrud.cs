@@ -113,6 +113,19 @@ namespace Group4
             dataGridView1.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
         }
 
+        private void Load_Enum()
+        {
+            List<KeyValuePair<string, string>> lstLng = new List<KeyValuePair<string, string>>();
+            Array Languages = Enum.GetValues(typeof(Language));
+            foreach (Language Language in Languages)
+            {
+                lstLng.Add(new KeyValuePair<string, string>(Language.ToString(), ((int)Language).ToString()));
+            }
+            LngCombo.DataSource = lstLng;
+            LngCombo.DisplayMember = "Key";
+            LngCombo.ValueMember = "Value";
+        }
+
         private void BookCrud_Load(object sender, EventArgs e)
         {
 
@@ -122,11 +135,11 @@ namespace Group4
                 ISBNTextBox.Hide();
                 AuthorTextBox.Hide();
                 PublishYearTextBox.Hide();
-                languageTextBox.Hide();
                 CreateNewBook.Hide();
                 Titlelbl.Hide();
                 TitleTextBox.Hide();
                 btnUpdateBook.Hide();
+                LngCombo.Hide();
 
                 this.b = Program.seekBook(sn);
                 lb_ISBN_value.Text = sn;
@@ -146,6 +159,7 @@ namespace Group4
             }
             else if (sn == "update")
             {
+                Load_Enum();
                 BringBackFromArchieve.Hide();
                 Titlelbl.Hide();
                 ISBNTextBox.Hide();
@@ -161,11 +175,11 @@ namespace Group4
                 BookCrudTitle.Text = b.get_title();
                 AuthorTextBox.Text = b.get_author();
                 PublishYearTextBox.Text = b.get_PYear().ToString();
-                languageTextBox.Text = b.get_lang().ToString();
+                LngCombo.Text = b.get_lang().ToString();
                 updateScreenratinglbl.Text = b.get_rating().ToString();
                 ISBNUpdateScreen.Text = b.get_sNumber();
-
-            }
+                
+        }
             else
             {
                 BringBackFromArchieve.Hide();
@@ -176,6 +190,7 @@ namespace Group4
                 BookCrudTitle.Hide();
                 Ratinglbl.Hide();
                 btnUpdateBook.Hide();
+                Load_Enum();
             }
 
 
@@ -246,7 +261,7 @@ namespace Group4
         {
             if (this.checkIfValid())
             {
-                Language l = (Language)Enum.Parse(typeof(Language), languageTextBox.Text);
+                Language l = (Language)Enum.Parse(typeof(Language), LngCombo.Text);
                 Book b = new Book(ISBNTextBox.Text, TitleTextBox.Text, AuthorTextBox.Text, int.Parse(PublishYearTextBox.Text), l, 0, false, true);
                 Copy c = new Copy(1, b, false, true);
                 b.Copies.Add(c);
@@ -260,7 +275,7 @@ namespace Group4
         private bool checkIfValid()
         {
             BookCrudErrorWindow bc;
-            if (ISBNTextBox.Text == "" || PublishYearTextBox.Text == "" || languageTextBox.Text == "" || TitleTextBox.Text == "" || AuthorTextBox.Text == "")
+            if (ISBNTextBox.Text == "" || PublishYearTextBox.Text == "" || TitleTextBox.Text == "" || AuthorTextBox.Text == "")
             {
                 String s = $"Not all required information entered, \nPlease try again";
                 bc = new BookCrudErrorWindow(s, this);
@@ -285,24 +300,25 @@ namespace Group4
                 bc.Show();
                 return false;
             }
-            string ans = languageTextBox.Text.Substring(0, 1).ToUpper() + languageTextBox.Text.Substring(1).ToLower();
-            languageTextBox.Text = ans;
-            string langOptions = "";
-            foreach (Language lang in Enum.GetValues(typeof(Language)))
-            {
-                langOptions = langOptions + lang.ToString() + ", ";
-                if (ans == lang.ToString())
-                {
-                    return true;
-                }
-            
-            }
-            langOptions = langOptions.Substring(0, langOptions.Length - 2) + ".";
-            //Error Window
-            String st = $"Unavailable language, \nPlease try again,\nAvailable langueges: {langOptions}";
-            bc = new BookCrudErrorWindow(st,this);
-            bc.Show();
-            return false;
+            /*            string ans = languageTextBox.Text.Substring(0, 1).ToUpper() + languageTextBox.Text.Substring(1).ToLower();
+                        languageTextBox.Text = ans;
+                        string langOptions = "";
+                        foreach (Language lang in Enum.GetValues(typeof(Language)))
+                        {
+                            langOptions = langOptions + lang.ToString() + ", ";
+                            if (ans == lang.ToString())
+                            {
+                                return true;
+                            }
+
+                        }
+                        langOptions = langOptions.Substring(0, langOptions.Length - 2) + ".";
+                        //Error Window
+                        String st = $"Unavailable language, \nPlease try again,\nAvailable langueges: {langOptions}";
+                        bc = new BookCrudErrorWindow(st,this);
+                        bc.Show();
+                        return false;*/
+            return true;
         }
 
         private void BookCrudUpdateBTN_Click(object sender, EventArgs e)
@@ -316,7 +332,7 @@ namespace Group4
         {
             this.b.set_author(AuthorTextBox.Text);
             this.b.set_PYear(int.Parse(PublishYearTextBox.Text));
-            this.b.set_lang((Language)Enum.Parse(typeof (Language), languageTextBox.Text));
+            this.b.set_lang((Language)Enum.Parse(typeof (Language), LngCombo.Text));
             this.b.update_Book();
             BookCrud updated = new BookCrud(b.get_sNumber());
             updated.Show();
@@ -342,6 +358,21 @@ namespace Group4
             this.Hide();
             ManageBooks form16 = new ManageBooks();
             form16.Show();
+
+        }
+
+        private void languageTextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //Language v = (Language)this.LngCombo.SelectedValue;
+        }
+
+        private void dataGridView1_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        {
 
         }
     }

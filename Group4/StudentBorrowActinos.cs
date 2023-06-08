@@ -13,12 +13,13 @@ namespace Group4
     public partial class StudentBorrowActinos : Form
     {
         String st = "";
-        Book b = null; //change
+        Book bo = null; //change
    
-        public StudentBorrowActinos(string st)
-        {
-            InitializeComponent();
+        public StudentBorrowActinos(string st, Book b)
+        {           
             this.st = st;
+            this.bo = b;
+            InitializeComponent();
         }
 
 
@@ -31,7 +32,7 @@ namespace Group4
 
         private void StudentBorrow_Load(object sender, EventArgs e)
         {
-
+            BookCrudTitle.Text = bo.get_title().ToString();
         }
 
         private void bookHistoryToolStripMenuItem_Click(object sender, EventArgs e)

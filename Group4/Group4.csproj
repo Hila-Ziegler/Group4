@@ -52,6 +52,12 @@
     <Compile Include="AdminActions.Designer.cs">
       <DependentUpon>AdminActions.cs</DependentUpon>
     </Compile>
+    <Compile Include="AdminConfirmDelete.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminConfirmDelete.Designer.cs">
+      <DependentUpon>AdminConfirmDelete.cs</DependentUpon>
+    </Compile>
     <Compile Include="AdminGridView.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -87,12 +93,19 @@
     <Compile Include="CopyCrud.Designer.cs">
       <DependentUpon>CopyCrud.cs</DependentUpon>
     </Compile>
+    <Compile Include="EnumHelper.cs" />
     <Compile Include="Event.cs" />
     <Compile Include="EventCrud.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="EventCrud.Designer.cs">
       <DependentUpon>EventCrud.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IncorrectInformation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IncorrectInformation.Designer.cs">
+      <DependentUpon>IncorrectInformation.cs</DependentUpon>
     </Compile>
     <Compile Include="LibrarianCrud.cs">
       <SubType>Form</SubType>
@@ -124,6 +137,12 @@
     <Compile Include="SQL_CON.cs" />
     <Compile Include="Status.cs" />
     <Compile Include="Student.cs" />
+    <Compile Include="studentAllMessagescs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="studentAllMessagescs.Designer.cs">
+      <DependentUpon>studentAllMessagescs.cs</DependentUpon>
+    </Compile>
     <Compile Include="StudentBookHistory.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -170,6 +189,9 @@
     <EmbeddedResource Include="AdminActions.resx">
       <DependentUpon>AdminActions.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AdminConfirmDelete.resx">
+      <DependentUpon>AdminConfirmDelete.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AdminGridView.resx">
       <DependentUpon>AdminGridView.cs</DependentUpon>
     </EmbeddedResource>
@@ -187,6 +209,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="EventCrud.resx">
       <DependentUpon>EventCrud.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IncorrectInformation.resx">
+      <DependentUpon>IncorrectInformation.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LibrarianCrud.resx">
       <DependentUpon>LibrarianCrud.cs</DependentUpon>
@@ -206,6 +231,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="studentAllMessagescs.resx">
+      <DependentUpon>studentAllMessagescs.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="StudentBookHistory.resx">
       <DependentUpon>StudentBookHistory.cs</DependentUpon>
     </EmbeddedResource>

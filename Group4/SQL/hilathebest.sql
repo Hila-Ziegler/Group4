@@ -135,7 +135,7 @@ Update dbo.BookHistory
 SET
 startDate=@startDate, endDate=@endDate, rate=@rate
 WHERE copyNumber=@copyNumber AND serialNumber=@serialNumber AND id=@id
-
+--DROP PROCEDURE dbo.SP_Update_Event
 CREATE PROCEDURE dbo.SP_Update_Event @guestType	VARCHAR(50),@date DATETIME,	@price	DECIMAL,@guestSpeakerName VARCHAR(50),@maxGuests INTEGER,@currentlyRegistered INTEGER
 AS
 Update dbo.Events

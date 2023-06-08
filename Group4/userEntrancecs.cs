@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace Group4
 {
@@ -14,6 +15,8 @@ namespace Group4
     {
         private string adminUser = "Admin";
         private string adminPass = "admin";
+        private int entered = 0;
+
         public userEntrancecs()
         {
             InitializeComponent();
@@ -26,11 +29,12 @@ namespace Group4
 
         private void btnEnter_Click(object sender, EventArgs e)
         {
-            if(txtUserName.Text !=  null || txtPassword.Text != null)
+            if(txtUserName.Text !=  "" && txtPassword.Text != "")
             {
                 if(txtUserName.Text == this.adminUser && txtPassword.Text == this.adminPass)
                 {
                     //מסך אדמין
+                    entered++;
                     AdminActions form20 = new AdminActions();
                     form20.Show();
                     this.Hide();
@@ -40,6 +44,7 @@ namespace Group4
                     if (txtUserName.Text == L.get_ID() && Hash.GetHash(txtPassword.Text) == L.get_password())
                     {
                         // show new form for librarians
+                        entered++;
                         LibrarianChooseAction form1 = new LibrarianChooseAction();
                         form1.Show();
                         this.Hide();
@@ -50,7 +55,7 @@ namespace Group4
                 {
                     if (txtUserName.Text == T.get_ID() && Hash.GetHash(txtPassword.Text) == T.get_password())
                     {
-
+                        entered++;
                         this.Hide();
 
                         
@@ -62,13 +67,25 @@ namespace Group4
                 {
                     if (txtUserName.Text == S.get_ID() && Hash.GetHash(txtPassword.Text) == S.get_password())
                     {
-
+                        entered++;
                         StudentChooseAction formStudentChooseAction = new StudentChooseAction(S.get_name());
                         formStudentChooseAction.Show();
                         this.Hide();
                     }
+                } // foreach Teacher end
+
+                //If you got this far, the user details are incorrect
+                if (entered == 0)
+                {
+                IncorrectInformation formIncorrectInformation = new IncorrectInformation("Username or password are incorrect");
+                formIncorrectInformation.Show();
                 }
-                // foreach Teacher end
+
+            }//if
+            else  //No details entered
+            {
+                IncorrectInformation formIncorrectInformation = new IncorrectInformation("No details entered");
+                formIncorrectInformation.Show();
             }
         }
 
