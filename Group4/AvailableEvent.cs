@@ -186,6 +186,8 @@ namespace Group4
         private void ShowPastEvents_Click(object sender, EventArgs e)
         {
             update_OldEventList();
+            btnFutureEvents.Show();
+            ShowPastEvents.Hide();
         }
         private void AvailableEvent_Load(object sender, EventArgs e)
         {            
@@ -194,12 +196,15 @@ namespace Group4
                 homePageToolStripMenuItem.Visible = false;
             }
             update_EventList();
+            btnFutureEvents.Hide();
 
         }
 
         private void btnFutureEvents_Click(object sender, EventArgs e)
         {
             update_EventList();
+            btnFutureEvents.Hide();
+            ShowPastEvents.Show();
         }
     }
 }
