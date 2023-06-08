@@ -33,6 +33,7 @@ namespace Group4
 
         private void StudentCrud_Load(object sender, EventArgs e)
         {
+            AgeComboBox.SelectedIndex=1;
             if (s == null && st != null)
             {
                 Passwordlbl.Hide();
@@ -43,7 +44,7 @@ namespace Group4
                 Namelbl.Hide();
                 NameTextBox.Hide();
                 IDTextBox.Hide();
-                YearlyGoalTextBox.Hide();
+                numericYearlyGoal.Hide();
                 ClubComboBox.Hide();
                 AgeComboBox.Hide();
                 if (st.get_archive())
@@ -69,7 +70,7 @@ namespace Group4
                 lb_ID_value.Text = st.get_ID();
                 NameTextBox.Text = st.get_name();
                 AgeComboBox.Text = st.get_age().ToString();
-                YearlyGoalTextBox.Text = st.get_yearlyGoal().ToString();
+                numericYearlyGoal.Text = st.get_yearlyGoal().ToString();
                 ClubComboBox.Text = st.get_club().ToString();
 
 
@@ -88,15 +89,12 @@ namespace Group4
 
         private void loadEnum()
         {
-            List<KeyValuePair<string, string>> Clublist = new List<KeyValuePair<string, string>>();
-            Array clubs = Enum.GetValues(typeof(Club));
-            foreach (Club club in clubs)
+            foreach (Club club in Enum.GetValues(typeof(Club)))
             {
-                Clublist.Add(new KeyValuePair<string, string>(club.ToString(), ((int)club).ToString()));
+                string description = EnumHelper.GetDescription(club);
+                ClubComboBox.Items.Add(description);
             }
-            ClubComboBox.DataSource = Clublist;
-            ClubComboBox.DisplayMember = "Key";
-            ClubComboBox.ValueMember = "Value";
+
         }
 
         private void BringBackFromArchieve_Click(object sender, EventArgs e)
@@ -127,7 +125,7 @@ namespace Group4
                 st.set_name(NameTextBox.Text);
                 st.set_age(int.Parse(AgeComboBox.Text));
                 st.set_club((Club)Enum.Parse(typeof(Club), ClubComboBox.Text));
-                st.set_yearlyGoal(int.Parse(YearlyGoalTextBox.Text));
+                st.set_yearlyGoal(int.Parse(numericYearlyGoal.Text));
                 st.update_Student();
                 StudentCrud form21 = new StudentCrud(this.st);
                 form21.Show();
@@ -139,27 +137,51 @@ namespace Group4
 
         private bool checkIfValid()
         {
-            if (YearlyGoalTextBox.Text != "" && NameTextBox.Text != "")
+            if (this.s == null && this.st == null)
+            {
+                if (PasswordTextBox.Text == "")
+                {
+                    string s = "Please enter a password for this user.";
+                    IncorrectInformation form23 = new IncorrectInformation(s);
+                    form23.Show();
+                    return false;
+                }
+            }
+                if (NameTextBox.Text != "")
             {
                 if (this.s!="update" && IDTextBox.Text != "")
                 {
                     if (IDTextBox.Text.Any(x => !char.IsDigit(x)))
                     {
+                        string s = "ID must contain numbers only.\n No other characters allowed!";
+                        IncorrectInformation form23 = new IncorrectInformation(s);
+                        form23.Show();
                         return false;
                     }
                     return true;
                 
                 }
+                else if (this.s != "update" && IDTextBox.Text == "")
+                {
+                    string s = "ID field can't be left empty!";
+                    IncorrectInformation form23 = new IncorrectInformation(s);
+                    form23.Show();
+                    return false;
+                }
                 return true;
 
             }
+            string st = $"Name field can't be left empty!";
+            IncorrectInformation form24 = new IncorrectInformation(st);
+            form24.Show();
             return false;
         }
+
         private void Createbtn_Click(object sender, EventArgs e)
         {
             if (this.checkIfValid()) {
                 Club club = (Club)Enum.Parse(typeof(Club), ClubComboBox.Text);
-                Student stu = new Student(IDTextBox.Text, NameTextBox.Text, int.Parse(AgeComboBox.Text), club, int.Parse(YearlyGoalTextBox.Text), Hash.GetHash(PasswordTextBox.Text), false, true);
+                Student stu = new Student(IDTextBox.Text, NameTextBox.Text, int.Parse(AgeComboBox.Text), club, int.Parse(numericYearlyGoal.Text), Hash.GetHash(PasswordTextBox.Text), false, true);
                 StudentCrud form20 = new StudentCrud(stu);
                 form20.Show();
                 this.Hide();

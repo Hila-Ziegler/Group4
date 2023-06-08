@@ -87,20 +87,43 @@ namespace Group4
 
         private bool checkIfValid()
         {
+            if (this.t == null && this.s == null)
+            {
+                if (PasswordTextBox.Text == "")
+                {
+                    string s = "Please enter a password for this user.";
+                    IncorrectInformation form23 = new IncorrectInformation(s);
+                    form23.Show();
+                    return false;
+                }
+            }
             if (NameTextBox.Text != "")
             {
                 if (this.s != "update" && IDTextBox.Text != "")
                 {
                     if (IDTextBox.Text.Any(x => !char.IsDigit(x)))
                     {
+                        string s = "ID must contain numbers only.\n No other characters allowed!";
+                        IncorrectInformation form23 = new IncorrectInformation(s);
+                        form23.Show();
                         return false;
                     }
                     return true;
 
                 }
+                else if (this.s != "update" && IDTextBox.Text == "")
+                {
+                    string s = "ID field can't be left empty!";
+                    IncorrectInformation form23 = new IncorrectInformation(s);
+                    form23.Show();
+                    return false;
+                }
                 return true;
 
             }
+            string st = $"Name field can't be left empty!";
+            IncorrectInformation form24 = new IncorrectInformation(st);
+            form24.Show();
             return false;
         }
 
