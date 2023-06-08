@@ -46,6 +46,12 @@
             this.homeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.bookHistoryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label2 = new System.Windows.Forms.Label();
+            this.TitleTextBox = new System.Windows.Forms.TextBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
             RequestTimeExtention = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -75,7 +81,7 @@
             // Titlelbl
             // 
             this.Titlelbl.AutoSize = true;
-            this.Titlelbl.Location = new System.Drawing.Point(207, 83);
+            this.Titlelbl.Location = new System.Drawing.Point(207, 88);
             this.Titlelbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Titlelbl.Name = "Titlelbl";
             this.Titlelbl.Size = new System.Drawing.Size(35, 17);
@@ -130,7 +136,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(207, 113);
+            this.label7.Location = new System.Drawing.Point(207, 118);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(39, 17);
@@ -194,21 +200,21 @@
             this.bookHistoryToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(800, 30);
+            this.menuStrip1.Size = new System.Drawing.Size(800, 28);
             this.menuStrip1.TabIndex = 43;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // homeToolStripMenuItem
             // 
             this.homeToolStripMenuItem.Name = "homeToolStripMenuItem";
-            this.homeToolStripMenuItem.Size = new System.Drawing.Size(100, 26);
+            this.homeToolStripMenuItem.Size = new System.Drawing.Size(100, 24);
             this.homeToolStripMenuItem.Text = "Home Page";
             this.homeToolStripMenuItem.Click += new System.EventHandler(this.homeToolStripMenuItem_Click);
             // 
             // bookHistoryToolStripMenuItem
             // 
             this.bookHistoryToolStripMenuItem.Name = "bookHistoryToolStripMenuItem";
-            this.bookHistoryToolStripMenuItem.Size = new System.Drawing.Size(108, 26);
+            this.bookHistoryToolStripMenuItem.Size = new System.Drawing.Size(108, 24);
             this.bookHistoryToolStripMenuItem.Text = "Book History";
             this.bookHistoryToolStripMenuItem.Click += new System.EventHandler(this.bookHistoryToolStripMenuItem_Click);
             // 
@@ -223,11 +229,65 @@
             this.label2.TabIndex = 44;
             this.label2.Text = "The library is a brand, when you\'ve got a card in your hand";
             // 
+            // TitleTextBox
+            // 
+            this.TitleTextBox.Location = new System.Drawing.Point(310, 83);
+            this.TitleTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.TitleTextBox.Name = "TitleTextBox";
+            this.TitleTextBox.Size = new System.Drawing.Size(128, 22);
+            this.TitleTextBox.TabIndex = 45;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(310, 113);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(128, 22);
+            this.textBox1.TabIndex = 46;
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(310, 147);
+            this.textBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(128, 22);
+            this.textBox2.TabIndex = 47;
+            // 
+            // textBox3
+            // 
+            this.textBox3.Location = new System.Drawing.Point(310, 177);
+            this.textBox3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(128, 22);
+            this.textBox3.TabIndex = 48;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(310, 214);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(128, 24);
+            this.comboBox1.TabIndex = 49;
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Location = new System.Drawing.Point(310, 249);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(128, 24);
+            this.comboBox2.TabIndex = 50;
+            // 
             // StudentBorrowActinos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.comboBox2);
+            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.TitleTextBox);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.SuggestAlternativeBook);
             this.Controls.Add(RequestTimeExtention);
@@ -274,5 +334,11 @@
         private System.Windows.Forms.ToolStripMenuItem homeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem bookHistoryToolStripMenuItem;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox TitleTextBox;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox comboBox2;
     }
 }
