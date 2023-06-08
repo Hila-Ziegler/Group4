@@ -57,8 +57,11 @@ namespace Group4
                     {
                         entered++;
                         this.Hide();
+                        AvailableEvent formAvailableEvent = new AvailableEvent(T);
+                        formAvailableEvent.Show();
 
-                        
+
+
 
                     }
                 }
@@ -68,7 +71,7 @@ namespace Group4
                     if (txtUserName.Text == S.get_ID() && Hash.GetHash(txtPassword.Text) == S.get_password())
                     {
                         entered++;
-                        StudentChooseAction formStudentChooseAction = new StudentChooseAction(S.get_name());
+                        StudentChooseAction formStudentChooseAction = new StudentChooseAction(S);
                         formStudentChooseAction.Show();
                         this.Hide();
                     }

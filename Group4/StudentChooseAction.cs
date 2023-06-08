@@ -14,12 +14,14 @@ namespace Group4
     {
 
         String st = "";
+        Student student = null;
 
-        public StudentChooseAction(string s)
+        public StudentChooseAction(Student stud)
         {
-            st = s;
+            //st = s;
+            student = stud;
             InitializeComponent();
-            this.st = s;
+            //this.st = s;
         }
 
 
@@ -32,7 +34,7 @@ namespace Group4
 
         private void btnEvent_Click(object sender, EventArgs e)
         {
-            AvailableEvent formAvailableEvent = new AvailableEvent(st);
+            AvailableEvent formAvailableEvent = new AvailableEvent(st,student);
             formAvailableEvent.Show();
             this.Hide();
 
@@ -41,7 +43,7 @@ namespace Group4
         private void StudentChooseAction_Load(object sender, EventArgs e)
         {
 
-            tlxWalcome.Text = $"Welcome {st}";
+            tlxWalcome.Text = $"Welcome {student.get_name()}";
 ;        }
 
         private void btnMessages_Click(object sender, EventArgs e)
