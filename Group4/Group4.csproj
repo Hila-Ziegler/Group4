@@ -117,6 +117,7 @@
     <Compile Include="CopyCrud.Designer.cs">
       <DependentUpon>CopyCrud.cs</DependentUpon>
     </Compile>
+    <Compile Include="EnumHelper.cs" />
     <Compile Include="Event.cs" />
     <Compile Include="EventCrud.cs">
       <SubType>Form</SubType>

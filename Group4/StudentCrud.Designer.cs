@@ -44,7 +44,6 @@ namespace Group4
             this.NameTitle = new System.Windows.Forms.Label();
             this.StudentCrudClublb = new System.Windows.Forms.Label();
             this.StudentCrudAgelb = new System.Windows.Forms.Label();
-            this.YearlyGoalTextBox = new System.Windows.Forms.TextBox();
             this.YearlyGoallbl = new System.Windows.Forms.Label();
             this.AgeComboBox = new System.Windows.Forms.ComboBox();
             this.ClubComboBox = new System.Windows.Forms.ComboBox();
@@ -54,7 +53,9 @@ namespace Group4
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.homepageToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.manageStudentsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.numericYearlyGoal = new System.Windows.Forms.NumericUpDown();
             this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericYearlyGoal)).BeginInit();
             this.SuspendLayout();
             // 
             // BringBackFromArchieve
@@ -200,13 +201,6 @@ namespace Group4
             this.StudentCrudAgelb.TabIndex = 72;
             this.StudentCrudAgelb.Text = "Age";
             // 
-            // YearlyGoalTextBox
-            // 
-            this.YearlyGoalTextBox.Location = new System.Drawing.Point(325, 223);
-            this.YearlyGoalTextBox.Name = "YearlyGoalTextBox";
-            this.YearlyGoalTextBox.Size = new System.Drawing.Size(128, 22);
-            this.YearlyGoalTextBox.TabIndex = 75;
-            // 
             // YearlyGoallbl
             // 
             this.YearlyGoallbl.AutoSize = true;
@@ -304,17 +298,24 @@ namespace Group4
             this.manageStudentsToolStripMenuItem.Text = "Manage Students";
             this.manageStudentsToolStripMenuItem.Click += new System.EventHandler(this.manageStudentsToolStripMenuItem_Click);
             // 
+            // numericYearlyGoal
+            // 
+            this.numericYearlyGoal.Location = new System.Drawing.Point(354, 224);
+            this.numericYearlyGoal.Name = "numericYearlyGoal";
+            this.numericYearlyGoal.Size = new System.Drawing.Size(68, 22);
+            this.numericYearlyGoal.TabIndex = 82;
+            // 
             // StudentCrud
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.numericYearlyGoal);
             this.Controls.Add(this.AgeValuelbl);
             this.Controls.Add(this.YearlyGoalValuelbl);
             this.Controls.Add(this.ClubNamelbl);
             this.Controls.Add(this.ClubComboBox);
             this.Controls.Add(this.AgeComboBox);
-            this.Controls.Add(this.YearlyGoalTextBox);
             this.Controls.Add(this.YearlyGoallbl);
             this.Controls.Add(this.StudentCrudAgelb);
             this.Controls.Add(this.StudentCrudClublb);
@@ -338,6 +339,7 @@ namespace Group4
             this.Load += new System.EventHandler(this.StudentCrud_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericYearlyGoal)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -360,7 +362,6 @@ namespace Group4
         private System.Windows.Forms.Label NameTitle;
         private System.Windows.Forms.Label StudentCrudClublb;
         private System.Windows.Forms.Label StudentCrudAgelb;
-        private System.Windows.Forms.TextBox YearlyGoalTextBox;
         private System.Windows.Forms.Label YearlyGoallbl;
         private System.Windows.Forms.ComboBox AgeComboBox;
         private System.Windows.Forms.ComboBox ClubComboBox;
@@ -370,5 +371,6 @@ namespace Group4
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem homepageToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem manageStudentsToolStripMenuItem;
+        private System.Windows.Forms.NumericUpDown numericYearlyGoal;
     }
 }
