@@ -116,7 +116,9 @@ namespace Group4
             else if (t != null)
             {
                 RegisterBTN.Hide();
-                
+                homePageToolStripMenuItem.Visible = false;
+
+
                 //homePageToolStripMenuItem hide homepage button
                 if (st == "update")
                 {

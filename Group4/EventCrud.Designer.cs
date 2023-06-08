@@ -114,7 +114,7 @@
             // GuestNameTextBox
             // 
             this.GuestNameTextBox.Location = new System.Drawing.Point(487, 119);
-            this.GuestNameTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.GuestNameTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.GuestNameTextBox.Name = "GuestNameTextBox";
             this.GuestNameTextBox.Size = new System.Drawing.Size(169, 22);
             this.GuestNameTextBox.TabIndex = 45;
@@ -209,7 +209,7 @@
             // UpdateEvent
             // 
             this.UpdateEvent.Location = new System.Drawing.Point(134, 473);
-            this.UpdateEvent.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.UpdateEvent.Margin = new System.Windows.Forms.Padding(5);
             this.UpdateEvent.Name = "UpdateEvent";
             this.UpdateEvent.Size = new System.Drawing.Size(137, 28);
             this.UpdateEvent.TabIndex = 46;
@@ -220,7 +220,7 @@
             // CreateNewEvent
             // 
             this.CreateNewEvent.Location = new System.Drawing.Point(400, 473);
-            this.CreateNewEvent.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.CreateNewEvent.Margin = new System.Windows.Forms.Padding(4);
             this.CreateNewEvent.Name = "CreateNewEvent";
             this.CreateNewEvent.Size = new System.Drawing.Size(145, 28);
             this.CreateNewEvent.TabIndex = 47;
@@ -231,7 +231,7 @@
             // DeleteEvent
             // 
             this.DeleteEvent.Location = new System.Drawing.Point(690, 473);
-            this.DeleteEvent.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.DeleteEvent.Margin = new System.Windows.Forms.Padding(5);
             this.DeleteEvent.Name = "DeleteEvent";
             this.DeleteEvent.Size = new System.Drawing.Size(100, 28);
             this.DeleteEvent.TabIndex = 49;
@@ -242,7 +242,7 @@
             // RegisterBTN
             // 
             this.RegisterBTN.Location = new System.Drawing.Point(400, 406);
-            this.RegisterBTN.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.RegisterBTN.Margin = new System.Windows.Forms.Padding(5);
             this.RegisterBTN.Name = "RegisterBTN";
             this.RegisterBTN.Size = new System.Drawing.Size(145, 26);
             this.RegisterBTN.TabIndex = 50;
@@ -253,7 +253,7 @@
             // EventDatePicker
             // 
             this.EventDatePicker.Location = new System.Drawing.Point(487, 160);
-            this.EventDatePicker.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.EventDatePicker.Margin = new System.Windows.Forms.Padding(4);
             this.EventDatePicker.Name = "EventDatePicker";
             this.EventDatePicker.Size = new System.Drawing.Size(308, 22);
             this.EventDatePicker.TabIndex = 51;
@@ -271,7 +271,7 @@
             // numericMaxAttendance
             // 
             this.numericMaxAttendance.Location = new System.Drawing.Point(487, 238);
-            this.numericMaxAttendance.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.numericMaxAttendance.Margin = new System.Windows.Forms.Padding(4);
             this.numericMaxAttendance.Name = "numericMaxAttendance";
             this.numericMaxAttendance.Size = new System.Drawing.Size(160, 22);
             this.numericMaxAttendance.TabIndex = 53;
@@ -280,7 +280,12 @@
             // 
             this.numericPrice.DecimalPlaces = 2;
             this.numericPrice.Location = new System.Drawing.Point(486, 342);
-            this.numericPrice.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.numericPrice.Margin = new System.Windows.Forms.Padding(4);
+            this.numericPrice.Maximum = new decimal(new int[] {
+            20000,
+            0,
+            0,
+            0});
             this.numericPrice.Name = "numericPrice";
             this.numericPrice.Size = new System.Drawing.Size(160, 22);
             this.numericPrice.TabIndex = 54;
@@ -308,7 +313,7 @@
             // 
             this.OpenForRegistrationCheckBox.AutoSize = true;
             this.OpenForRegistrationCheckBox.Location = new System.Drawing.Point(487, 276);
-            this.OpenForRegistrationCheckBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.OpenForRegistrationCheckBox.Margin = new System.Windows.Forms.Padding(4);
             this.OpenForRegistrationCheckBox.Name = "OpenForRegistrationCheckBox";
             this.OpenForRegistrationCheckBox.Size = new System.Drawing.Size(18, 17);
             this.OpenForRegistrationCheckBox.TabIndex = 58;
@@ -318,7 +323,7 @@
             // 
             this.GuestTypeComboBox.FormattingEnabled = true;
             this.GuestTypeComboBox.Location = new System.Drawing.Point(486, 194);
-            this.GuestTypeComboBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.GuestTypeComboBox.Margin = new System.Windows.Forms.Padding(4);
             this.GuestTypeComboBox.Name = "GuestTypeComboBox";
             this.GuestTypeComboBox.Size = new System.Drawing.Size(160, 24);
             this.GuestTypeComboBox.TabIndex = 60;
@@ -326,7 +331,7 @@
             // updateEventbtn
             // 
             this.updateEventbtn.Location = new System.Drawing.Point(815, 244);
-            this.updateEventbtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.updateEventbtn.Margin = new System.Windows.Forms.Padding(4);
             this.updateEventbtn.Name = "updateEventbtn";
             this.updateEventbtn.Size = new System.Drawing.Size(100, 53);
             this.updateEventbtn.TabIndex = 61;
