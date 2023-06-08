@@ -146,6 +146,17 @@ namespace Group4
             SQL_CON SC = new SQL_CON();
             SC.execute_non_query(c);
         }
+
+        public void delete_Event()
+        {
+            SqlCommand c = new SqlCommand();
+            c.CommandText = "EXECUTE dbo.SP_delete_Event @guestSpeakerName ,@date";
+            c.Parameters.AddWithValue("@guestSpeakerName", this.GuestName);
+            c.Parameters.AddWithValue("@date", this.Date);
+            SQL_CON SC = new SQL_CON();
+            SC.execute_non_query(c);
+        }
+
         public int checkCurrentlyRegistered()
         {
             return this.Registered.Count();// האם מפה לעשות  UPDET לכמות המשתתפים?
