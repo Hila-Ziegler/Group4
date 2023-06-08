@@ -12,9 +12,10 @@ namespace Group4
         private string Review;
         private int Rating;
         private Event Event;
+        private string oldDate;
 
 
-        public Registration(Student Student, DateTime eventDate, string guestName, bool showedUp, string review, int rating, bool is_new)
+        public Registration(Student Student, DateTime eventDate, string guestName, bool showedUp, string review, int rating, string oldDate ,bool is_new)
         {
             this.Student = Student;
             this.EventDate = eventDate;
@@ -22,6 +23,7 @@ namespace Group4
             this.ShowedUp = showedUp;
             this.Review = review;
             this.Rating = rating;
+            this.oldDate = oldDate;
 
             if (is_new)
             {
@@ -60,6 +62,11 @@ namespace Group4
             return this.Rating;
         }
 
+        public string get_oldDate()
+        {
+            return this.oldDate;
+        }
+
         public void set_Student(Student s)
         {
             this.Student = s;
@@ -90,16 +97,22 @@ namespace Group4
             this.Rating = rating;
         }
 
+        public void set_oldDate(string s)
+        {
+            this.oldDate = s;
+        }
+
         public void create_Registration()
         {
             SqlCommand c = new SqlCommand();
-            c.CommandText = "EXECUTE dbo.SP_add_Registrations @id , @eventDate, @guestSpeakerName, @showedUp, @review, @rating";
+            c.CommandText = "EXECUTE dbo.SP_add_Registrations @id , @eventDate, @guestSpeakerName, @showedUp, @review, @rating ,@oldDate";
             c.Parameters.AddWithValue("@id", this.Student.get_ID());
             c.Parameters.AddWithValue("@eventDate", this.EventDate);
             c.Parameters.AddWithValue("@guestSpeakerName", this.GuestName);
             c.Parameters.AddWithValue("@showedUp", this.ShowedUp);
             c.Parameters.AddWithValue("@review", this.Review);
             c.Parameters.AddWithValue("@rating", this.Rating);
+            c.Parameters.AddWithValue("@oldDate", this.oldDate);
             SQL_CON SC = new SQL_CON();
             SC.execute_non_query(c);
         }
@@ -107,13 +120,14 @@ namespace Group4
         public void update_Registration()
         {
             SqlCommand c = new SqlCommand();
-            c.CommandText = "EXECUTE dbo.SP_Update_Registration @id , @eventDate, @guestSpeakerName, @showedUp, @review, @rating";
+            c.CommandText = "EXECUTE dbo.SP_Update_Registration @id , @eventDate, @guestSpeakerName, @showedUp, @review, @rating, @oldDate";
             c.Parameters.AddWithValue("@id", this.Student.get_ID());
             c.Parameters.AddWithValue("@eventDate", this.EventDate);
             c.Parameters.AddWithValue("@guestSpeakerName", this.GuestName);
             c.Parameters.AddWithValue("@showedUp", this.ShowedUp);
             c.Parameters.AddWithValue("@review", this.Review);
             c.Parameters.AddWithValue("@rating", this.Rating);
+            c.Parameters.AddWithValue("@oldDate", this.oldDate);
             SQL_CON SC = new SQL_CON();
             SC.execute_non_query(c);
         }

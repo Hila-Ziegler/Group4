@@ -83,13 +83,16 @@ CREATE TABLE dbo.Registrations (
 	guestSpeakerName	VARCHAR(50) NOT NULL,
 	showedUp			BIT,
 	review				VARCHAR(50),
-	rating				INTEGER, 
+	rating				INTEGER,
+	oldDate				VARCHAR(50),
 	CONSTRAINT PK_Registration PRIMARY KEY (id,eventDate, guestSpeakerName),
 	CONSTRAINT FK_Registration_To_Event FOREIGN KEY (eventDate, guestSpeakerName)
 		REFERENCES Events (date, guestSpeakerName),
 	CONSTRAINT FK_Registration_To_Student FOREIGN KEY (id)
 		REFERENCES Students (id)
 )
+ALTER TABLE dbo.Registrations
+ADD oldDate VARCHAR(50)
 
 --DROP TABLE dbo.Requests
 CREATE TABLE dbo.Requests (

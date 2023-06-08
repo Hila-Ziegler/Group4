@@ -42,8 +42,8 @@ namespace Group4
 
         private void StudentChooseAction_Load(object sender, EventArgs e)
         {
-
             tlxWalcome.Text = $"Welcome {student.get_name()}";
+            //Event time changed windows.
 ;        }
 
         private void btnMessages_Click(object sender, EventArgs e)
@@ -57,6 +57,13 @@ namespace Group4
         {
             ReadingGoals form30 = new ReadingGoals(this.student);
             form30.Show();
+            this.Hide();
+        }
+
+        private void btnSocialPage_Click(object sender, EventArgs e)
+        {
+            socialPage formsocialPage = new socialPage(this.student);
+            formsocialPage.Show();
             this.Hide();
         }
     }

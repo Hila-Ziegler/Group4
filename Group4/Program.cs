@@ -261,7 +261,7 @@ namespace Group4
             while (rdr.Read())
             {
                 Student s = seekStudent(rdr.GetValue(0).ToString());
-                Registration r = new Registration(s, DateTime.Parse(rdr.GetValue(1).ToString()),rdr.GetValue(2).ToString(),bool.Parse(rdr.GetValue(3).ToString()),rdr.GetValue(4).ToString(), int.Parse(rdr.GetValue(5).ToString()), false);
+                Registration r = new Registration(s, DateTime.Parse(rdr.GetValue(1).ToString()),rdr.GetValue(2).ToString(),bool.Parse(rdr.GetValue(3).ToString()),rdr.GetValue(4).ToString(), int.Parse(rdr.GetValue(5).ToString()), rdr.GetValue(6).ToString(), false);
                 Event e = seekEvent(DateTime.Parse(rdr.GetValue(1).ToString()), rdr.GetValue(2).ToString());
                 e.Registered.Add(s);
                 registrations.Add(r);

@@ -139,22 +139,16 @@ namespace Group4
 
         private void button2_Click(object sender, EventArgs e)
         {
-            Student st = Program.seekStudent(StID.Text);
-            foreach (BookHistory bh in this.history)
+            int lastIndex = this.history.Count - 1;
+            if (lastIndex >= 0)
             {
-                if (bh.get_StartDate() == bh.get_EndDate())
-                {
-                    bh.set_endDate(DateTime.Now);
-                    this.updateBookHistory();
-                    bh.update_BookHistory();
-                    this.copy.set_status(false);
-                    this.copy.update_Copy();
-                    
-                    
-                }
+                BookHistory lastRecord = this.history[lastIndex];
+                lastRecord.set_endDate(DateTime.Now);
+                lastRecord.update_BookHistory();
+                this.copy.set_status(false);
+                this.copy.update_Copy();
+                this.updateBookHistory();
             }
-            
-           
         }
 
         private void StID_TextChanged(object sender, EventArgs e)
