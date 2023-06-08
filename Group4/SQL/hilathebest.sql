@@ -136,11 +136,11 @@ SET
 startDate=@startDate, endDate=@endDate, rate=@rate
 WHERE copyNumber=@copyNumber AND serialNumber=@serialNumber AND id=@id
 --DROP PROCEDURE dbo.SP_Update_Event
-CREATE PROCEDURE dbo.SP_Update_Event @guestType	VARCHAR(50),@date DATETIME,	@price	DECIMAL,@guestSpeakerName VARCHAR(50),@maxGuests INTEGER,@currentlyRegistered INTEGER
+CREATE PROCEDURE dbo.SP_Update_Event @guestType	VARCHAR(50),@date DATETIME,	@price	DECIMAL,@guestSpeakerName VARCHAR(50),@status VARCHAR(50), @maxGuests INTEGER,@currentlyRegistered INTEGER
 AS
 Update dbo.Events
 SET
-price=@price, guestType=@guestType, maxGuests=@maxGuests, currentlyRegistered=@currentlyRegistered
+price=@price, guestType=@guestType, maxGuests=@maxGuests, currentlyRegistered=@currentlyRegistered, status =@status
 WHERE date=@date AND guestSpeakerName=@guestSpeakerName
 
 CREATE PROCEDURE dbo.SP_Update_Registration @id VARCHAR(50),@eventDate DATETIME ,@guestSpeakerName VARCHAR(50),@showedUp	BIT,@review	VARCHAR(50),@rating	INTEGER
@@ -158,6 +158,14 @@ type=@type, endDT=@endDT, status=@status, photoAddress=@photoAddress, serialNumb
 WHERE startDT=@startDT AND sid=@sid AND lid=@lid
 
 --Delete record
+--DROP PROCEDURE dbo.SP_delete_Event
+CREATE PROCEDURE dbo.SP_delete_Event @guestSpeakerName	VARCHAR(50),@date DATETIME
+AS
+DELETE FROM dbo.Events
+WHERE @guestSpeakerName=@guestSpeakerName AND date=@date
+
+
+
 --DROP PROCEDURE dbo.SP_delete_Books
 CREATE PROCEDURE dbo.SP_delete_Books
 AS
@@ -188,6 +196,10 @@ CREATE PROCEDURE dbo.SP_delete_BookHistory
 AS
 DELETE FROM dbo.BookHistory
 WHERE id IS NOT NULL
+
+
+
+
 --DROP PROCEDURE dbo.SP_delete_Events
 CREATE PROCEDURE dbo.SP_delete_Events
 AS
