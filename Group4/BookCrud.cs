@@ -370,5 +370,10 @@ namespace Group4
         {
             //Language v = (Language)this.LngCombo.SelectedValue;
         }
+
+        private void dataGridView1_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

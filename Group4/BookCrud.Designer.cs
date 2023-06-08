@@ -68,9 +68,10 @@ namespace Group4
             // 
             this.BookCrudTitle.AutoSize = true;
             this.BookCrudTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BookCrudTitle.Location = new System.Drawing.Point(475, 24);
+            this.BookCrudTitle.Location = new System.Drawing.Point(633, 30);
+            this.BookCrudTitle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.BookCrudTitle.Name = "BookCrudTitle";
-            this.BookCrudTitle.Size = new System.Drawing.Size(71, 33);
+            this.BookCrudTitle.Size = new System.Drawing.Size(88, 42);
             this.BookCrudTitle.TabIndex = 0;
             this.BookCrudTitle.Text = "Title";
             this.BookCrudTitle.Click += new System.EventHandler(this.label1_Click);
@@ -79,17 +80,19 @@ namespace Group4
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(306, 523);
+            this.label2.Location = new System.Drawing.Point(408, 644);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(413, 20);
+            this.label2.Size = new System.Drawing.Size(516, 25);
             this.label2.TabIndex = 5;
             this.label2.Text = "The library is a brand, when you\'ve got a card in your hand";
             // 
             // BookCrudUpdateBTN
             // 
-            this.BookCrudUpdateBTN.Location = new System.Drawing.Point(357, 277);
+            this.BookCrudUpdateBTN.Location = new System.Drawing.Point(476, 341);
+            this.BookCrudUpdateBTN.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.BookCrudUpdateBTN.Name = "BookCrudUpdateBTN";
-            this.BookCrudUpdateBTN.Size = new System.Drawing.Size(75, 23);
+            this.BookCrudUpdateBTN.Size = new System.Drawing.Size(100, 28);
             this.BookCrudUpdateBTN.TabIndex = 6;
             this.BookCrudUpdateBTN.Text = "Update";
             this.BookCrudUpdateBTN.UseVisualStyleBackColor = true;
@@ -97,9 +100,10 @@ namespace Group4
             // 
             // BookCrudDeleteBTN
             // 
-            this.BookCrudDeleteBTN.Location = new System.Drawing.Point(549, 277);
+            this.BookCrudDeleteBTN.Location = new System.Drawing.Point(732, 341);
+            this.BookCrudDeleteBTN.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.BookCrudDeleteBTN.Name = "BookCrudDeleteBTN";
-            this.BookCrudDeleteBTN.Size = new System.Drawing.Size(75, 23);
+            this.BookCrudDeleteBTN.Size = new System.Drawing.Size(100, 28);
             this.BookCrudDeleteBTN.TabIndex = 7;
             this.BookCrudDeleteBTN.Text = "Delete";
             this.BookCrudDeleteBTN.UseVisualStyleBackColor = true;
@@ -111,11 +115,13 @@ namespace Group4
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.CopyNum,
             this.Borrowed});
-            this.dataGridView1.Location = new System.Drawing.Point(384, 337);
+            this.dataGridView1.Location = new System.Drawing.Point(512, 415);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.Size = new System.Drawing.Size(240, 150);
+            this.dataGridView1.Size = new System.Drawing.Size(320, 185);
             this.dataGridView1.TabIndex = 8;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick_1);
             this.dataGridView1.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // CopyNum
@@ -137,9 +143,10 @@ namespace Group4
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(307, 118);
+            this.label3.Location = new System.Drawing.Point(409, 145);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(38, 13);
+            this.label3.Size = new System.Drawing.Size(45, 16);
             this.label3.TabIndex = 9;
             this.label3.Text = "Author";
             this.label3.Click += new System.EventHandler(this.label3_Click);
@@ -147,9 +154,10 @@ namespace Group4
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(307, 142);
+            this.label4.Location = new System.Drawing.Point(409, 175);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(66, 13);
+            this.label4.Size = new System.Drawing.Size(83, 16);
             this.label4.TabIndex = 10;
             this.label4.Text = "Publish Year";
             this.label4.Click += new System.EventHandler(this.label4_Click);
@@ -157,9 +165,10 @@ namespace Group4
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(307, 172);
+            this.label5.Location = new System.Drawing.Point(409, 212);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(55, 13);
+            this.label5.Size = new System.Drawing.Size(68, 16);
             this.label5.TabIndex = 11;
             this.label5.Text = "Language";
             this.label5.Click += new System.EventHandler(this.label5_Click);
@@ -167,9 +176,10 @@ namespace Group4
             // Ratinglbl
             // 
             this.Ratinglbl.AutoSize = true;
-            this.Ratinglbl.Location = new System.Drawing.Point(307, 201);
+            this.Ratinglbl.Location = new System.Drawing.Point(409, 247);
+            this.Ratinglbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Ratinglbl.Name = "Ratinglbl";
-            this.Ratinglbl.Size = new System.Drawing.Size(38, 13);
+            this.Ratinglbl.Size = new System.Drawing.Size(46, 16);
             this.Ratinglbl.TabIndex = 12;
             this.Ratinglbl.Text = "Rating";
             this.Ratinglbl.Click += new System.EventHandler(this.label6_Click);
@@ -177,9 +187,10 @@ namespace Group4
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(307, 90);
+            this.label7.Location = new System.Drawing.Point(409, 111);
+            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(32, 13);
+            this.label7.Size = new System.Drawing.Size(38, 16);
             this.label7.TabIndex = 13;
             this.label7.Text = "ISBN";
             this.label7.Click += new System.EventHandler(this.label7_Click);
@@ -191,69 +202,74 @@ namespace Group4
             this.BookCrudHomePage});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(1106, 24);
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
+            this.menuStrip1.Size = new System.Drawing.Size(1475, 28);
             this.menuStrip1.TabIndex = 14;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // BookCrudHomePage
             // 
             this.BookCrudHomePage.Name = "BookCrudHomePage";
-            this.BookCrudHomePage.Size = new System.Drawing.Size(81, 20);
+            this.BookCrudHomePage.Size = new System.Drawing.Size(100, 24);
             this.BookCrudHomePage.Text = "Home Page";
             this.BookCrudHomePage.Click += new System.EventHandler(this.BookCrudHomePage_Click);
             // 
             // lb_ISBN_value
             // 
             this.lb_ISBN_value.AutoSize = true;
-            this.lb_ISBN_value.Location = new System.Drawing.Point(429, 90);
+            this.lb_ISBN_value.Location = new System.Drawing.Point(572, 111);
+            this.lb_ISBN_value.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lb_ISBN_value.Name = "lb_ISBN_value";
-            this.lb_ISBN_value.Size = new System.Drawing.Size(0, 13);
+            this.lb_ISBN_value.Size = new System.Drawing.Size(0, 16);
             this.lb_ISBN_value.TabIndex = 19;
             this.lb_ISBN_value.Click += new System.EventHandler(this.label8_Click);
             // 
             // lb_RatingValue
             // 
             this.lb_RatingValue.AutoSize = true;
-            this.lb_RatingValue.Location = new System.Drawing.Point(429, 201);
+            this.lb_RatingValue.Location = new System.Drawing.Point(572, 247);
+            this.lb_RatingValue.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lb_RatingValue.Name = "lb_RatingValue";
-            this.lb_RatingValue.Size = new System.Drawing.Size(0, 13);
+            this.lb_RatingValue.Size = new System.Drawing.Size(0, 16);
             this.lb_RatingValue.TabIndex = 18;
             this.lb_RatingValue.Click += new System.EventHandler(this.label9_Click);
             // 
             // lb_LangueageValue
             // 
             this.lb_LangueageValue.AutoSize = true;
-            this.lb_LangueageValue.Location = new System.Drawing.Point(429, 172);
+            this.lb_LangueageValue.Location = new System.Drawing.Point(572, 212);
+            this.lb_LangueageValue.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lb_LangueageValue.Name = "lb_LangueageValue";
-            this.lb_LangueageValue.Size = new System.Drawing.Size(0, 13);
+            this.lb_LangueageValue.Size = new System.Drawing.Size(0, 16);
             this.lb_LangueageValue.TabIndex = 17;
             this.lb_LangueageValue.Click += new System.EventHandler(this.label10_Click);
             // 
             // lb_PublishYearValue
             // 
             this.lb_PublishYearValue.AutoSize = true;
-            this.lb_PublishYearValue.Location = new System.Drawing.Point(429, 142);
+            this.lb_PublishYearValue.Location = new System.Drawing.Point(572, 175);
+            this.lb_PublishYearValue.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lb_PublishYearValue.Name = "lb_PublishYearValue";
-            this.lb_PublishYearValue.Size = new System.Drawing.Size(0, 13);
+            this.lb_PublishYearValue.Size = new System.Drawing.Size(0, 16);
             this.lb_PublishYearValue.TabIndex = 16;
             this.lb_PublishYearValue.Click += new System.EventHandler(this.label11_Click);
             // 
             // lb_AuthorValue
             // 
             this.lb_AuthorValue.AutoSize = true;
-            this.lb_AuthorValue.Location = new System.Drawing.Point(429, 118);
+            this.lb_AuthorValue.Location = new System.Drawing.Point(572, 145);
+            this.lb_AuthorValue.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lb_AuthorValue.Name = "lb_AuthorValue";
-            this.lb_AuthorValue.Size = new System.Drawing.Size(0, 13);
+            this.lb_AuthorValue.Size = new System.Drawing.Size(0, 16);
             this.lb_AuthorValue.TabIndex = 15;
             this.lb_AuthorValue.Click += new System.EventHandler(this.label12_Click);
             // 
             // bookCrudAddNewCopy
             // 
-            this.bookCrudAddNewCopy.Location = new System.Drawing.Point(636, 389);
-            this.bookCrudAddNewCopy.Margin = new System.Windows.Forms.Padding(2);
+            this.bookCrudAddNewCopy.Location = new System.Drawing.Point(848, 479);
+            this.bookCrudAddNewCopy.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.bookCrudAddNewCopy.Name = "bookCrudAddNewCopy";
-            this.bookCrudAddNewCopy.Size = new System.Drawing.Size(77, 37);
+            this.bookCrudAddNewCopy.Size = new System.Drawing.Size(103, 46);
             this.bookCrudAddNewCopy.TabIndex = 20;
             this.bookCrudAddNewCopy.Text = "Add a new copy";
             this.bookCrudAddNewCopy.UseVisualStyleBackColor = true;
@@ -261,34 +277,34 @@ namespace Group4
             // 
             // ISBNTextBox
             // 
-            this.ISBNTextBox.Location = new System.Drawing.Point(480, 90);
-            this.ISBNTextBox.Margin = new System.Windows.Forms.Padding(2);
+            this.ISBNTextBox.Location = new System.Drawing.Point(640, 111);
+            this.ISBNTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ISBNTextBox.Name = "ISBNTextBox";
-            this.ISBNTextBox.Size = new System.Drawing.Size(97, 20);
+            this.ISBNTextBox.Size = new System.Drawing.Size(128, 22);
             this.ISBNTextBox.TabIndex = 21;
             // 
             // AuthorTextBox
             // 
-            this.AuthorTextBox.Location = new System.Drawing.Point(480, 115);
-            this.AuthorTextBox.Margin = new System.Windows.Forms.Padding(2);
+            this.AuthorTextBox.Location = new System.Drawing.Point(640, 142);
+            this.AuthorTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.AuthorTextBox.Name = "AuthorTextBox";
-            this.AuthorTextBox.Size = new System.Drawing.Size(97, 20);
+            this.AuthorTextBox.Size = new System.Drawing.Size(128, 22);
             this.AuthorTextBox.TabIndex = 22;
             // 
             // PublishYearTextBox
             // 
-            this.PublishYearTextBox.Location = new System.Drawing.Point(480, 142);
-            this.PublishYearTextBox.Margin = new System.Windows.Forms.Padding(2);
+            this.PublishYearTextBox.Location = new System.Drawing.Point(640, 175);
+            this.PublishYearTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.PublishYearTextBox.Name = "PublishYearTextBox";
-            this.PublishYearTextBox.Size = new System.Drawing.Size(97, 20);
+            this.PublishYearTextBox.Size = new System.Drawing.Size(128, 22);
             this.PublishYearTextBox.TabIndex = 23;
             // 
             // CreateNewBook
             // 
-            this.CreateNewBook.Location = new System.Drawing.Point(435, 280);
-            this.CreateNewBook.Margin = new System.Windows.Forms.Padding(2);
+            this.CreateNewBook.Location = new System.Drawing.Point(580, 345);
+            this.CreateNewBook.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.CreateNewBook.Name = "CreateNewBook";
-            this.CreateNewBook.Size = new System.Drawing.Size(109, 40);
+            this.CreateNewBook.Size = new System.Drawing.Size(145, 49);
             this.CreateNewBook.TabIndex = 26;
             this.CreateNewBook.Text = "Create New Book";
             this.CreateNewBook.UseVisualStyleBackColor = true;
@@ -297,26 +313,27 @@ namespace Group4
             // Titlelbl
             // 
             this.Titlelbl.AutoSize = true;
-            this.Titlelbl.Location = new System.Drawing.Point(307, 66);
+            this.Titlelbl.Location = new System.Drawing.Point(409, 81);
+            this.Titlelbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Titlelbl.Name = "Titlelbl";
-            this.Titlelbl.Size = new System.Drawing.Size(27, 13);
+            this.Titlelbl.Size = new System.Drawing.Size(33, 16);
             this.Titlelbl.TabIndex = 27;
             this.Titlelbl.Text = "Title";
             // 
             // TitleTextBox
             // 
-            this.TitleTextBox.Location = new System.Drawing.Point(480, 63);
-            this.TitleTextBox.Margin = new System.Windows.Forms.Padding(2);
+            this.TitleTextBox.Location = new System.Drawing.Point(640, 78);
+            this.TitleTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TitleTextBox.Name = "TitleTextBox";
-            this.TitleTextBox.Size = new System.Drawing.Size(97, 20);
+            this.TitleTextBox.Size = new System.Drawing.Size(128, 22);
             this.TitleTextBox.TabIndex = 28;
             // 
             // btnUpdateBook
             // 
-            this.btnUpdateBook.Location = new System.Drawing.Point(457, 256);
-            this.btnUpdateBook.Margin = new System.Windows.Forms.Padding(2);
+            this.btnUpdateBook.Location = new System.Drawing.Point(609, 315);
+            this.btnUpdateBook.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnUpdateBook.Name = "btnUpdateBook";
-            this.btnUpdateBook.Size = new System.Drawing.Size(64, 44);
+            this.btnUpdateBook.Size = new System.Drawing.Size(85, 54);
             this.btnUpdateBook.TabIndex = 29;
             this.btnUpdateBook.Text = "Update Book";
             this.btnUpdateBook.UseVisualStyleBackColor = true;
@@ -325,28 +342,26 @@ namespace Group4
             // updateScreenratinglbl
             // 
             this.updateScreenratinglbl.AutoSize = true;
-            this.updateScreenratinglbl.Location = new System.Drawing.Point(489, 201);
-            this.updateScreenratinglbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.updateScreenratinglbl.Location = new System.Drawing.Point(652, 247);
             this.updateScreenratinglbl.Name = "updateScreenratinglbl";
-            this.updateScreenratinglbl.Size = new System.Drawing.Size(0, 13);
+            this.updateScreenratinglbl.Size = new System.Drawing.Size(0, 16);
             this.updateScreenratinglbl.TabIndex = 30;
             this.updateScreenratinglbl.Click += new System.EventHandler(this.label1_Click_1);
             // 
             // ISBNUpdateScreen
             // 
             this.ISBNUpdateScreen.AutoSize = true;
-            this.ISBNUpdateScreen.Location = new System.Drawing.Point(489, 90);
-            this.ISBNUpdateScreen.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.ISBNUpdateScreen.Location = new System.Drawing.Point(652, 111);
             this.ISBNUpdateScreen.Name = "ISBNUpdateScreen";
-            this.ISBNUpdateScreen.Size = new System.Drawing.Size(0, 13);
+            this.ISBNUpdateScreen.Size = new System.Drawing.Size(0, 16);
             this.ISBNUpdateScreen.TabIndex = 31;
             // 
             // BringBackFromArchieve
             // 
-            this.BringBackFromArchieve.Location = new System.Drawing.Point(646, 103);
-            this.BringBackFromArchieve.Margin = new System.Windows.Forms.Padding(2);
+            this.BringBackFromArchieve.Location = new System.Drawing.Point(861, 127);
+            this.BringBackFromArchieve.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.BringBackFromArchieve.Name = "BringBackFromArchieve";
-            this.BringBackFromArchieve.Size = new System.Drawing.Size(96, 42);
+            this.BringBackFromArchieve.Size = new System.Drawing.Size(128, 52);
             this.BringBackFromArchieve.TabIndex = 32;
             this.BringBackFromArchieve.Text = "Return From Archieve";
             this.BringBackFromArchieve.UseVisualStyleBackColor = true;
@@ -355,17 +370,18 @@ namespace Group4
             // LngCombo
             // 
             this.LngCombo.FormattingEnabled = true;
-            this.LngCombo.Location = new System.Drawing.Point(480, 172);
+            this.LngCombo.Location = new System.Drawing.Point(640, 212);
+            this.LngCombo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.LngCombo.Name = "LngCombo";
-            this.LngCombo.Size = new System.Drawing.Size(97, 21);
+            this.LngCombo.Size = new System.Drawing.Size(128, 24);
             this.LngCombo.TabIndex = 33;
             this.LngCombo.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // BookCrud
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1106, 604);
+            this.ClientSize = new System.Drawing.Size(1475, 743);
             this.Controls.Add(this.LngCombo);
             this.Controls.Add(this.BringBackFromArchieve);
             this.Controls.Add(this.ISBNUpdateScreen);
@@ -395,6 +411,7 @@ namespace Group4
             this.Controls.Add(this.BookCrudTitle);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "BookCrud";
             this.Text = "BookCrud";
             this.Load += new System.EventHandler(this.BookCrud_Load);
