@@ -12,8 +12,8 @@ namespace Group4
 {
     public partial class studentAllMessagescs : Form
     {
-        string st = "";
-        public studentAllMessagescs(String s)
+        Student st = null;
+        public studentAllMessagescs(Student s)
         {
             this.st = s;
             InitializeComponent();
