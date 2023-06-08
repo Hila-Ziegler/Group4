@@ -37,17 +37,16 @@ namespace Group4
             this.CopyNum = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Actions = new System.Windows.Forms.DataGridViewButtonColumn();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.StartDT = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.StudentID1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.BookSerial = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Copy = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.AttachedPhoto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Actions1 = new System.Windows.Forms.DataGridViewButtonColumn();
             this.TimeReqtxt = new System.Windows.Forms.Label();
             this.AltBooktxt = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.homePageToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.StartDT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.StudentID1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.BookSerial = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Copy = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Actions1 = new System.Windows.Forms.DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.menuStrip1.SuspendLayout();
@@ -123,61 +122,13 @@ namespace Group4
             this.StudentID1,
             this.BookSerial,
             this.Copy,
-            this.AttachedPhoto,
             this.Actions1});
             this.dataGridView2.Location = new System.Drawing.Point(742, 257);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.RowHeadersWidth = 51;
-            this.dataGridView2.Size = new System.Drawing.Size(803, 242);
+            this.dataGridView2.Size = new System.Drawing.Size(679, 242);
             this.dataGridView2.TabIndex = 9;
             this.dataGridView2.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentClick);
-            // 
-            // StartDT
-            // 
-            this.StartDT.HeaderText = "Start Date";
-            this.StartDT.MinimumWidth = 6;
-            this.StartDT.Name = "StartDT";
-            this.StartDT.Width = 125;
-            // 
-            // StudentID1
-            // 
-            this.StudentID1.HeaderText = "Student ID";
-            this.StudentID1.MinimumWidth = 6;
-            this.StudentID1.Name = "StudentID1";
-            this.StudentID1.Width = 125;
-            // 
-            // BookSerial
-            // 
-            this.BookSerial.HeaderText = "Book Serial Number";
-            this.BookSerial.MinimumWidth = 6;
-            this.BookSerial.Name = "BookSerial";
-            this.BookSerial.Width = 125;
-            // 
-            // Copy
-            // 
-            this.Copy.HeaderText = "Copy Number";
-            this.Copy.MinimumWidth = 6;
-            this.Copy.Name = "Copy";
-            this.Copy.Width = 125;
-            // 
-            // AttachedPhoto
-            // 
-            this.AttachedPhoto.HeaderText = "Attached Photo";
-            this.AttachedPhoto.MinimumWidth = 6;
-            this.AttachedPhoto.Name = "AttachedPhoto";
-            this.AttachedPhoto.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.AttachedPhoto.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.AttachedPhoto.Width = 125;
-            // 
-            // Actions1
-            // 
-            this.Actions1.HeaderText = "Actions";
-            this.Actions1.MinimumWidth = 6;
-            this.Actions1.Name = "Actions1";
-            this.Actions1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Actions1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.Actions1.Text = "View";
-            this.Actions1.Width = 125;
             // 
             // TimeReqtxt
             // 
@@ -228,6 +179,44 @@ namespace Group4
             this.homePageToolStripMenuItem.Text = "Home Page";
             this.homePageToolStripMenuItem.Click += new System.EventHandler(this.homePageToolStripMenuItem_Click);
             // 
+            // StartDT
+            // 
+            this.StartDT.HeaderText = "Start Date";
+            this.StartDT.MinimumWidth = 6;
+            this.StartDT.Name = "StartDT";
+            this.StartDT.Width = 125;
+            // 
+            // StudentID1
+            // 
+            this.StudentID1.HeaderText = "Student ID";
+            this.StudentID1.MinimumWidth = 6;
+            this.StudentID1.Name = "StudentID1";
+            this.StudentID1.Width = 125;
+            // 
+            // BookSerial
+            // 
+            this.BookSerial.HeaderText = "Book Serial Number";
+            this.BookSerial.MinimumWidth = 6;
+            this.BookSerial.Name = "BookSerial";
+            this.BookSerial.Width = 125;
+            // 
+            // Copy
+            // 
+            this.Copy.HeaderText = "Copy Number";
+            this.Copy.MinimumWidth = 6;
+            this.Copy.Name = "Copy";
+            this.Copy.Width = 125;
+            // 
+            // Actions1
+            // 
+            this.Actions1.HeaderText = "Actions";
+            this.Actions1.MinimumWidth = 6;
+            this.Actions1.Name = "Actions1";
+            this.Actions1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Actions1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.Actions1.Text = "View";
+            this.Actions1.Width = 125;
+            // 
             // ManageRequests
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -266,13 +255,12 @@ namespace Group4
         private System.Windows.Forms.DataGridViewTextBoxColumn BookSerialNum;
         private System.Windows.Forms.DataGridViewTextBoxColumn CopyNum;
         private System.Windows.Forms.DataGridViewButtonColumn Actions;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem homePageToolStripMenuItem;
         private System.Windows.Forms.DataGridViewTextBoxColumn StartDT;
         private System.Windows.Forms.DataGridViewTextBoxColumn StudentID1;
         private System.Windows.Forms.DataGridViewTextBoxColumn BookSerial;
         private System.Windows.Forms.DataGridViewTextBoxColumn Copy;
-        private System.Windows.Forms.DataGridViewTextBoxColumn AttachedPhoto;
         private System.Windows.Forms.DataGridViewButtonColumn Actions1;
-        private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem homePageToolStripMenuItem;
     }
 }

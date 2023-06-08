@@ -291,6 +291,7 @@ namespace Group4
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "RequestDeat";
             this.Text = "Request Details";
+            this.Load += new System.EventHandler(this.RequestDeat_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
