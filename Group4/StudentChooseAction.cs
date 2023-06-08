@@ -42,8 +42,8 @@ namespace Group4
 
         private void StudentChooseAction_Load(object sender, EventArgs e)
         {
-
             tlxWalcome.Text = $"Welcome {student.get_name()}";
+            //Event time changed windows.
 ;        }
 
         private void btnMessages_Click(object sender, EventArgs e)
