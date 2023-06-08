@@ -14,8 +14,10 @@ namespace Group4
     {
         private Copy copy;
         private System.Collections.Generic.List<BookHistory> history;
-        public CopyCrud(Copy c)
+        Librarian librarian;
+        public CopyCrud(Copy c, Librarian libr)
         {
+            librarian = libr;
             this.copy = c;
             this.history = this.getCopyHistory();
             InitializeComponent();
@@ -108,14 +110,14 @@ namespace Group4
 
         private void toolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            LibrarianChooseAction form6 = new LibrarianChooseAction();
+            LibrarianChooseAction form6 = new LibrarianChooseAction(librarian);
             form6.Show();
             this.Hide();
         }
 
         private void MenuManageBooks_Click(object sender, EventArgs e)
         {
-            ManageBooks form7 = new ManageBooks();
+            ManageBooks form7 = new ManageBooks(librarian);
             form7.Show();
             this.Hide();
 

@@ -139,16 +139,36 @@ namespace Group4
 
         private void homePageToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            StudentChooseAction formStudentChooseAction = new StudentChooseAction(student);
+            if (s != null)
+            {
+            StudentChooseAction formStudentChooseAction = new StudentChooseAction(s);
             formStudentChooseAction.Show();
             this.Hide();
+            }
+/*            else if (t != null) מה לעשות עם המורה האם להכין מסך ראשי שיוביל לאירועים או ש
+            {
+                StudentChooseAction formStudentChooseAction = new StudentChooseAction(t);
+                formStudentChooseAction.Show();
+                this.Hide();
+            }*/
+
         }
 
         private void backToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            AvailableEvent formAvailableEvent = new AvailableEvent(student);
+            if (t != null)
+            {
+            AvailableEvent formAvailableEvent = new AvailableEvent(t);
             formAvailableEvent.Show();
             this.Hide();
+            }
+            else if (s != null)
+            {
+                AvailableEvent formAvailableEvent = new AvailableEvent(s);
+                formAvailableEvent.Show();
+                this.Hide();
+            }
+
         }
     }
 }

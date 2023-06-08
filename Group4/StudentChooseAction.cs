@@ -13,7 +13,7 @@ namespace Group4
     public partial class StudentChooseAction : Form
     {
 
-        String st = "";
+       // String st = "";
         Student student = null;
 
         public StudentChooseAction(Student stud)
@@ -27,7 +27,7 @@ namespace Group4
 
         private void btnBooks_Click(object sender, EventArgs e)
         {
-            StudentBookHistory formStudentBookHistory = new StudentBookHistory(st);
+            StudentBookHistory formStudentBookHistory = new StudentBookHistory(student);
             formStudentBookHistory.Show();
             this.Hide();
         }

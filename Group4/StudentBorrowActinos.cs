@@ -12,20 +12,22 @@ namespace Group4
 {
     public partial class StudentBorrowActinos : Form
     {
-        String st = "";
+       // String st = "";
         Book bo = null; //change
+        Student Student = null;
    
-        public StudentBorrowActinos(string st, Book b)
+        public StudentBorrowActinos( Book b, Student Stud)
         {           
-            this.st = st;
+            //this.st = st;
             this.bo = b;
+            this.Student = Stud;
             InitializeComponent();
         }
 
 
         private void homeToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            StudentChooseAction formStudentChooseAction = new StudentChooseAction(st);
+            StudentChooseAction formStudentChooseAction = new StudentChooseAction(Student);
             formStudentChooseAction.Show();
             this.Hide();
         }
@@ -37,7 +39,7 @@ namespace Group4
 
         private void bookHistoryToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            StudentBookHistory formStudentBookHistory = new StudentBookHistory(st);
+            StudentBookHistory formStudentBookHistory = new StudentBookHistory(Student);
             formStudentBookHistory.Show();
             this.Hide();
         }

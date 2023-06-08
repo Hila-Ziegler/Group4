@@ -12,17 +12,17 @@ namespace Group4
 {
     public partial class AvailableEvent : Form
     {
-        string st = "";
+
         public System.Collections.Generic.List<Event> events = null;
         Student student = null;
         Teacher teacher = null;
 
         public AvailableEvent( Student stud)
         {            
-        //  this.st = st;
+
           this.student = stud;
           System.Collections.Generic.List<Event> Allevents = Program.events;
-          this.events = this.filterEvent(Allevents, st);
+          this.events = this.filterEvent(Allevents);
 
             InitializeComponent();
         }
@@ -31,14 +31,14 @@ namespace Group4
         {
             this.teacher = teac;
             System.Collections.Generic.List<Event> Allevents = Program.events;
-            this.events = this.filterEvent(Allevents, st);
+            this.events = this.filterEvent(Allevents);
 
             InitializeComponent();
         }
-        private System.Collections.Generic.List<Event> filterEvent(System.Collections.Generic.List<Event> li, String sn)
+        private System.Collections.Generic.List<Event> filterEvent(System.Collections.Generic.List<Event> li)
         {
             System.Collections.Generic.List<Event> ans = new System.Collections.Generic.List<Event>();
-            if(Program.seekStudent(student.get_ID()) != null)
+            if(student != null)
             {
                 foreach (Event e in li)
                 {
@@ -48,7 +48,7 @@ namespace Group4
                     }
                 }
             }
-            if (Program.seekTeacher(teacher.get_ID()) != null)
+            if (teacher != null)
             {
                 foreach (Event e in li)
                 {
@@ -71,11 +71,12 @@ namespace Group4
 
                 if (i < dataGridView1.Rows.Count)
                 {
-                    this.dataGridView1.Rows[i].Cells[0].Value = e.get_Teacher().get_name();
-                    this.dataGridView1.Rows[i].Cells[1].Value = e.get_guestName();
-                    this.dataGridView1.Rows[i].Cells[2].Value = e.get_date();
-                    this.dataGridView1.Rows[i].Cells[3].Value = e.get_currentlyRegistered();
-                    this.dataGridView1.Rows[i].Cells[4].Value = e.get_maxGuests();
+                    this.dataGridView1.Rows[i].Cells[0].Value = e.get_guestName();
+                    this.dataGridView1.Rows[i].Cells[1].Value = e.get_date();
+                    this.dataGridView1.Rows[i].Cells[2].Value = e.get_currentlyRegistered();
+                    this.dataGridView1.Rows[i].Cells[3].Value = e.get_maxGuests();                    
+                //    this.dataGridView1.Rows[i].Cells[4].Value = e.get_Teacher().get_name();
+
                 }
 
                 i++;
@@ -91,15 +92,39 @@ namespace Group4
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            if(student != null)
+            {
+                if (e.ColumnIndex == dataGridView1.Columns["GuestName"].Index)
+                {
+                    int i = e.RowIndex;
+                    string guestName = dataGridView1.Rows[i].Cells[0].Value.ToString();
+                    DateTime date = DateTime.Parse(dataGridView1.Rows[i].Cells[1].Value.ToString());
+                    Event ev =Program.seekEvent(date, guestName);
+                    EventCrud formEventCrud = new EventCrud( student, ev);
+                    formEventCrud.Show();
+                    this.Hide();
+                 }
+            }
+            if (teacher != null)
+            {
+                if (e.ColumnIndex == dataGridView1.Columns["GuestName"].Index)
+                {
+                    int i = e.RowIndex;
+                    string guestName = dataGridView1.Rows[i].Cells[0].Value.ToString();
+                    DateTime date = DateTime.Parse(dataGridView1.Rows[i].Cells[1].Value.ToString());
+                    Event ev = Program.seekEvent(date, guestName);
+                    EventCrud formEventCrud = new EventCrud("",teacher,ev);
+                    formEventCrud.Show();
+                    this.Hide();
+                }
+            }
 
-            EventCrud formEventCrud = new EventCrud(st);
-            formEventCrud.Show();
-            this.Hide();
+
         }
 
         private void CreateNewEvent_Click(object sender, EventArgs e)
         {
-            EventCrud formEventCrud = new EventCrud(st);
+            EventCrud formEventCrud = new EventCrud("",teacher);
             formEventCrud.Show();
             this.Hide();
         }
@@ -114,10 +139,15 @@ namespace Group4
         private void AvailableEvent_Load(object sender, EventArgs e)
         {
             update_EventList();
-            if (Program.seekTeacher(teacher.get_ID()) == null)
+            if (teacher != null) 
             {
                 homePageToolStripMenuItem.HideDropDown();
             }
+
+        }
+
+        private void ShowPastEvents_Click(object sender, EventArgs e)
+        {
 
         }
     }
