@@ -50,6 +50,16 @@ namespace Group4
             return null;
         }
 
+        public static Request SeekRequest(DateTime DT, Librarian l, Student s)
+        {
+            foreach (Request r in requests)
+            {
+                if (r.get_startDT() == DT && r.get_Librarian().get_ID() == l.get_ID() && r.get_Student().get_ID() == s.get_ID())
+                    return r;
+            }
+            return null;
+        }
+
         public static Teacher seekTeacher(string id)
         {
             foreach (Teacher t in teachers)
@@ -251,7 +261,7 @@ namespace Group4
             while (rdr.Read())
             {
                 Student s = seekStudent(rdr.GetValue(0).ToString());
-                Registration r = new Registration(s, DateTime.Parse(rdr.GetValue(1).ToString()),rdr.GetValue(2).ToString(),bool.Parse(rdr.GetValue(3).ToString()),rdr.GetValue(4).ToString(), int.Parse(rdr.GetValue(5).ToString()), false);
+                Registration r = new Registration(s, DateTime.Parse(rdr.GetValue(1).ToString()),rdr.GetValue(2).ToString(),bool.Parse(rdr.GetValue(3).ToString()),rdr.GetValue(4).ToString(), int.Parse(rdr.GetValue(5).ToString()), rdr.GetValue(6).ToString(), false);
                 Event e = seekEvent(DateTime.Parse(rdr.GetValue(1).ToString()), rdr.GetValue(2).ToString());
                 e.Registered.Add(s);
                 registrations.Add(r);

@@ -13,7 +13,7 @@ namespace Group4
         private Status status; //enum
         private int MaxGuests;
         private int CurrentlyRegistered;
-        private Teacher Teacher; // האם רק מורה פותח אירוע ולא גם ספרנית
+        private Teacher Teacher;
         public System.Collections.Generic.List<Student> Registered;
         //public System.Collections.Generic.List<Order> orders;
 
@@ -76,6 +76,8 @@ namespace Group4
             return this.status;
         }
 
+
+
         public void set_guestType(GuestType guestType)
         {
             this.GuestType = guestType;
@@ -117,6 +119,7 @@ namespace Group4
         }
 
 
+
         public void create_Event()
         {
             SqlCommand c = new SqlCommand();
@@ -146,6 +149,17 @@ namespace Group4
             SQL_CON SC = new SQL_CON();
             SC.execute_non_query(c);
         }
+
+        public void delete_Event()
+        {
+            SqlCommand c = new SqlCommand();
+            c.CommandText = "EXECUTE dbo.SP_delete_Event @guestSpeakerName ,@date";
+            c.Parameters.AddWithValue("@guestSpeakerName", this.GuestName);
+            c.Parameters.AddWithValue("@date", this.Date);
+            SQL_CON SC = new SQL_CON();
+            SC.execute_non_query(c);
+        }
+
         public int checkCurrentlyRegistered()
         {
             return this.Registered.Count();// האם מפה לעשות  UPDET לכמות המשתתפים?

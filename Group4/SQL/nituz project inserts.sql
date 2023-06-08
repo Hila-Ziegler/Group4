@@ -126,21 +126,21 @@ INSERT INTO Events
 -- insert into Registrations
 INSERT INTO Registrations
 	VALUES
-	('275733109', CONVERT(datetime, '18/09/2022 11:00:00', 103), 'Barbara Cartland', '1', 'i enjoyed it', '5'),
-	('383306250', CONVERT(datetime, '18/09/2022 11:00:00', 103), 'Barbara Cartland', '1', '', ''),
-	('275733109', CONVERT(datetime, '18/10/2022 12:00:00', 103), 'Agatha Christie', '1', '', '3'),
-	('265571602', CONVERT(datetime, '18/10/2022 12:00:00', 103), 'Agatha Christie', '1', '', ''),
-	('480945291', CONVERT(datetime, '18/10/2022 12:00:00', 103), 'Agatha Christie', '0', '', ''),
-	('275733109', CONVERT(datetime, '08/06/2022 15:00:00', 103), 'Tom Hanks', '1', '', '5'),
-	('265571602', CONVERT(datetime, '08/06/2022 15:00:00', 103), 'Tom Hanks', '1', 'it was fun', '4'),
-	('336015350', CONVERT(datetime, '08/06/2022 15:00:00', 103), 'Tom Hanks', '1', 'i enjoyed it', '4'),
-	('275733109', CONVERT(datetime, '25/02/2022 11:00:00', 103), 'Samuel Jackson', '0', '', ''),
-	('275733109', CONVERT(datetime, '22/03/2022 10:00:00', 103), 'Vin Diesel', '1', 'i enjoyed it', '5'),
-	('480945291', CONVERT(datetime, '22/03/2022 10:00:00', 103), 'Vin Diesel', '0', '', ''),
-	('275733109', CONVERT(datetime, '11/06/2022 11:00:00', 103), 'Ben Kingsley', '1', 'i didnt like it', '1'),
-	('336015350', CONVERT(datetime, '11/06/2022 11:00:00', 103), 'Ben Kingsley', '0', '', ''),
-	('275733109', CONVERT(datetime, '13/09/2022 10:00:00', 103), 'William Shakespeare', '1', 'i enjoyed it', '5'),
-	('217392528', CONVERT(datetime, '13/09/2022 10:00:00', 103), 'William Shakespeare', '1', 'boring', '2');
+	('275733109', CONVERT(datetime, '18/09/2022 11:00:00', 103), 'Barbara Cartland', '1', 'i enjoyed it', '5', ''),
+	('383306250', CONVERT(datetime, '18/09/2022 11:00:00', 103), 'Barbara Cartland', '1', '', '', ''),
+	('275733109', CONVERT(datetime, '18/10/2022 12:00:00', 103), 'Agatha Christie', '1', '', '3', ''),
+	('265571602', CONVERT(datetime, '18/10/2022 12:00:00', 103), 'Agatha Christie', '1', '', '', ''),
+	('480945291', CONVERT(datetime, '18/10/2022 12:00:00', 103), 'Agatha Christie', '0', '', '', ''),
+	('275733109', CONVERT(datetime, '08/06/2022 15:00:00', 103), 'Tom Hanks', '1', '', '5', ''),
+	('265571602', CONVERT(datetime, '08/06/2022 15:00:00', 103), 'Tom Hanks', '1', 'it was fun', '4', ''),
+	('336015350', CONVERT(datetime, '08/06/2022 15:00:00', 103), 'Tom Hanks', '1', 'i enjoyed it', '4', ''),
+	('275733109', CONVERT(datetime, '25/02/2022 11:00:00', 103), 'Samuel Jackson', '0', '', '', ''),
+	('275733109', CONVERT(datetime, '22/03/2022 10:00:00', 103), 'Vin Diesel', '1', 'i enjoyed it', '5', ''),
+	('480945291', CONVERT(datetime, '22/03/2022 10:00:00', 103), 'Vin Diesel', '0', '', '', ''),
+	('275733109', CONVERT(datetime, '11/06/2022 11:00:00', 103), 'Ben Kingsley', '1', 'i didnt like it', '1', ''),
+	('336015350', CONVERT(datetime, '11/06/2022 11:00:00', 103), 'Ben Kingsley', '0', '', '', ''),
+	('275733109', CONVERT(datetime, '13/09/2022 10:00:00', 103), 'William Shakespeare', '1', 'i enjoyed it', '5', ''),
+	('217392528', CONVERT(datetime, '13/09/2022 10:00:00', 103), 'William Shakespeare', '1', 'boring', '2', '');
 
 
 

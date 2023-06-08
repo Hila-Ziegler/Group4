@@ -74,35 +74,46 @@ namespace Group4
             this.Actions});
             this.dataGridView1.Location = new System.Drawing.Point(36, 257);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(543, 224);
+            this.dataGridView1.RowHeadersWidth = 51;
+            this.dataGridView1.Size = new System.Drawing.Size(680, 242);
             this.dataGridView1.TabIndex = 8;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // StartDate
             // 
             this.StartDate.HeaderText = "Start Date";
+            this.StartDate.MinimumWidth = 6;
             this.StartDate.Name = "StartDate";
+            this.StartDate.Width = 125;
             // 
             // StudentID
             // 
             this.StudentID.HeaderText = "Student ID";
+            this.StudentID.MinimumWidth = 6;
             this.StudentID.Name = "StudentID";
+            this.StudentID.Width = 125;
             // 
             // BookSerialNum
             // 
             this.BookSerialNum.HeaderText = "Book Serial Number";
+            this.BookSerialNum.MinimumWidth = 6;
             this.BookSerialNum.Name = "BookSerialNum";
+            this.BookSerialNum.Width = 125;
             // 
             // CopyNum
             // 
             this.CopyNum.HeaderText = "Copy Number";
+            this.CopyNum.MinimumWidth = 6;
             this.CopyNum.Name = "CopyNum";
+            this.CopyNum.Width = 125;
             // 
             // Actions
             // 
             this.Actions.HeaderText = "Actions";
+            this.Actions.MinimumWidth = 6;
             this.Actions.Name = "Actions";
             this.Actions.Text = "View";
+            this.Actions.Width = 125;
             // 
             // dataGridView2
             // 
@@ -114,46 +125,59 @@ namespace Group4
             this.Copy,
             this.AttachedPhoto,
             this.Actions1});
-            this.dataGridView2.Location = new System.Drawing.Point(624, 257);
+            this.dataGridView2.Location = new System.Drawing.Point(742, 257);
             this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(643, 224);
+            this.dataGridView2.RowHeadersWidth = 51;
+            this.dataGridView2.Size = new System.Drawing.Size(803, 242);
             this.dataGridView2.TabIndex = 9;
             this.dataGridView2.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentClick);
             // 
             // StartDT
             // 
             this.StartDT.HeaderText = "Start Date";
+            this.StartDT.MinimumWidth = 6;
             this.StartDT.Name = "StartDT";
+            this.StartDT.Width = 125;
             // 
             // StudentID1
             // 
             this.StudentID1.HeaderText = "Student ID";
+            this.StudentID1.MinimumWidth = 6;
             this.StudentID1.Name = "StudentID1";
+            this.StudentID1.Width = 125;
             // 
             // BookSerial
             // 
             this.BookSerial.HeaderText = "Book Serial Number";
+            this.BookSerial.MinimumWidth = 6;
             this.BookSerial.Name = "BookSerial";
+            this.BookSerial.Width = 125;
             // 
             // Copy
             // 
             this.Copy.HeaderText = "Copy Number";
+            this.Copy.MinimumWidth = 6;
             this.Copy.Name = "Copy";
+            this.Copy.Width = 125;
             // 
             // AttachedPhoto
             // 
             this.AttachedPhoto.HeaderText = "Attached Photo";
+            this.AttachedPhoto.MinimumWidth = 6;
             this.AttachedPhoto.Name = "AttachedPhoto";
             this.AttachedPhoto.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.AttachedPhoto.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.AttachedPhoto.Width = 125;
             // 
             // Actions1
             // 
             this.Actions1.HeaderText = "Actions";
+            this.Actions1.MinimumWidth = 6;
             this.Actions1.Name = "Actions1";
             this.Actions1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.Actions1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.Actions1.Text = "View";
+            this.Actions1.Width = 125;
             // 
             // TimeReqtxt
             // 
@@ -169,7 +193,7 @@ namespace Group4
             // 
             this.AltBooktxt.AutoSize = true;
             this.AltBooktxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AltBooktxt.Location = new System.Drawing.Point(620, 207);
+            this.AltBooktxt.Location = new System.Drawing.Point(738, 207);
             this.AltBooktxt.Name = "AltBooktxt";
             this.AltBooktxt.Size = new System.Drawing.Size(202, 20);
             this.AltBooktxt.TabIndex = 11;
@@ -179,7 +203,7 @@ namespace Group4
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(352, 570);
+            this.label2.Location = new System.Drawing.Point(527, 634);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(413, 20);
             this.label2.TabIndex = 12;
@@ -187,11 +211,13 @@ namespace Group4
             // 
             // menuStrip1
             // 
+            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.homePageToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1319, 24);
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
+            this.menuStrip1.Size = new System.Drawing.Size(1589, 24);
             this.menuStrip1.TabIndex = 13;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -200,12 +226,13 @@ namespace Group4
             this.homePageToolStripMenuItem.Name = "homePageToolStripMenuItem";
             this.homePageToolStripMenuItem.Size = new System.Drawing.Size(81, 20);
             this.homePageToolStripMenuItem.Text = "Home Page";
+            this.homePageToolStripMenuItem.Click += new System.EventHandler(this.homePageToolStripMenuItem_Click);
             // 
             // ManageRequests
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1319, 599);
+            this.ClientSize = new System.Drawing.Size(1589, 740);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.AltBooktxt);
             this.Controls.Add(this.TimeReqtxt);

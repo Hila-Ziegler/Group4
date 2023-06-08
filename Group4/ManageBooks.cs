@@ -91,13 +91,35 @@ namespace Group4
 
         private void BookManagmentGoToArchieve_Click(object sender, EventArgs e)
         {
-            BookManagmentGoToArchieve.Hide();
+           // BookManagmentGoToArchieve.Hide();
             this.dataGridView1.DataSource = null;
             this.dataGridView1.DataSource = books.ToArray();
             int i = 0;
             foreach (Book b in books)
             {
                 if (b.get_archive())
+                {
+                    this.dataGridView1.Rows[i].Cells[0].Value = b.get_sNumber();
+                    this.dataGridView1.Rows[i].Cells[1].Value = b.get_title();
+                    this.dataGridView1.Rows[i].Cells[2].Value = b.get_author();
+                    this.dataGridView1.Rows[i].Cells[3].Value = b.get_lang();
+                    this.dataGridView1.Rows[i].Cells[4].Value = b.Copies.Count();
+                    this.dataGridView1.Rows[i].Cells[5].Value = b.get_PYear();
+                    i++;
+                }
+            }
+            SizeAllColumns(sender, e);
+        }
+
+        private void btnShowActiveBooks_Click(object sender, EventArgs e)
+        {
+
+            this.dataGridView1.DataSource = null;
+            this.dataGridView1.DataSource = books.ToArray();
+            int i = 0;
+            foreach (Book b in books)
+            {
+                if (!b.get_archive())
                 {
                     this.dataGridView1.Rows[i].Cells[0].Value = b.get_sNumber();
                     this.dataGridView1.Rows[i].Cells[1].Value = b.get_title();
