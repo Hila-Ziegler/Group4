@@ -101,6 +101,7 @@
     <Compile Include="EventCrud.Designer.cs">
       <DependentUpon>EventCrud.cs</DependentUpon>
     </Compile>
+    <Compile Include="forthELOL.cs" />
     <Compile Include="IncorrectInformation.cs">
       <SubType>Form</SubType>
     </Compile>
