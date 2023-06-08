@@ -69,12 +69,14 @@ namespace Group4
 
         private void homePAgeToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            StudentChooseAction sca = new StudentChooseAction(this.s);
+            sca.Show();
+            this.Hide();
         }
 
         private void ReadingGoalReport_Load(object sender, EventArgs e)
         {
-            label8.Text = DateTime.Now.ToString();
+            label8.Text = "Generated on:\n" +DateTime.Now.ToString();
             label9.Text = "Morday Hagetaot School";
             label15.Text = this.s.get_name();
             label10.Text = $"Age: {this.s.get_age()}";
@@ -82,11 +84,10 @@ namespace Group4
             AverageBookRating.Text = $"Your Average Book Rating is: {this.getMyAverageRating()}";
             label1.Text = $"Your shortest book borrow is: \n{this.getShortestBookBorrow()}";
             label2.Text = $"Your Longest book borrow is: \n{this.getShortestBookBorrow()}";
-            label6.Text = $"Average reading goal in school is {this.getaverageReadingGoalInSchool()}";
-            label7.Text = $"Average Reading goal success rate in school is {this.getaverageSuccessRate("school")}";
-            //Average reading goal in club
-            label13.Text = $"Average reading goal in your club is {this.getaverageReadingGoalInClub()}";
-            label14.Text = $"Average Reading goal success rate in your club is {this.getaverageSuccessRate("club")}";
+            label6.Text = $"Average reading goal in school is: {this.getaverageReadingGoalInSchool()}";
+            label7.Text = $"Average Reading goal success rate in school is: {this.getaverageSuccessRate("school")}";
+            label13.Text = $"Average reading goal in your club is: {this.getaverageReadingGoalInClub()}";
+            label14.Text = $"Average Reading goal success rate in your club is: {this.getaverageSuccessRate("club")}";
         }
 
         private float getMyAverageRating()
@@ -101,7 +102,7 @@ namespace Group4
                     count++;
                 }
             }
-            return (float)(totalRating / count);
+            return count!=0 ? (float)(totalRating / count): 0;
         }
 
         private string getShortestBookBorrow()
@@ -140,7 +141,7 @@ namespace Group4
         private string getBorrowString(BookHistory bh)
         {
             int days = (bh.get_StartDate() - bh.get_EndDate()).Days;
-            return $"{bh.get_book().get_title()}\nYou took it on {bh.get_StartDate().Date} \nand handed it back after {days} days";
+            return $"{bh.get_book().get_title()}\nYou took it on {bh.get_StartDate().ToShortDateString()} \nand handed it back after {days} days";
         }
 
         private int getReadAmount() {
@@ -213,7 +214,7 @@ namespace Group4
                 totalReadingGoal += st.get_yearlyGoal();
                 count++;
             }
-            return (float)(totalReadingGoal / count);
+            return count!=0 ? (float)(totalReadingGoal / count): 0;
         }
     }
 }
