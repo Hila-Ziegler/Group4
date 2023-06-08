@@ -42,6 +42,10 @@ namespace Group4
             this.DeleteBTN = new System.Windows.Forms.Button();
             this.UpdateBTN = new System.Windows.Forms.Button();
             this.NameTitle = new System.Windows.Forms.Label();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.homepageToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.manageStudentsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // BringBackFromArchieve
@@ -167,11 +171,38 @@ namespace Group4
             this.NameTitle.TabIndex = 33;
             this.NameTitle.Text = "Name";
             // 
+            // menuStrip1
+            // 
+            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.homepageToolStripMenuItem,
+            this.manageStudentsToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(800, 30);
+            this.menuStrip1.TabIndex = 82;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // homepageToolStripMenuItem
+            // 
+            this.homepageToolStripMenuItem.Name = "homepageToolStripMenuItem";
+            this.homepageToolStripMenuItem.Size = new System.Drawing.Size(98, 26);
+            this.homepageToolStripMenuItem.Text = "Homepage";
+            this.homepageToolStripMenuItem.Click += new System.EventHandler(this.homepageToolStripMenuItem_Click);
+            // 
+            // manageStudentsToolStripMenuItem
+            // 
+            this.manageStudentsToolStripMenuItem.Name = "manageStudentsToolStripMenuItem";
+            this.manageStudentsToolStripMenuItem.Size = new System.Drawing.Size(145, 26);
+            this.manageStudentsToolStripMenuItem.Text = "Manage Librarians";
+            this.manageStudentsToolStripMenuItem.Click += new System.EventHandler(this.manageStudentsToolStripMenuItem_Click);
+            // 
             // LibrarianCrud
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.BringBackFromArchieve);
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.NameTextBox);
@@ -188,6 +219,8 @@ namespace Group4
             this.Name = "LibrarianCrud";
             this.Text = "LibrarianCrud";
             this.Load += new System.EventHandler(this.LibrarianCrud_Load);
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -208,5 +241,8 @@ namespace Group4
         private System.Windows.Forms.Button DeleteBTN;
         private System.Windows.Forms.Button UpdateBTN;
         private System.Windows.Forms.Label NameTitle;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem homepageToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem manageStudentsToolStripMenuItem;
     }
 }
