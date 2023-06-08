@@ -165,6 +165,12 @@
       <DependentUpon>RequestDeat.cs</DependentUpon>
     </Compile>
     <Compile Include="RequestType.cs" />
+    <Compile Include="socialPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="socialPage.Designer.cs">
+      <DependentUpon>socialPage.cs</DependentUpon>
+    </Compile>
     <Compile Include="SQL_CON.cs" />
     <Compile Include="Status.cs" />
     <Compile Include="Student.cs" />
@@ -276,6 +282,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="RequestDeat.resx">
       <DependentUpon>RequestDeat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="socialPage.resx">
+      <DependentUpon>socialPage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="studentAllMessagescs.resx">
       <DependentUpon>studentAllMessagescs.cs</DependentUpon>
