@@ -71,6 +71,11 @@ namespace Group4
             return this.Teacher;
         }
 
+        public Status get_Status()
+        {
+            return this.status;
+        }
+
         public void set_guestType(GuestType guestType)
         {
             this.GuestType = guestType;
@@ -106,7 +111,12 @@ namespace Group4
             this.Teacher = t;
         }
 
-       
+        public void set_Status(Status s)
+        {
+            this.status = s;
+        }
+
+
         public void create_Event()
         {
             SqlCommand c = new SqlCommand();

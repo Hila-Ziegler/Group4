@@ -32,26 +32,33 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.homePageToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.backToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.BookCrudTitle = new System.Windows.Forms.Label();
-            this.TitleTextBox = new System.Windows.Forms.TextBox();
+            this.SpeakerName = new System.Windows.Forms.Label();
+            this.GuestNameTextBox = new System.Windows.Forms.TextBox();
             this.MaxAttendance = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
+            this.OpenForRegistrationlbl = new System.Windows.Forms.Label();
             this.CurrentAtten = new System.Windows.Forms.Label();
             this.Date = new System.Windows.Forms.Label();
-            this.lb_AuthorValue = new System.Windows.Forms.Label();
-            this.lb_PublishYearValue = new System.Windows.Forms.Label();
-            this.lb_LangueageValue = new System.Windows.Forms.Label();
-            this.lb_ISBN_value = new System.Windows.Forms.Label();
-            this.ISBNTextBox = new System.Windows.Forms.TextBox();
-            this.AuthorTextBox = new System.Windows.Forms.TextBox();
-            this.PublishYearTextBox = new System.Windows.Forms.TextBox();
-            this.languageTextBox = new System.Windows.Forms.TextBox();
+            this.lb_MaxAttendanceValue = new System.Windows.Forms.Label();
+            this.OpenForRegistrationValuelb = new System.Windows.Forms.Label();
+            this.lb_CurrentAttendanceValue = new System.Windows.Forms.Label();
+            this.lb_Date_value = new System.Windows.Forms.Label();
             this.GuestName = new System.Windows.Forms.Label();
             this.UpdateEvent = new System.Windows.Forms.Button();
             this.CreateNewEvent = new System.Windows.Forms.Button();
             this.DeleteEvent = new System.Windows.Forms.Button();
             this.RegisterBTN = new System.Windows.Forms.Button();
+            this.EventDatePicker = new System.Windows.Forms.DateTimePicker();
+            this.label1 = new System.Windows.Forms.Label();
+            this.numericMaxAttendance = new System.Windows.Forms.NumericUpDown();
+            this.numericPrice = new System.Windows.Forms.NumericUpDown();
+            this.GuestTypelbl = new System.Windows.Forms.Label();
+            this.GuestTypeValue = new System.Windows.Forms.Label();
+            this.OpenForRegistrationCheckBox = new System.Windows.Forms.CheckBox();
+            this.GuestTypeComboBox = new System.Windows.Forms.ComboBox();
+            this.updateEventbtn = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericMaxAttendance)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericPrice)).BeginInit();
             this.SuspendLayout();
             // 
             // label2
@@ -72,8 +79,7 @@
             this.backToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(669, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(892, 30);
             this.menuStrip1.TabIndex = 7;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -91,138 +97,130 @@
             this.backToolStripMenuItem.Text = "AvailableEvent";
             this.backToolStripMenuItem.Click += new System.EventHandler(this.backToolStripMenuItem_Click);
             // 
-            // BookCrudTitle
+            // SpeakerName
             // 
-            this.BookCrudTitle.AutoSize = true;
-            this.BookCrudTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BookCrudTitle.Location = new System.Drawing.Point(286, 33);
-            this.BookCrudTitle.Name = "BookCrudTitle";
-            this.BookCrudTitle.Size = new System.Drawing.Size(93, 33);
-            this.BookCrudTitle.TabIndex = 8;
-            this.BookCrudTitle.Text = "Name";
-            this.BookCrudTitle.Click += new System.EventHandler(this.BookCrudTitle_Click);
+
+            this.SpeakerName.AutoSize = true;
+            this.SpeakerName.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SpeakerName.Location = new System.Drawing.Point(381, 41);
+            this.SpeakerName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.SpeakerName.Name = "SpeakerName";
+            this.SpeakerName.Size = new System.Drawing.Size(117, 42);
+            this.SpeakerName.TabIndex = 8;
+            this.SpeakerName.Text = "Name";
+            this.SpeakerName.Click += new System.EventHandler(this.BookCrudTitle_Click);
             // 
-            // TitleTextBox
+            // GuestNameTextBox
             // 
-            this.TitleTextBox.Location = new System.Drawing.Point(353, 89);
-            this.TitleTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.TitleTextBox.Name = "TitleTextBox";
-            this.TitleTextBox.Size = new System.Drawing.Size(97, 20);
-            this.TitleTextBox.TabIndex = 45;
+
+            this.GuestNameTextBox.Location = new System.Drawing.Point(471, 110);
+            this.GuestNameTextBox.Name = "GuestNameTextBox";
+            this.GuestNameTextBox.Size = new System.Drawing.Size(128, 22);
+            this.GuestNameTextBox.TabIndex = 45;
+
             // 
             // MaxAttendance
             // 
             this.MaxAttendance.AutoSize = true;
-            this.MaxAttendance.Location = new System.Drawing.Point(180, 144);
+            this.MaxAttendance.Location = new System.Drawing.Point(240, 206);
+            this.MaxAttendance.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.MaxAttendance.Name = "MaxAttendance";
-            this.MaxAttendance.Size = new System.Drawing.Size(85, 13);
+            this.MaxAttendance.Size = new System.Drawing.Size(109, 17);
             this.MaxAttendance.TabIndex = 30;
             this.MaxAttendance.Text = "Max Attendance";
             // 
-            // label4
+            // OpenForRegistrationlbl
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(180, 168);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(109, 13);
-            this.label4.TabIndex = 31;
-            this.label4.Text = "Available For Registry";
+
+            this.OpenForRegistrationlbl.AutoSize = true;
+            this.OpenForRegistrationlbl.Location = new System.Drawing.Point(240, 236);
+            this.OpenForRegistrationlbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.OpenForRegistrationlbl.Name = "OpenForRegistrationlbl";
+            this.OpenForRegistrationlbl.Size = new System.Drawing.Size(148, 17);
+            this.OpenForRegistrationlbl.TabIndex = 31;
+            this.OpenForRegistrationlbl.Text = "Open For Registration";
+
             // 
             // CurrentAtten
             // 
             this.CurrentAtten.AutoSize = true;
-            this.CurrentAtten.Location = new System.Drawing.Point(180, 198);
+
+            this.CurrentAtten.Location = new System.Drawing.Point(240, 300);
+            this.CurrentAtten.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.CurrentAtten.Name = "CurrentAtten";
-            this.CurrentAtten.Size = new System.Drawing.Size(99, 13);
+            this.CurrentAtten.Size = new System.Drawing.Size(138, 17);
             this.CurrentAtten.TabIndex = 32;
-            this.CurrentAtten.Text = "Current Attendance";
+            this.CurrentAtten.Text = "Currently Registered";
             // 
             // Date
             // 
             this.Date.AutoSize = true;
             this.Date.Location = new System.Drawing.Point(180, 116);
             this.Date.Name = "Date";
-            this.Date.Size = new System.Drawing.Size(30, 13);
+
+            this.Date.Size = new System.Drawing.Size(38, 17);
+
             this.Date.TabIndex = 34;
             this.Date.Text = "Date";
             // 
-            // lb_AuthorValue
+            // lb_MaxAttendanceValue
             // 
-            this.lb_AuthorValue.AutoSize = true;
-            this.lb_AuthorValue.Location = new System.Drawing.Point(302, 144);
-            this.lb_AuthorValue.Name = "lb_AuthorValue";
-            this.lb_AuthorValue.Size = new System.Drawing.Size(0, 13);
-            this.lb_AuthorValue.TabIndex = 35;
+
+            this.lb_MaxAttendanceValue.AutoSize = true;
+            this.lb_MaxAttendanceValue.Location = new System.Drawing.Point(403, 206);
+            this.lb_MaxAttendanceValue.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lb_MaxAttendanceValue.Name = "lb_MaxAttendanceValue";
+            this.lb_MaxAttendanceValue.Size = new System.Drawing.Size(0, 17);
+            this.lb_MaxAttendanceValue.TabIndex = 35;
+
             // 
-            // lb_PublishYearValue
+            // OpenForRegistrationValuelb
             // 
-            this.lb_PublishYearValue.AutoSize = true;
-            this.lb_PublishYearValue.Location = new System.Drawing.Point(302, 168);
-            this.lb_PublishYearValue.Name = "lb_PublishYearValue";
-            this.lb_PublishYearValue.Size = new System.Drawing.Size(0, 13);
-            this.lb_PublishYearValue.TabIndex = 36;
+
+            this.OpenForRegistrationValuelb.AutoSize = true;
+            this.OpenForRegistrationValuelb.Location = new System.Drawing.Point(403, 236);
+            this.OpenForRegistrationValuelb.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.OpenForRegistrationValuelb.Name = "OpenForRegistrationValuelb";
+            this.OpenForRegistrationValuelb.Size = new System.Drawing.Size(0, 17);
+            this.OpenForRegistrationValuelb.TabIndex = 36;
             // 
-            // lb_LangueageValue
+            // lb_CurrentAttendanceValue
             // 
-            this.lb_LangueageValue.AutoSize = true;
-            this.lb_LangueageValue.Location = new System.Drawing.Point(302, 198);
-            this.lb_LangueageValue.Name = "lb_LangueageValue";
-            this.lb_LangueageValue.Size = new System.Drawing.Size(0, 13);
-            this.lb_LangueageValue.TabIndex = 37;
+
+            this.lb_CurrentAttendanceValue.AutoSize = true;
+            this.lb_CurrentAttendanceValue.Location = new System.Drawing.Point(403, 300);
+            this.lb_CurrentAttendanceValue.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lb_CurrentAttendanceValue.Name = "lb_CurrentAttendanceValue";
+            this.lb_CurrentAttendanceValue.Size = new System.Drawing.Size(0, 17);
+            this.lb_CurrentAttendanceValue.TabIndex = 37;
             // 
-            // lb_ISBN_value
+            // lb_Date_value
             // 
-            this.lb_ISBN_value.AutoSize = true;
-            this.lb_ISBN_value.Location = new System.Drawing.Point(302, 116);
-            this.lb_ISBN_value.Name = "lb_ISBN_value";
-            this.lb_ISBN_value.Size = new System.Drawing.Size(0, 13);
-            this.lb_ISBN_value.TabIndex = 39;
-            // 
-            // ISBNTextBox
-            // 
-            this.ISBNTextBox.Location = new System.Drawing.Point(353, 116);
-            this.ISBNTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.ISBNTextBox.Name = "ISBNTextBox";
-            this.ISBNTextBox.Size = new System.Drawing.Size(97, 20);
-            this.ISBNTextBox.TabIndex = 40;
-            // 
-            // AuthorTextBox
-            // 
-            this.AuthorTextBox.Location = new System.Drawing.Point(353, 141);
-            this.AuthorTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.AuthorTextBox.Name = "AuthorTextBox";
-            this.AuthorTextBox.Size = new System.Drawing.Size(97, 20);
-            this.AuthorTextBox.TabIndex = 41;
-            // 
-            // PublishYearTextBox
-            // 
-            this.PublishYearTextBox.Location = new System.Drawing.Point(353, 168);
-            this.PublishYearTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.PublishYearTextBox.Name = "PublishYearTextBox";
-            this.PublishYearTextBox.Size = new System.Drawing.Size(97, 20);
-            this.PublishYearTextBox.TabIndex = 42;
-            // 
-            // languageTextBox
-            // 
-            this.languageTextBox.Location = new System.Drawing.Point(353, 196);
-            this.languageTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.languageTextBox.Name = "languageTextBox";
-            this.languageTextBox.Size = new System.Drawing.Size(97, 20);
-            this.languageTextBox.TabIndex = 43;
+
+            this.lb_Date_value.AutoSize = true;
+            this.lb_Date_value.Location = new System.Drawing.Point(403, 143);
+            this.lb_Date_value.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lb_Date_value.Name = "lb_Date_value";
+            this.lb_Date_value.Size = new System.Drawing.Size(0, 17);
+            this.lb_Date_value.TabIndex = 39;
             // 
             // GuestName
             // 
             this.GuestName.AutoSize = true;
             this.GuestName.Location = new System.Drawing.Point(180, 92);
             this.GuestName.Name = "GuestName";
-            this.GuestName.Size = new System.Drawing.Size(66, 13);
+
+            this.GuestName.Size = new System.Drawing.Size(87, 17);
+
             this.GuestName.TabIndex = 44;
             this.GuestName.Text = "Guest Name";
             this.GuestName.Click += new System.EventHandler(this.Titlelbl_Click);
             // 
             // UpdateEvent
             // 
-            this.UpdateEvent.Location = new System.Drawing.Point(154, 307);
+
+            this.UpdateEvent.Location = new System.Drawing.Point(206, 397);
+            this.UpdateEvent.Margin = new System.Windows.Forms.Padding(4);
             this.UpdateEvent.Name = "UpdateEvent";
             this.UpdateEvent.Size = new System.Drawing.Size(103, 23);
             this.UpdateEvent.TabIndex = 46;
@@ -231,8 +229,8 @@
             // 
             // CreateNewEvent
             // 
-            this.CreateNewEvent.Location = new System.Drawing.Point(304, 307);
-            this.CreateNewEvent.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+
+            this.CreateNewEvent.Location = new System.Drawing.Point(406, 397);
             this.CreateNewEvent.Name = "CreateNewEvent";
             this.CreateNewEvent.Size = new System.Drawing.Size(109, 23);
             this.CreateNewEvent.TabIndex = 47;
@@ -241,7 +239,9 @@
             // 
             // DeleteEvent
             // 
-            this.DeleteEvent.Location = new System.Drawing.Point(467, 307);
+
+            this.DeleteEvent.Location = new System.Drawing.Point(623, 397);
+            this.DeleteEvent.Margin = new System.Windows.Forms.Padding(4);
             this.DeleteEvent.Name = "DeleteEvent";
             this.DeleteEvent.Size = new System.Drawing.Size(75, 23);
             this.DeleteEvent.TabIndex = 49;
@@ -250,37 +250,123 @@
             // 
             // RegisterBTN
             // 
-            this.RegisterBTN.Location = new System.Drawing.Point(304, 263);
+
+            this.RegisterBTN.Location = new System.Drawing.Point(406, 343);
+            this.RegisterBTN.Margin = new System.Windows.Forms.Padding(4);
+
             this.RegisterBTN.Name = "RegisterBTN";
             this.RegisterBTN.Size = new System.Drawing.Size(109, 21);
             this.RegisterBTN.TabIndex = 50;
             this.RegisterBTN.Text = "Register For Event";
             this.RegisterBTN.UseVisualStyleBackColor = true;
             // 
+            // EventDatePicker
+            // 
+            this.EventDatePicker.Location = new System.Drawing.Point(471, 143);
+            this.EventDatePicker.Name = "EventDatePicker";
+            this.EventDatePicker.Size = new System.Drawing.Size(232, 22);
+            this.EventDatePicker.TabIndex = 51;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(240, 269);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(90, 17);
+            this.label1.TabIndex = 52;
+            this.label1.Text = "Event\'s Price";
+            // 
+            // numericMaxAttendance
+            // 
+            this.numericMaxAttendance.Location = new System.Drawing.Point(471, 206);
+            this.numericMaxAttendance.Name = "numericMaxAttendance";
+            this.numericMaxAttendance.Size = new System.Drawing.Size(120, 22);
+            this.numericMaxAttendance.TabIndex = 53;
+            // 
+            // numericPrice
+            // 
+            this.numericPrice.DecimalPlaces = 2;
+            this.numericPrice.Location = new System.Drawing.Point(471, 269);
+            this.numericPrice.Name = "numericPrice";
+            this.numericPrice.Size = new System.Drawing.Size(120, 22);
+            this.numericPrice.TabIndex = 54;
+            // 
+            // GuestTypelbl
+            // 
+            this.GuestTypelbl.AutoSize = true;
+            this.GuestTypelbl.Location = new System.Drawing.Point(239, 173);
+            this.GuestTypelbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.GuestTypelbl.Name = "GuestTypelbl";
+            this.GuestTypelbl.Size = new System.Drawing.Size(82, 17);
+            this.GuestTypelbl.TabIndex = 55;
+            this.GuestTypelbl.Text = "Guest Type";
+            // 
+            // GuestTypeValue
+            // 
+            this.GuestTypeValue.AutoSize = true;
+            this.GuestTypeValue.Location = new System.Drawing.Point(402, 170);
+            this.GuestTypeValue.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.GuestTypeValue.Name = "GuestTypeValue";
+            this.GuestTypeValue.Size = new System.Drawing.Size(0, 17);
+            this.GuestTypeValue.TabIndex = 57;
+            // 
+            // OpenForRegistrationCheckBox
+            // 
+            this.OpenForRegistrationCheckBox.AutoSize = true;
+            this.OpenForRegistrationCheckBox.Location = new System.Drawing.Point(471, 237);
+            this.OpenForRegistrationCheckBox.Name = "OpenForRegistrationCheckBox";
+            this.OpenForRegistrationCheckBox.Size = new System.Drawing.Size(18, 17);
+            this.OpenForRegistrationCheckBox.TabIndex = 58;
+            this.OpenForRegistrationCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // GuestTypeComboBox
+            // 
+            this.GuestTypeComboBox.FormattingEnabled = true;
+            this.GuestTypeComboBox.Location = new System.Drawing.Point(470, 171);
+            this.GuestTypeComboBox.Name = "GuestTypeComboBox";
+            this.GuestTypeComboBox.Size = new System.Drawing.Size(121, 24);
+            this.GuestTypeComboBox.TabIndex = 60;
+            // 
+            // updateEventbtn
+            // 
+            this.updateEventbtn.Location = new System.Drawing.Point(717, 211);
+            this.updateEventbtn.Name = "updateEventbtn";
+            this.updateEventbtn.Size = new System.Drawing.Size(75, 43);
+            this.updateEventbtn.TabIndex = 61;
+            this.updateEventbtn.Text = "Update";
+            this.updateEventbtn.UseVisualStyleBackColor = true;
+            // 
             // EventCrud
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(669, 453);
+
+            this.ClientSize = new System.Drawing.Size(892, 557);
+            this.Controls.Add(this.updateEventbtn);
+            this.Controls.Add(this.GuestTypeComboBox);
+            this.Controls.Add(this.OpenForRegistrationCheckBox);
+            this.Controls.Add(this.GuestTypeValue);
+            this.Controls.Add(this.GuestTypelbl);
+            this.Controls.Add(this.numericPrice);
+            this.Controls.Add(this.numericMaxAttendance);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.EventDatePicker);
             this.Controls.Add(this.RegisterBTN);
             this.Controls.Add(this.DeleteEvent);
             this.Controls.Add(this.CreateNewEvent);
             this.Controls.Add(this.UpdateEvent);
-            this.Controls.Add(this.TitleTextBox);
+            this.Controls.Add(this.GuestNameTextBox);
             this.Controls.Add(this.GuestName);
-            this.Controls.Add(this.languageTextBox);
-            this.Controls.Add(this.PublishYearTextBox);
-            this.Controls.Add(this.AuthorTextBox);
-            this.Controls.Add(this.ISBNTextBox);
-            this.Controls.Add(this.lb_ISBN_value);
-            this.Controls.Add(this.lb_LangueageValue);
-            this.Controls.Add(this.lb_PublishYearValue);
-            this.Controls.Add(this.lb_AuthorValue);
+            this.Controls.Add(this.lb_Date_value);
+            this.Controls.Add(this.lb_CurrentAttendanceValue);
+            this.Controls.Add(this.OpenForRegistrationValuelb);
+            this.Controls.Add(this.lb_MaxAttendanceValue);
             this.Controls.Add(this.Date);
             this.Controls.Add(this.CurrentAtten);
-            this.Controls.Add(this.label4);
+            this.Controls.Add(this.OpenForRegistrationlbl);
             this.Controls.Add(this.MaxAttendance);
-            this.Controls.Add(this.BookCrudTitle);
+            this.Controls.Add(this.SpeakerName);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
@@ -290,6 +376,8 @@
             this.Load += new System.EventHandler(this.EventCrud_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericMaxAttendance)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericPrice)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -301,24 +389,29 @@
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem homePageToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem backToolStripMenuItem;
-        private System.Windows.Forms.Label BookCrudTitle;
-        private System.Windows.Forms.TextBox TitleTextBox;
+        private System.Windows.Forms.Label SpeakerName;
+        private System.Windows.Forms.TextBox GuestNameTextBox;
         private System.Windows.Forms.Label MaxAttendance;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label OpenForRegistrationlbl;
         private System.Windows.Forms.Label CurrentAtten;
         private System.Windows.Forms.Label Date;
-        private System.Windows.Forms.Label lb_AuthorValue;
-        private System.Windows.Forms.Label lb_PublishYearValue;
-        private System.Windows.Forms.Label lb_LangueageValue;
-        private System.Windows.Forms.Label lb_ISBN_value;
-        private System.Windows.Forms.TextBox ISBNTextBox;
-        private System.Windows.Forms.TextBox AuthorTextBox;
-        private System.Windows.Forms.TextBox PublishYearTextBox;
-        private System.Windows.Forms.TextBox languageTextBox;
+        private System.Windows.Forms.Label lb_MaxAttendanceValue;
+        private System.Windows.Forms.Label OpenForRegistrationValuelb;
+        private System.Windows.Forms.Label lb_CurrentAttendanceValue;
+        private System.Windows.Forms.Label lb_Date_value;
         private System.Windows.Forms.Label GuestName;
         private System.Windows.Forms.Button UpdateEvent;
         private System.Windows.Forms.Button CreateNewEvent;
         private System.Windows.Forms.Button DeleteEvent;
         private System.Windows.Forms.Button RegisterBTN;
+        private System.Windows.Forms.DateTimePicker EventDatePicker;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.NumericUpDown numericMaxAttendance;
+        private System.Windows.Forms.NumericUpDown numericPrice;
+        private System.Windows.Forms.Label GuestTypelbl;
+        private System.Windows.Forms.Label GuestTypeValue;
+        private System.Windows.Forms.CheckBox OpenForRegistrationCheckBox;
+        private System.Windows.Forms.ComboBox GuestTypeComboBox;
+        private System.Windows.Forms.Button updateEventbtn;
     }
 }
