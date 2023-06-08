@@ -142,12 +142,16 @@ namespace Group4
             {
                 if (bh.get_StartDate() == bh.get_EndDate())
                 {
-                   bh.set_endDate(DateTime.Now);
+                    bh.set_endDate(DateTime.Now);
+                    this.updateBookHistory();
+                    bh.update_BookHistory();
+                    this.copy.set_status(false);
+                    this.copy.update_Copy();
+                    
+                    
                 }
             }
-            this.copy.set_status(false);
-            this.copy.update_Copy();
-            this.updateBookHistory();
+            
            
         }
 
