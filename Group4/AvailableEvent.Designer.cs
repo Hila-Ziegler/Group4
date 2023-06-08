@@ -31,14 +31,14 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.homePageToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.BookCrudTitle = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.CreateNewEvent = new System.Windows.Forms.Button();
-            this.ShowPastEvents = new System.Windows.Forms.Button();
             this.GuestName = new System.Windows.Forms.DataGridViewButtonColumn();
             this.Date = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CurrentlyRegistered = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MaxGuests = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.BookCrudTitle = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.CreateNewEvent = new System.Windows.Forms.Button();
+            this.ShowPastEvents = new System.Windows.Forms.Button();
             this.btnFutureEvents = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -77,6 +77,34 @@
             this.dataGridView1.Size = new System.Drawing.Size(670, 140);
             this.dataGridView1.TabIndex = 1;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
+            // GuestName
+            // 
+            this.GuestName.HeaderText = "Guest Name";
+            this.GuestName.MinimumWidth = 6;
+            this.GuestName.Name = "GuestName";
+            this.GuestName.Width = 125;
+            // 
+            // Date
+            // 
+            this.Date.HeaderText = "Date";
+            this.Date.MinimumWidth = 6;
+            this.Date.Name = "Date";
+            this.Date.Width = 125;
+            // 
+            // CurrentlyRegistered
+            // 
+            this.CurrentlyRegistered.HeaderText = "Currently Registered";
+            this.CurrentlyRegistered.MinimumWidth = 6;
+            this.CurrentlyRegistered.Name = "CurrentlyRegistered";
+            this.CurrentlyRegistered.Width = 125;
+            // 
+            // MaxGuests
+            // 
+            this.MaxGuests.HeaderText = "Max Guests";
+            this.MaxGuests.MinimumWidth = 6;
+            this.MaxGuests.Name = "MaxGuests";
+            this.MaxGuests.Width = 125;
             // 
             // BookCrudTitle
             // 
@@ -123,34 +151,6 @@
             this.ShowPastEvents.UseVisualStyleBackColor = true;
             this.ShowPastEvents.Click += new System.EventHandler(this.ShowPastEvents_Click);
             // 
-            // GuestName
-            // 
-            this.GuestName.HeaderText = "Guest Name";
-            this.GuestName.MinimumWidth = 6;
-            this.GuestName.Name = "GuestName";
-            this.GuestName.Width = 125;
-            // 
-            // Date
-            // 
-            this.Date.HeaderText = "Date";
-            this.Date.MinimumWidth = 6;
-            this.Date.Name = "Date";
-            this.Date.Width = 125;
-            // 
-            // CurrentlyRegistered
-            // 
-            this.CurrentlyRegistered.HeaderText = "Currently Registered";
-            this.CurrentlyRegistered.MinimumWidth = 6;
-            this.CurrentlyRegistered.Name = "CurrentlyRegistered";
-            this.CurrentlyRegistered.Width = 125;
-            // 
-            // MaxGuests
-            // 
-            this.MaxGuests.HeaderText = "Max Guests";
-            this.MaxGuests.MinimumWidth = 6;
-            this.MaxGuests.Name = "MaxGuests";
-            this.MaxGuests.Width = 125;
-            // 
             // btnFutureEvents
             // 
             this.btnFutureEvents.Location = new System.Drawing.Point(653, 350);
@@ -194,11 +194,11 @@
         private System.Windows.Forms.Label BookCrudTitle;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button CreateNewEvent;
-        private System.Windows.Forms.Button ShowPastEvents;
         private System.Windows.Forms.DataGridViewButtonColumn GuestName;
         private System.Windows.Forms.DataGridViewTextBoxColumn Date;
         private System.Windows.Forms.DataGridViewTextBoxColumn CurrentlyRegistered;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaxGuests;
         private System.Windows.Forms.Button btnFutureEvents;
+        private System.Windows.Forms.Button ShowPastEvents;
     }
 }
