@@ -51,9 +51,17 @@ namespace Group4
                     {
                         this.dataGridView1.Rows[i].Cells[0].Value = c.get_book().get_title();
                         this.dataGridView1.Rows[i].Cells[1].Value = c.get_book().get_sNumber();
-                        this.dataGridView1.Rows[i].Cells[2].Value = c.get_StartDate();
-                        this.dataGridView1.Rows[i].Cells[3].Value = c.get_EndDate();
-                        this.dataGridView1.Rows[i].Cells[4].Value = c.get_rate();
+                        this.dataGridView1.Rows[i].Cells[2].Value = c.get_copyNum();
+                        this.dataGridView1.Rows[i].Cells[3].Value = c.get_StartDate();
+                        if (c.get_StartDate() == c.get_EndDate())
+                        {
+                            this.dataGridView1.Rows[i].Cells[4].Value = DBNull.Value;
+                        }
+                        else
+                        {
+                            this.dataGridView1.Rows[i].Cells[4].Value = c.get_EndDate();
+                        }
+                        this.dataGridView1.Rows[i].Cells[5].Value = c.get_rate();
                     }
 
                     i++;
@@ -72,9 +80,9 @@ namespace Group4
         {
             if (e.ColumnIndex == dataGridView1.Columns["Title"].Index)
             {
-                int i = e.RowIndex;
-                string sn = dataGridView1.Rows[i].Cells[1].Value.ToString();
-                Book b = Program.seekBook(sn);
+               int i = e.RowIndex;
+               string sn = dataGridView1.Rows[i].Cells[1].Value.ToString();
+               Book b = Program.seekBook(sn);
                StudentBorrowActinos formStudentBorrow = new StudentBorrowActinos(st,b);
                formStudentBorrow.Show();
                this.Hide();

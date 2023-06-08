@@ -16,6 +16,8 @@ namespace Group4
         [Description("Declined")]
         Declined,
         [Description ("Open")]
-        Open
+        Open,
+        [Description ("Closed")]
+        Closed
     }
 }
