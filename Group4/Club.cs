@@ -13,6 +13,7 @@ namespace Group4
         BookBesties,
         [Description("Sequel Chasers")]
         SequelChasers,
+        None
         /*        TheBookies,
                 TheBookMarks,
                 BookBesties,
