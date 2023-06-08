@@ -45,7 +45,7 @@ namespace Group4
                     {
                         // show new form for librarians
                         entered++;
-                        LibrarianChooseAction form1 = new LibrarianChooseAction();
+                        LibrarianChooseAction form1 = new LibrarianChooseAction(L);
                         form1.Show();
                         this.Hide();
                     }
@@ -57,8 +57,11 @@ namespace Group4
                     {
                         entered++;
                         this.Hide();
+                        AvailableEvent formAvailableEvent = new AvailableEvent(T);
+                        formAvailableEvent.Show();
 
-                        
+
+
 
                     }
                 }
@@ -68,7 +71,7 @@ namespace Group4
                     if (txtUserName.Text == S.get_ID() && Hash.GetHash(txtPassword.Text) == S.get_password())
                     {
                         entered++;
-                        StudentChooseAction formStudentChooseAction = new StudentChooseAction(S.get_name());
+                        StudentChooseAction formStudentChooseAction = new StudentChooseAction(S);
                         formStudentChooseAction.Show();
                         this.Hide();
                     }
@@ -90,6 +93,11 @@ namespace Group4
         }
 
         private void userEntrancecs_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
         {
 
         }

@@ -31,13 +31,15 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.homePageToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.EventName = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.Guest = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Date = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.BookCrudTitle = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.CreateNewEvent = new System.Windows.Forms.Button();
             this.ShowPastEvents = new System.Windows.Forms.Button();
+            this.GuestName = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.Date = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CurrentlyRegistered = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MaxGuests = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TeacherName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -49,7 +51,7 @@
             this.homePageToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(800, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(1150, 28);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -64,39 +66,18 @@
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.EventName,
-            this.Guest,
-            this.Date});
-            this.dataGridView1.Location = new System.Drawing.Point(158, 160);
+            this.GuestName,
+            this.Date,
+            this.CurrentlyRegistered,
+            this.MaxGuests,
+            this.TeacherName});
+            this.dataGridView1.Location = new System.Drawing.Point(158, 156);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(428, 155);
+            this.dataGridView1.Size = new System.Drawing.Size(766, 159);
             this.dataGridView1.TabIndex = 1;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            // 
-            // EventName
-            // 
-            this.EventName.HeaderText = "Event Name";
-            this.EventName.MinimumWidth = 6;
-            this.EventName.Name = "EventName";
-            this.EventName.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.EventName.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.EventName.Width = 125;
-            // 
-            // Guest
-            // 
-            this.Guest.HeaderText = "Guest";
-            this.Guest.MinimumWidth = 6;
-            this.Guest.Name = "Guest";
-            this.Guest.Width = 125;
-            // 
-            // Date
-            // 
-            this.Date.HeaderText = "Date";
-            this.Date.MinimumWidth = 6;
-            this.Date.Name = "Date";
-            this.Date.Width = 125;
             // 
             // BookCrudTitle
             // 
@@ -141,12 +122,48 @@
             this.ShowPastEvents.TabIndex = 8;
             this.ShowPastEvents.Text = "Show Past Events";
             this.ShowPastEvents.UseVisualStyleBackColor = true;
+            this.ShowPastEvents.Click += new System.EventHandler(this.ShowPastEvents_Click);
+            // 
+            // GuestName
+            // 
+            this.GuestName.HeaderText = "Guest Name";
+            this.GuestName.MinimumWidth = 6;
+            this.GuestName.Name = "GuestName";
+            this.GuestName.Width = 125;
+            // 
+            // Date
+            // 
+            this.Date.HeaderText = "Date";
+            this.Date.MinimumWidth = 6;
+            this.Date.Name = "Date";
+            this.Date.Width = 125;
+            // 
+            // CurrentlyRegistered
+            // 
+            this.CurrentlyRegistered.HeaderText = "Currently Registered";
+            this.CurrentlyRegistered.MinimumWidth = 6;
+            this.CurrentlyRegistered.Name = "CurrentlyRegistered";
+            this.CurrentlyRegistered.Width = 125;
+            // 
+            // MaxGuests
+            // 
+            this.MaxGuests.HeaderText = "Max Guests";
+            this.MaxGuests.MinimumWidth = 6;
+            this.MaxGuests.Name = "MaxGuests";
+            this.MaxGuests.Width = 125;
+            // 
+            // TeacherName
+            // 
+            this.TeacherName.HeaderText = "Teacher Name";
+            this.TeacherName.MinimumWidth = 6;
+            this.TeacherName.Name = "TeacherName";
+            this.TeacherName.Width = 125;
             // 
             // AvailableEvent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 472);
+            this.ClientSize = new System.Drawing.Size(1150, 492);
             this.Controls.Add(this.ShowPastEvents);
             this.Controls.Add(this.CreateNewEvent);
             this.Controls.Add(this.label2);
@@ -156,6 +173,7 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "AvailableEvent";
             this.Text = "StudentEvent";
+            this.Load += new System.EventHandler(this.AvailableEvent_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -170,11 +188,13 @@
         private System.Windows.Forms.ToolStripMenuItem homePageToolStripMenuItem;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label BookCrudTitle;
-        private System.Windows.Forms.DataGridViewButtonColumn EventName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Guest;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Date;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button CreateNewEvent;
         private System.Windows.Forms.Button ShowPastEvents;
+        private System.Windows.Forms.DataGridViewButtonColumn GuestName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Date;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CurrentlyRegistered;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MaxGuests;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TeacherName;
     }
 }
