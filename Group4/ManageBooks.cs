@@ -13,8 +13,10 @@ namespace Group4
     public partial class ManageBooks : Form
     {
         public static System.Collections.Generic.List<Book> books = Program.books;
-        public ManageBooks()
+        Librarian librarian;
+        public ManageBooks(Librarian libr)
         {
+            librarian = libr;
             InitializeComponent();
         }
         private void SizeAllColumns(Object sender, EventArgs e)
@@ -30,7 +32,7 @@ namespace Group4
             {
                 int i = e.RowIndex;
                 string sn = dataGridView1.Rows[i].Cells[0].Value.ToString();
-                BookCrud form10 = new BookCrud(sn);
+                BookCrud form10 = new BookCrud(sn, librarian);
                 form10.Show();
                 this.Hide();
             }
@@ -65,7 +67,7 @@ namespace Group4
 
         private void AddNewBook_Click(object sender, EventArgs e)
         {
-            BookCrud form5 = new BookCrud(null);
+            BookCrud form5 = new BookCrud(null,librarian);
             form5.Show();
             this.Hide();
         }
@@ -82,7 +84,7 @@ namespace Group4
 
         private void ManageBooksHomePagemenu_Click(object sender, EventArgs e)
         {
-            LibrarianChooseAction form9 = new LibrarianChooseAction();
+            LibrarianChooseAction form9 = new LibrarianChooseAction(librarian);
             form9.Show();
             this.Hide();
         }

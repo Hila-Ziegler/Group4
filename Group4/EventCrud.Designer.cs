@@ -65,10 +65,9 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(187, 523);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(140, 425);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(516, 25);
+            this.label2.Size = new System.Drawing.Size(413, 20);
             this.label2.TabIndex = 6;
             this.label2.Text = "The library is a brand, when you\'ve got a card in your hand";
             // 
@@ -87,19 +86,20 @@
             // homePageToolStripMenuItem
             // 
             this.homePageToolStripMenuItem.Name = "homePageToolStripMenuItem";
-            this.homePageToolStripMenuItem.Size = new System.Drawing.Size(100, 24);
+            this.homePageToolStripMenuItem.Size = new System.Drawing.Size(81, 20);
             this.homePageToolStripMenuItem.Text = "Home Page";
             this.homePageToolStripMenuItem.Click += new System.EventHandler(this.homePageToolStripMenuItem_Click);
             // 
             // backToolStripMenuItem
             // 
             this.backToolStripMenuItem.Name = "backToolStripMenuItem";
-            this.backToolStripMenuItem.Size = new System.Drawing.Size(121, 24);
+            this.backToolStripMenuItem.Size = new System.Drawing.Size(96, 20);
             this.backToolStripMenuItem.Text = "AvailableEvent";
             this.backToolStripMenuItem.Click += new System.EventHandler(this.backToolStripMenuItem_Click);
             // 
             // SpeakerName
             // 
+
             this.SpeakerName.AutoSize = true;
             this.SpeakerName.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SpeakerName.Location = new System.Drawing.Point(381, 41);
@@ -112,10 +112,12 @@
             // 
             // GuestNameTextBox
             // 
+
             this.GuestNameTextBox.Location = new System.Drawing.Point(471, 110);
             this.GuestNameTextBox.Name = "GuestNameTextBox";
             this.GuestNameTextBox.Size = new System.Drawing.Size(128, 22);
             this.GuestNameTextBox.TabIndex = 45;
+
             // 
             // MaxAttendance
             // 
@@ -129,6 +131,7 @@
             // 
             // OpenForRegistrationlbl
             // 
+
             this.OpenForRegistrationlbl.AutoSize = true;
             this.OpenForRegistrationlbl.Location = new System.Drawing.Point(240, 236);
             this.OpenForRegistrationlbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
@@ -136,10 +139,12 @@
             this.OpenForRegistrationlbl.Size = new System.Drawing.Size(148, 17);
             this.OpenForRegistrationlbl.TabIndex = 31;
             this.OpenForRegistrationlbl.Text = "Open For Registration";
+
             // 
             // CurrentAtten
             // 
             this.CurrentAtten.AutoSize = true;
+
             this.CurrentAtten.Location = new System.Drawing.Point(240, 300);
             this.CurrentAtten.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.CurrentAtten.Name = "CurrentAtten";
@@ -150,24 +155,28 @@
             // Date
             // 
             this.Date.AutoSize = true;
-            this.Date.Location = new System.Drawing.Point(240, 143);
-            this.Date.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.Date.Location = new System.Drawing.Point(180, 116);
             this.Date.Name = "Date";
+
             this.Date.Size = new System.Drawing.Size(38, 17);
+
             this.Date.TabIndex = 34;
             this.Date.Text = "Date";
             // 
             // lb_MaxAttendanceValue
             // 
+
             this.lb_MaxAttendanceValue.AutoSize = true;
             this.lb_MaxAttendanceValue.Location = new System.Drawing.Point(403, 206);
             this.lb_MaxAttendanceValue.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lb_MaxAttendanceValue.Name = "lb_MaxAttendanceValue";
             this.lb_MaxAttendanceValue.Size = new System.Drawing.Size(0, 17);
             this.lb_MaxAttendanceValue.TabIndex = 35;
+
             // 
             // OpenForRegistrationValuelb
             // 
+
             this.OpenForRegistrationValuelb.AutoSize = true;
             this.OpenForRegistrationValuelb.Location = new System.Drawing.Point(403, 236);
             this.OpenForRegistrationValuelb.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
@@ -177,6 +186,7 @@
             // 
             // lb_CurrentAttendanceValue
             // 
+
             this.lb_CurrentAttendanceValue.AutoSize = true;
             this.lb_CurrentAttendanceValue.Location = new System.Drawing.Point(403, 300);
             this.lb_CurrentAttendanceValue.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
@@ -186,6 +196,7 @@
             // 
             // lb_Date_value
             // 
+
             this.lb_Date_value.AutoSize = true;
             this.lb_Date_value.Location = new System.Drawing.Point(403, 143);
             this.lb_Date_value.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
@@ -196,49 +207,55 @@
             // GuestName
             // 
             this.GuestName.AutoSize = true;
-            this.GuestName.Location = new System.Drawing.Point(240, 113);
-            this.GuestName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.GuestName.Location = new System.Drawing.Point(180, 92);
             this.GuestName.Name = "GuestName";
+
             this.GuestName.Size = new System.Drawing.Size(87, 17);
+
             this.GuestName.TabIndex = 44;
             this.GuestName.Text = "Guest Name";
             this.GuestName.Click += new System.EventHandler(this.Titlelbl_Click);
             // 
             // UpdateEvent
             // 
+
             this.UpdateEvent.Location = new System.Drawing.Point(206, 397);
             this.UpdateEvent.Margin = new System.Windows.Forms.Padding(4);
             this.UpdateEvent.Name = "UpdateEvent";
-            this.UpdateEvent.Size = new System.Drawing.Size(137, 28);
+            this.UpdateEvent.Size = new System.Drawing.Size(103, 23);
             this.UpdateEvent.TabIndex = 46;
             this.UpdateEvent.Text = "Update Event";
             this.UpdateEvent.UseVisualStyleBackColor = true;
             // 
             // CreateNewEvent
             // 
+
             this.CreateNewEvent.Location = new System.Drawing.Point(406, 397);
             this.CreateNewEvent.Name = "CreateNewEvent";
-            this.CreateNewEvent.Size = new System.Drawing.Size(145, 28);
+            this.CreateNewEvent.Size = new System.Drawing.Size(109, 23);
             this.CreateNewEvent.TabIndex = 47;
             this.CreateNewEvent.Text = "Create New Event";
             this.CreateNewEvent.UseVisualStyleBackColor = true;
             // 
             // DeleteEvent
             // 
+
             this.DeleteEvent.Location = new System.Drawing.Point(623, 397);
             this.DeleteEvent.Margin = new System.Windows.Forms.Padding(4);
             this.DeleteEvent.Name = "DeleteEvent";
-            this.DeleteEvent.Size = new System.Drawing.Size(100, 28);
+            this.DeleteEvent.Size = new System.Drawing.Size(75, 23);
             this.DeleteEvent.TabIndex = 49;
             this.DeleteEvent.Text = "Delete Event";
             this.DeleteEvent.UseVisualStyleBackColor = true;
             // 
             // RegisterBTN
             // 
+
             this.RegisterBTN.Location = new System.Drawing.Point(406, 343);
             this.RegisterBTN.Margin = new System.Windows.Forms.Padding(4);
+
             this.RegisterBTN.Name = "RegisterBTN";
-            this.RegisterBTN.Size = new System.Drawing.Size(145, 26);
+            this.RegisterBTN.Size = new System.Drawing.Size(109, 21);
             this.RegisterBTN.TabIndex = 50;
             this.RegisterBTN.Text = "Register For Event";
             this.RegisterBTN.UseVisualStyleBackColor = true;
@@ -322,8 +339,9 @@
             // 
             // EventCrud
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+
             this.ClientSize = new System.Drawing.Size(892, 557);
             this.Controls.Add(this.updateEventbtn);
             this.Controls.Add(this.GuestTypeComboBox);
@@ -352,8 +370,9 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "EventCrud";
-            this.Text = "EventCrud";
+            this.Text = "s";
             this.Load += new System.EventHandler(this.EventCrud_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();

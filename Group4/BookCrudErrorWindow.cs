@@ -14,8 +14,10 @@ namespace Group4
     {
         string message = "";
         BookCrud bc;
-        public BookCrudErrorWindow(string m, BookCrud bc)
+        Librarian librarian;
+        public BookCrudErrorWindow(string m, BookCrud bc, Librarian libr)
         {
+            librarian = libr;
             this.message = m;
             InitializeComponent();
             this.bc = bc;
@@ -29,7 +31,7 @@ namespace Group4
 
         private void GoBackButton_Click(object sender, EventArgs e)
         {
-            BookCrud form13 = new BookCrud(null);
+            BookCrud form13 = new BookCrud(null, librarian);
             bc.Hide();
             form13.Show();
             this.Hide();

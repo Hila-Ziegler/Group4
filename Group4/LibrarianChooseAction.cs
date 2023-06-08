@@ -12,14 +12,16 @@ namespace Group4
 {
     public partial class LibrarianChooseAction : Form
     {
-        public LibrarianChooseAction()
+        Librarian l = null;
+        public LibrarianChooseAction(Librarian l)
         {
+            this.l = l;
             InitializeComponent();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            ManageBooks form3 = new ManageBooks();
+            ManageBooks form3 = new ManageBooks(l);
             form3.Show();
             this.Hide();
         }
@@ -27,6 +29,13 @@ namespace Group4
         private void Action_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            ManageRequests formManageRequests = new ManageRequests(l);
+            formManageRequests.Show();
+            this.Hide();
         }
     }
 }

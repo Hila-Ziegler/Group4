@@ -13,6 +13,7 @@ namespace Group4
     public partial class EventCrud : Form
     {
         string st = "";
+
         Student s = null;
         Teacher t = null;
         Event ev = null;
@@ -21,6 +22,7 @@ namespace Group4
             this.st = st;
             this.t = t;
             InitializeComponent();
+
         }
         public EventCrud(Student s, Event ev)
         {
@@ -137,16 +139,36 @@ namespace Group4
 
         private void homePageToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            StudentChooseAction formStudentChooseAction = new StudentChooseAction(st);
+            if (s != null)
+            {
+            StudentChooseAction formStudentChooseAction = new StudentChooseAction(s);
             formStudentChooseAction.Show();
             this.Hide();
+            }
+/*            else if (t != null) מה לעשות עם המורה האם להכין מסך ראשי שיוביל לאירועים או ש
+            {
+                StudentChooseAction formStudentChooseAction = new StudentChooseAction(t);
+                formStudentChooseAction.Show();
+                this.Hide();
+            }*/
+
         }
 
         private void backToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            AvailableEvent formAvailableEvent = new AvailableEvent(st);
+            if (t != null)
+            {
+            AvailableEvent formAvailableEvent = new AvailableEvent(t);
             formAvailableEvent.Show();
             this.Hide();
+            }
+            else if (s != null)
+            {
+                AvailableEvent formAvailableEvent = new AvailableEvent(s);
+                formAvailableEvent.Show();
+                this.Hide();
+            }
+
         }
     }
 }
