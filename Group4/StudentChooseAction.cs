@@ -52,5 +52,12 @@ namespace Group4
             formstudentAllMessagescs.Show();
             this.Hide();
         }
+
+        private void readingGoalsbtn_Click(object sender, EventArgs e)
+        {
+            ReadingGoals form30 = new ReadingGoals(this.student);
+            form30.Show();
+            this.Hide();
+        }
     }
 }
