@@ -21,7 +21,7 @@ namespace Group4
 
         private void button1_Click(object sender, EventArgs e)
         {
-            ManageBooks form3 = new ManageBooks();
+            ManageBooks form3 = new ManageBooks(l);
             form3.Show();
             this.Hide();
         }

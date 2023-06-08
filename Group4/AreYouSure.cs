@@ -14,8 +14,10 @@ namespace Group4
     {
         private Book book;
         private BookCrud bc;
-        public AreYouSure(Book b, BookCrud bc)
+        Librarian librarian;
+        public AreYouSure(Book b, BookCrud bc, Librarian libr)
         {
+            librarian = libr;
             this.book = b;
             this.bc = bc;
             InitializeComponent();
@@ -27,7 +29,7 @@ namespace Group4
             book.update_Book();
             this.Hide();
             bc.Hide();
-            ManageBooks form16 = new ManageBooks();
+            ManageBooks form16 = new ManageBooks(librarian);
             form16.Show();
         }
 

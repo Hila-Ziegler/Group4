@@ -16,9 +16,10 @@ namespace Group4
         private string sn = "";
         public System.Collections.Generic.List<Copy> copies = null;
         private  int serialNumLength= 8;
-
-        public BookCrud(string s)
+        Librarian librarian;
+        public BookCrud(string s, Librarian libr)
         {
+            librarian = libr;
             System.Collections.Generic.List<Copy> allCopies = Program.copies;
             this.copies = Program.copies;
             this.sn = s;
@@ -27,8 +28,9 @@ namespace Group4
             InitializeComponent();
         }
 
-        public BookCrud(String s, Book b)
+        public BookCrud(String s, Book b, Librarian libr)
         {
+            librarian = libr;
             System.Collections.Generic.List<Copy> allCopies = Program.copies;
             this.copies = Program.copies;
             this.b = b;
@@ -51,7 +53,7 @@ namespace Group4
 
         private void BookCrudHomePage_Click(object sender, EventArgs e)
         {
-            LibrarianChooseAction form8 = new LibrarianChooseAction();
+            LibrarianChooseAction form8 = new LibrarianChooseAction(librarian);
             form8.Show();
             this.Hide();
         }
@@ -69,7 +71,7 @@ namespace Group4
                         c = co;
                     }
                 }
-                CopyCrud form11 = new CopyCrud(c);
+                CopyCrud form11 = new CopyCrud(c, librarian);
                 form11.Show();
                 this.Hide();
             }
@@ -266,7 +268,7 @@ namespace Group4
                 Copy c = new Copy(1, b, false, true);
                 b.Copies.Add(c);
 
-                BookCrud form12 = new BookCrud(b.get_sNumber());
+                BookCrud form12 = new BookCrud(b.get_sNumber(), librarian);
                 form12.Show();
                 this.Hide();
             }
@@ -278,7 +280,7 @@ namespace Group4
             if (ISBNTextBox.Text == "" || PublishYearTextBox.Text == "" || TitleTextBox.Text == "" || AuthorTextBox.Text == "")
             {
                 String s = $"Not all required information entered, \nPlease try again";
-                bc = new BookCrudErrorWindow(s, this);
+                bc = new BookCrudErrorWindow(s, this, librarian);
                 bc.Show();
                 return false;
             }
@@ -288,7 +290,7 @@ namespace Group4
             {
                 // Error Window
                 String s = $"Serial number is longer than expected, \nPlease enter a valid number of characters,\nmax allowed length is: {serialNumLength}";
-                bc = new BookCrudErrorWindow(s,this);
+                bc = new BookCrudErrorWindow(s,this, librarian);
                 bc.Show();
                 return false;
             }
@@ -296,7 +298,7 @@ namespace Group4
             {
                 //Error Window
                 String s = $"Publish year cannot exceed current year, \nPlease enter a valid year";
-                bc = new BookCrudErrorWindow(s,this);
+                bc = new BookCrudErrorWindow(s,this,librarian);
                 bc.Show();
                 return false;
             }
@@ -323,7 +325,7 @@ namespace Group4
 
         private void BookCrudUpdateBTN_Click(object sender, EventArgs e)
         {
-            BookCrud update = new BookCrud("update", b);
+            BookCrud update = new BookCrud("update", b, librarian);
             update.Show();
             this.Hide();
         }
@@ -334,7 +336,7 @@ namespace Group4
             this.b.set_PYear(int.Parse(PublishYearTextBox.Text));
             this.b.set_lang((Language)Enum.Parse(typeof (Language), LngCombo.Text));
             this.b.update_Book();
-            BookCrud updated = new BookCrud(b.get_sNumber());
+            BookCrud updated = new BookCrud(b.get_sNumber(), librarian);
             updated.Show();
             this.Hide();
 
@@ -347,7 +349,7 @@ namespace Group4
 
         private void BookCrudDeleteBTN_Click(object sender, EventArgs e)
         {
-            AreYouSure form14 = new AreYouSure(b,this);
+            AreYouSure form14 = new AreYouSure(b,this, librarian);
             form14.Show();
         }
 
@@ -356,7 +358,7 @@ namespace Group4
             this.b.set_archive(false);
             this.b.update_Book();
             this.Hide();
-            ManageBooks form16 = new ManageBooks();
+            ManageBooks form16 = new ManageBooks(librarian);
             form16.Show();
 
         }
