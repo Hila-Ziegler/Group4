@@ -59,5 +59,12 @@ namespace Group4
             form30.Show();
             this.Hide();
         }
+
+        private void btnSocialPage_Click(object sender, EventArgs e)
+        {
+            socialPage formsocialPage = new socialPage(this.student);
+            formsocialPage.Show();
+            this.Hide();
+        }
     }
 }
