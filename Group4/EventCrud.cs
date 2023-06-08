@@ -13,10 +13,12 @@ namespace Group4
     public partial class EventCrud : Form
     {
         string st = "";
-        public EventCrud(string st)
+        Student student = null;
+        public EventCrud(Student s)
         {
             InitializeComponent();
-            this.st = st;
+            student = s;
+            //this.st = st;
         }
         public EventCrud()
         {
@@ -40,14 +42,14 @@ namespace Group4
 
         private void homePageToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            StudentChooseAction formStudentChooseAction = new StudentChooseAction(st);
+            StudentChooseAction formStudentChooseAction = new StudentChooseAction(student);
             formStudentChooseAction.Show();
             this.Hide();
         }
 
         private void backToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            AvailableEvent formAvailableEvent = new AvailableEvent(st);
+            AvailableEvent formAvailableEvent = new AvailableEvent(student);
             formAvailableEvent.Show();
             this.Hide();
         }

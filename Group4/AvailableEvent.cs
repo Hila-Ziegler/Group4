@@ -17,9 +17,9 @@ namespace Group4
         Student student = null;
         Teacher teacher = null;
 
-        public AvailableEvent(string st, Student stud)
+        public AvailableEvent( Student stud)
         {            
-          this.st = st;
+        //  this.st = st;
           this.student = stud;
           System.Collections.Generic.List<Event> Allevents = Program.events;
           this.events = this.filterEvent(Allevents, st);
