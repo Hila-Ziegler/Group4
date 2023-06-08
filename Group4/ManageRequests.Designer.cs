@@ -57,10 +57,9 @@ namespace Group4
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(40, 65);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(30, 53);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(323, 42);
+            this.label1.Size = new System.Drawing.Size(250, 33);
             this.label1.TabIndex = 1;
             this.label1.Text = "Manage Requests";
             // 
@@ -73,11 +72,10 @@ namespace Group4
             this.BookSerialNum,
             this.CopyNum,
             this.Actions});
-            this.dataGridView1.Location = new System.Drawing.Point(48, 316);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGridView1.Location = new System.Drawing.Point(36, 257);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.Size = new System.Drawing.Size(724, 276);
+            this.dataGridView1.Size = new System.Drawing.Size(680, 242);
             this.dataGridView1.TabIndex = 8;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
@@ -127,11 +125,10 @@ namespace Group4
             this.Copy,
             this.AttachedPhoto,
             this.Actions1});
-            this.dataGridView2.Location = new System.Drawing.Point(832, 316);
-            this.dataGridView2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGridView2.Location = new System.Drawing.Point(742, 257);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.RowHeadersWidth = 51;
-            this.dataGridView2.Size = new System.Drawing.Size(857, 276);
+            this.dataGridView2.Size = new System.Drawing.Size(803, 242);
             this.dataGridView2.TabIndex = 9;
             this.dataGridView2.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentClick);
             // 
@@ -186,10 +183,9 @@ namespace Group4
             // 
             this.TimeReqtxt.AutoSize = true;
             this.TimeReqtxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TimeReqtxt.Location = new System.Drawing.Point(43, 255);
-            this.TimeReqtxt.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.TimeReqtxt.Location = new System.Drawing.Point(32, 207);
             this.TimeReqtxt.Name = "TimeReqtxt";
-            this.TimeReqtxt.Size = new System.Drawing.Size(235, 25);
+            this.TimeReqtxt.Size = new System.Drawing.Size(191, 20);
             this.TimeReqtxt.TabIndex = 10;
             this.TimeReqtxt.Text = "Time Extention Requests:";
             // 
@@ -197,10 +193,9 @@ namespace Group4
             // 
             this.AltBooktxt.AutoSize = true;
             this.AltBooktxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AltBooktxt.Location = new System.Drawing.Point(827, 255);
-            this.AltBooktxt.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.AltBooktxt.Location = new System.Drawing.Point(738, 207);
             this.AltBooktxt.Name = "AltBooktxt";
-            this.AltBooktxt.Size = new System.Drawing.Size(247, 25);
+            this.AltBooktxt.Size = new System.Drawing.Size(202, 20);
             this.AltBooktxt.TabIndex = 11;
             this.AltBooktxt.Text = "Alternative Book Requests:";
             // 
@@ -208,10 +203,9 @@ namespace Group4
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(469, 702);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(527, 634);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(516, 25);
+            this.label2.Size = new System.Drawing.Size(413, 20);
             this.label2.TabIndex = 12;
             this.label2.Text = "The library is a brand, when you\'ve got a card in your hand";
             // 
@@ -222,22 +216,23 @@ namespace Group4
             this.homePageToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1759, 28);
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
+            this.menuStrip1.Size = new System.Drawing.Size(1589, 24);
             this.menuStrip1.TabIndex = 13;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // homePageToolStripMenuItem
             // 
             this.homePageToolStripMenuItem.Name = "homePageToolStripMenuItem";
-            this.homePageToolStripMenuItem.Size = new System.Drawing.Size(100, 24);
+            this.homePageToolStripMenuItem.Size = new System.Drawing.Size(81, 20);
             this.homePageToolStripMenuItem.Text = "Home Page";
             this.homePageToolStripMenuItem.Click += new System.EventHandler(this.homePageToolStripMenuItem_Click);
             // 
             // ManageRequests
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1759, 737);
+            this.ClientSize = new System.Drawing.Size(1589, 740);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.AltBooktxt);
             this.Controls.Add(this.TimeReqtxt);
@@ -246,7 +241,6 @@ namespace Group4
             this.Controls.Add(this.label1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "ManageRequests";
             this.Text = "Manage Requests";
             this.Load += new System.EventHandler(this.ManageRequests_Load);
