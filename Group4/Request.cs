@@ -24,7 +24,7 @@ namespace Group4
             this.EndDT = endDT;
             this.Status = status;
             this.PhotoAddress = photoAddress;
-            this.copy = c;
+            this.Copy = c;
             
 
             if (is_new)
@@ -121,8 +121,8 @@ namespace Group4
             c.Parameters.AddWithValue("@endDT", this.EndDT);
             c.Parameters.AddWithValue("@status", this.Status.ToString());
             c.Parameters.AddWithValue("@photoAddress", this.PhotoAddress);
-            c.Parameters.AddWithValue("@serialNum", this.copy.get_book().get_sNumber());
-            c.Parameters.AddWithValue("@copyNum", this.copy.get_copyNum());
+            c.Parameters.AddWithValue("@serialNum", this.Copy.get_book().get_sNumber());
+            c.Parameters.AddWithValue("@copyNum", this.Copy.get_copyNum());
             SQL_CON SC = new SQL_CON();
             SC.execute_non_query(c);
         }
@@ -138,8 +138,8 @@ namespace Group4
             c.Parameters.AddWithValue("@endDT", this.EndDT);
             c.Parameters.AddWithValue("@status", this.Status.ToString());
             c.Parameters.AddWithValue("@photoAddress", this.PhotoAddress);
-            c.Parameters.AddWithValue("@serialNum", this.copy.get_book().get_sNumber());
-            c.Parameters.AddWithValue("@copyNum", this.copy.get_copyNum());
+            c.Parameters.AddWithValue("@serialNum", this.Copy.get_book().get_sNumber());
+            c.Parameters.AddWithValue("@copyNum", this.Copy.get_copyNum());
             SQL_CON SC = new SQL_CON();
             SC.execute_non_query(c);
         }
