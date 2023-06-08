@@ -45,7 +45,7 @@ namespace Group4
                     {
                         // show new form for librarians
                         entered++;
-                        LibrarianChooseAction form1 = new LibrarianChooseAction();
+                        LibrarianChooseAction form1 = new LibrarianChooseAction(L);
                         form1.Show();
                         this.Hide();
                     }

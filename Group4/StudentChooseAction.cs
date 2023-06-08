@@ -34,7 +34,7 @@ namespace Group4
 
         private void btnEvent_Click(object sender, EventArgs e)
         {
-            AvailableEvent formAvailableEvent = new AvailableEvent(st,student);
+            AvailableEvent formAvailableEvent = new AvailableEvent(student);
             formAvailableEvent.Show();
             this.Hide();
 
@@ -48,7 +48,7 @@ namespace Group4
 
         private void btnMessages_Click(object sender, EventArgs e)
         {
-            studentAllMessagescs  formstudentAllMessagescs = new studentAllMessagescs(st);
+            studentAllMessagescs  formstudentAllMessagescs = new studentAllMessagescs(student);
             formstudentAllMessagescs.Show();
             this.Hide();
         }
