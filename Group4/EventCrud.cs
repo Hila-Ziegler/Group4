@@ -243,7 +243,8 @@ namespace Group4
         {
             if (DateTime.Parse(EventDatePicker.Value.ToString()) != this.ev.get_date())
             {
-                this.ev.set_oldDate(this.ev.get_date().ToShortDateString());
+                //this.ev.set_oldDate(this.ev.get_date().ToShortDateString());
+                //update registrations
             }
             this.ev.set_guestName(GuestNameTextBox.Text);
             this.ev.set_date(DateTime.Parse(EventDatePicker.Value.ToString()));
