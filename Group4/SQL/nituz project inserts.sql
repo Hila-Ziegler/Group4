@@ -106,41 +106,41 @@ INSERT INTO BookHistory
 -- insert into Events
 INSERT INTO Events
 	VALUES
-	('Author', CONVERT(datetime, '18/09/2022 11:00:00', 103), '5001.6', 'Barbara Cartland','Open' ,'50', '40'),
-	('Publisher', CONVERT(datetime, '18/10/2022 12:00:00', 103), '8000.00', 'Agatha Christie','Open' , '100', '50'),
-	('Author', CONVERT(datetime, '10/05/2022 11:00:00', 103), '4003.47', 'Danielle Steel','Open' ,'50', '50'),
-	('Actor', CONVERT(datetime, '08/06/2022 15:00:00', 103), '4567.88', 'Tom Hanks', 'Open' , '60', '60'),
-	('Author', CONVERT(datetime, '18/06/2022 15:00:00', 103), '999.88', 'Michael Caine', 'Open', '50', '35'),
-	('Actor', CONVERT(datetime, '17/04/2022 11:00:00', 103), '10000.13', 'Leonardo DiCaprio', 'Open', '50', '27'),
-	('Actor', CONVERT(datetime, '18/03/2022 14:00:00', 103), '5001.34', 'Al Pacino', 'Open', '25', '25'),
-	('Author', CONVERT(datetime, '13/09/2022 10:00:00', 103), '34543.78', 'William Shakespeare', 'Open', '50', '45'),
-	('Author', CONVERT(datetime, '10/04/2022 11:00:00', 103), '345.56', 'Dustin Hoffman', 'Open', '70', '70'),
-	('Publisher', CONVERT(datetime, '09/09/2022 11:00:00', 103), '234.77', 'Denzel Washington', 'Open', '50', '50'),
-	('Author', CONVERT(datetime, '03/02/2022 09:00:00', 103), '9812.12', 'Clint Eastwood', 'Open', '50', '40'),
-	('Publisher', CONVERT(datetime, '10/01/2022 10:00:00', 103), '333.44', 'Robert De Niro', 'Open', '50', '44'),
-	('Author', CONVERT(datetime, '25/02/2022 11:00:00', 103), '6567.77', 'Samuel Jackson', 'Open', '100', '100'),
-	('Author', CONVERT(datetime, '22/03/2022 10:00:00', 103), '555.55', 'Vin Diesel', 'Open', '100', '80'),
-	('Actor', CONVERT(datetime, '11/06/2022 11:00:00', 103), '7876.66', 'Ben Kingsley', 'Open', '100', '88'),
-	('Author', CONVERT(datetime, '23/05/2022 11:00:00', 103), '1000.00', 'Edward Norton', 'Open', '50', '40');
+	('Author', CONVERT(datetime, '18/09/2022 11:00:00', 103), '5001.6', 'Barbara Cartland','Open' ,'50', '40','1'),
+	('Publisher', CONVERT(datetime, '18/10/2022 12:00:00', 103), '8000.00', 'Agatha Christie','Open' , '100', '50','2'),
+	('Author', CONVERT(datetime, '10/05/2022 11:00:00', 103), '4003.47', 'Danielle Steel','Open' ,'50', '50','3'),
+	('Actor', CONVERT(datetime, '08/06/2022 15:00:00', 103), '4567.88', 'Tom Hanks', 'Open' , '60', '60','4'),
+	('Author', CONVERT(datetime, '18/06/2022 15:00:00', 103), '999.88', 'Michael Caine', 'Open', '50', '35','5'),
+	('Actor', CONVERT(datetime, '17/04/2022 11:00:00', 103), '10000.13', 'Leonardo DiCaprio', 'Open', '50', '27','6'),
+	('Actor', CONVERT(datetime, '18/03/2022 14:00:00', 103), '5001.34', 'Al Pacino', 'Open', '25', '25','16'),
+	('Author', CONVERT(datetime, '13/09/2022 10:00:00', 103), '34543.78', 'William Shakespeare', 'Open', '50', '45','7'),
+	('Author', CONVERT(datetime, '10/04/2022 11:00:00', 103), '345.56', 'Dustin Hoffman', 'Open', '70', '70','8'),
+	('Publisher', CONVERT(datetime, '09/09/2022 11:00:00', 103), '234.77', 'Denzel Washington', 'Open', '50', '50','9'),
+	('Author', CONVERT(datetime, '03/02/2022 09:00:00', 103), '9812.12', 'Clint Eastwood', 'Open', '50', '40','10'),
+	('Publisher', CONVERT(datetime, '10/01/2022 10:00:00', 103), '333.44', 'Robert De Niro', 'Open', '50', '44','11'),
+	('Author', CONVERT(datetime, '25/02/2022 11:00:00', 103), '6567.77', 'Samuel Jackson', 'Open', '100', '100','12'),
+	('Author', CONVERT(datetime, '22/03/2022 10:00:00', 103), '555.55', 'Vin Diesel', 'Open', '100', '80','13'),
+	('Actor', CONVERT(datetime, '11/06/2022 11:00:00', 103), '7876.66', 'Ben Kingsley', 'Open', '100', '88','14'),
+	('Author', CONVERT(datetime, '23/05/2022 11:00:00', 103), '1000.00', 'Edward Norton', 'Open', '50', '40','15');
 
 -- insert into Registrations
 INSERT INTO Registrations
 	VALUES
-	('275733109', CONVERT(datetime, '18/09/2022 11:00:00', 103), 'Barbara Cartland', '1', 'i enjoyed it', '5', ''),
-	('383306250', CONVERT(datetime, '18/09/2022 11:00:00', 103), 'Barbara Cartland', '1', '', '', ''),
-	('275733109', CONVERT(datetime, '18/10/2022 12:00:00', 103), 'Agatha Christie', '1', '', '3', ''),
-	('265571602', CONVERT(datetime, '18/10/2022 12:00:00', 103), 'Agatha Christie', '1', '', '', ''),
-	('480945291', CONVERT(datetime, '18/10/2022 12:00:00', 103), 'Agatha Christie', '0', '', '', ''),
-	('275733109', CONVERT(datetime, '08/06/2022 15:00:00', 103), 'Tom Hanks', '1', '', '5', ''),
-	('265571602', CONVERT(datetime, '08/06/2022 15:00:00', 103), 'Tom Hanks', '1', 'it was fun', '4', ''),
-	('336015350', CONVERT(datetime, '08/06/2022 15:00:00', 103), 'Tom Hanks', '1', 'i enjoyed it', '4', ''),
-	('275733109', CONVERT(datetime, '25/02/2022 11:00:00', 103), 'Samuel Jackson', '0', '', '', ''),
-	('275733109', CONVERT(datetime, '22/03/2022 10:00:00', 103), 'Vin Diesel', '1', 'i enjoyed it', '5', ''),
-	('480945291', CONVERT(datetime, '22/03/2022 10:00:00', 103), 'Vin Diesel', '0', '', '', ''),
-	('275733109', CONVERT(datetime, '11/06/2022 11:00:00', 103), 'Ben Kingsley', '1', 'i didnt like it', '1', ''),
-	('336015350', CONVERT(datetime, '11/06/2022 11:00:00', 103), 'Ben Kingsley', '0', '', '', ''),
-	('275733109', CONVERT(datetime, '13/09/2022 10:00:00', 103), 'William Shakespeare', '1', 'i enjoyed it', '5', ''),
-	('217392528', CONVERT(datetime, '13/09/2022 10:00:00', 103), 'William Shakespeare', '1', 'boring', '2', '');
+	('275733109','1', 'i enjoyed it', '5','1',''),
+	('383306250','1', '', '','1',''),
+	('275733109', '1', '', '3','2',''),
+	('265571602', '1', '', '','2',''),
+	('480945291', '0', '', '','2',''),
+	('275733109','1', '', '5','3',''),
+	('265571602','1','it was fun', '4','1',''),
+	('336015350','1', 'i enjoyed it', '4','4',''),
+	('275733109','0', '', '','5',''),
+	('275733109','1', 'i enjoyed it', '5','10',''),
+	('480945291','0', '', '','3',''),
+	('275733109','1', 'i didnt like it', '1','7',''),
+	('336015350','0', '', '','8',''),
+	('275733109','1', 'i enjoyed it', '5','9',''),
+	('217392528','1', 'boring', '2','12','');
 
 
 
@@ -158,7 +158,7 @@ INSERT INTO Requests
 	('AlternativeBook', CONVERT(datetime, '22/03/2022 11:10:10', 103), '275733109', '216678793', '', 'In process', 'C:\Documents\Newsletters\Summer2018.pdf', 'vhR6uwAn', '3'),
 	('TimeExtention', CONVERT(datetime, '29/03/2022 14:10:47', 103), '204539542', '216678793', CONVERT(datetime, '03/04/2022 11:11:35', 103), 'Approved', '', 'SUoFHA92', '1'),
 	('TimeExtention', CONVERT(datetime, '19/10/2022 10:10:40', 103), '336015350', '216678793', '', 'In process', '', '5kReQmoD', '1'),
-	('TimeExtention', CONVERT(datetime, '23/05/2022 14:33:23', 103), '275733109', '216678793', '', 'In process', '', 'R5gL6ZaC', '0'),
+	('TimeExtention', CONVERT(datetime, '23/05/2022 14:33:23', 103), '275733109', '216678793', '', 'In process', '', 'vhR6uwAn', '5'),
 	('TimeExtention', CONVERT(datetime, '20/03/2022 11:45:45', 103), '336015350', '216678793', '', 'In process', '', '2zbXhPWG', '2'),
 	('TimeExtention', CONVERT(datetime, '23/12/2022 08:10:00', 103), '204539542', '216678793', '', 'In process', '', 'rXbp43Rh', '1'),
 	('AlternativeBook', CONVERT(datetime, '12/12/2022 11:05:32', 103), '217392528', '216678793', CONVERT(datetime, '12/12/2022 18:05:32', 103), 'Approved', '','rXbp43Rh', '2'),

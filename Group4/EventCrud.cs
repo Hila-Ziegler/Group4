@@ -90,6 +90,16 @@ namespace Group4
         private void EventCrud_Load(object sender, EventArgs e)
         {
             this.Load_Enum();
+            if (this.ev.get_date()> DateTime.Now)
+            {
+                finalRatingScore.Hide();
+                WatchReviews.Hide();
+            }
+            else
+            {
+                this.setFinalRatingScore();
+
+            }
             if(s != null)
             {
                 UpdateEvent.Hide();
@@ -140,6 +150,7 @@ namespace Group4
                     RegisterBTN.Hide();
                     UpdateEvent.Hide();
                     DeleteEvent.Hide();
+                    CurrentAtten.Hide();
 
                 }
                 else
@@ -181,13 +192,6 @@ namespace Group4
             formStudentChooseAction.Show();
             this.Hide();
             }
-/*            else if (t != null) מה לעשות עם המורה האם להכין מסך ראשי שיוביל לאירועים או ש
-            {
-                StudentChooseAction formStudentChooseAction = new StudentChooseAction(t);
-                formStudentChooseAction.Show();
-                this.Hide();
-            }*/
-
         }
 
         private void backToolStripMenuItem_Click(object sender, EventArgs e)
@@ -211,8 +215,9 @@ namespace Group4
         {
             GuestType gt = (GuestType)Enum.Parse(typeof(GuestType),GuestTypeComboBox.Text);
             DateTime dt = DateTime.Parse(EventDatePicker.Value.ToString());
-            Status st = OpenForRegistrationCheckBox.Checked ? (Status)Enum.Parse(typeof(Status),"Open"): (Status)Enum.Parse(typeof(Status), "Closed"); 
-            Event newE = new Event(gt, dt, float.Parse(numericPrice.Value.ToString()), GuestNameTextBox.Text, st, int.Parse(numericMaxAttendance.Value.ToString()), true);
+            Status st = OpenForRegistrationCheckBox.Checked ? (Status)Enum.Parse(typeof(Status),"Open"): (Status)Enum.Parse(typeof(Status), "Closed");
+            int num = Program.events.Count + 1;
+            Event newE = new Event(gt, dt, float.Parse(numericPrice.Value.ToString()), GuestNameTextBox.Text, st, int.Parse(numericMaxAttendance.Value.ToString()),0,num , true);
             t.addEvent(newE);
             EventCrud form24 = new EventCrud("",this.t,newE);
             form24.Show();
@@ -243,8 +248,14 @@ namespace Group4
         {
             if (DateTime.Parse(EventDatePicker.Value.ToString()) != this.ev.get_date())
             {
-                //this.ev.set_oldDate(this.ev.get_date().ToShortDateString());
-                //update registrations
+                foreach (Registration re in Program.registrations)
+                {
+                    if(this.ev.getNum() == re.GetEvent().getNum())
+                    {
+                        re.set_oldDate(this.ev.get_date().ToShortDateString());
+                        re.update_Registration();
+                    }
+                }
             }
             this.ev.set_guestName(GuestNameTextBox.Text);
             this.ev.set_date(DateTime.Parse(EventDatePicker.Value.ToString()));
@@ -261,11 +272,51 @@ namespace Group4
 
         private void RegisterBTN_Click(object sender, EventArgs e)
         {
-            this.ev.set_currentlyRegistered(this.ev.get_currentlyRegistered() + 1);
             this.ev.Registered.Add(this.s);
+            Registration newReg = new Registration(this.s, false, "", 0,this.ev ,"", true);
+            this.ev.set_currentlyRegistered(this.ev.get_currentlyRegistered() + 1);
+            this.ev.update_Event();
             EventCrud form24 = new EventCrud(this.s, this.ev);
             form24.Show();
             this.Hide();
+
+        }
+
+        private List<Registration> GetRegistrations()
+        {
+            List<Registration> ans = new List<Registration>();
+            foreach(Registration r in Program.registrations)
+            {
+                if (r.GetEvent() == this.ev)
+                {
+                    ans.Add(r);
+                }
+            }
+            return ans;
+        }
+
+        private void WatchReviews_Click(object sender, EventArgs e)
+        {
+            EventReviews evre = new EventReviews(this.ev);
+            evre.Show();
+        }
+
+        private void setFinalRatingScore()
+        {
+            int counter = 0;
+            int score = 0;
+            foreach (Registration re in Program.registrations)
+            {
+                if (re.GetEvent().getNum() == this.ev.getNum())
+                {
+                    if(re.get_rating() != 0)
+                    {
+                        counter++;
+                        score += re.get_rating();
+                    }
+                }
+            }
+            finalRatingScore.Text = $"Event's Final Rating: {(float)(score/counter)}";
 
         }
     }

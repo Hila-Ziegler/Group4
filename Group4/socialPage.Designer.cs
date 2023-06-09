@@ -44,6 +44,9 @@
             this.labAge = new System.Windows.Forms.Label();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.homePageToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.progressBar1 = new System.Windows.Forms.ProgressBar();
+            this.label1 = new System.Windows.Forms.Label();
+            this.progressBar2 = new System.Windows.Forms.ProgressBar();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -55,11 +58,11 @@
             this.StudentName,
             this.Age,
             this.Club});
-            this.dataGridView1.Location = new System.Drawing.Point(87, 335);
+            this.dataGridView1.Location = new System.Drawing.Point(87, 293);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(518, 103);
+            this.dataGridView1.Size = new System.Drawing.Size(518, 145);
             this.dataGridView1.TabIndex = 0;
             // 
             // StudentName
@@ -135,17 +138,17 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(434, 110);
+            this.label3.Location = new System.Drawing.Point(440, 79);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(283, 25);
+            this.label3.Size = new System.Drawing.Size(127, 25);
             this.label3.TabIndex = 23;
-            this.label3.Text = "You\'ve read 5/5 of your goal";
+            this.label3.Text = "You\'ve read";
             // 
             // labGoal
             // 
             this.labGoal.AutoSize = true;
             this.labGoal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labGoal.Location = new System.Drawing.Point(436, 160);
+            this.labGoal.Location = new System.Drawing.Point(440, 114);
             this.labGoal.Name = "labGoal";
             this.labGoal.Size = new System.Drawing.Size(255, 25);
             this.labGoal.TabIndex = 28;
@@ -191,11 +194,38 @@
             this.homePageToolStripMenuItem.Size = new System.Drawing.Size(120, 29);
             this.homePageToolStripMenuItem.Text = "Home page";
             // 
+            // progressBar1
+            // 
+            this.progressBar1.Location = new System.Drawing.Point(445, 142);
+            this.progressBar1.Name = "progressBar1";
+            this.progressBar1.Size = new System.Drawing.Size(295, 23);
+            this.progressBar1.TabIndex = 30;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(440, 186);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(216, 25);
+            this.label1.TabIndex = 31;
+            this.label1.Text = "Your Club\'s Progress";
+            // 
+            // progressBar2
+            // 
+            this.progressBar2.Location = new System.Drawing.Point(445, 221);
+            this.progressBar2.Name = "progressBar2";
+            this.progressBar2.Size = new System.Drawing.Size(295, 23);
+            this.progressBar2.TabIndex = 32;
+            // 
             // socialPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.progressBar2);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.labGoal);
             this.Controls.Add(this.labClub);
             this.Controls.Add(this.labAge);
@@ -237,5 +267,8 @@
         private System.Windows.Forms.Label labAge;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem homePageToolStripMenuItem;
+        private System.Windows.Forms.ProgressBar progressBar1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ProgressBar progressBar2;
     }
 }

@@ -13,19 +13,21 @@ namespace Group4
         private Status status; //enum
         private int MaxGuests;
         private int CurrentlyRegistered;
+        private int number;
         private Teacher Teacher;
         public System.Collections.Generic.List<Student> Registered;
-        //public System.Collections.Generic.List<Order> orders;
 
 
-        public Event(GuestType guestType, DateTime date, float price, string guestName, Status status, int maxGuests, bool is_new)
+        public Event(GuestType guestType, DateTime date, float price, string guestName, Status status, int maxGuests, int currentyReg, int num,bool is_new)
         {
             this.GuestType = guestType;
             this.Date = date;
             this.Price = price;
             this.GuestName = guestName;
             this.MaxGuests = maxGuests;
-            this.CurrentlyRegistered = 0;
+            this.CurrentlyRegistered = currentyReg;
+            this.number = num;
+
             this.Registered = new System.Collections.Generic.List<Student>();
             this.status = status;
 
@@ -76,6 +78,11 @@ namespace Group4
             return this.status;
         }
 
+        public int getNum()
+        {
+            return this.number;
+        }
+
 
 
         public void set_guestType(GuestType guestType)
@@ -121,9 +128,9 @@ namespace Group4
 
 
         public void create_Event()
-        {
+        {//@guestType, @date, @price, @guestSpeakerName, @status, @maxGuests, @currentlyRegistered, @number
             SqlCommand c = new SqlCommand();
-            c.CommandText = "EXECUTE dbo.SP_add_Events @guestType,@date,@price,@guestSpeakerName , @status,@maxGuests,@currentlyRegistered";
+            c.CommandText = "EXECUTE dbo.SP_add_Events @guestType, @date, @price, @guestSpeakerName, @status, @maxGuests, @currentlyRegistered, @number";
             c.Parameters.AddWithValue("@guestType", this.GuestType.ToString());
             c.Parameters.AddWithValue("@date", this.Date);
             c.Parameters.AddWithValue("@price", this.Price);
@@ -131,6 +138,7 @@ namespace Group4
             c.Parameters.AddWithValue("@status", this.status.ToString());
             c.Parameters.AddWithValue("@maxGuests", this.MaxGuests);
             c.Parameters.AddWithValue("@currentlyRegistered", this.CurrentlyRegistered);
+            c.Parameters.AddWithValue("@number", this.number);
             SQL_CON SC = new SQL_CON();
             SC.execute_non_query(c);
         }
@@ -138,7 +146,7 @@ namespace Group4
         public void update_Event()
         {
             SqlCommand c = new SqlCommand();
-            c.CommandText = "EXECUTE dbo.SP_Update_Event @guestType,@date,@price,@guestSpeakerName , @status,@maxGuests,@currentlyRegistered";
+            c.CommandText = "EXECUTE dbo.SP_Update_Event @guestType, @date, @price, @guestSpeakerName, @status, @maxGuests, @currentlyRegistered, @number";
             c.Parameters.AddWithValue("@guestType", this.GuestType.ToString());
             c.Parameters.AddWithValue("@date", this.Date);
             c.Parameters.AddWithValue("@price", this.Price);
@@ -146,6 +154,7 @@ namespace Group4
             c.Parameters.AddWithValue("@status", this.status.ToString());
             c.Parameters.AddWithValue("@maxGuests", this.MaxGuests);
             c.Parameters.AddWithValue("@currentlyRegistered", this.CurrentlyRegistered);
+            c.Parameters.AddWithValue("@number", this.number);
             SQL_CON SC = new SQL_CON();
             SC.execute_non_query(c);
         }
