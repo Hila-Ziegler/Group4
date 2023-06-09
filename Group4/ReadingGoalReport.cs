@@ -112,7 +112,7 @@ namespace Group4
             {
                 if (bh.get_EndDate() != bh.get_StartDate())
                 {
-                    if (bh.get_EndDate() - bh.get_StartDate() < shortest.get_StartDate() - shortest.get_EndDate())
+                    if (bh.get_EndDate() - bh.get_StartDate() < shortest.get_EndDate() - shortest.get_StartDate())
                     {
                         shortest = bh;
                     }
@@ -128,7 +128,7 @@ namespace Group4
             {
                 if (bh.get_EndDate() != bh.get_StartDate())
                 {
-                    if (bh.get_EndDate() - bh.get_StartDate() > longest.get_StartDate() - longest.get_EndDate())
+                    if (bh.get_EndDate() - bh.get_StartDate() > longest.get_EndDate() - longest.get_StartDate())
                     {
                         longest = bh;
                     }

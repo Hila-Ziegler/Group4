@@ -100,7 +100,10 @@ namespace Group4
             labName.Text = student.get_name().ToString();
             labDate.Text = DateTime.Now.ToString();
             labSchoolName.Text = "Morday Hagetaot School";
-            labGoal.Text =  ((this.getReadAmount()) /( student.get_yearlyGoal())).ToString() ;
+            labGoal.Text =  this.getReadAmount().ToString()  ;
+            progressBar1.Maximum = this.student.get_yearlyGoal();
+            progressBar1.Minimum = 0;
+            progressBar1.Value =  this.getReadAmount();
 
 
 
