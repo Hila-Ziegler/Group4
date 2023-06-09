@@ -84,7 +84,8 @@ namespace Group4
                string sn = dataGridView1.Rows[i].Cells[1].Value.ToString();
                DateTime sd =  DateTime.Parse(dataGridView1.Rows[i].Cells[3].Value.ToString());
                Book b = Program.seekBook(sn);
-               StudentBorrowActinos formStudentBorrowActions = new StudentBorrowActinos(b, student, sd);
+               Copy c = Program.seekCopy(b, int.Parse(dataGridView1.Rows[i].Cells[2].Value.ToString()));
+               StudentBorrowActinos formStudentBorrowActions = new StudentBorrowActinos(student, sd, c);
                formStudentBorrowActions.Show();
                this.Hide();
             }

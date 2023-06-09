@@ -128,7 +128,7 @@ namespace Group4
             Student st = Program.seekStudent(StID.Text);
             DateTime startDate = DateTime.Now;
             DateTime endDate = DateTime.Now;
-            BookHistory bh = new BookHistory(this.copy.get_copyNum(), this.copy.get_book(), st, startDate, endDate, true);
+            BookHistory bh = new BookHistory(this.copy.get_copyNum(), this.copy.get_book(), st, startDate, endDate, 0, true);
             this.history.Add(bh);
             st.addBookHistory(bh);
             copy.get_book().addBookHistory(bh);

@@ -65,6 +65,7 @@
             RequestTimeExtention.TabIndex = 39;
             RequestTimeExtention.Text = "Request Time Extention";
             RequestTimeExtention.UseVisualStyleBackColor = true;
+            RequestTimeExtention.Click += new System.EventHandler(this.RequestTimeExtention_Click);
             // 
             // BookCrudTitle
             // 
