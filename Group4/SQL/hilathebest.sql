@@ -143,12 +143,12 @@ SET
 price=@price, guestType=@guestType, maxGuests=@maxGuests, currentlyRegistered=@currentlyRegistered, status =@status, date=@date, guestSpeakerName=@guestSpeakerName
 WHERE number= @number
 --DROP PROCEDURE dbo.SP_Update_Registration
-CREATE PROCEDURE dbo.SP_Update_Registration @id VARCHAR(50),@eventDate DATETIME ,@guestSpeakerName VARCHAR(50),@showedUp	BIT,@review	VARCHAR(50),@rating	INTEGER, @oldDate VARCHAR(50)
+CREATE PROCEDURE dbo.SP_Update_Registration @id VARCHAR(50),@showedUp	BIT,@review	VARCHAR(50),@rating	INTEGER,@number INTEGER ,@oldDate VARCHAR(50)
 AS
 Update dbo.Registrations
 SET
-showedUp=@showedUp, review=@review, rating=@rating, oldDate=@oldDate
-WHERE id=@id AND eventDate=@eventDate AND guestSpeakerName=@guestSpeakerName
+showedUp=@showedUp, review=@review, rating=@rating, oldDate=@oldDate, id=@id
+WHERE number=@number
 --DROP PROCEDURE dbo.SP_Update_Request
 CREATE PROCEDURE dbo.SP_Update_Request @type VARCHAR(50),@startDT DATETIME ,@sid	VARCHAR(50),@lid VARCHAR(50),@endDT	DATETIME,@status VARCHAR(50),@photoAddress	NVARCHAR(260), @serialNum VARCHAR(50), @copyNum INTEGER
 AS
