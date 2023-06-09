@@ -136,5 +136,10 @@ namespace Group4
         {
 
         }
+
+        private void RequestDeat_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

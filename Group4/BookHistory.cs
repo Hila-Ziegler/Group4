@@ -26,7 +26,6 @@ namespace Group4
             {
                 this.create_BookHistory();
                 Program.bookHistories.Add(this);
-
             }
         }
 
@@ -111,8 +110,8 @@ namespace Group4
             c.Parameters.AddWithValue("@copyNumber", this.CopyNum);
             c.Parameters.AddWithValue("@serialNumber", this.Book.get_sNumber());
             c.Parameters.AddWithValue("@id", this.Student.get_ID());
-            c.Parameters.AddWithValue("@startDate", this.StartDate);
-            c.Parameters.AddWithValue("@endDate", this.EndDate);
+            c.Parameters.AddWithValue("@startDate", this.StartDate.ToString());
+            c.Parameters.AddWithValue("@endDate", this.EndDate.ToString());
             c.Parameters.AddWithValue("@rate", this.Rate);
             SQL_CON SC = new SQL_CON();
             SC.execute_non_query(c);

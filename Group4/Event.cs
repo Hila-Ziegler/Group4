@@ -13,7 +13,7 @@ namespace Group4
         private Status status; //enum
         private int MaxGuests;
         private int CurrentlyRegistered;
-        private Teacher Teacher; // האם רק מורה פותח אירוע ולא גם ספרנית
+        private Teacher Teacher;
         public System.Collections.Generic.List<Student> Registered;
         //public System.Collections.Generic.List<Order> orders;
 
@@ -76,6 +76,8 @@ namespace Group4
             return this.status;
         }
 
+
+
         public void set_guestType(GuestType guestType)
         {
             this.GuestType = guestType;
@@ -115,6 +117,7 @@ namespace Group4
         {
             this.status = s;
         }
+
 
 
         public void create_Event()

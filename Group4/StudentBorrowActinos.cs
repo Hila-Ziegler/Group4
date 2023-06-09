@@ -12,15 +12,18 @@ namespace Group4
 {
     public partial class StudentBorrowActinos : Form
     {
-       // String st = "";
-        Book bo = null; //change
-        Student Student = null;
+        // String st = "";
+        private Book b = null; //change
+        private Student Student = null;
+        private string sn = "";
+        
    
-        public StudentBorrowActinos( Book b, Student Stud)
+        public StudentBorrowActinos(string s, Book b, Student Stud)
         {           
             //this.st = st;
-            this.bo = b;
+            this.b = b;
             this.Student = Stud;
+            this.sn = s;
             InitializeComponent();
         }
 
@@ -34,7 +37,14 @@ namespace Group4
 
         private void StudentBorrow_Load(object sender, EventArgs e)
         {
-            BookCrudTitle.Text = bo.get_title().ToString();
+           /* BookCrudTitle.Text = b.get_title().ToString();
+            this.b = Program.seekBook(sn);
+            lb_ISBN_value.Text = sn;
+            lb_AuthorValue.Text = b.get_author();
+            lb_PublishYearValue.Text = b.get_PYear().ToString();
+            lb_LangueageValue.Text = b.get_lang().ToString();
+            lb_RatingValue.Text = b.get_rating().ToString();
+            BookCrudTitle.Text = b.get_title();*/
         }
 
         private void bookHistoryToolStripMenuItem_Click(object sender, EventArgs e)
