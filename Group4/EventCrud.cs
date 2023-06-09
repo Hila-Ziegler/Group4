@@ -211,8 +211,9 @@ namespace Group4
         {
             GuestType gt = (GuestType)Enum.Parse(typeof(GuestType),GuestTypeComboBox.Text);
             DateTime dt = DateTime.Parse(EventDatePicker.Value.ToString());
-            Status st = OpenForRegistrationCheckBox.Checked ? (Status)Enum.Parse(typeof(Status),"Open"): (Status)Enum.Parse(typeof(Status), "Closed"); 
-            Event newE = new Event(gt, dt, float.Parse(numericPrice.Value.ToString()), GuestNameTextBox.Text, st, int.Parse(numericMaxAttendance.Value.ToString()), true);
+            Status st = OpenForRegistrationCheckBox.Checked ? (Status)Enum.Parse(typeof(Status),"Open"): (Status)Enum.Parse(typeof(Status), "Closed");
+            int num = Program.events.Count + 1;
+            Event newE = new Event(gt, dt, float.Parse(numericPrice.Value.ToString()), GuestNameTextBox.Text, st, int.Parse(numericMaxAttendance.Value.ToString()),0,num , true);
             t.addEvent(newE);
             EventCrud form24 = new EventCrud("",this.t,newE);
             form24.Show();
@@ -269,7 +270,7 @@ namespace Group4
         {
             this.ev.set_currentlyRegistered(this.ev.get_currentlyRegistered() + 1);
             this.ev.Registered.Add(this.s);
-            Registration newReg = new Registration(this.s, this.ev.get_date(), this.ev.get_guestName(), false, "", 0, "", true);
+            Registration newReg = new Registration(this.s, false, "", 0,this.ev ,"", true);
             EventCrud form24 = new EventCrud(this.s, this.ev);
             form24.Show();
             this.Hide();
