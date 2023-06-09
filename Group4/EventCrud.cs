@@ -90,6 +90,16 @@ namespace Group4
         private void EventCrud_Load(object sender, EventArgs e)
         {
             this.Load_Enum();
+            if (this.ev.get_date()> DateTime.Now)
+            {
+                finalRatingScore.Hide();
+                WatchReviews.Hide();
+            }
+            else
+            {
+                this.setFinalRatingScore();
+
+            }
             if(s != null)
             {
                 UpdateEvent.Hide();
@@ -182,13 +192,6 @@ namespace Group4
             formStudentChooseAction.Show();
             this.Hide();
             }
-/*            else if (t != null) מה לעשות עם המורה האם להכין מסך ראשי שיוביל לאירועים או ש
-            {
-                StudentChooseAction formStudentChooseAction = new StudentChooseAction(t);
-                formStudentChooseAction.Show();
-                this.Hide();
-            }*/
-
         }
 
         private void backToolStripMenuItem_Click(object sender, EventArgs e)
@@ -290,6 +293,36 @@ namespace Group4
                 }
             }
             return ans;
+        }
+
+        private void WatchReviews_Click(object sender, EventArgs e)
+        {
+            EventReviews evre = new EventReviews(this.ev);
+            evre.Show();
+        }
+
+        private void setFinalRatingScore()
+        {
+            int counter = 0;
+            int score = 0;
+            foreach (Registration re in Program.registrations)
+            {
+                if (re.GetEvent().getNum() == this.ev.getNum())
+                {
+                    if(re.get_rating() != 0)
+                    {
+                        counter++;
+                        score += re.get_rating();
+                    }
+                }
+            }
+            finalRatingScore.Text = $"Event's Final Rating: {(float)(score/counter)}";
+
+        }
+
+        private void GuestTypeComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

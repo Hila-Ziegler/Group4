@@ -113,6 +113,12 @@
     <Compile Include="EventDateChangedMessage.Designer.cs">
       <DependentUpon>EventDateChangedMessage.cs</DependentUpon>
     </Compile>
+    <Compile Include="EventReviews.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EventReviews.Designer.cs">
+      <DependentUpon>EventReviews.cs</DependentUpon>
+    </Compile>
     <Compile Include="forthELOL.cs" />
     <Compile Include="FriendSocialPage1.cs">
       <SubType>Form</SubType>
@@ -265,8 +271,10 @@
     <EmbeddedResource Include="EventDateChangedMessage.resx">
       <DependentUpon>EventDateChangedMessage.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FriendSocialPage1.resx">
-      <DependentUpon>FriendSocialPage1.cs</DependentUpon>
+
+    <EmbeddedResource Include="EventReviews.resx">
+      <DependentUpon>EventReviews.cs</DependentUpon>
+
     </EmbeddedResource>
     <EmbeddedResource Include="IncorrectInformation.resx">
       <DependentUpon>IncorrectInformation.cs</DependentUpon>
