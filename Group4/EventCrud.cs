@@ -243,8 +243,14 @@ namespace Group4
         {
             if (DateTime.Parse(EventDatePicker.Value.ToString()) != this.ev.get_date())
             {
-                //this.ev.set_oldDate(this.ev.get_date().ToShortDateString());
-                //update registrations
+                foreach (Registration re in Program.registrations)
+                {
+                    if(this.ev == re.GetEvent())
+                    {
+                        re.set_oldDate(this.ev.get_date().ToString());
+                        re.update_Registration();
+                    }
+                }
             }
             this.ev.set_guestName(GuestNameTextBox.Text);
             this.ev.set_date(DateTime.Parse(EventDatePicker.Value.ToString()));
@@ -263,10 +269,24 @@ namespace Group4
         {
             this.ev.set_currentlyRegistered(this.ev.get_currentlyRegistered() + 1);
             this.ev.Registered.Add(this.s);
+            Registration newReg = new Registration(this.s, this.ev.get_date(), this.ev.get_guestName(), false, "", 0, "", true);
             EventCrud form24 = new EventCrud(this.s, this.ev);
             form24.Show();
             this.Hide();
 
+        }
+
+        private List<Registration> GetRegistrations()
+        {
+            List<Registration> ans = new List<Registration>();
+            foreach(Registration r in Program.registrations)
+            {
+                if (r.GetEvent() == this.ev)
+                {
+                    ans.Add(r);
+                }
+            }
+            return ans;
         }
     }
 }
