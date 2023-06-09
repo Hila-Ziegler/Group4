@@ -46,12 +46,12 @@
             this.homeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.bookHistoryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label2 = new System.Windows.Forms.Label();
-            this.TitleTextBox = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.RatingCB = new System.Windows.Forms.ComboBox();
+            this.PublishYearLB = new System.Windows.Forms.Label();
+            this.AuthorLB = new System.Windows.Forms.Label();
+            this.ISBNLB = new System.Windows.Forms.Label();
+            this.TitleLB = new System.Windows.Forms.Label();
+            this.LanguageLB = new System.Windows.Forms.Label();
             RequestTimeExtention = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -70,7 +70,7 @@
             // 
             this.BookCrudTitle.AutoSize = true;
             this.BookCrudTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BookCrudTitle.Location = new System.Drawing.Point(313, 9);
+            this.BookCrudTitle.Location = new System.Drawing.Point(315, 28);
             this.BookCrudTitle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.BookCrudTitle.Name = "BookCrudTitle";
             this.BookCrudTitle.Size = new System.Drawing.Size(88, 42);
@@ -229,65 +229,72 @@
             this.label2.TabIndex = 44;
             this.label2.Text = "The library is a brand, when you\'ve got a card in your hand";
             // 
-            // TitleTextBox
+            // RatingCB
             // 
-            this.TitleTextBox.Location = new System.Drawing.Point(310, 83);
-            this.TitleTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.TitleTextBox.Name = "TitleTextBox";
-            this.TitleTextBox.Size = new System.Drawing.Size(128, 22);
-            this.TitleTextBox.TabIndex = 45;
+            this.RatingCB.FormattingEnabled = true;
+            this.RatingCB.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5"});
+            this.RatingCB.Location = new System.Drawing.Point(310, 249);
+            this.RatingCB.Name = "RatingCB";
+            this.RatingCB.Size = new System.Drawing.Size(128, 24);
+            this.RatingCB.TabIndex = 50;
+            this.RatingCB.SelectedIndexChanged += new System.EventHandler(this.RatingCB_SelectedIndexChanged);
             // 
-            // textBox1
+            // PublishYearLB
             // 
-            this.textBox1.Location = new System.Drawing.Point(310, 113);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(128, 22);
-            this.textBox1.TabIndex = 46;
+            this.PublishYearLB.AutoSize = true;
+            this.PublishYearLB.Location = new System.Drawing.Point(307, 177);
+            this.PublishYearLB.Name = "PublishYearLB";
+            this.PublishYearLB.Size = new System.Drawing.Size(0, 17);
+            this.PublishYearLB.TabIndex = 51;
             // 
-            // textBox2
+            // AuthorLB
             // 
-            this.textBox2.Location = new System.Drawing.Point(310, 147);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(128, 22);
-            this.textBox2.TabIndex = 47;
+            this.AuthorLB.AutoSize = true;
+            this.AuthorLB.Location = new System.Drawing.Point(307, 147);
+            this.AuthorLB.Name = "AuthorLB";
+            this.AuthorLB.Size = new System.Drawing.Size(0, 17);
+            this.AuthorLB.TabIndex = 52;
             // 
-            // textBox3
+            // ISBNLB
             // 
-            this.textBox3.Location = new System.Drawing.Point(310, 177);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(128, 22);
-            this.textBox3.TabIndex = 48;
+            this.ISBNLB.AutoSize = true;
+            this.ISBNLB.Location = new System.Drawing.Point(307, 118);
+            this.ISBNLB.Name = "ISBNLB";
+            this.ISBNLB.Size = new System.Drawing.Size(0, 17);
+            this.ISBNLB.TabIndex = 53;
             // 
-            // comboBox1
+            // TitleLB
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(310, 214);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(128, 24);
-            this.comboBox1.TabIndex = 49;
+            this.TitleLB.AutoSize = true;
+            this.TitleLB.Location = new System.Drawing.Point(307, 88);
+            this.TitleLB.Name = "TitleLB";
+            this.TitleLB.Size = new System.Drawing.Size(0, 17);
+            this.TitleLB.TabIndex = 54;
             // 
-            // comboBox2
+            // LanguageLB
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(310, 249);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(128, 24);
-            this.comboBox2.TabIndex = 50;
+            this.LanguageLB.AutoSize = true;
+            this.LanguageLB.Location = new System.Drawing.Point(307, 214);
+            this.LanguageLB.Name = "LanguageLB";
+            this.LanguageLB.Size = new System.Drawing.Size(0, 17);
+            this.LanguageLB.TabIndex = 55;
             // 
             // StudentBorrowActinos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.TitleTextBox);
+            this.Controls.Add(this.LanguageLB);
+            this.Controls.Add(this.TitleLB);
+            this.Controls.Add(this.ISBNLB);
+            this.Controls.Add(this.AuthorLB);
+            this.Controls.Add(this.PublishYearLB);
+            this.Controls.Add(this.RatingCB);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.SuggestAlternativeBook);
             this.Controls.Add(RequestTimeExtention);
@@ -334,11 +341,11 @@
         private System.Windows.Forms.ToolStripMenuItem homeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem bookHistoryToolStripMenuItem;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox TitleTextBox;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox RatingCB;
+        private System.Windows.Forms.Label PublishYearLB;
+        private System.Windows.Forms.Label AuthorLB;
+        private System.Windows.Forms.Label ISBNLB;
+        private System.Windows.Forms.Label TitleLB;
+        private System.Windows.Forms.Label LanguageLB;
     }
 }
