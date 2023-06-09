@@ -134,7 +134,7 @@ AS
 Update dbo.BookHistory
 SET
 startDate=@startDate, endDate=@endDate, rate=@rate
-WHERE copyNumber=@copyNumber AND serialNumber=@serialNumber AND id=@id
+WHERE copyNumber=@copyNumber AND serialNumber=@serialNumber AND id=@id AND startDate=@startDate
 --DROP PROCEDURE dbo.SP_Update_Event
 CREATE PROCEDURE dbo.SP_Update_Event @guestType	VARCHAR(50),@date DATETIME,	@price	DECIMAL,@guestSpeakerName VARCHAR(50),@status VARCHAR(50), @maxGuests INTEGER,@currentlyRegistered INTEGER, @number INTEGER
 AS
@@ -147,8 +147,8 @@ CREATE PROCEDURE dbo.SP_Update_Registration @id VARCHAR(50),@showedUp	BIT,@revie
 AS
 Update dbo.Registrations
 SET
-showedUp=@showedUp, review=@review, rating=@rating, oldDate=@oldDate, id=@id
-WHERE number=@number
+showedUp=@showedUp, review=@review, rating=@rating, oldDate=@oldDate
+WHERE number=@number AND id=@id --מפתח ראשי של רישום הוא גם ת.ז של סטודנט
 --DROP PROCEDURE dbo.SP_Update_Request
 CREATE PROCEDURE dbo.SP_Update_Request @type VARCHAR(50),@startDT DATETIME ,@sid	VARCHAR(50),@lid VARCHAR(50),@endDT	DATETIME,@status VARCHAR(50),@photoAddress	NVARCHAR(260), @serialNum VARCHAR(50), @copyNum INTEGER
 AS
