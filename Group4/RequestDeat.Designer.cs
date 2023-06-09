@@ -30,17 +30,14 @@ namespace Group4
         private void InitializeComponent()
         {
             this.StartDTtxt = new System.Windows.Forms.Label();
-            this.DenyBTN = new System.Windows.Forms.Button();
             this.StudentID = new System.Windows.Forms.Label();
             this.EndDTtxt = new System.Windows.Forms.Label();
             this.CopyNumtxt = new System.Windows.Forms.Label();
             this.BookSerialtxt = new System.Windows.Forms.Label();
             this.CancelBTN = new System.Windows.Forms.Button();
             this.AcceptBTN = new System.Windows.Forms.Button();
-            this.BookCrudTitle = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.ChangePhotoBTN = new System.Windows.Forms.Button();
+            this.AttachedPhotobox = new System.Windows.Forms.PictureBox();
+            this.AttachedPhotolbl = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.homePageToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -52,7 +49,9 @@ namespace Group4
             this.Entxt = new System.Windows.Forms.Label();
             this.Snlbl = new System.Windows.Forms.Label();
             this.Sntxt = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.UpdateStlbl = new System.Windows.Forms.Label();
+            this.StatusCombo = new System.Windows.Forms.ComboBox();
+            ((System.ComponentModel.ISupportInitialize)(this.AttachedPhotobox)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -66,17 +65,6 @@ namespace Group4
             this.StartDTtxt.TabIndex = 51;
             this.StartDTtxt.Text = "Start Date";
             this.StartDTtxt.Click += new System.EventHandler(this.Titlelbl_Click);
-            // 
-            // DenyBTN
-            // 
-            this.DenyBTN.Location = new System.Drawing.Point(391, 303);
-            this.DenyBTN.Margin = new System.Windows.Forms.Padding(2);
-            this.DenyBTN.Name = "DenyBTN";
-            this.DenyBTN.Size = new System.Drawing.Size(79, 23);
-            this.DenyBTN.TabIndex = 50;
-            this.DenyBTN.Text = "Deny";
-            this.DenyBTN.UseVisualStyleBackColor = true;
-            this.DenyBTN.Click += new System.EventHandler(this.CreateNewBook_Click);
             // 
             // StudentID
             // 
@@ -120,17 +108,17 @@ namespace Group4
             // 
             // CancelBTN
             // 
-            this.CancelBTN.Location = new System.Drawing.Point(512, 303);
+            this.CancelBTN.Location = new System.Drawing.Point(617, 313);
             this.CancelBTN.Name = "CancelBTN";
-            this.CancelBTN.Size = new System.Drawing.Size(75, 23);
+            this.CancelBTN.Size = new System.Drawing.Size(94, 23);
             this.CancelBTN.TabIndex = 36;
-            this.CancelBTN.Text = "Cancel";
+            this.CancelBTN.Text = "Cancel Request";
             this.CancelBTN.UseVisualStyleBackColor = true;
             this.CancelBTN.Click += new System.EventHandler(this.BookCrudDeleteBTN_Click);
             // 
             // AcceptBTN
             // 
-            this.AcceptBTN.Location = new System.Drawing.Point(283, 303);
+            this.AcceptBTN.Location = new System.Drawing.Point(284, 313);
             this.AcceptBTN.Name = "AcceptBTN";
             this.AcceptBTN.Size = new System.Drawing.Size(75, 23);
             this.AcceptBTN.TabIndex = 35;
@@ -138,42 +126,22 @@ namespace Group4
             this.AcceptBTN.UseVisualStyleBackColor = true;
             this.AcceptBTN.Click += new System.EventHandler(this.BookCrudUpdateBTN_Click);
             // 
-            // BookCrudTitle
+            // AttachedPhotobox
             // 
-            this.BookCrudTitle.AutoSize = true;
-            this.BookCrudTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BookCrudTitle.Location = new System.Drawing.Point(446, 28);
-            this.BookCrudTitle.Name = "BookCrudTitle";
-            this.BookCrudTitle.Size = new System.Drawing.Size(71, 33);
-            this.BookCrudTitle.TabIndex = 34;
-            this.BookCrudTitle.Text = "Title";
-            this.BookCrudTitle.Click += new System.EventHandler(this.BookCrudTitle_Click);
+            this.AttachedPhotobox.Location = new System.Drawing.Point(611, 128);
+            this.AttachedPhotobox.Name = "AttachedPhotobox";
+            this.AttachedPhotobox.Size = new System.Drawing.Size(100, 50);
+            this.AttachedPhotobox.TabIndex = 58;
+            this.AttachedPhotobox.TabStop = false;
             // 
-            // pictureBox1
+            // AttachedPhotolbl
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(561, 128);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(100, 50);
-            this.pictureBox1.TabIndex = 58;
-            this.pictureBox1.TabStop = false;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(558, 89);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(84, 13);
-            this.label1.TabIndex = 59;
-            this.label1.Text = "Attached Photo:";
-            // 
-            // ChangePhotoBTN
-            // 
-            this.ChangePhotoBTN.Location = new System.Drawing.Point(561, 210);
-            this.ChangePhotoBTN.Name = "ChangePhotoBTN";
-            this.ChangePhotoBTN.Size = new System.Drawing.Size(137, 23);
-            this.ChangePhotoBTN.TabIndex = 60;
-            this.ChangePhotoBTN.Text = "Ask For Different Photo";
-            this.ChangePhotoBTN.UseVisualStyleBackColor = true;
+            this.AttachedPhotolbl.AutoSize = true;
+            this.AttachedPhotolbl.Location = new System.Drawing.Point(608, 89);
+            this.AttachedPhotolbl.Name = "AttachedPhotolbl";
+            this.AttachedPhotolbl.Size = new System.Drawing.Size(84, 13);
+            this.AttachedPhotolbl.TabIndex = 59;
+            this.AttachedPhotolbl.Text = "Attached Photo:";
             // 
             // label2
             // 
@@ -268,11 +236,30 @@ namespace Group4
             this.Sntxt.Size = new System.Drawing.Size(0, 13);
             this.Sntxt.TabIndex = 69;
             // 
+            // UpdateStlbl
+            // 
+            this.UpdateStlbl.AutoSize = true;
+            this.UpdateStlbl.Location = new System.Drawing.Point(283, 253);
+            this.UpdateStlbl.Name = "UpdateStlbl";
+            this.UpdateStlbl.Size = new System.Drawing.Size(78, 13);
+            this.UpdateStlbl.TabIndex = 70;
+            this.UpdateStlbl.Text = "Update Status:";
+            // 
+            // StatusCombo
+            // 
+            this.StatusCombo.FormattingEnabled = true;
+            this.StatusCombo.Location = new System.Drawing.Point(284, 276);
+            this.StatusCombo.Name = "StatusCombo";
+            this.StatusCombo.Size = new System.Drawing.Size(121, 21);
+            this.StatusCombo.TabIndex = 71;
+            // 
             // RequestDeat
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(949, 459);
+            this.Controls.Add(this.StatusCombo);
+            this.Controls.Add(this.UpdateStlbl);
             this.Controls.Add(this.Sntxt);
             this.Controls.Add(this.Snlbl);
             this.Controls.Add(this.Entxt);
@@ -281,24 +268,21 @@ namespace Group4
             this.Controls.Add(this.Sidtxt);
             this.Controls.Add(this.Sdtxt);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.ChangePhotoBTN);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.AttachedPhotolbl);
+            this.Controls.Add(this.AttachedPhotobox);
             this.Controls.Add(this.StartDTtxt);
-            this.Controls.Add(this.DenyBTN);
             this.Controls.Add(this.StudentID);
             this.Controls.Add(this.EndDTtxt);
             this.Controls.Add(this.CopyNumtxt);
             this.Controls.Add(this.BookSerialtxt);
             this.Controls.Add(this.CancelBTN);
             this.Controls.Add(this.AcceptBTN);
-            this.Controls.Add(this.BookCrudTitle);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "RequestDeat";
             this.Text = "Request Details";
             this.Load += new System.EventHandler(this.RequestDeat_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.AttachedPhotobox)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -308,17 +292,14 @@ namespace Group4
 
         #endregion
         private System.Windows.Forms.Label StartDTtxt;
-        private System.Windows.Forms.Button DenyBTN;
         private System.Windows.Forms.Label StudentID;
         private System.Windows.Forms.Label EndDTtxt;
         private System.Windows.Forms.Label CopyNumtxt;
         private System.Windows.Forms.Label BookSerialtxt;
         private System.Windows.Forms.Button CancelBTN;
         private System.Windows.Forms.Button AcceptBTN;
-        private System.Windows.Forms.Label BookCrudTitle;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button ChangePhotoBTN;
+        private System.Windows.Forms.PictureBox AttachedPhotobox;
+        private System.Windows.Forms.Label AttachedPhotolbl;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem homePageToolStripMenuItem;
@@ -330,5 +311,7 @@ namespace Group4
         private System.Windows.Forms.Label Entxt;
         private System.Windows.Forms.Label Snlbl;
         private System.Windows.Forms.Label Sntxt;
+        private System.Windows.Forms.Label UpdateStlbl;
+        private System.Windows.Forms.ComboBox StatusCombo;
     }
 }

@@ -109,6 +109,11 @@ namespace Group4
             this.PhotoAddress = photoAddress;
         }
 
+        public void set_copy(Copy copy)
+        {
+            this.Copy = copy;
+        }
+
 
         public void create_Request()
         {
