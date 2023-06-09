@@ -116,6 +116,7 @@ namespace Group4
             this.Event = e;
         }
 
+
         public void create_Registration()
         {//
             SqlCommand c = new SqlCommand();

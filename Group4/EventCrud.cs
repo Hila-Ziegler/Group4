@@ -140,6 +140,7 @@ namespace Group4
                     RegisterBTN.Hide();
                     UpdateEvent.Hide();
                     DeleteEvent.Hide();
+                    CurrentAtten.Hide();
 
                 }
                 else
@@ -246,9 +247,9 @@ namespace Group4
             {
                 foreach (Registration re in Program.registrations)
                 {
-                    if(this.ev == re.GetEvent())
+                    if(this.ev.getNum() == re.GetEvent().getNum())
                     {
-                        re.set_oldDate(this.ev.get_date().ToString());
+                        re.set_oldDate(this.ev.get_date().ToShortDateString());
                         re.update_Registration();
                     }
                 }
@@ -268,9 +269,10 @@ namespace Group4
 
         private void RegisterBTN_Click(object sender, EventArgs e)
         {
-            this.ev.set_currentlyRegistered(this.ev.get_currentlyRegistered() + 1);
             this.ev.Registered.Add(this.s);
             Registration newReg = new Registration(this.s, false, "", 0,this.ev ,"", true);
+            this.ev.set_currentlyRegistered(this.ev.get_currentlyRegistered() + 1);
+            this.ev.update_Event();
             EventCrud form24 = new EventCrud(this.s, this.ev);
             form24.Show();
             this.Hide();

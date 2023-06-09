@@ -47,7 +47,6 @@ namespace Group4
             {
                 if (re.get_oldDate() != "" && re.get_student().get_ID() == this.student.get_ID())
                 {
-                    Console.WriteLine($"re.getOldDate() value is: {re.get_oldDate()}");
                     EventDateChangedMessage edcm = new EventDateChangedMessage(re);
                     edcm.Show();
                 }
