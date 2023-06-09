@@ -29,14 +29,8 @@ namespace Group4
         /// </summary>
         private void InitializeComponent()
         {
-            this.ISBNUpdateScreen = new System.Windows.Forms.Label();
-            this.updateScreenratinglbl = new System.Windows.Forms.Label();
             this.StartDTtxt = new System.Windows.Forms.Label();
             this.DenyBTN = new System.Windows.Forms.Button();
-            this.lb_ISBN_value = new System.Windows.Forms.Label();
-            this.lb_LangueageValue = new System.Windows.Forms.Label();
-            this.lb_PublishYearValue = new System.Windows.Forms.Label();
-            this.lb_AuthorValue = new System.Windows.Forms.Label();
             this.StudentID = new System.Windows.Forms.Label();
             this.EndDTtxt = new System.Windows.Forms.Label();
             this.CopyNumtxt = new System.Windows.Forms.Label();
@@ -51,29 +45,16 @@ namespace Group4
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.homePageToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.backToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.Sdtxt = new System.Windows.Forms.Label();
+            this.Sidtxt = new System.Windows.Forms.Label();
+            this.Bsntxt = new System.Windows.Forms.Label();
+            this.Cntxt = new System.Windows.Forms.Label();
+            this.Entxt = new System.Windows.Forms.Label();
+            this.Snlbl = new System.Windows.Forms.Label();
+            this.Sntxt = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // ISBNUpdateScreen
-            // 
-            this.ISBNUpdateScreen.AutoSize = true;
-            this.ISBNUpdateScreen.Location = new System.Drawing.Point(402, 89);
-            this.ISBNUpdateScreen.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.ISBNUpdateScreen.Name = "ISBNUpdateScreen";
-            this.ISBNUpdateScreen.Size = new System.Drawing.Size(0, 13);
-            this.ISBNUpdateScreen.TabIndex = 55;
-            this.ISBNUpdateScreen.Click += new System.EventHandler(this.ISBNUpdateScreen_Click);
-            // 
-            // updateScreenratinglbl
-            // 
-            this.updateScreenratinglbl.AutoSize = true;
-            this.updateScreenratinglbl.Location = new System.Drawing.Point(402, 165);
-            this.updateScreenratinglbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.updateScreenratinglbl.Name = "updateScreenratinglbl";
-            this.updateScreenratinglbl.Size = new System.Drawing.Size(0, 13);
-            this.updateScreenratinglbl.TabIndex = 54;
-            this.updateScreenratinglbl.Click += new System.EventHandler(this.updateScreenratinglbl_Click);
             // 
             // StartDTtxt
             // 
@@ -97,42 +78,6 @@ namespace Group4
             this.DenyBTN.UseVisualStyleBackColor = true;
             this.DenyBTN.Click += new System.EventHandler(this.CreateNewBook_Click);
             // 
-            // lb_ISBN_value
-            // 
-            this.lb_ISBN_value.AutoSize = true;
-            this.lb_ISBN_value.Location = new System.Drawing.Point(402, 89);
-            this.lb_ISBN_value.Name = "lb_ISBN_value";
-            this.lb_ISBN_value.Size = new System.Drawing.Size(0, 13);
-            this.lb_ISBN_value.TabIndex = 46;
-            this.lb_ISBN_value.Click += new System.EventHandler(this.lb_ISBN_value_Click);
-            // 
-            // lb_LangueageValue
-            // 
-            this.lb_LangueageValue.AutoSize = true;
-            this.lb_LangueageValue.Location = new System.Drawing.Point(402, 195);
-            this.lb_LangueageValue.Name = "lb_LangueageValue";
-            this.lb_LangueageValue.Size = new System.Drawing.Size(0, 13);
-            this.lb_LangueageValue.TabIndex = 44;
-            this.lb_LangueageValue.Click += new System.EventHandler(this.lb_LangueageValue_Click);
-            // 
-            // lb_PublishYearValue
-            // 
-            this.lb_PublishYearValue.AutoSize = true;
-            this.lb_PublishYearValue.Location = new System.Drawing.Point(402, 141);
-            this.lb_PublishYearValue.Name = "lb_PublishYearValue";
-            this.lb_PublishYearValue.Size = new System.Drawing.Size(0, 13);
-            this.lb_PublishYearValue.TabIndex = 43;
-            this.lb_PublishYearValue.Click += new System.EventHandler(this.lb_PublishYearValue_Click);
-            // 
-            // lb_AuthorValue
-            // 
-            this.lb_AuthorValue.AutoSize = true;
-            this.lb_AuthorValue.Location = new System.Drawing.Point(402, 113);
-            this.lb_AuthorValue.Name = "lb_AuthorValue";
-            this.lb_AuthorValue.Size = new System.Drawing.Size(0, 13);
-            this.lb_AuthorValue.TabIndex = 42;
-            this.lb_AuthorValue.Click += new System.EventHandler(this.lb_AuthorValue_Click);
-            // 
             // StudentID
             // 
             this.StudentID.AutoSize = true;
@@ -146,7 +91,7 @@ namespace Group4
             // EndDTtxt
             // 
             this.EndDTtxt.AutoSize = true;
-            this.EndDTtxt.Location = new System.Drawing.Point(280, 195);
+            this.EndDTtxt.Location = new System.Drawing.Point(280, 215);
             this.EndDTtxt.Name = "EndDTtxt";
             this.EndDTtxt.Size = new System.Drawing.Size(52, 13);
             this.EndDTtxt.TabIndex = 39;
@@ -156,7 +101,7 @@ namespace Group4
             // CopyNumtxt
             // 
             this.CopyNumtxt.AutoSize = true;
-            this.CopyNumtxt.Location = new System.Drawing.Point(280, 165);
+            this.CopyNumtxt.Location = new System.Drawing.Point(280, 189);
             this.CopyNumtxt.Name = "CopyNumtxt";
             this.CopyNumtxt.Size = new System.Drawing.Size(71, 13);
             this.CopyNumtxt.TabIndex = 38;
@@ -166,7 +111,7 @@ namespace Group4
             // BookSerialtxt
             // 
             this.BookSerialtxt.AutoSize = true;
-            this.BookSerialtxt.Location = new System.Drawing.Point(280, 141);
+            this.BookSerialtxt.Location = new System.Drawing.Point(280, 165);
             this.BookSerialtxt.Name = "BookSerialtxt";
             this.BookSerialtxt.Size = new System.Drawing.Size(101, 13);
             this.BookSerialtxt.TabIndex = 37;
@@ -256,30 +201,91 @@ namespace Group4
             this.homePageToolStripMenuItem.Name = "homePageToolStripMenuItem";
             this.homePageToolStripMenuItem.Size = new System.Drawing.Size(81, 20);
             this.homePageToolStripMenuItem.Text = "Home Page";
+            this.homePageToolStripMenuItem.Click += new System.EventHandler(this.homePageToolStripMenuItem_Click);
             // 
             // backToolStripMenuItem
             // 
             this.backToolStripMenuItem.Name = "backToolStripMenuItem";
             this.backToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
             this.backToolStripMenuItem.Text = "Back";
+            this.backToolStripMenuItem.Click += new System.EventHandler(this.backToolStripMenuItem_Click);
+            // 
+            // Sdtxt
+            // 
+            this.Sdtxt.AutoSize = true;
+            this.Sdtxt.Location = new System.Drawing.Point(405, 89);
+            this.Sdtxt.Name = "Sdtxt";
+            this.Sdtxt.Size = new System.Drawing.Size(0, 13);
+            this.Sdtxt.TabIndex = 63;
+            // 
+            // Sidtxt
+            // 
+            this.Sidtxt.AutoSize = true;
+            this.Sidtxt.Location = new System.Drawing.Point(405, 113);
+            this.Sidtxt.Name = "Sidtxt";
+            this.Sidtxt.Size = new System.Drawing.Size(0, 13);
+            this.Sidtxt.TabIndex = 64;
+            // 
+            // Bsntxt
+            // 
+            this.Bsntxt.AutoSize = true;
+            this.Bsntxt.Location = new System.Drawing.Point(405, 165);
+            this.Bsntxt.Name = "Bsntxt";
+            this.Bsntxt.Size = new System.Drawing.Size(0, 13);
+            this.Bsntxt.TabIndex = 65;
+            this.Bsntxt.Click += new System.EventHandler(this.Bsntxt_Click);
+            // 
+            // Cntxt
+            // 
+            this.Cntxt.AutoSize = true;
+            this.Cntxt.Location = new System.Drawing.Point(405, 189);
+            this.Cntxt.Name = "Cntxt";
+            this.Cntxt.Size = new System.Drawing.Size(0, 13);
+            this.Cntxt.TabIndex = 66;
+            // 
+            // Entxt
+            // 
+            this.Entxt.AutoSize = true;
+            this.Entxt.Location = new System.Drawing.Point(405, 215);
+            this.Entxt.Name = "Entxt";
+            this.Entxt.Size = new System.Drawing.Size(0, 13);
+            this.Entxt.TabIndex = 67;
+            // 
+            // Snlbl
+            // 
+            this.Snlbl.AutoSize = true;
+            this.Snlbl.Location = new System.Drawing.Point(280, 139);
+            this.Snlbl.Name = "Snlbl";
+            this.Snlbl.Size = new System.Drawing.Size(75, 13);
+            this.Snlbl.TabIndex = 68;
+            this.Snlbl.Text = "Student Name";
+            // 
+            // Sntxt
+            // 
+            this.Sntxt.AutoSize = true;
+            this.Sntxt.Location = new System.Drawing.Point(405, 139);
+            this.Sntxt.Name = "Sntxt";
+            this.Sntxt.Size = new System.Drawing.Size(0, 13);
+            this.Sntxt.TabIndex = 69;
             // 
             // RequestDeat
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(949, 459);
+            this.Controls.Add(this.Sntxt);
+            this.Controls.Add(this.Snlbl);
+            this.Controls.Add(this.Entxt);
+            this.Controls.Add(this.Cntxt);
+            this.Controls.Add(this.Bsntxt);
+            this.Controls.Add(this.Sidtxt);
+            this.Controls.Add(this.Sdtxt);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.ChangePhotoBTN);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.ISBNUpdateScreen);
-            this.Controls.Add(this.updateScreenratinglbl);
             this.Controls.Add(this.StartDTtxt);
             this.Controls.Add(this.DenyBTN);
-            this.Controls.Add(this.lb_ISBN_value);
-            this.Controls.Add(this.lb_LangueageValue);
-            this.Controls.Add(this.lb_PublishYearValue);
-            this.Controls.Add(this.lb_AuthorValue);
             this.Controls.Add(this.StudentID);
             this.Controls.Add(this.EndDTtxt);
             this.Controls.Add(this.CopyNumtxt);
@@ -301,14 +307,8 @@ namespace Group4
         }
 
         #endregion
-        private System.Windows.Forms.Label ISBNUpdateScreen;
-        private System.Windows.Forms.Label updateScreenratinglbl;
         private System.Windows.Forms.Label StartDTtxt;
         private System.Windows.Forms.Button DenyBTN;
-        private System.Windows.Forms.Label lb_ISBN_value;
-        private System.Windows.Forms.Label lb_LangueageValue;
-        private System.Windows.Forms.Label lb_PublishYearValue;
-        private System.Windows.Forms.Label lb_AuthorValue;
         private System.Windows.Forms.Label StudentID;
         private System.Windows.Forms.Label EndDTtxt;
         private System.Windows.Forms.Label CopyNumtxt;
@@ -323,5 +323,12 @@ namespace Group4
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem homePageToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem backToolStripMenuItem;
+        private System.Windows.Forms.Label Sdtxt;
+        private System.Windows.Forms.Label Sidtxt;
+        private System.Windows.Forms.Label Bsntxt;
+        private System.Windows.Forms.Label Cntxt;
+        private System.Windows.Forms.Label Entxt;
+        private System.Windows.Forms.Label Snlbl;
+        private System.Windows.Forms.Label Sntxt;
     }
 }
