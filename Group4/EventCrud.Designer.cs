@@ -57,6 +57,8 @@
             this.GuestTypeComboBox = new System.Windows.Forms.ComboBox();
             this.updateEventbtn = new System.Windows.Forms.Button();
             this.eventsPriceValuelbl = new System.Windows.Forms.Label();
+            this.finalRatingScore = new System.Windows.Forms.Label();
+            this.WatchReviews = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericMaxAttendance)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericPrice)).BeginInit();
@@ -348,11 +350,33 @@
             this.eventsPriceValuelbl.Size = new System.Drawing.Size(0, 17);
             this.eventsPriceValuelbl.TabIndex = 62;
             // 
+            // finalRatingScore
+            // 
+            this.finalRatingScore.AutoSize = true;
+            this.finalRatingScore.Location = new System.Drawing.Point(703, 65);
+            this.finalRatingScore.Name = "finalRatingScore";
+            this.finalRatingScore.Size = new System.Drawing.Size(83, 17);
+            this.finalRatingScore.TabIndex = 63;
+            this.finalRatingScore.Text = "Final Rating";
+            // 
+            // WatchReviews
+            // 
+            this.WatchReviews.Location = new System.Drawing.Point(706, 86);
+            this.WatchReviews.Margin = new System.Windows.Forms.Padding(4);
+            this.WatchReviews.Name = "WatchReviews";
+            this.WatchReviews.Size = new System.Drawing.Size(100, 53);
+            this.WatchReviews.TabIndex = 64;
+            this.WatchReviews.Text = "Watch Reviews";
+            this.WatchReviews.UseVisualStyleBackColor = true;
+            this.WatchReviews.Click += new System.EventHandler(this.WatchReviews_Click);
+            // 
             // EventCrud
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(977, 566);
+            this.Controls.Add(this.WatchReviews);
+            this.Controls.Add(this.finalRatingScore);
             this.Controls.Add(this.eventsPriceValuelbl);
             this.Controls.Add(this.updateEventbtn);
             this.Controls.Add(this.GuestTypeComboBox);
@@ -425,5 +449,7 @@
         private System.Windows.Forms.ComboBox GuestTypeComboBox;
         private System.Windows.Forms.Button updateEventbtn;
         private System.Windows.Forms.Label eventsPriceValuelbl;
+        private System.Windows.Forms.Label finalRatingScore;
+        private System.Windows.Forms.Button WatchReviews;
     }
 }
