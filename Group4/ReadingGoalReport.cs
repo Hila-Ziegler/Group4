@@ -216,5 +216,10 @@ namespace Group4
             }
             return count!=0 ? (float)(totalReadingGoal / count): 0;
         }
+
+        private void label10_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

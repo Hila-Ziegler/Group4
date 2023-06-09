@@ -85,7 +85,8 @@ namespace Group4
                int i = e.RowIndex;
                string sn = dataGridView1.Rows[i].Cells[1].Value.ToString();
                Book b = Program.seekBook(sn);
-               StudentBorrowActinos formStudentBorrow = new StudentBorrowActinos(b, student);
+               string s = "";
+               StudentBorrowActinos formStudentBorrow = new StudentBorrowActinos(s, b, student);
                formStudentBorrow.Show();
                this.Hide();
             }
