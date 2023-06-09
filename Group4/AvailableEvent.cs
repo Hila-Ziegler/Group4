@@ -195,6 +195,10 @@ namespace Group4
             {
                 homePageToolStripMenuItem.Visible = false;
             }
+            if (student != null)
+            {
+                CreateNewEvent.Hide();
+            }
             update_EventList();
             btnFutureEvents.Hide();
 
