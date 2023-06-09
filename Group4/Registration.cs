@@ -23,8 +23,12 @@ namespace Group4
             this.ShowedUp = showedUp;
             this.Review = review;
             this.Rating = rating;
-            this.oldDate = oldDate;
-
+            if(oldDate == "\"\"")
+            {
+                this.oldDate = "";
+            }
+            else this.oldDate = oldDate;
+            this.Event = Program.seekEvent(this.EventDate, this.GuestName);
             if (is_new)
             {
                 this.create_Registration();
@@ -67,6 +71,11 @@ namespace Group4
             return this.oldDate;
         }
 
+        public Event GetEvent()
+        {
+            return this.Event;
+        }
+
         public void set_Student(Student s)
         {
             this.Student = s;
@@ -100,6 +109,11 @@ namespace Group4
         public void set_oldDate(string s)
         {
             this.oldDate = s;
+        }
+
+        public void setEvent(Event e)
+        {
+            this.Event = e;
         }
 
         public void create_Registration()

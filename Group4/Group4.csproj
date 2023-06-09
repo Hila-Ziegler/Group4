@@ -107,6 +107,12 @@
     <Compile Include="EventCrud.Designer.cs">
       <DependentUpon>EventCrud.cs</DependentUpon>
     </Compile>
+    <Compile Include="EventDateChangedMessage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EventDateChangedMessage.Designer.cs">
+      <DependentUpon>EventDateChangedMessage.cs</DependentUpon>
+    </Compile>
     <Compile Include="forthELOL.cs" />
     <Compile Include="IncorrectInformation.cs">
       <SubType>Form</SubType>
@@ -249,6 +255,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="EventCrud.resx">
       <DependentUpon>EventCrud.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EventDateChangedMessage.resx">
+      <DependentUpon>EventDateChangedMessage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="IncorrectInformation.resx">
       <DependentUpon>IncorrectInformation.cs</DependentUpon>
