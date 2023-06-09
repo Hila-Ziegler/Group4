@@ -30,6 +30,7 @@
         {
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.StudentName = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Age = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Club = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.labName = new System.Windows.Forms.Label();
@@ -44,9 +45,15 @@
             this.labAge = new System.Windows.Forms.Label();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.homePageToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.progressBar1 = new System.Windows.Forms.ProgressBar();
+            this.progressBarAllTheTome = new System.Windows.Forms.ProgressBar();
             this.label1 = new System.Windows.Forms.Label();
-            this.progressBar2 = new System.Windows.Forms.ProgressBar();
+            this.label2 = new System.Windows.Forms.Label();
+            this.progressBarThisYear = new System.Windows.Forms.ProgressBar();
+            this.progressBarClub = new System.Windows.Forms.ProgressBar();
+            this.lablabThisYearIRead1 = new System.Windows.Forms.Label();
+            this.labThisYearIRead = new System.Windows.Forms.Label();
+            this.labPercentageAll = new System.Windows.Forms.Label();
+            this.labPercentageClub = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -56,14 +63,16 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.StudentName,
+            this.Id,
             this.Age,
             this.Club});
-            this.dataGridView1.Location = new System.Drawing.Point(87, 293);
+            this.dataGridView1.Location = new System.Drawing.Point(431, 112);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(518, 145);
+            this.dataGridView1.Size = new System.Drawing.Size(567, 481);
             this.dataGridView1.TabIndex = 0;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // StudentName
             // 
@@ -71,6 +80,13 @@
             this.StudentName.MinimumWidth = 6;
             this.StudentName.Name = "StudentName";
             this.StudentName.Width = 125;
+            // 
+            // Id
+            // 
+            this.Id.HeaderText = "Id";
+            this.Id.MinimumWidth = 6;
+            this.Id.Name = "Id";
+            this.Id.Width = 125;
             // 
             // Age
             // 
@@ -89,9 +105,10 @@
             // labName
             // 
             this.labName.AutoSize = true;
-            this.labName.Location = new System.Drawing.Point(336, 50);
+            this.labName.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labName.Location = new System.Drawing.Point(425, 49);
             this.labName.Name = "labName";
-            this.labName.Size = new System.Drawing.Size(44, 16);
+            this.labName.Size = new System.Drawing.Size(89, 32);
             this.labName.TabIndex = 18;
             this.labName.Text = "Name";
             // 
@@ -99,7 +116,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(44, 96);
+            this.label10.Location = new System.Drawing.Point(38, 112);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(51, 25);
             this.label10.TabIndex = 17;
@@ -109,7 +126,7 @@
             // 
             this.labDate.AutoSize = true;
             this.labDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labDate.Location = new System.Drawing.Point(696, 43);
+            this.labDate.Location = new System.Drawing.Point(824, 55);
             this.labDate.Name = "labDate";
             this.labDate.Size = new System.Drawing.Size(57, 25);
             this.labDate.TabIndex = 20;
@@ -118,9 +135,10 @@
             // labSchoolName
             // 
             this.labSchoolName.AutoSize = true;
-            this.labSchoolName.Location = new System.Drawing.Point(12, 50);
+            this.labSchoolName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labSchoolName.Location = new System.Drawing.Point(51, 59);
             this.labSchoolName.Name = "labSchoolName";
-            this.labSchoolName.Size = new System.Drawing.Size(99, 16);
+            this.labSchoolName.Size = new System.Drawing.Size(130, 22);
             this.labSchoolName.TabIndex = 21;
             this.labSchoolName.Text = "School\'s Name";
             // 
@@ -128,7 +146,7 @@
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(44, 174);
+            this.label11.Location = new System.Drawing.Point(128, 111);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(115, 25);
             this.label11.TabIndex = 22;
@@ -138,28 +156,28 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(440, 79);
+            this.label3.Location = new System.Drawing.Point(38, 362);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(127, 25);
+            this.label3.Size = new System.Drawing.Size(205, 25);
             this.label3.TabIndex = 23;
-            this.label3.Text = "You\'ve read";
+            this.label3.Text = "You\'ve Read So Far";
             // 
             // labGoal
             // 
             this.labGoal.AutoSize = true;
             this.labGoal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labGoal.Location = new System.Drawing.Point(440, 114);
+            this.labGoal.Location = new System.Drawing.Point(38, 400);
             this.labGoal.Name = "labGoal";
-            this.labGoal.Size = new System.Drawing.Size(255, 25);
+            this.labGoal.Size = new System.Drawing.Size(121, 25);
             this.labGoal.TabIndex = 28;
-            this.labGoal.Text = "You\'ve read 5/5 of your goal";
+            this.labGoal.Text = "You\'ve read ";
             this.labGoal.Click += new System.EventHandler(this.labGoal_Click);
             // 
             // labClub
             // 
             this.labClub.AutoSize = true;
             this.labClub.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labClub.Location = new System.Drawing.Point(46, 219);
+            this.labClub.Location = new System.Drawing.Point(130, 156);
             this.labClub.Name = "labClub";
             this.labClub.Size = new System.Drawing.Size(105, 25);
             this.labClub.TabIndex = 27;
@@ -169,7 +187,7 @@
             // 
             this.labAge.AutoSize = true;
             this.labAge.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labAge.Location = new System.Drawing.Point(46, 140);
+            this.labAge.Location = new System.Drawing.Point(40, 156);
             this.labAge.Name = "labAge";
             this.labAge.Size = new System.Drawing.Size(48, 25);
             this.labAge.TabIndex = 24;
@@ -183,7 +201,7 @@
             this.homePageToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(800, 33);
+            this.menuStrip1.Size = new System.Drawing.Size(1119, 33);
             this.menuStrip1.TabIndex = 29;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -193,39 +211,104 @@
             this.homePageToolStripMenuItem.Name = "homePageToolStripMenuItem";
             this.homePageToolStripMenuItem.Size = new System.Drawing.Size(120, 29);
             this.homePageToolStripMenuItem.Text = "Home page";
+            this.homePageToolStripMenuItem.Click += new System.EventHandler(this.homePageToolStripMenuItem_Click);
             // 
-            // progressBar1
+            // progressBarAllTheTome
             // 
-            this.progressBar1.Location = new System.Drawing.Point(445, 142);
-            this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(295, 23);
-            this.progressBar1.TabIndex = 30;
+            this.progressBarAllTheTome.Location = new System.Drawing.Point(41, 438);
+            this.progressBarAllTheTome.Name = "progressBarAllTheTome";
+            this.progressBarAllTheTome.Size = new System.Drawing.Size(367, 26);
+            this.progressBarAllTheTome.TabIndex = 30;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(440, 186);
+            this.label1.Location = new System.Drawing.Point(38, 493);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(216, 25);
             this.label1.TabIndex = 31;
             this.label1.Text = "Your Club\'s Progress";
             // 
-            // progressBar2
+            // label2
             // 
-            this.progressBar2.Location = new System.Drawing.Point(445, 221);
-            this.progressBar2.Name = "progressBar2";
-            this.progressBar2.Size = new System.Drawing.Size(295, 23);
-            this.progressBar2.TabIndex = 32;
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(38, 226);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(163, 25);
+            this.label2.TabIndex = 33;
+            this.label2.Text = "This year I read";
+            // 
+            // progressBarThisYear
+            // 
+            this.progressBarThisYear.Location = new System.Drawing.Point(41, 321);
+            this.progressBarThisYear.Name = "progressBarThisYear";
+            this.progressBarThisYear.Size = new System.Drawing.Size(367, 25);
+            this.progressBarThisYear.TabIndex = 35;
+            // 
+            // progressBarClub
+            // 
+            this.progressBarClub.Location = new System.Drawing.Point(41, 540);
+            this.progressBarClub.Name = "progressBarClub";
+            this.progressBarClub.Size = new System.Drawing.Size(367, 23);
+            this.progressBarClub.TabIndex = 32;
+            // 
+            // lablabThisYearIRead1
+            // 
+            this.lablabThisYearIRead1.AutoSize = true;
+            this.lablabThisYearIRead1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lablabThisYearIRead1.Location = new System.Drawing.Point(315, 293);
+            this.lablabThisYearIRead1.Name = "lablabThisYearIRead1";
+            this.lablabThisYearIRead1.Size = new System.Drawing.Size(93, 25);
+            this.lablabThisYearIRead1.TabIndex = 36;
+            this.lablabThisYearIRead1.Text = "This year";
+            // 
+            // labThisYearIRead
+            // 
+            this.labThisYearIRead.AutoSize = true;
+            this.labThisYearIRead.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labThisYearIRead.Location = new System.Drawing.Point(38, 273);
+            this.labThisYearIRead.Name = "labThisYearIRead";
+            this.labThisYearIRead.Size = new System.Drawing.Size(102, 25);
+            this.labThisYearIRead.TabIndex = 34;
+            this.labThisYearIRead.Text = "This year";
+            // 
+            // labPercentageAll
+            // 
+            this.labPercentageAll.AutoSize = true;
+            this.labPercentageAll.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labPercentageAll.Location = new System.Drawing.Point(315, 410);
+            this.labPercentageAll.Name = "labPercentageAll";
+            this.labPercentageAll.Size = new System.Drawing.Size(93, 25);
+            this.labPercentageAll.TabIndex = 37;
+            this.labPercentageAll.Text = "This year";
+            this.labPercentageAll.Click += new System.EventHandler(this.label4_Click);
+            // 
+            // labPercentageClub
+            // 
+            this.labPercentageClub.AutoSize = true;
+            this.labPercentageClub.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labPercentageClub.Location = new System.Drawing.Point(315, 512);
+            this.labPercentageClub.Name = "labPercentageClub";
+            this.labPercentageClub.Size = new System.Drawing.Size(93, 25);
+            this.labPercentageClub.TabIndex = 38;
+            this.labPercentageClub.Text = "This year";
             // 
             // socialPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.progressBar2);
+            this.ClientSize = new System.Drawing.Size(1119, 673);
+            this.Controls.Add(this.labPercentageClub);
+            this.Controls.Add(this.labPercentageAll);
+            this.Controls.Add(this.lablabThisYearIRead1);
+            this.Controls.Add(this.progressBarThisYear);
+            this.Controls.Add(this.labThisYearIRead);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.progressBarClub);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.progressBar1);
+            this.Controls.Add(this.progressBarAllTheTome);
             this.Controls.Add(this.labGoal);
             this.Controls.Add(this.labClub);
             this.Controls.Add(this.labAge);
@@ -252,9 +335,6 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewButtonColumn StudentName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Age;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Club;
         private System.Windows.Forms.Label labName;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label labDate;
@@ -267,8 +347,18 @@
         private System.Windows.Forms.Label labAge;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem homePageToolStripMenuItem;
-        private System.Windows.Forms.ProgressBar progressBar1;
+        private System.Windows.Forms.ProgressBar progressBarAllTheTome;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ProgressBar progressBar2;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ProgressBar progressBarThisYear;
+        private System.Windows.Forms.ProgressBar progressBarClub;
+        private System.Windows.Forms.Label lablabThisYearIRead1;
+        private System.Windows.Forms.Label labThisYearIRead;
+        private System.Windows.Forms.Label labPercentageAll;
+        private System.Windows.Forms.Label labPercentageClub;
+        private System.Windows.Forms.DataGridViewButtonColumn StudentName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Age;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Club;
     }
 }
