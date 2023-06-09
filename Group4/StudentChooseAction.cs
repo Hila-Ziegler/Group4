@@ -43,7 +43,14 @@ namespace Group4
         private void StudentChooseAction_Load(object sender, EventArgs e)
         {
             tlxWalcome.Text = $"Welcome {student.get_name()}";
-            //Event time changed windows.
+            foreach (Registration re in Program.registrations)
+            {
+                if (re.get_oldDate() != "" && re.get_student().get_ID() == this.student.get_ID())
+                {
+                    EventDateChangedMessage edcm = new EventDateChangedMessage(re);
+                    edcm.Show();
+                }
+            }
 ;        }
 
         private void btnMessages_Click(object sender, EventArgs e)
