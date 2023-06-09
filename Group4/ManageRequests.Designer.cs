@@ -31,11 +31,6 @@ namespace Group4
         {
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.StartDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.StudentID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.BookSerialNum = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CopyNum = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Actions = new System.Windows.Forms.DataGridViewButtonColumn();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.TimeReqtxt = new System.Windows.Forms.Label();
             this.AltBooktxt = new System.Windows.Forms.Label();
@@ -44,9 +39,10 @@ namespace Group4
             this.homePageToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.StartDT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.StudentID1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.BookSerial = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Copy = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Actions1 = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.StartDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.StudentID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Actions = new System.Windows.Forms.DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.menuStrip1.SuspendLayout();
@@ -68,51 +64,13 @@ namespace Group4
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.StartDate,
             this.StudentID,
-            this.BookSerialNum,
-            this.CopyNum,
             this.Actions});
-            this.dataGridView1.Location = new System.Drawing.Point(36, 257);
+            this.dataGridView1.Location = new System.Drawing.Point(93, 257);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.Size = new System.Drawing.Size(680, 242);
+            this.dataGridView1.Size = new System.Drawing.Size(346, 242);
             this.dataGridView1.TabIndex = 8;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            // 
-            // StartDate
-            // 
-            this.StartDate.HeaderText = "Start Date";
-            this.StartDate.MinimumWidth = 6;
-            this.StartDate.Name = "StartDate";
-            this.StartDate.Width = 125;
-            // 
-            // StudentID
-            // 
-            this.StudentID.HeaderText = "Student ID";
-            this.StudentID.MinimumWidth = 6;
-            this.StudentID.Name = "StudentID";
-            this.StudentID.Width = 125;
-            // 
-            // BookSerialNum
-            // 
-            this.BookSerialNum.HeaderText = "Book Serial Number";
-            this.BookSerialNum.MinimumWidth = 6;
-            this.BookSerialNum.Name = "BookSerialNum";
-            this.BookSerialNum.Width = 125;
-            // 
-            // CopyNum
-            // 
-            this.CopyNum.HeaderText = "Copy Number";
-            this.CopyNum.MinimumWidth = 6;
-            this.CopyNum.Name = "CopyNum";
-            this.CopyNum.Width = 125;
-            // 
-            // Actions
-            // 
-            this.Actions.HeaderText = "Actions";
-            this.Actions.MinimumWidth = 6;
-            this.Actions.Name = "Actions";
-            this.Actions.Text = "View";
-            this.Actions.Width = 125;
             // 
             // dataGridView2
             // 
@@ -120,13 +78,11 @@ namespace Group4
             this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.StartDT,
             this.StudentID1,
-            this.BookSerial,
-            this.Copy,
             this.Actions1});
-            this.dataGridView2.Location = new System.Drawing.Point(742, 257);
+            this.dataGridView2.Location = new System.Drawing.Point(542, 257);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.RowHeadersWidth = 51;
-            this.dataGridView2.Size = new System.Drawing.Size(679, 242);
+            this.dataGridView2.Size = new System.Drawing.Size(350, 242);
             this.dataGridView2.TabIndex = 9;
             this.dataGridView2.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentClick);
             // 
@@ -134,7 +90,7 @@ namespace Group4
             // 
             this.TimeReqtxt.AutoSize = true;
             this.TimeReqtxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TimeReqtxt.Location = new System.Drawing.Point(32, 207);
+            this.TimeReqtxt.Location = new System.Drawing.Point(89, 207);
             this.TimeReqtxt.Name = "TimeReqtxt";
             this.TimeReqtxt.Size = new System.Drawing.Size(191, 20);
             this.TimeReqtxt.TabIndex = 10;
@@ -144,7 +100,7 @@ namespace Group4
             // 
             this.AltBooktxt.AutoSize = true;
             this.AltBooktxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AltBooktxt.Location = new System.Drawing.Point(738, 207);
+            this.AltBooktxt.Location = new System.Drawing.Point(538, 207);
             this.AltBooktxt.Name = "AltBooktxt";
             this.AltBooktxt.Size = new System.Drawing.Size(202, 20);
             this.AltBooktxt.TabIndex = 11;
@@ -154,7 +110,7 @@ namespace Group4
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(527, 634);
+            this.label2.Location = new System.Drawing.Point(283, 638);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(413, 20);
             this.label2.TabIndex = 12;
@@ -168,7 +124,7 @@ namespace Group4
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(1589, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1067, 24);
             this.menuStrip1.TabIndex = 13;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -193,20 +149,6 @@ namespace Group4
             this.StudentID1.Name = "StudentID1";
             this.StudentID1.Width = 125;
             // 
-            // BookSerial
-            // 
-            this.BookSerial.HeaderText = "Book Serial Number";
-            this.BookSerial.MinimumWidth = 6;
-            this.BookSerial.Name = "BookSerial";
-            this.BookSerial.Width = 125;
-            // 
-            // Copy
-            // 
-            this.Copy.HeaderText = "Copy Number";
-            this.Copy.MinimumWidth = 6;
-            this.Copy.Name = "Copy";
-            this.Copy.Width = 125;
-            // 
             // Actions1
             // 
             this.Actions1.HeaderText = "Actions";
@@ -217,11 +159,33 @@ namespace Group4
             this.Actions1.Text = "View";
             this.Actions1.Width = 125;
             // 
+            // StartDate
+            // 
+            this.StartDate.HeaderText = "Start Date";
+            this.StartDate.MinimumWidth = 6;
+            this.StartDate.Name = "StartDate";
+            this.StartDate.Width = 125;
+            // 
+            // StudentID
+            // 
+            this.StudentID.HeaderText = "Student ID";
+            this.StudentID.MinimumWidth = 6;
+            this.StudentID.Name = "StudentID";
+            this.StudentID.Width = 125;
+            // 
+            // Actions
+            // 
+            this.Actions.HeaderText = "Actions";
+            this.Actions.MinimumWidth = 6;
+            this.Actions.Name = "Actions";
+            this.Actions.Text = "View";
+            this.Actions.Width = 125;
+            // 
             // ManageRequests
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1589, 740);
+            this.ClientSize = new System.Drawing.Size(1067, 687);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.AltBooktxt);
             this.Controls.Add(this.TimeReqtxt);
@@ -250,17 +214,13 @@ namespace Group4
         private System.Windows.Forms.Label TimeReqtxt;
         private System.Windows.Forms.Label AltBooktxt;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn StartDate;
-        private System.Windows.Forms.DataGridViewTextBoxColumn StudentID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn BookSerialNum;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CopyNum;
-        private System.Windows.Forms.DataGridViewButtonColumn Actions;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem homePageToolStripMenuItem;
+        private System.Windows.Forms.DataGridViewTextBoxColumn StartDate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn StudentID;
+        private System.Windows.Forms.DataGridViewButtonColumn Actions;
         private System.Windows.Forms.DataGridViewTextBoxColumn StartDT;
         private System.Windows.Forms.DataGridViewTextBoxColumn StudentID1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn BookSerial;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Copy;
         private System.Windows.Forms.DataGridViewButtonColumn Actions1;
     }
 }
