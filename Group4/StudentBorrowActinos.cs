@@ -12,20 +12,19 @@ namespace Group4
 {
     public partial class StudentBorrowActinos : Form
     {
-        // String st = "";
-        private Book b = null; //change
+        private Book b; 
         private Student Student = null;
-        private string sn = "";
-        
-   
-        public StudentBorrowActinos(string s, Book b, Student Stud)
-        {           
-            //this.st = st;
+        private DateTime StartDate;
+        public System.Collections.Generic.List<BookHistory> History;
+
+        public StudentBorrowActinos(Book b, Student Stud, DateTime sd)
+        {
             this.b = b;
             this.Student = Stud;
-            this.sn = s;
+            this.StartDate = sd;
             InitializeComponent();
         }
+
 
 
         private void homeToolStripMenuItem_Click(object sender, EventArgs e)
@@ -37,14 +36,13 @@ namespace Group4
 
         private void StudentBorrow_Load(object sender, EventArgs e)
         {
-           /* BookCrudTitle.Text = b.get_title().ToString();
-            this.b = Program.seekBook(sn);
-            lb_ISBN_value.Text = sn;
-            lb_AuthorValue.Text = b.get_author();
-            lb_PublishYearValue.Text = b.get_PYear().ToString();
-            lb_LangueageValue.Text = b.get_lang().ToString();
+            BookCrudTitle.Text = b.get_title().ToString();
+            TitleLB.Text = b.get_title(); // y do we need the book title here as well?
+            ISBNLB.Text = b.get_sNumber();
+            AuthorLB.Text = b.get_author();
+            PublishYearLB.Text = b.get_PYear().ToString();
+            LanguageLB.Text = b.get_lang().ToString();
             lb_RatingValue.Text = b.get_rating().ToString();
-            BookCrudTitle.Text = b.get_title();*/
         }
 
         private void bookHistoryToolStripMenuItem_Click(object sender, EventArgs e)
@@ -54,28 +52,24 @@ namespace Group4
             this.Hide();
         }
 
-
-        private void ratingControl1_Click(object sender, EventArgs e)
-        {
-           // switch (RatingStars.Value)
-            {
-                //case 1:
-                        
-                    
-              //  case 2:
-
-
-
-            }
-        }
-
         private void BookCrudTitle_Click(object sender, EventArgs e)
         {
 
         }
 
-       
+        private void RatingCB_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            foreach (BookHistory bh in Program.bookHistories)
+            {
+                if (bh.get_StartDate() == this.StartDate && bh.get_book() == this.b && bh.get_student() == this.Student)
+                {
+                    bh.set_rate(int.Parse(RatingCB.Text));
+                    bh.update_BookHistory();
+                }
+                break;
+            }
 
+        }
     }
 }
 
