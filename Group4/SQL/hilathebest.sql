@@ -128,12 +128,12 @@ Update dbo.Students
 SET
 name=@name, age=@age, club=@club, yearlyGoal=@yearlyGoal, password=@password, archive=@archive
 WHERE id=@id
-
+--DROP PROCEDURE dbo.SP_Update_BookHistory
 CREATE PROCEDURE dbo.SP_Update_BookHistory @copyNumber	INTEGER,@serialNumber VARCHAR(50), @id	VARCHAR(50), @startDate	DATETIME,@endDate DATETIME,@rate INTEGER
 AS
 Update dbo.BookHistory
 SET
-startDate=@startDate, endDate=@endDate, rate=@rate
+endDate=@endDate, rate=@rate
 WHERE copyNumber=@copyNumber AND serialNumber=@serialNumber AND id=@id AND startDate=@startDate
 --DROP PROCEDURE dbo.SP_Update_Event
 CREATE PROCEDURE dbo.SP_Update_Event @guestType	VARCHAR(50),@date DATETIME,	@price	DECIMAL,@guestSpeakerName VARCHAR(50),@status VARCHAR(50), @maxGuests INTEGER,@currentlyRegistered INTEGER, @number INTEGER
