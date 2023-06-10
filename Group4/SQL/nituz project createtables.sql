@@ -57,7 +57,7 @@ CREATE TABLE dbo.BookHistory (
 	startDate		DATETIME		NOT NULL,
 	endDate			DATETIME,
 	rate			INTEGER,
-	CONSTRAINT PK_BookHistory PRIMARY KEY (copyNumber, serialNumber, id),
+	CONSTRAINT PK_BookHistory PRIMARY KEY (copyNumber, serialNumber, id, startDate),
 	CONSTRAINT FK_BookHistory_To_Copy FOREIGN KEY (copyNumber, serialNumber)
 		REFERENCES Copies (copyNumber, serialNumber),
 	CONSTRAINT FK_BookHistory_To_Student FOREIGN KEY (id)
