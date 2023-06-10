@@ -319,5 +319,10 @@ namespace Group4
             finalRatingScore.Text = $"Event's Final Rating: {(float)(score/counter)}";
 
         }
+
+        private void GuestTypeComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

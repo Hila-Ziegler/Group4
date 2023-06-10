@@ -12,15 +12,13 @@ namespace Group4
 {
     public partial class StudentBookHistory : Form
     {
-        //string st = "";
         Student student;
         public System.Collections.Generic.List<BookHistory> History = null;
 
         public StudentBookHistory(Student stud)
         {
             System.Collections.Generic.List<BookHistory> AllBookHistory = Program.bookHistories;
-            //  this.st = s;
-             student = stud;
+            student = stud;
             this.History = this.filterStudentBookHistory(AllBookHistory);
             InitializeComponent();
         }
@@ -84,10 +82,11 @@ namespace Group4
             {
                int i = e.RowIndex;
                string sn = dataGridView1.Rows[i].Cells[1].Value.ToString();
+               DateTime sd =  DateTime.Parse(dataGridView1.Rows[i].Cells[3].Value.ToString());
                Book b = Program.seekBook(sn);
-               string s = "";
-               StudentBorrowActinos formStudentBorrow = new StudentBorrowActinos(s, b, student);
-               formStudentBorrow.Show();
+               Copy c = Program.seekCopy(b, int.Parse(dataGridView1.Rows[i].Cells[2].Value.ToString()));
+               StudentBorrowActinos formStudentBorrowActions = new StudentBorrowActinos(student, sd, c);
+               formStudentBorrowActions.Show();
                this.Hide();
             }
 

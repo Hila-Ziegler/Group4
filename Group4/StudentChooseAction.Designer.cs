@@ -41,7 +41,7 @@
             // btnBooks
             // 
             this.btnBooks.Font = new System.Drawing.Font("Microsoft YaHei UI", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBooks.Location = new System.Drawing.Point(111, 280);
+            this.btnBooks.Location = new System.Drawing.Point(12, 394);
             this.btnBooks.Name = "btnBooks";
             this.btnBooks.Size = new System.Drawing.Size(235, 57);
             this.btnBooks.TabIndex = 3;
@@ -52,9 +52,9 @@
             // btnEvent
             // 
             this.btnEvent.Font = new System.Drawing.Font("Microsoft YaHei UI", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEvent.Location = new System.Drawing.Point(387, 280);
+            this.btnEvent.Location = new System.Drawing.Point(12, 280);
             this.btnEvent.Name = "btnEvent";
-            this.btnEvent.Size = new System.Drawing.Size(200, 57);
+            this.btnEvent.Size = new System.Drawing.Size(235, 57);
             this.btnEvent.TabIndex = 4;
             this.btnEvent.Text = "Events";
             this.btnEvent.UseVisualStyleBackColor = true;
@@ -64,7 +64,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(113, 393);
+            this.label1.Location = new System.Drawing.Point(254, 426);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(516, 25);
@@ -86,7 +86,7 @@
             // 
             this.Action.AutoSize = true;
             this.Action.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Action.Location = new System.Drawing.Point(241, 193);
+            this.Action.Location = new System.Drawing.Point(348, 201);
             this.Action.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Action.Name = "Action";
             this.Action.Size = new System.Drawing.Size(281, 29);
@@ -96,9 +96,9 @@
             // btnMessages
             // 
             this.btnMessages.Font = new System.Drawing.Font("Microsoft YaHei UI", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMessages.Location = new System.Drawing.Point(630, 280);
+            this.btnMessages.Location = new System.Drawing.Point(818, 280);
             this.btnMessages.Name = "btnMessages";
-            this.btnMessages.Size = new System.Drawing.Size(200, 57);
+            this.btnMessages.Size = new System.Drawing.Size(206, 57);
             this.btnMessages.TabIndex = 8;
             this.btnMessages.Text = "Messages";
             this.btnMessages.UseVisualStyleBackColor = true;
@@ -107,9 +107,9 @@
             // readingGoalsbtn
             // 
             this.readingGoalsbtn.Font = new System.Drawing.Font("Microsoft YaHei UI", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.readingGoalsbtn.Location = new System.Drawing.Point(630, 177);
+            this.readingGoalsbtn.Location = new System.Drawing.Point(353, 280);
             this.readingGoalsbtn.Name = "readingGoalsbtn";
-            this.readingGoalsbtn.Size = new System.Drawing.Size(200, 83);
+            this.readingGoalsbtn.Size = new System.Drawing.Size(379, 57);
             this.readingGoalsbtn.TabIndex = 9;
             this.readingGoalsbtn.Text = "Reading Goals";
             this.readingGoalsbtn.UseVisualStyleBackColor = true;
@@ -118,9 +118,9 @@
             // btnSocialPage
             // 
             this.btnSocialPage.Font = new System.Drawing.Font("Microsoft YaHei UI", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSocialPage.Location = new System.Drawing.Point(630, 63);
+            this.btnSocialPage.Location = new System.Drawing.Point(818, 394);
             this.btnSocialPage.Name = "btnSocialPage";
-            this.btnSocialPage.Size = new System.Drawing.Size(200, 83);
+            this.btnSocialPage.Size = new System.Drawing.Size(206, 57);
             this.btnSocialPage.TabIndex = 10;
             this.btnSocialPage.Text = "Social Page";
             this.btnSocialPage.UseVisualStyleBackColor = true;
@@ -130,7 +130,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(934, 450);
+            this.ClientSize = new System.Drawing.Size(1076, 463);
             this.Controls.Add(this.btnSocialPage);
             this.Controls.Add(this.readingGoalsbtn);
             this.Controls.Add(this.btnMessages);

@@ -76,18 +76,24 @@ namespace Group4
 
         private void ReadingGoalReport_Load(object sender, EventArgs e)
         {
-            label8.Text = "Generated on:\n" +DateTime.Now.ToString();
+            label8.Text = "Generated on:\n" +DateTime.Now.ToString("dd/MM/yyyy");
             label9.Text = "Morday Hagetaot School";
             label15.Text = this.s.get_name();
             label10.Text = $"Age: {this.s.get_age()}";
             label3.Text = $"You've read {this.getReadAmount()} / {this.s.get_yearlyGoal()} books";
-            AverageBookRating.Text = $"Your Average Book Rating is: {this.getMyAverageRating()}";
-            label1.Text = $"Your shortest book borrow is: \n{this.getShortestBookBorrow()}";
-            label2.Text = $"Your Longest book borrow is: \n{this.getShortestBookBorrow()}";
-            label6.Text = $"Average reading goal in school is: {this.getaverageReadingGoalInSchool()}";
-            label7.Text = $"Average Reading goal success rate in school is: {this.getaverageSuccessRate("school")}";
-            label13.Text = $"Average reading goal in your club is: {this.getaverageReadingGoalInClub()}";
-            label14.Text = $"Average Reading goal success rate in your club is: {this.getaverageSuccessRate("club")}";
+            AverageBookRating.Text = this.getMyAverageRating().ToString();
+            label1.Text =  this.getShortestBookBorrow().ToString();
+            label2.Text = this.getShortestBookBorrow().ToString();
+            label6.Text = $"{this.getaverageReadingGoalInSchool()}";
+            label7.Text = $"{this.getaverageSuccessRate("school")}";
+            label13.Text = this.getaverageReadingGoalInClub().ToString();
+            label14.Text = this.getaverageSuccessRate("club").ToString();
+            label12.Text = "Morday Hagetaot School";
+            label11.Text = this.s.get_club().ToString();
+
+
+
+
         }
 
         private float getMyAverageRating()
@@ -218,6 +224,21 @@ namespace Group4
         }
 
         private void label10_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label17_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label12_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label8_Click(object sender, EventArgs e)
         {
 
         }
