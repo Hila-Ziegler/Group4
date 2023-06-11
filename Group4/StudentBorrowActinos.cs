@@ -12,9 +12,9 @@ namespace Group4
 {
     public partial class StudentBorrowActinos : Form
     {
-        private BookHistory bhRecord;
-        private Copy c;
-        private Student student;
+        BookHistory bhRecord;
+        Copy c;
+        Student student;
 
         public StudentBorrowActinos(BookHistory bhRecord)
         {
@@ -55,15 +55,6 @@ namespace Group4
             cbRate = int.Parse(RatingCB.Text);
             bhRecord.set_rate(cbRate);
             bhRecord.update_BookHistory();
-            //just to check
-            foreach (BookHistory bh in Program.bookHistories)
-            {
-                if (bh == bhRecord)
-                {
-                    bh.set_rate(cbRate);
-                    bhRecord.update_BookHistory();
-                }
-            }
         }
 
         private void RequestTimeExtention_Click(object sender, EventArgs e)
