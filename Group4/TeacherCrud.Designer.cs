@@ -50,9 +50,10 @@ namespace Group4
             // 
             // BringBackFromArchieve
             // 
-            this.BringBackFromArchieve.Location = new System.Drawing.Point(578, 100);
+            this.BringBackFromArchieve.Font = new System.Drawing.Font("Trebuchet MS", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BringBackFromArchieve.Location = new System.Drawing.Point(544, 119);
             this.BringBackFromArchieve.Name = "BringBackFromArchieve";
-            this.BringBackFromArchieve.Size = new System.Drawing.Size(128, 52);
+            this.BringBackFromArchieve.Size = new System.Drawing.Size(150, 76);
             this.BringBackFromArchieve.TabIndex = 69;
             this.BringBackFromArchieve.Text = "Return From Archieve";
             this.BringBackFromArchieve.UseVisualStyleBackColor = true;
@@ -60,9 +61,10 @@ namespace Group4
             // 
             // btnUpdate
             // 
-            this.btnUpdate.Location = new System.Drawing.Point(294, 337);
+            this.btnUpdate.Font = new System.Drawing.Font("Trebuchet MS", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUpdate.Location = new System.Drawing.Point(322, 312);
             this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(85, 54);
+            this.btnUpdate.Size = new System.Drawing.Size(141, 76);
             this.btnUpdate.TabIndex = 68;
             this.btnUpdate.Text = "Update ";
             this.btnUpdate.UseVisualStyleBackColor = true;
@@ -70,26 +72,28 @@ namespace Group4
             // 
             // NameTextBox
             // 
-            this.NameTextBox.Location = new System.Drawing.Point(325, 100);
+            this.NameTextBox.Location = new System.Drawing.Point(275, 119);
             this.NameTextBox.Name = "NameTextBox";
-            this.NameTextBox.Size = new System.Drawing.Size(128, 22);
+            this.NameTextBox.Size = new System.Drawing.Size(188, 22);
             this.NameTextBox.TabIndex = 67;
             // 
             // Namelbl
             // 
             this.Namelbl.AutoSize = true;
+            this.Namelbl.Font = new System.Drawing.Font("Trebuchet MS", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Namelbl.Location = new System.Drawing.Point(94, 103);
             this.Namelbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Namelbl.Name = "Namelbl";
-            this.Namelbl.Size = new System.Drawing.Size(45, 17);
+            this.Namelbl.Size = new System.Drawing.Size(93, 38);
             this.Namelbl.TabIndex = 66;
             this.Namelbl.Text = "Name";
             // 
             // Createbtn
             // 
-            this.Createbtn.Location = new System.Drawing.Point(265, 366);
+            this.Createbtn.Font = new System.Drawing.Font("Trebuchet MS", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Createbtn.Location = new System.Drawing.Point(299, 337);
             this.Createbtn.Name = "Createbtn";
-            this.Createbtn.Size = new System.Drawing.Size(145, 49);
+            this.Createbtn.Size = new System.Drawing.Size(211, 51);
             this.Createbtn.TabIndex = 65;
             this.Createbtn.Text = "Create";
             this.Createbtn.UseVisualStyleBackColor = true;
@@ -97,16 +101,16 @@ namespace Group4
             // 
             // PasswordTextBox
             // 
-            this.PasswordTextBox.Location = new System.Drawing.Point(325, 164);
+            this.PasswordTextBox.Location = new System.Drawing.Point(275, 231);
             this.PasswordTextBox.Name = "PasswordTextBox";
-            this.PasswordTextBox.Size = new System.Drawing.Size(128, 22);
+            this.PasswordTextBox.Size = new System.Drawing.Size(188, 22);
             this.PasswordTextBox.TabIndex = 64;
             // 
             // IDTextBox
             // 
-            this.IDTextBox.Location = new System.Drawing.Point(325, 133);
+            this.IDTextBox.Location = new System.Drawing.Point(275, 173);
             this.IDTextBox.Name = "IDTextBox";
-            this.IDTextBox.Size = new System.Drawing.Size(128, 22);
+            this.IDTextBox.Size = new System.Drawing.Size(188, 22);
             this.IDTextBox.TabIndex = 63;
             // 
             // lb_ID_value
@@ -115,35 +119,39 @@ namespace Group4
             this.lb_ID_value.Location = new System.Drawing.Point(322, 135);
             this.lb_ID_value.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lb_ID_value.Name = "lb_ID_value";
-            this.lb_ID_value.Size = new System.Drawing.Size(0, 17);
+            this.lb_ID_value.Size = new System.Drawing.Size(0, 16);
             this.lb_ID_value.TabIndex = 62;
             // 
             // IDlbl
             // 
             this.IDlbl.AutoSize = true;
-            this.IDlbl.Location = new System.Drawing.Point(94, 133);
+            this.IDlbl.Font = new System.Drawing.Font("Trebuchet MS", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.IDlbl.Location = new System.Drawing.Point(94, 157);
             this.IDlbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.IDlbl.Name = "IDlbl";
-            this.IDlbl.Size = new System.Drawing.Size(21, 17);
+            this.IDlbl.Size = new System.Drawing.Size(43, 38);
             this.IDlbl.TabIndex = 61;
             this.IDlbl.Text = "ID";
+            this.IDlbl.Click += new System.EventHandler(this.IDlbl_Click);
             // 
             // Passwordlbl
             // 
             this.Passwordlbl.AutoSize = true;
-            this.Passwordlbl.Location = new System.Drawing.Point(94, 167);
+            this.Passwordlbl.Font = new System.Drawing.Font("Trebuchet MS", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Passwordlbl.Location = new System.Drawing.Point(94, 215);
             this.Passwordlbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Passwordlbl.Name = "Passwordlbl";
-            this.Passwordlbl.Size = new System.Drawing.Size(69, 17);
+            this.Passwordlbl.Size = new System.Drawing.Size(140, 38);
             this.Passwordlbl.TabIndex = 60;
             this.Passwordlbl.Text = "Password";
             // 
             // DeleteBTN
             // 
-            this.DeleteBTN.Location = new System.Drawing.Point(417, 363);
+            this.DeleteBTN.Font = new System.Drawing.Font("Trebuchet MS", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DeleteBTN.Location = new System.Drawing.Point(522, 334);
             this.DeleteBTN.Margin = new System.Windows.Forms.Padding(4);
             this.DeleteBTN.Name = "DeleteBTN";
-            this.DeleteBTN.Size = new System.Drawing.Size(100, 28);
+            this.DeleteBTN.Size = new System.Drawing.Size(138, 54);
             this.DeleteBTN.TabIndex = 59;
             this.DeleteBTN.Text = "Delete";
             this.DeleteBTN.UseVisualStyleBackColor = true;
@@ -151,10 +159,11 @@ namespace Group4
             // 
             // UpdateBTN
             // 
-            this.UpdateBTN.Location = new System.Drawing.Point(161, 363);
+            this.UpdateBTN.Font = new System.Drawing.Font("Trebuchet MS", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.UpdateBTN.Location = new System.Drawing.Point(98, 336);
             this.UpdateBTN.Margin = new System.Windows.Forms.Padding(4);
             this.UpdateBTN.Name = "UpdateBTN";
-            this.UpdateBTN.Size = new System.Drawing.Size(100, 28);
+            this.UpdateBTN.Size = new System.Drawing.Size(160, 52);
             this.UpdateBTN.TabIndex = 58;
             this.UpdateBTN.Text = "Update";
             this.UpdateBTN.UseVisualStyleBackColor = true;
@@ -164,7 +173,7 @@ namespace Group4
             // 
             this.NameTitle.AutoSize = true;
             this.NameTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NameTitle.Location = new System.Drawing.Point(318, 36);
+            this.NameTitle.Location = new System.Drawing.Point(117, 43);
             this.NameTitle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.NameTitle.Name = "NameTitle";
             this.NameTitle.Size = new System.Drawing.Size(117, 42);
@@ -173,27 +182,33 @@ namespace Group4
             // 
             // menuStrip1
             // 
+            this.menuStrip1.BackColor = System.Drawing.Color.Lavender;
+            this.menuStrip1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.menuStrip1.Dock = System.Windows.Forms.DockStyle.None;
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.homepageToolStripMenuItem,
             this.manageStudentsToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(800, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(264, 31);
             this.menuStrip1.TabIndex = 82;
             this.menuStrip1.Text = "menuStrip1";
+            this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
             // 
             // homepageToolStripMenuItem
             // 
+            this.homepageToolStripMenuItem.Font = new System.Drawing.Font("Trebuchet MS", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.homepageToolStripMenuItem.Name = "homepageToolStripMenuItem";
-            this.homepageToolStripMenuItem.Size = new System.Drawing.Size(98, 24);
+            this.homepageToolStripMenuItem.Size = new System.Drawing.Size(103, 27);
             this.homepageToolStripMenuItem.Text = "Homepage";
             this.homepageToolStripMenuItem.Click += new System.EventHandler(this.homepageToolStripMenuItem_Click);
             // 
             // manageStudentsToolStripMenuItem
             // 
+            this.manageStudentsToolStripMenuItem.Font = new System.Drawing.Font("Trebuchet MS", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.manageStudentsToolStripMenuItem.Name = "manageStudentsToolStripMenuItem";
-            this.manageStudentsToolStripMenuItem.Size = new System.Drawing.Size(138, 24);
+            this.manageStudentsToolStripMenuItem.Size = new System.Drawing.Size(153, 27);
             this.manageStudentsToolStripMenuItem.Text = "Manage Teachers";
             this.manageStudentsToolStripMenuItem.Click += new System.EventHandler(this.manageStudentsToolStripMenuItem_Click);
             // 
@@ -201,6 +216,7 @@ namespace Group4
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Lavender;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.BringBackFromArchieve);
