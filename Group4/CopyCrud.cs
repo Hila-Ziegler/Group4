@@ -14,7 +14,7 @@ namespace Group4
     {
         private Copy copy;
         private System.Collections.Generic.List<BookHistory> history;
-        Librarian librarian;
+        private Librarian librarian;
         public CopyCrud(Copy c, Librarian libr)
         {
             librarian = libr;
@@ -22,6 +22,7 @@ namespace Group4
             this.history = this.getCopyHistory();
             InitializeComponent();
         }
+
         private System.Collections.Generic.List<BookHistory> getCopyHistory()
         {
             System.Collections.Generic.List<BookHistory> ans = new System.Collections.Generic.List<BookHistory>();
@@ -32,7 +33,6 @@ namespace Group4
                     ans.Add(bh);
                 }
             }
-
             return ans;
         }
 
@@ -77,14 +77,8 @@ namespace Group4
                     }
                     i++;
                 }
-
             }
             dataGridView1.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
-        }
-
-        private void button4_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void CopyCrud_Load(object sender, EventArgs e)
@@ -100,12 +94,6 @@ namespace Group4
                 CopyCrudCopyNum.Text = copy.get_copyNum().ToString();
                 this.updateBookHistory();
             }
-
-        }
-
-        private void copyCrudMenu_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
-        {
-
         }
 
         private void toolStripMenuItem1_Click(object sender, EventArgs e)
@@ -120,7 +108,6 @@ namespace Group4
             ManageBooks form7 = new ManageBooks(librarian);
             form7.Show();
             this.Hide();
-
         }
 
         private void StartBorrow_Click(object sender, EventArgs e)
@@ -128,7 +115,7 @@ namespace Group4
             Student st = Program.seekStudent(StID.Text);
             DateTime startDate = DateTime.Now;
             DateTime endDate = DateTime.Now;
-            BookHistory bh = new BookHistory(this.copy.get_copyNum(), this.copy.get_book(), st, startDate, endDate, true);
+            BookHistory bh = new BookHistory(this.copy.get_copyNum(), this.copy.get_book(), st, startDate, endDate, 0, true);
             this.history.Add(bh);
             st.addBookHistory(bh);
             copy.get_book().addBookHistory(bh);
@@ -149,36 +136,6 @@ namespace Group4
                 this.copy.update_Copy();
                 this.updateBookHistory();
             }
-        }
-
-        private void StID_TextChanged(object sender, EventArgs e)
-        {
-           
-        }
-
-        private void StName_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label5_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

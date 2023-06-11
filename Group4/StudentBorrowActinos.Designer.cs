@@ -65,6 +65,7 @@
             RequestTimeExtention.TabIndex = 39;
             RequestTimeExtention.Text = "Request Time Extention";
             RequestTimeExtention.UseVisualStyleBackColor = true;
+            RequestTimeExtention.Click += new System.EventHandler(this.RequestTimeExtention_Click);
             // 
             // BookCrudTitle
             // 
@@ -76,7 +77,6 @@
             this.BookCrudTitle.Size = new System.Drawing.Size(88, 42);
             this.BookCrudTitle.TabIndex = 1;
             this.BookCrudTitle.Text = "Title";
-            this.BookCrudTitle.Click += new System.EventHandler(this.BookCrudTitle_Click);
             // 
             // Titlelbl
             // 

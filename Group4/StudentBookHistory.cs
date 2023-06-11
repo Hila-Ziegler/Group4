@@ -12,27 +12,22 @@ namespace Group4
 {
     public partial class StudentBookHistory : Form
     {
-        Student student;
-        public System.Collections.Generic.List<BookHistory> History = null;
+        private Student student;
+        private System.Collections.Generic.List<BookHistory> history;
 
         public StudentBookHistory(Student stud)
         {
-            System.Collections.Generic.List<BookHistory> AllBookHistory = Program.bookHistories;
             student = stud;
-            this.History = this.filterStudentBookHistory(AllBookHistory);
-            InitializeComponent();
-        }
-        public StudentBookHistory()
-        {
+            this.history = this.filterStudentBookHistory();
             InitializeComponent();
         }
 
-        private System.Collections.Generic.List<BookHistory> filterStudentBookHistory(System.Collections.Generic.List<BookHistory> li)
+        private System.Collections.Generic.List<BookHistory> filterStudentBookHistory()
         {
             System.Collections.Generic.List<BookHistory> ans = new System.Collections.Generic.List<BookHistory>();
-            foreach (BookHistory bh in li)
+            foreach (BookHistory bh in Program.bookHistories)
             {
-                if (bh.get_student().get_ID() == student.get_ID())
+                if (bh.get_student() == this.student)
                 {
                     ans.Add(bh);
                 }
@@ -42,31 +37,28 @@ namespace Group4
         private void update_BookHistoryList()
         {
             this.dataGridView1.DataSource = null;
-            this.dataGridView1.DataSource = this.History;
+            this.dataGridView1.DataSource = this.history;
             int i = 0;
-            foreach (BookHistory c in this.History)
+            foreach (BookHistory bh in this.history)
             {
-
                     if (i < dataGridView1.Rows.Count)
                     {
-                        this.dataGridView1.Rows[i].Cells[0].Value = c.get_book().get_title();
-                        this.dataGridView1.Rows[i].Cells[1].Value = c.get_book().get_sNumber();
-                        this.dataGridView1.Rows[i].Cells[2].Value = c.get_copyNum();
-                        this.dataGridView1.Rows[i].Cells[3].Value = c.get_StartDate();
-                        if (c.get_StartDate() == c.get_EndDate())
+                        this.dataGridView1.Rows[i].Cells[0].Value = bh.get_book().get_title();
+                        this.dataGridView1.Rows[i].Cells[1].Value = bh.get_book().get_sNumber();
+                        this.dataGridView1.Rows[i].Cells[2].Value = bh.get_copyNum();
+                        this.dataGridView1.Rows[i].Cells[3].Value = bh.get_StartDate();
+                        if (bh.get_StartDate() == bh.get_EndDate())
                         {
                             this.dataGridView1.Rows[i].Cells[4].Value = DBNull.Value;
                         }
                         else
                         {
-                            this.dataGridView1.Rows[i].Cells[4].Value = c.get_EndDate();
+                            this.dataGridView1.Rows[i].Cells[4].Value = bh.get_EndDate();
                         }
-                        this.dataGridView1.Rows[i].Cells[5].Value = c.get_rate();
+                        this.dataGridView1.Rows[i].Cells[5].Value = bh.get_rate();
                     }
 
                     i++;
-
-
             }
             dataGridView1.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
         }
@@ -82,13 +74,12 @@ namespace Group4
             {
                int i = e.RowIndex;
                string sn = dataGridView1.Rows[i].Cells[1].Value.ToString();
-               DateTime sd =  DateTime.Parse(dataGridView1.Rows[i].Cells[3].Value.ToString());
-               Book b = Program.seekBook(sn);
-               StudentBorrowActinos formStudentBorrowActions = new StudentBorrowActinos(b, student, sd);
+               int c = int.Parse(dataGridView1.Rows[i].Cells[2].Value.ToString());
+               BookHistory bhRecord = this.history.Find(history => history.get_book().get_sNumber() == sn && history.get_copyNum() == c);
+               StudentBorrowActinos formStudentBorrowActions = new StudentBorrowActinos(bhRecord);
                formStudentBorrowActions.Show();
                this.Hide();
             }
-
         }
 
         private void homePageToolStripMenuItem_Click(object sender, EventArgs e)
@@ -96,11 +87,6 @@ namespace Group4
             StudentChooseAction formStudentChooseAction = new StudentChooseAction(student);
             formStudentChooseAction.Show();
             this.Hide();
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

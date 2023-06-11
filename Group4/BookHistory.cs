@@ -13,14 +13,14 @@ namespace Group4
         private int Rate;
 
 
-        public BookHistory(int copyNum, Book Book, Student Student, DateTime startDate, DateTime endDate, bool is_new)
+        public BookHistory(int copyNum, Book Book, Student Student, DateTime startDate, DateTime endDate, int rate, bool is_new)
         {
             this.CopyNum = copyNum;
             this.Book = Book;
             this.Student = Student;
             this.StartDate = startDate;
             this.EndDate = endDate;
-            this.Rate = 0;
+            this.Rate = rate;
 
             if (is_new)
             {
@@ -112,7 +112,7 @@ namespace Group4
             c.Parameters.AddWithValue("@id", this.Student.get_ID());
             c.Parameters.AddWithValue("@startDate", this.StartDate.ToString());
             c.Parameters.AddWithValue("@endDate", this.EndDate.ToString());
-            c.Parameters.AddWithValue("@rate", this.Rate);
+            c.Parameters.AddWithValue("@rate", this.Rate); 
             SQL_CON SC = new SQL_CON();
             SC.execute_non_query(c);
         }

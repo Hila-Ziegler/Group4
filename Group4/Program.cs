@@ -233,7 +233,7 @@ namespace Group4
             {
                 Book b = seekBook(rdr.GetValue(1).ToString());
                 Student s = seekStudent(rdr.GetValue(2).ToString());
-                BookHistory bh = new BookHistory(int.Parse(rdr.GetValue(0).ToString()), b, s, DateTime.Parse(rdr.GetValue(3).ToString()), DateTime.Parse(rdr.GetValue(4).ToString()), false);
+                BookHistory bh = new BookHistory(int.Parse(rdr.GetValue(0).ToString()), b, s, DateTime.Parse(rdr.GetValue(3).ToString()), DateTime.Parse(rdr.GetValue(4).ToString()), int.Parse(rdr.GetValue(5).ToString()), false);
                 b.History.Add(bh);
                 s.History.Add(bh);
                 bookHistories.Add(bh);
