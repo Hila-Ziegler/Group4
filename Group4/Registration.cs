@@ -132,9 +132,9 @@ namespace Group4
         }
 
         public void update_Registration()
-        {
+        {//dbo.SP_Update_Registration @id, @showedUp, @review, @rating, @number, @oldDate
             SqlCommand c = new SqlCommand();
-            c.CommandText = "EXECUTE dbo.SP_Update_Registration @id , @showedUp, @review, @rating, @number, @oldDate";
+            c.CommandText = "EXECUTE dbo.SP_Update_Registration @id, @showedUp, @review, @rating, @number, @oldDate";
             c.Parameters.AddWithValue("@id", this.Student.get_ID());
             c.Parameters.AddWithValue("@showedUp", this.ShowedUp);
             c.Parameters.AddWithValue("@review", this.Review);

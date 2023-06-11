@@ -136,7 +136,7 @@ namespace Group4
                     this.dataGridView1.Rows[i].Cells[0].Value = s.get_name();
                     this.dataGridView1.Rows[i].Cells[1].Value = s.get_ID();
                     this.dataGridView1.Rows[i].Cells[2].Value = s.get_age();
-                    this.dataGridView1.Rows[i].Cells[3].Value = s.get_club();
+                    this.dataGridView1.Rows[i].Cells[3].Value = EnumHelper.GetDescription(s.get_club());
 
                 }
 
@@ -155,6 +155,7 @@ namespace Group4
             float f =((a/b) * 100);
             return f;
         }
+
         private void socialPage_Load(object sender, EventArgs e)
         {
             update_socialPage();
@@ -162,7 +163,7 @@ namespace Group4
             labAge.Text = student.get_age().ToString();
             labDate.Text = DateTime.Now.ToString("dd/MM/yyyy");
             labSchoolName.Text = "Morday Hagetaot School";
-            labClub.Text = student.get_club().ToString();
+            labClub.Text = EnumHelper.GetDescription(student.get_club());
             labThisYearIRead.Text = this.getReadAmountThisYea().ToString();            
             lablabThisYearIRead1.Text = $"{(percentage(getReadAmountThisYea(), get_yearlyGoalfloat()).ToString("F2"))} %";
 
