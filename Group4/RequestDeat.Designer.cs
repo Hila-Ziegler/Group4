@@ -52,6 +52,7 @@ namespace Group4
             this.UpdateStlbl = new System.Windows.Forms.Label();
             this.StatusCombo = new System.Windows.Forms.ComboBox();
             this.Uploadbtn = new System.Windows.Forms.Button();
+            this.CreateReqbtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.AttachedPhotobox)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -264,11 +265,22 @@ namespace Group4
             this.Uploadbtn.UseVisualStyleBackColor = true;
             this.Uploadbtn.Click += new System.EventHandler(this.Uploadbtn_Click);
             // 
+            // CreateReqbtn
+            // 
+            this.CreateReqbtn.Location = new System.Drawing.Point(434, 313);
+            this.CreateReqbtn.Name = "CreateReqbtn";
+            this.CreateReqbtn.Size = new System.Drawing.Size(100, 23);
+            this.CreateReqbtn.TabIndex = 73;
+            this.CreateReqbtn.Text = "Create Request";
+            this.CreateReqbtn.UseVisualStyleBackColor = true;
+            this.CreateReqbtn.Click += new System.EventHandler(this.CreateReqbtn_Click);
+            // 
             // RequestDeat
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(949, 459);
+            this.Controls.Add(this.CreateReqbtn);
             this.Controls.Add(this.Uploadbtn);
             this.Controls.Add(this.StatusCombo);
             this.Controls.Add(this.UpdateStlbl);
@@ -326,5 +338,6 @@ namespace Group4
         private System.Windows.Forms.Label UpdateStlbl;
         private System.Windows.Forms.ComboBox StatusCombo;
         private System.Windows.Forms.Button Uploadbtn;
+        private System.Windows.Forms.Button CreateReqbtn;
     }
 }
