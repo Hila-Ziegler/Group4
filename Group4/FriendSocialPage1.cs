@@ -167,7 +167,7 @@ namespace Group4
             labAge.Text = student.get_age().ToString();
             labDate.Text = DateTime.Now.ToString("dd/MM/yyyy");
             labSchoolName.Text = "Morday Hagetaot School";
-            labClub.Text = student.get_club().ToString();
+            labClub.Text = EnumHelper.GetDescription(student.get_club());
             labThisYearIRead.Text = this.getReadAmountThisYea().ToString();
             lablabThisYearIRead1.Text = $"{(percentage(getReadAmountThisYea(), get_yearlyGoalfloat()).ToString("F2"))} %";
 

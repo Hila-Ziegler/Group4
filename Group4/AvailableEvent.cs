@@ -102,6 +102,7 @@ namespace Group4
         {
             if(student != null)
             {
+
                 if (e.ColumnIndex == dataGridView1.Columns["GuestName"].Index)
                 {
                     int i = e.RowIndex;
@@ -197,10 +198,23 @@ namespace Group4
             }
             if (student != null)
             {
+                popEventRating();
                 CreateNewEvent.Hide();
             }
             update_EventList();
             btnFutureEvents.Hide();
+        }
+
+        private void popEventRating()
+        {
+            foreach (Registration re in Program.registrations)
+            {
+                if(re.GetEvent().get_date() < DateTime.Now && re.get_student().get_ID() == this.student.get_ID() && re.get_review()=="" && re.get_rating()==0 && re.get_showedUp())
+                {
+                    StudentRateEvent sre = new StudentRateEvent(re);
+                    sre.Show();
+                }
+            }
 
         }
 
