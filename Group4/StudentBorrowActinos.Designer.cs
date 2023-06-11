@@ -77,7 +77,6 @@
             this.BookCrudTitle.Size = new System.Drawing.Size(88, 42);
             this.BookCrudTitle.TabIndex = 1;
             this.BookCrudTitle.Text = "Title";
-            this.BookCrudTitle.Click += new System.EventHandler(this.BookCrudTitle_Click);
             // 
             // Titlelbl
             // 
