@@ -73,7 +73,7 @@ namespace Group4
 
         private void BookCrudDeleteBTN_Click(object sender, EventArgs e)
         {
-            //delete or archive? 
+            Status st = (Status)Enum.Parse(typeof(Status), "Closed");
         }
 
         private void BookCrudUpdateBTN_Click(object sender, EventArgs e)
@@ -92,7 +92,7 @@ namespace Group4
             }
             else
             {
-                //AttachedPhotobox.Image = Image.FromFile(this.r.get_photoAddress());
+                //show picture 
             }
             if (this.student == null)
             {
@@ -103,6 +103,7 @@ namespace Group4
                 Cntxt.Text = this.r.get_copy().get_copyNum().ToString();
                 EndDTtxt.Hide();
                 CancelBTN.Hide();
+                Uploadbtn.Hide();
                 loadEnum();
             }
             else
@@ -118,14 +119,13 @@ namespace Group4
                 Bsntxt.Text = this.copy.get_book().get_sNumber();
                 NewR.set_copy(this.copy);
                 NewR.set_Librarian(this.librarian);
-                //set status
+                NewR.set_status((Status)Enum.Parse(typeof(Status), "Open"));
                 //photo address
                 //NewR.create_Request();
                 EndDTtxt.Hide();
                 UpdateStlbl.Hide();
                 StatusCombo.Hide();
             }
-            //archive mode? 
         }
 
         private void Bsntxt_Click(object sender, EventArgs e)
@@ -145,6 +145,16 @@ namespace Group4
             LibrarianChooseAction formLibrarianChooseAction = new LibrarianChooseAction(librarian);
             formLibrarianChooseAction.Show();
             this.Hide();
+        }
+
+        private void Uploadbtn_Click(object sender, EventArgs e)
+        {
+/*            OpenFileDialog opnfd = new OpenFileDialog();
+            opnfd.Filter = "Image Files (*.jpg;*.jpeg;.*.gif;)|*.jpg;*.jpeg;.*.gif";
+            if (opnfd.ShowDialog() == DialogResult.OK)
+            {
+                AttachedPhotobox.Image = new Bitmap(opnfd.FileName);
+            }*/
         }
     }
 }
