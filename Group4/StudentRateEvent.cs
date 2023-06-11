@@ -33,5 +33,10 @@ namespace Group4
             re.update_Registration();
             this.Hide();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
