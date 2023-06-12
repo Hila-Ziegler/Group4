@@ -35,7 +35,6 @@ namespace Group4
             formStudentChooseAction.Show();
             this.Hide();
         }
-
         private void StudentBorrow_Load(object sender, EventArgs e)
         {
             BookCrudTitle.Text = c.get_book().get_title().ToString();
@@ -149,6 +148,11 @@ namespace Group4
                     }
                 }
             }
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+
         }
     }
 }
