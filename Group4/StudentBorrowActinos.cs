@@ -43,10 +43,9 @@ namespace Group4
             LanguageLB.Text = c.get_book().get_lang().ToString();
             lb_RatingValue.Text = c.get_book().get_rating().ToString();
 
-            CancelTimeExtbtn.Show();
-            CancelAltbtn.Show();
-            RequestTimebtn.Show();
-            SuggestAlternativeBook.Show();
+            CancelTimeExtbtn.Hide();
+            CancelAltbtn.Hide();
+
 
             foreach (Request r in getStudentRequests())
             {
@@ -69,7 +68,7 @@ namespace Group4
             List<Request> li = new List<Request>();
             foreach(Request r in Program.requests)
             {
-                if (this.student.get_ID() == r.get_Student().get_ID())
+                if (this.student.get_ID() == r.get_Student().get_ID() && this.c.get_book().get_sNumber() == r.get_copy().get_book().get_sNumber() && this.c.get_copyNum() == r.get_copy().get_copyNum())
                 {
                     li.Add(r);
                 }
@@ -131,7 +130,7 @@ namespace Group4
         {
             foreach (Request r in Program.requests)
             {
-                if (r.get_Student() == this.student && r.get_copy().get_copyNum() == this.c.get_copyNum() && r.get_status().ToString() == "Open")
+                if (r.get_Student().get_ID() == this.student.get_ID() && r.get_copy().get_book().get_sNumber() == this.c.get_book().get_sNumber() && r.get_copy().get_copyNum() == this.c.get_copyNum() && r.get_status().ToString() == "Open")
                 {
                     if (r.get_type().ToString() == "TimeExtention")
                     {
@@ -148,7 +147,7 @@ namespace Group4
         {
             foreach (Request r in Program.requests)
             {
-                if (r.get_Student() == this.student && r.get_copy().get_copyNum() == this.c.get_copyNum() && r.get_status().ToString() == "Open")
+                if (r.get_Student().get_ID() == this.student.get_ID() && r.get_copy().get_book().get_sNumber() == this.c.get_book().get_sNumber() && r.get_copy().get_copyNum() == this.c.get_copyNum() && r.get_status().ToString() == "Open")
                 {
                     if (r.get_type().ToString() == "AlternativeBook")
                     {
