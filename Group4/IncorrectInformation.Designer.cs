@@ -35,17 +35,17 @@
             // labdetails
             // 
             this.labdetails.AutoSize = true;
-            this.labdetails.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labdetails.Font = new System.Drawing.Font("Trebuchet MS", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labdetails.Location = new System.Drawing.Point(36, 48);
             this.labdetails.Name = "labdetails";
-            this.labdetails.Size = new System.Drawing.Size(183, 39);
+            this.labdetails.Size = new System.Drawing.Size(181, 43);
             this.labdetails.TabIndex = 0;
             this.labdetails.Text = "Username ";
             this.labdetails.Click += new System.EventHandler(this.labdetails_Click);
             // 
             // btnOk
             // 
-            this.btnOk.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnOk.Font = new System.Drawing.Font("Trebuchet MS", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnOk.Location = new System.Drawing.Point(242, 154);
             this.btnOk.Name = "btnOk";
             this.btnOk.Size = new System.Drawing.Size(122, 42);
@@ -58,6 +58,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Lavender;
             this.ClientSize = new System.Drawing.Size(655, 227);
             this.Controls.Add(this.btnOk);
             this.Controls.Add(this.labdetails);

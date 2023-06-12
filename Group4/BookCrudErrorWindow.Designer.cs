@@ -36,16 +36,17 @@ namespace Group4
             // ErrorMessage
             // 
             this.ErrorMessage.AutoSize = true;
-            this.ErrorMessage.Font = new System.Drawing.Font("Microsoft Sans Serif", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ErrorMessage.Location = new System.Drawing.Point(226, 71);
+            this.ErrorMessage.Font = new System.Drawing.Font("Trebuchet MS", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ErrorMessage.Location = new System.Drawing.Point(152, 68);
             this.ErrorMessage.Name = "ErrorMessage";
-            this.ErrorMessage.Size = new System.Drawing.Size(176, 44);
+            this.ErrorMessage.Size = new System.Drawing.Size(167, 46);
             this.ErrorMessage.TabIndex = 0;
             this.ErrorMessage.Text = "Example";
             // 
             // GoBackButton
             // 
-            this.GoBackButton.Location = new System.Drawing.Point(287, 256);
+            this.GoBackButton.Font = new System.Drawing.Font("Trebuchet MS", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GoBackButton.Location = new System.Drawing.Point(195, 252);
             this.GoBackButton.Name = "GoBackButton";
             this.GoBackButton.Size = new System.Drawing.Size(76, 36);
             this.GoBackButton.TabIndex = 1;
@@ -57,6 +58,7 @@ namespace Group4
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Lavender;
             this.ClientSize = new System.Drawing.Size(493, 318);
             this.Controls.Add(this.GoBackButton);
             this.Controls.Add(this.ErrorMessage);

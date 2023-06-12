@@ -64,6 +64,7 @@ namespace Group4
             // 
             // Closebtn
             // 
+            this.Closebtn.Font = new System.Drawing.Font("Trebuchet MS", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Closebtn.Location = new System.Drawing.Point(292, 306);
             this.Closebtn.Name = "Closebtn";
             this.Closebtn.Size = new System.Drawing.Size(127, 41);
@@ -76,6 +77,7 @@ namespace Group4
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Lavender;
             this.ClientSize = new System.Drawing.Size(766, 359);
             this.Controls.Add(this.Closebtn);
             this.Controls.Add(this.dataGridView1);

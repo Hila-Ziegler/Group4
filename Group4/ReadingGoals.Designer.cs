@@ -33,7 +33,10 @@ namespace Group4
             this.setGoalbtn = new System.Windows.Forms.Button();
             this.numericYearlyGoal = new System.Windows.Forms.NumericUpDown();
             this.generateReport = new System.Windows.Forms.Button();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.homePageToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.numericYearlyGoal)).BeginInit();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // readinggoallbl
@@ -81,6 +84,26 @@ namespace Group4
             this.generateReport.UseVisualStyleBackColor = true;
             this.generateReport.Click += new System.EventHandler(this.button1_Click);
             // 
+            // menuStrip1
+            // 
+            this.menuStrip1.BackColor = System.Drawing.Color.Lavender;
+            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.homePageToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(413, 31);
+            this.menuStrip1.TabIndex = 4;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // homePageToolStripMenuItem
+            // 
+            this.homePageToolStripMenuItem.Font = new System.Drawing.Font("Trebuchet MS", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.homePageToolStripMenuItem.Name = "homePageToolStripMenuItem";
+            this.homePageToolStripMenuItem.Size = new System.Drawing.Size(107, 27);
+            this.homePageToolStripMenuItem.Text = "Home Page";
+            this.homePageToolStripMenuItem.Click += new System.EventHandler(this.homePageToolStripMenuItem_Click);
+            // 
             // ReadingGoals
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -91,10 +114,14 @@ namespace Group4
             this.Controls.Add(this.numericYearlyGoal);
             this.Controls.Add(this.setGoalbtn);
             this.Controls.Add(this.readinggoallbl);
+            this.Controls.Add(this.menuStrip1);
+            this.MainMenuStrip = this.menuStrip1;
             this.Name = "ReadingGoals";
             this.Text = " Get Reading Goals";
             this.Load += new System.EventHandler(this.ReadingGoals_Load);
             ((System.ComponentModel.ISupportInitialize)(this.numericYearlyGoal)).EndInit();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -106,5 +133,7 @@ namespace Group4
         private System.Windows.Forms.Button setGoalbtn;
         private System.Windows.Forms.NumericUpDown numericYearlyGoal;
         private System.Windows.Forms.Button generateReport;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem homePageToolStripMenuItem;
     }
 }
