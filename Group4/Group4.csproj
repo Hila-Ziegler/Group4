@@ -246,6 +246,12 @@
     <Compile Include="StudentRateEvent.Designer.cs">
       <DependentUpon>StudentRateEvent.cs</DependentUpon>
     </Compile>
+    <Compile Include="StudentRequests.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StudentRequests.Designer.cs">
+      <DependentUpon>StudentRequests.cs</DependentUpon>
+    </Compile>
     <Compile Include="Teacher.cs" />
     <Compile Include="TeacherCrud.cs">
       <SubType>Form</SubType>
