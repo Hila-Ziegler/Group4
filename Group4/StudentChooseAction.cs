@@ -71,5 +71,12 @@ namespace Group4
             formsocialPage.Show();
             this.Hide();
         }
+
+        private void Requests_Click(object sender, EventArgs e)
+        {
+            StudentRequests formStudentRequest = new StudentRequests(this.student);
+            formStudentRequest.Show();
+            this.Hide();
+        }
     }
 }
