@@ -96,8 +96,8 @@ namespace Group4
             c.Parameters.AddWithValue("@serialNumber", this.Book.get_sNumber());
             c.Parameters.AddWithValue("@id", this.Student.get_ID());
             //Issue with making new entry in DateTime
-            c.Parameters.AddWithValue("@startDate", this.StartDate.ToString());
-            c.Parameters.AddWithValue("@endDate", this.EndDate.ToString());
+            c.Parameters.AddWithValue("@startDate", this.StartDate.ToString("yyyy/MM/dd HH:mm:ss"));
+            c.Parameters.AddWithValue("@endDate", this.EndDate.ToString("yyyy/MM/dd HH:mm:ss"));
             c.Parameters.AddWithValue("@rate", this.Rate);
             SQL_CON SC = new SQL_CON();
             SC.execute_non_query(c);

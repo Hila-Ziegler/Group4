@@ -120,10 +120,10 @@ namespace Group4
             SqlCommand c = new SqlCommand();
             c.CommandText = "EXECUTE dbo.SP_add_Requests @type, @startDT, @sid, @lib, @endDT, @status, @photoAddress, @serialNum, @copyNum";
             c.Parameters.AddWithValue("@type", this.Type.ToString());
-            c.Parameters.AddWithValue("@startDT", this.StartDT);
+            c.Parameters.AddWithValue("@startDT", this.StartDT.ToString("yyyy/MM/dd HH:mm:ss"));
             c.Parameters.AddWithValue("@sid", this.Student.get_ID());
             c.Parameters.AddWithValue("@lib", this.Librarian.get_ID());
-            c.Parameters.AddWithValue("@endDT", this.EndDT);
+            c.Parameters.AddWithValue("@endDT", this.EndDT.ToString("yyyy/MM/dd HH:mm:ss"));
             c.Parameters.AddWithValue("@status", this.Status.ToString());
             c.Parameters.AddWithValue("@photoAddress", this.PhotoAddress);
             c.Parameters.AddWithValue("@serialNum", this.Copy.get_book().get_sNumber());
@@ -137,10 +137,10 @@ namespace Group4
             SqlCommand c = new SqlCommand();
             c.CommandText = "EXECUTE dbo.SP_Update_Request @type, @startDT, @sid, @lib, @endDT, @status, @photoAddress, @serialNum, @copyNum";
             c.Parameters.AddWithValue("@type", this.Type.ToString());
-            c.Parameters.AddWithValue("@startDT", this.StartDT);
+            c.Parameters.AddWithValue("@startDT", this.StartDT.ToString("yyyy/MM/dd HH:mm:ss"));
             c.Parameters.AddWithValue("@sid", this.Student.get_ID());
             c.Parameters.AddWithValue("@lib", this.Librarian.get_ID());
-            c.Parameters.AddWithValue("@endDT", this.EndDT);
+            c.Parameters.AddWithValue("@endDT", this.EndDT.ToString("yyyy/MM/dd HH:mm:ss"));
             c.Parameters.AddWithValue("@status", this.Status.ToString());
             c.Parameters.AddWithValue("@photoAddress", this.PhotoAddress);
             c.Parameters.AddWithValue("@serialNum", this.Copy.get_book().get_sNumber());
