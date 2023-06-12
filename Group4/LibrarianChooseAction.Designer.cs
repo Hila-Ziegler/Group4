@@ -101,6 +101,7 @@ namespace Group4
             this.Controls.Add(this.TitleText);
             this.Name = "LibrarianChooseAction";
             this.Text = "Library Managment System";
+            this.Load += new System.EventHandler(this.LibrarianChooseAction_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
