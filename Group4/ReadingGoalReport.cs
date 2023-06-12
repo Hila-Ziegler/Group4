@@ -89,7 +89,7 @@ namespace Group4
             label13.Text = this.getaverageReadingGoalInClub().ToString();
             label14.Text = this.getaverageSuccessRate("club").ToString();
             label12.Text = "Morday Hagetaot School";
-            label11.Text = this.s.get_club().ToString();
+            label11.Text = EnumHelper.GetDescription(this.s.get_club());
 
 
 

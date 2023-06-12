@@ -218,6 +218,7 @@
             this.progressBarAllTheTome.Location = new System.Drawing.Point(41, 438);
             this.progressBarAllTheTome.Name = "progressBarAllTheTome";
             this.progressBarAllTheTome.Size = new System.Drawing.Size(367, 26);
+            this.progressBarAllTheTome.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
             this.progressBarAllTheTome.TabIndex = 30;
             // 
             // label1
@@ -242,6 +243,7 @@
             // 
             // progressBarThisYear
             // 
+            this.progressBarThisYear.ForeColor = System.Drawing.SystemColors.HighlightText;
             this.progressBarThisYear.Location = new System.Drawing.Point(41, 321);
             this.progressBarThisYear.Name = "progressBarThisYear";
             this.progressBarThisYear.Size = new System.Drawing.Size(367, 25);
@@ -253,6 +255,7 @@
             this.progressBarClub.Name = "progressBarClub";
             this.progressBarClub.Size = new System.Drawing.Size(367, 23);
             this.progressBarClub.TabIndex = 32;
+            this.progressBarClub.Click += new System.EventHandler(this.progressBarClub_Click);
             // 
             // lablabThisYearIRead1
             // 
