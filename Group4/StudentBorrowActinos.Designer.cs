@@ -193,7 +193,7 @@
             // SuggestAlternativeBook
             // 
             this.SuggestAlternativeBook.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SuggestAlternativeBook.Location = new System.Drawing.Point(606, 455);
+            this.SuggestAlternativeBook.Location = new System.Drawing.Point(466, 456);
             this.SuggestAlternativeBook.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.SuggestAlternativeBook.Name = "SuggestAlternativeBook";
             this.SuggestAlternativeBook.Size = new System.Drawing.Size(235, 26);
@@ -316,7 +316,7 @@
             // 
             // RequestTimebtn
             // 
-            this.RequestTimebtn.Location = new System.Drawing.Point(185, 453);
+            this.RequestTimebtn.Location = new System.Drawing.Point(154, 454);
             this.RequestTimebtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.RequestTimebtn.Name = "RequestTimebtn";
             this.RequestTimebtn.Size = new System.Drawing.Size(184, 28);
@@ -327,7 +327,7 @@
             // 
             // CancelTimeExtbtn
             // 
-            this.CancelTimeExtbtn.Location = new System.Drawing.Point(185, 417);
+            this.CancelTimeExtbtn.Location = new System.Drawing.Point(154, 418);
             this.CancelTimeExtbtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.CancelTimeExtbtn.Name = "CancelTimeExtbtn";
             this.CancelTimeExtbtn.Size = new System.Drawing.Size(227, 28);
@@ -338,7 +338,7 @@
             // 
             // CancelAltbtn
             // 
-            this.CancelAltbtn.Location = new System.Drawing.Point(606, 417);
+            this.CancelAltbtn.Location = new System.Drawing.Point(466, 418);
             this.CancelAltbtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.CancelAltbtn.Name = "CancelAltbtn";
             this.CancelAltbtn.Size = new System.Drawing.Size(235, 28);

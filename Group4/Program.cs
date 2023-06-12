@@ -298,7 +298,7 @@ namespace Group4
                 Copy co = seekCopy(seekBook(rdr.GetValue(6).ToString()),int.Parse(rdr.GetValue(7).ToString()));
                 DateTime sdt = ToDateTime((rdr.GetValue(1).ToString()));
                 DateTime edt = ToDateTime(rdr.GetValue(4).ToString());
-                Request r = new Request(rt, sdt, s, l, edt, st, rdr.GetValue(6).ToString(),co, false);
+                Request r = new Request(rt, sdt, s, l, edt, st,co, false);
                 l.requests.Add(r);
                 s.requests.Add(r);
                 requests.Add(r);
