@@ -43,7 +43,7 @@ namespace Group4
 
         private void homePageToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            StudentChooseAction formStudentChooseAction = new StudentChooseAction(student);
+            StudentChooseAction formStudentChooseAction = new StudentChooseAction(s);
             formStudentChooseAction.Show();
             this.Hide();
         }
