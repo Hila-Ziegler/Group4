@@ -33,7 +33,6 @@ namespace Group4
             formStudentChooseAction.Show();
             this.Hide();
         }
-
         private void StudentBorrow_Load(object sender, EventArgs e)
         {
             BookCrudTitle.Text = c.get_book().get_title().ToString();
@@ -83,6 +82,55 @@ namespace Group4
         }
 
         private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            RequestType rt = ((RequestType)Enum.Parse(typeof(RequestType), "TimeExtention"));
+            int randomNum = rnd.Next(0, librarians.Count);
+            Librarian l = librarians[randomNum];
+            RequestDeat formRequestDeat = new RequestDeat(this.student, this.c, rt, l, this.bhRecord);
+            formRequestDeat.Show();
+            this.Hide();
+        }
+
+        private void CancelTimeExtbtn_Click(object sender, EventArgs e)
+        {
+            foreach (Request r in Program.requests)
+            {
+                if (r.get_Student() == this.student && r.get_copy() == this.c && r.get_status().ToString() == "Open")
+                {
+                    if (r.get_type().ToString() == "TimeExtention")
+                    {
+                        Status st = (Status)Enum.Parse(typeof(Status), "Closed");
+                        r.set_status(st);
+                        r.update_Request();
+                        bookHistoryToolStripMenuItem_Click(sender, e);
+                    }
+                }
+            }
+        }
+
+        private void CancelAltbtn_Click(object sender, EventArgs e)
+        {
+            foreach (Request r in Program.requests)
+            {
+                if (r.get_Student() == this.student && r.get_copy() == this.c && r.get_status().ToString() == "Open")
+                {
+                    if (r.get_type().ToString() == "AlternativeBook")
+                    {
+                        Status st = (Status)Enum.Parse(typeof(Status), "Closed");
+                        r.set_status(st);
+                        r.update_Request();
+                        bookHistoryToolStripMenuItem_Click(sender, e);
+                    }
+                }
+            }
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
         {
 
         }

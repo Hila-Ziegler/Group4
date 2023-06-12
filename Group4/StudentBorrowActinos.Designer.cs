@@ -52,7 +52,10 @@
             this.ISBNLB = new System.Windows.Forms.Label();
             this.TitleLB = new System.Windows.Forms.Label();
             this.LanguageLB = new System.Windows.Forms.Label();
-            RequestTimeExtention = new System.Windows.Forms.Button();
+            this.RequestTimebtn = new System.Windows.Forms.Button();
+            this.CancelTimeExtbtn = new System.Windows.Forms.Button();
+            this.CancelAltbtn = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -365,14 +368,56 @@
 
             this.LanguageLB.TabIndex = 55;
             // 
+            // RequestTimebtn
+            // 
+            this.RequestTimebtn.Location = new System.Drawing.Point(159, 323);
+            this.RequestTimebtn.Name = "RequestTimebtn";
+            this.RequestTimebtn.Size = new System.Drawing.Size(138, 23);
+            this.RequestTimebtn.TabIndex = 56;
+            this.RequestTimebtn.Text = "Request Time Extention";
+            this.RequestTimebtn.UseVisualStyleBackColor = true;
+            this.RequestTimebtn.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // CancelTimeExtbtn
+            // 
+            this.CancelTimeExtbtn.Location = new System.Drawing.Point(159, 291);
+            this.CancelTimeExtbtn.Name = "CancelTimeExtbtn";
+            this.CancelTimeExtbtn.Size = new System.Drawing.Size(170, 23);
+            this.CancelTimeExtbtn.TabIndex = 57;
+            this.CancelTimeExtbtn.Text = "Cancel Time Extention Request";
+            this.CancelTimeExtbtn.UseVisualStyleBackColor = true;
+            this.CancelTimeExtbtn.Click += new System.EventHandler(this.CancelTimeExtbtn_Click);
+            // 
+            // CancelAltbtn
+            // 
+            this.CancelAltbtn.Location = new System.Drawing.Point(407, 291);
+            this.CancelAltbtn.Name = "CancelAltbtn";
+            this.CancelAltbtn.Size = new System.Drawing.Size(176, 23);
+            this.CancelAltbtn.TabIndex = 58;
+            this.CancelAltbtn.Text = "Cancel Alternative Book Request";
+            this.CancelAltbtn.UseVisualStyleBackColor = true;
+            this.CancelAltbtn.Click += new System.EventHandler(this.CancelAltbtn_Click);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(551, 62);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 59;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            // 
+
             // StudentBorrowActinos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-
-            this.BackColor = System.Drawing.Color.Lavender;
-            this.ClientSize = new System.Drawing.Size(798, 542);
-
+            this.ClientSize = new System.Drawing.Size(684, 441);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.CancelAltbtn);
+            this.Controls.Add(this.CancelTimeExtbtn);
+            this.Controls.Add(this.RequestTimebtn);
             this.Controls.Add(this.LanguageLB);
             this.Controls.Add(this.TitleLB);
             this.Controls.Add(this.ISBNLB);
@@ -432,5 +477,9 @@
         private System.Windows.Forms.Label ISBNLB;
         private System.Windows.Forms.Label TitleLB;
         private System.Windows.Forms.Label LanguageLB;
+        private System.Windows.Forms.Button RequestTimebtn;
+        private System.Windows.Forms.Button CancelTimeExtbtn;
+        private System.Windows.Forms.Button CancelAltbtn;
+        private System.Windows.Forms.Button button1;
     }
 }
