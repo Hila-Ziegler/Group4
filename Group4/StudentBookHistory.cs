@@ -75,7 +75,8 @@ namespace Group4
                int i = e.RowIndex;
                string sn = dataGridView1.Rows[i].Cells[1].Value.ToString();
                int c = int.Parse(dataGridView1.Rows[i].Cells[2].Value.ToString());
-               BookHistory bhRecord = this.history.Find(history => history.get_book().get_sNumber() == sn && history.get_copyNum() == c);
+               DateTime st = DateTime.Parse(dataGridView1.Rows[i].Cells[3].Value.ToString());
+               BookHistory bhRecord = this.history.Find(history => history.get_book().get_sNumber() == sn && history.get_copyNum() == c && history.get_StartDate() == st);
                StudentBorrowActinos formStudentBorrowActions = new StudentBorrowActinos(bhRecord);
                formStudentBorrowActions.Show();
                this.Hide();
