@@ -83,12 +83,15 @@ namespace Group4
             this.Hide();
         }
 
-        private void RatingCB_SelectedIndexChanged(object sender, EventArgs e)  
+        private void RatingCB_SelectedIndexChanged(object sender, EventArgs e)
         {
             int cbRate;
             cbRate = int.Parse(RatingCB.Text);
             bhRecord.set_rate(cbRate);
+            bhRecord.get_book().calculateAverageRating();
             bhRecord.update_BookHistory();
+            Book b = bhRecord.get_book();
+            b.update_Book();
         }
 
         private void RequestTimeExtention_Click(object sender, EventArgs e)
