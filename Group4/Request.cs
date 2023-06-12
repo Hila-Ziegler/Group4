@@ -11,10 +11,11 @@ namespace Group4
         private Librarian Librarian;
         private DateTime EndDT;
         private Status Status;
+        private string PhotoAddress;
         private Copy Copy;
        
 
-        public Request(RequestType type, DateTime startDT, Student stud, Librarian lib, DateTime endDT, Status status,Copy c, bool is_new)
+        public Request(RequestType type, DateTime startDT, Student stud, Librarian lib, DateTime endDT, Status status, string photoAddress ,Copy c, bool is_new)
         {
             this.Type = type;
             this.StartDT = startDT;
@@ -22,6 +23,7 @@ namespace Group4
             this.Librarian = lib;
             this.EndDT = endDT;
             this.Status = status;
+            this.PhotoAddress = photoAddress;
             this.Copy = c;
             
 
@@ -62,6 +64,10 @@ namespace Group4
             return this.Status;
         }
 
+        public string get_photoAddress()
+        {
+            return this.PhotoAddress;
+        }
 
         public Copy get_copy()
         {
@@ -98,6 +104,10 @@ namespace Group4
             this.Status = status;
         }
 
+        public void set_photoAddress(string photoAddress)
+        {
+            this.PhotoAddress = photoAddress;
+        }
 
         public void set_copy(Copy copy)
         {
@@ -108,13 +118,14 @@ namespace Group4
         public void create_Request()
         {
             SqlCommand c = new SqlCommand();
-            c.CommandText = "EXECUTE dbo.SP_add_Requests @type, @startDT, @sid, @lid, @endDT, @status, @serialNum, @copyNum";
+            c.CommandText = "EXECUTE dbo.SP_add_Requests @type, @startDT, @sid, @lib, @endDT, @status, @photoAddress, @serialNum, @copyNum";
             c.Parameters.AddWithValue("@type", this.Type.ToString());
-            c.Parameters.AddWithValue("@startDT", this.StartDT.ToString("yyyy/MM/dd HH:mm:ss"));
+            c.Parameters.AddWithValue("@startDT", this.StartDT);
             c.Parameters.AddWithValue("@sid", this.Student.get_ID());
-            c.Parameters.AddWithValue("@lid", this.Librarian.get_ID());
-            c.Parameters.AddWithValue("@endDT", this.EndDT.ToString("yyyy/MM/dd HH:mm:ss"));
+            c.Parameters.AddWithValue("@lib", this.Librarian.get_ID());
+            c.Parameters.AddWithValue("@endDT", this.EndDT);
             c.Parameters.AddWithValue("@status", this.Status.ToString());
+            c.Parameters.AddWithValue("@photoAddress", this.PhotoAddress);
             c.Parameters.AddWithValue("@serialNum", this.Copy.get_book().get_sNumber());
             c.Parameters.AddWithValue("@copyNum", this.Copy.get_copyNum());
             SQL_CON SC = new SQL_CON();
@@ -124,14 +135,14 @@ namespace Group4
         public void update_Request()
         {
             SqlCommand c = new SqlCommand();
-            c.CommandText = "EXECUTE dbo.SP_Update_Request @type, @startDT, @sid, @lid, @endDT, @status, @serialNum, @copyNum";
+            c.CommandText = "EXECUTE dbo.SP_Update_Request @type, @startDT, @sid, @lib, @endDT, @status, @photoAddress, @serialNum, @copyNum";
             c.Parameters.AddWithValue("@type", this.Type.ToString());
-            c.Parameters.AddWithValue("@startDT", this.StartDT.ToString("yyyy/MM/dd HH:mm:ss"));
-            string test = this.StartDT.ToString("yyyy/MM/dd HH:mm:ss");
+            c.Parameters.AddWithValue("@startDT", this.StartDT);
             c.Parameters.AddWithValue("@sid", this.Student.get_ID());
-            c.Parameters.AddWithValue("@lid", this.Librarian.get_ID());
-            c.Parameters.AddWithValue("@endDT", this.EndDT.ToString("yyyy/MM/dd HH:mm:ss"));
+            c.Parameters.AddWithValue("@lib", this.Librarian.get_ID());
+            c.Parameters.AddWithValue("@endDT", this.EndDT);
             c.Parameters.AddWithValue("@status", this.Status.ToString());
+            c.Parameters.AddWithValue("@photoAddress", this.PhotoAddress);
             c.Parameters.AddWithValue("@serialNum", this.Copy.get_book().get_sNumber());
             c.Parameters.AddWithValue("@copyNum", this.Copy.get_copyNum());
             SQL_CON SC = new SQL_CON();
