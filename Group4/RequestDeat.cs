@@ -76,31 +76,16 @@ namespace Group4
 
         }
 
-        private void BookCrudDeleteBTN_Click(object sender, EventArgs e)
-        {
-            Status st = (Status)Enum.Parse(typeof(Status), "Closed");
-            this.r.set_status(st);
-            this.r.update_Request();
-        }
-
         private void BookCrudUpdateBTN_Click(object sender, EventArgs e)
         {
             this.r.set_status((Status)Enum.Parse(typeof(Status), StatusCombo.Text));
             this.r.set_endDT(DateTime.Now);
             this.r.update_Request();
+            backToolStripMenuItem_Click(sender, e);
         }
 
         private void RequestDeat_Load(object sender, EventArgs e)
         {
-/*            if (this.r.get_photoAddress() == "")
-            {
-                AttachedPhotolbl.Hide();
-                AttachedPhotobox.Hide();
-            }
-            else
-            {
-                //show picture 
-            }*/
             if (this.student == null)
             {
                 Sdtxt.Text = this.r.get_startDT().ToString();
@@ -109,8 +94,6 @@ namespace Group4
                 Bsntxt.Text = this.r.get_copy().get_book().get_sNumber().ToString();
                 Cntxt.Text = this.r.get_copy().get_copyNum().ToString();
                 EndDTtxt.Hide();
-                CancelBTN.Hide();
-                Uploadbtn.Hide();
                 CreateReqbtn.Hide();
                 loadEnum();
             }
@@ -122,7 +105,7 @@ namespace Group4
                     Sidtxt.Text = this.student.get_ID().ToString();
                     Sntxt.Text = this.student.get_name();
                     Bsntxt.Text = this.copy.get_book().get_sNumber();
-                    CancelBTN.Hide();
+                    Cntxt.Text = this.copy.get_copyNum().ToString();
 
                 }
                 else
@@ -181,19 +164,10 @@ namespace Group4
 
         }
 
-        private void Uploadbtn_Click(object sender, EventArgs e)
-        {
-/*            OpenFileDialog opnfd = new OpenFileDialog();
-            opnfd.Filter = "Image Files (*.jpg;*.jpeg;.*.gif;)|*.jpg;*.jpeg;.*.gif";
-            if (opnfd.ShowDialog() == DialogResult.OK)
-            {
-                AttachedPhotobox.Image = new Bitmap(opnfd.FileName);
-            }*/
-        }
-
         private void CreateReqbtn_Click(object sender, EventArgs e)
         {
-            Request NewR = new Request(this.requestType, DateTime.Now, this.student, this.librarian, DateTime.Now, (Status)Enum.Parse(typeof(Status), "Open"), "", this.copy, true);
+            Request NewR = new Request(this.requestType, DateTime.Now, this.student, this.librarian, DateTime.Now, (Status)Enum.Parse(typeof(Status), "Open"), this.copy, true);
+            backToolStripMenuItem_Click(sender, e);
         }
     }
 }

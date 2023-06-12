@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.Button RequestTimeExtention;
             this.BookCrudTitle = new System.Windows.Forms.Label();
             this.Titlelbl = new System.Windows.Forms.Label();
             this.lb_ISBN_value = new System.Windows.Forms.Label();
@@ -52,10 +51,13 @@
             this.ISBNLB = new System.Windows.Forms.Label();
             this.TitleLB = new System.Windows.Forms.Label();
             this.LanguageLB = new System.Windows.Forms.Label();
-            RequestTimeExtention = new System.Windows.Forms.Button();
+            this.RequestTimebtn = new System.Windows.Forms.Button();
+            this.CancelTimeExtbtn = new System.Windows.Forms.Button();
+            this.CancelAltbtn = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
+
             // RequestTimeExtention
             // 
 
@@ -226,7 +228,7 @@
             this.label3.Text = "Author";
             // 
             // SuggestAlternativeBook
-            // 
+
 
             this.SuggestAlternativeBook.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SuggestAlternativeBook.Location = new System.Drawing.Point(439, 403);
@@ -298,6 +300,7 @@
             "4",
             "5"});
 
+
             this.RatingCB.Location = new System.Drawing.Point(322, 349);
             this.RatingCB.Name = "RatingCB";
             this.RatingCB.Size = new System.Drawing.Size(128, 34);
@@ -365,14 +368,42 @@
 
             this.LanguageLB.TabIndex = 55;
             // 
+            // RequestTimebtn
+            // 
+            this.RequestTimebtn.Location = new System.Drawing.Point(159, 323);
+            this.RequestTimebtn.Name = "RequestTimebtn";
+            this.RequestTimebtn.Size = new System.Drawing.Size(138, 23);
+            this.RequestTimebtn.TabIndex = 56;
+            this.RequestTimebtn.Text = "Request Time Extention";
+            this.RequestTimebtn.UseVisualStyleBackColor = true;
+            this.RequestTimebtn.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // CancelTimeExtbtn
+            // 
+            this.CancelTimeExtbtn.Location = new System.Drawing.Point(159, 291);
+            this.CancelTimeExtbtn.Name = "CancelTimeExtbtn";
+            this.CancelTimeExtbtn.Size = new System.Drawing.Size(170, 23);
+            this.CancelTimeExtbtn.TabIndex = 57;
+            this.CancelTimeExtbtn.Text = "Cancel Time Extention Request";
+            this.CancelTimeExtbtn.UseVisualStyleBackColor = true;
+            this.CancelTimeExtbtn.Click += new System.EventHandler(this.CancelTimeExtbtn_Click);
+            // 
+            // CancelAltbtn
+            // 
+            this.CancelAltbtn.Location = new System.Drawing.Point(407, 291);
+            this.CancelAltbtn.Name = "CancelAltbtn";
+            this.CancelAltbtn.Size = new System.Drawing.Size(176, 23);
+            this.CancelAltbtn.TabIndex = 58;
+            this.CancelAltbtn.Text = "Cancel Alternative Book Request";
+            this.CancelAltbtn.UseVisualStyleBackColor = true;
+            this.CancelAltbtn.Click += new System.EventHandler(this.CancelAltbtn_Click);
+            // 
             // StudentBorrowActinos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-
             this.BackColor = System.Drawing.Color.Lavender;
             this.ClientSize = new System.Drawing.Size(798, 542);
-
             this.Controls.Add(this.LanguageLB);
             this.Controls.Add(this.TitleLB);
             this.Controls.Add(this.ISBNLB);
@@ -381,7 +412,6 @@
             this.Controls.Add(this.RatingCB);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.SuggestAlternativeBook);
-            this.Controls.Add(RequestTimeExtention);
             this.Controls.Add(this.Titlelbl);
             this.Controls.Add(this.lb_ISBN_value);
             this.Controls.Add(this.lb_RatingValue);
@@ -396,7 +426,7 @@
             this.Controls.Add(this.BookCrudTitle);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "StudentBorrowActinos";
             this.Text = "My Book Borrow";
             this.Load += new System.EventHandler(this.StudentBorrow_Load);
@@ -432,5 +462,8 @@
         private System.Windows.Forms.Label ISBNLB;
         private System.Windows.Forms.Label TitleLB;
         private System.Windows.Forms.Label LanguageLB;
+        private System.Windows.Forms.Button RequestTimebtn;
+        private System.Windows.Forms.Button CancelTimeExtbtn;
+        private System.Windows.Forms.Button CancelAltbtn;
     }
 }

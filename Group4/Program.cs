@@ -295,10 +295,10 @@ namespace Group4
                 Librarian l = seekLibrarian(rdr.GetValue(3).ToString());
                 RequestType rt = (RequestType)Enum.Parse(typeof(RequestType), rdr.GetValue(0).ToString());
                 Status st = (Status)Enum.Parse(typeof(Status), rdr.GetValue(5).ToString());
-                Copy co = seekCopy(seekBook(rdr.GetValue(7).ToString()),int.Parse(rdr.GetValue(8).ToString()));
+                Copy co = seekCopy(seekBook(rdr.GetValue(6).ToString()),int.Parse(rdr.GetValue(7).ToString()));
                 DateTime sdt = ToDateTime((rdr.GetValue(1).ToString()));
                 DateTime edt = ToDateTime(rdr.GetValue(4).ToString());
-                Request r = new Request(rt, sdt, s, l, edt, st, rdr.GetValue(6).ToString(),co, false);
+                Request r = new Request(rt, sdt, s, l, edt, st,co, false);
                 l.requests.Add(r);
                 s.requests.Add(r);
                 requests.Add(r);
