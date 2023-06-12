@@ -36,7 +36,7 @@ namespace Group4
         private void StudentBorrow_Load(object sender, EventArgs e)
         {
             BookCrudTitle.Text = c.get_book().get_title().ToString();
-            TitleLB.Text = c.get_book().get_title(); // y do we need the book title here as well?
+            TitleLB.Text = c.get_book().get_title();
             ISBNLB.Text = c.get_book().get_sNumber();
             AuthorLB.Text = c.get_book().get_author();
             PublishYearLB.Text = c.get_book().get_PYear().ToString();
@@ -45,18 +45,20 @@ namespace Group4
 
             CancelTimeExtbtn.Show();
             CancelAltbtn.Show();
+            RequestTimebtn.Show();
+            SuggestAlternativeBook.Show();
 
             foreach (Request r in getStudentRequests())
             {
                 if(r.get_type().ToString() == "TimeExtention" && r.get_status().ToString() == "Open")
                 {
-                    RequestTimebtn.Show();
-                    CancelTimeExtbtn.Hide();
+                    RequestTimebtn.Hide();
+                    CancelTimeExtbtn.Show();
                 }
                 if (r.get_type().ToString() == "AlternativeBook" && r.get_status().ToString() == "Open")
                 {
-                    SuggestAlternativeBook.Show();
-                    CancelAltbtn.Hide();
+                    SuggestAlternativeBook.Hide();
+                    CancelAltbtn.Show();
                 }
 
             }
