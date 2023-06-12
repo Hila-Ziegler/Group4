@@ -44,10 +44,10 @@
             this.labGoal = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.StudentName = new System.Windows.Forms.DataGridViewButtonColumn();
             this.labSchoolName = new System.Windows.Forms.Label();
             this.labDate = new System.Windows.Forms.Label();
             this.labName = new System.Windows.Forms.Label();
-            this.StudentName = new System.Windows.Forms.DataGridViewButtonColumn();
             this.label4 = new System.Windows.Forms.Label();
             this.butClose = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -56,70 +56,70 @@
             // labClub
             // 
             this.labClub.AutoSize = true;
-            this.labClub.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labClub.Location = new System.Drawing.Point(462, 111);
+            this.labClub.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labClub.Location = new System.Drawing.Point(418, 107);
             this.labClub.Name = "labClub";
-            this.labClub.Size = new System.Drawing.Size(105, 25);
+            this.labClub.Size = new System.Drawing.Size(104, 26);
             this.labClub.TabIndex = 31;
             this.labClub.Text = "Your Club:";
             // 
             // labAge
             // 
             this.labAge.AutoSize = true;
-            this.labAge.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labAge.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labAge.Location = new System.Drawing.Point(127, 111);
             this.labAge.Name = "labAge";
-            this.labAge.Size = new System.Drawing.Size(48, 25);
+            this.labAge.Size = new System.Drawing.Size(45, 26);
             this.labAge.TabIndex = 30;
             this.labAge.Text = "Age";
             // 
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(462, 86);
+            this.label11.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(418, 82);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(99, 25);
+            this.label11.Size = new System.Drawing.Size(93, 26);
             this.label11.TabIndex = 29;
             this.label11.Text = "My Club:";
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.Location = new System.Drawing.Point(37, 111);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(51, 25);
+            this.label10.Size = new System.Drawing.Size(47, 26);
             this.label10.TabIndex = 28;
             this.label10.Text = "Age";
             // 
             // labPercentageClub
             // 
             this.labPercentageClub.AutoSize = true;
-            this.labPercentageClub.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labPercentageClub.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labPercentageClub.Location = new System.Drawing.Point(255, 463);
             this.labPercentageClub.Name = "labPercentageClub";
-            this.labPercentageClub.Size = new System.Drawing.Size(93, 25);
+            this.labPercentageClub.Size = new System.Drawing.Size(95, 26);
             this.labPercentageClub.TabIndex = 49;
             this.labPercentageClub.Text = "This year";
             // 
             // labPercentageAll
             // 
             this.labPercentageAll.AutoSize = true;
-            this.labPercentageAll.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labPercentageAll.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labPercentageAll.Location = new System.Drawing.Point(255, 361);
             this.labPercentageAll.Name = "labPercentageAll";
-            this.labPercentageAll.Size = new System.Drawing.Size(93, 25);
+            this.labPercentageAll.Size = new System.Drawing.Size(95, 26);
             this.labPercentageAll.TabIndex = 48;
             this.labPercentageAll.Text = "This year";
             // 
             // lablabThisYearIRead1
             // 
             this.lablabThisYearIRead1.AutoSize = true;
-            this.lablabThisYearIRead1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lablabThisYearIRead1.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lablabThisYearIRead1.Location = new System.Drawing.Point(255, 244);
             this.lablabThisYearIRead1.Name = "lablabThisYearIRead1";
-            this.lablabThisYearIRead1.Size = new System.Drawing.Size(93, 25);
+            this.lablabThisYearIRead1.Size = new System.Drawing.Size(95, 26);
             this.lablabThisYearIRead1.TabIndex = 47;
             this.lablabThisYearIRead1.Text = "This year";
             // 
@@ -133,20 +133,20 @@
             // labThisYearIRead
             // 
             this.labThisYearIRead.AutoSize = true;
-            this.labThisYearIRead.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labThisYearIRead.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labThisYearIRead.Location = new System.Drawing.Point(39, 224);
             this.labThisYearIRead.Name = "labThisYearIRead";
-            this.labThisYearIRead.Size = new System.Drawing.Size(102, 25);
+            this.labThisYearIRead.Size = new System.Drawing.Size(100, 26);
             this.labThisYearIRead.TabIndex = 45;
             this.labThisYearIRead.Text = "This year";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(39, 177);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(163, 25);
+            this.label2.Size = new System.Drawing.Size(162, 26);
             this.label2.TabIndex = 44;
             this.label2.Text = "This year I read";
             // 
@@ -160,10 +160,10 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(39, 444);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(200, 25);
+            this.label1.Size = new System.Drawing.Size(187, 26);
             this.label1.TabIndex = 42;
             this.label1.Text = "My Club\'s Progress";
             // 
@@ -177,20 +177,20 @@
             // labGoal
             // 
             this.labGoal.AutoSize = true;
-            this.labGoal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labGoal.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labGoal.Location = new System.Drawing.Point(39, 351);
             this.labGoal.Name = "labGoal";
-            this.labGoal.Size = new System.Drawing.Size(121, 25);
+            this.labGoal.Size = new System.Drawing.Size(121, 26);
             this.labGoal.TabIndex = 40;
             this.labGoal.Text = "You\'ve read ";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(39, 313);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(145, 25);
+            this.label3.Size = new System.Drawing.Size(135, 26);
             this.label3.TabIndex = 39;
             this.label3.Text = "I Read So Far";
             // 
@@ -207,36 +207,6 @@
             this.dataGridView1.TabIndex = 50;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
-            // labSchoolName
-            // 
-            this.labSchoolName.AutoSize = true;
-            this.labSchoolName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labSchoolName.Location = new System.Drawing.Point(12, 9);
-            this.labSchoolName.Name = "labSchoolName";
-            this.labSchoolName.Size = new System.Drawing.Size(130, 22);
-            this.labSchoolName.TabIndex = 53;
-            this.labSchoolName.Text = "School\'s Name";
-            // 
-            // labDate
-            // 
-            this.labDate.AutoSize = true;
-            this.labDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labDate.Location = new System.Drawing.Point(562, 9);
-            this.labDate.Name = "labDate";
-            this.labDate.Size = new System.Drawing.Size(57, 25);
-            this.labDate.TabIndex = 52;
-            this.labDate.Text = "Date";
-            // 
-            // labName
-            // 
-            this.labName.AutoSize = true;
-            this.labName.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labName.Location = new System.Drawing.Point(40, 51);
-            this.labName.Name = "labName";
-            this.labName.Size = new System.Drawing.Size(89, 32);
-            this.labName.TabIndex = 51;
-            this.labName.Text = "Name";
-            // 
             // StudentName
             // 
             this.StudentName.HeaderText = "Student Name";
@@ -244,15 +214,45 @@
             this.StudentName.Name = "StudentName";
             this.StudentName.Width = 125;
             // 
+            // labSchoolName
+            // 
+            this.labSchoolName.AutoSize = true;
+            this.labSchoolName.Font = new System.Drawing.Font("Trebuchet MS", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labSchoolName.Location = new System.Drawing.Point(12, 9);
+            this.labSchoolName.Name = "labSchoolName";
+            this.labSchoolName.Size = new System.Drawing.Size(130, 24);
+            this.labSchoolName.TabIndex = 53;
+            this.labSchoolName.Text = "School\'s Name";
+            // 
+            // labDate
+            // 
+            this.labDate.AutoSize = true;
+            this.labDate.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labDate.Location = new System.Drawing.Point(562, 9);
+            this.labDate.Name = "labDate";
+            this.labDate.Size = new System.Drawing.Size(56, 26);
+            this.labDate.TabIndex = 52;
+            this.labDate.Text = "Date";
+            // 
+            // labName
+            // 
+            this.labName.AutoSize = true;
+            this.labName.Font = new System.Drawing.Font("Trebuchet MS", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labName.Location = new System.Drawing.Point(40, 51);
+            this.labName.Name = "labName";
+            this.labName.Size = new System.Drawing.Size(86, 36);
+            this.labName.TabIndex = 51;
+            this.labName.Text = "Name";
+            // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(462, 161);
+            this.label4.Font = new System.Drawing.Font("Trebuchet MS", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(418, 157);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(230, 29);
+            this.label4.Size = new System.Drawing.Size(276, 29);
             this.label4.TabIndex = 54;
-            this.label4.Text = "My Club Members:";
+            this.label4.Text = "Friend\'s Club Members:";
             // 
             // butClose
             // 
@@ -269,6 +269,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Lavender;
             this.ClientSize = new System.Drawing.Size(757, 672);
             this.Controls.Add(this.butClose);
             this.Controls.Add(this.label4);
@@ -292,7 +293,7 @@
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label10);
             this.Name = "FriendSocialPage1";
-            this.Text = "FriendSocialPage1";
+            this.Text = "Friend\'s Page";
             this.Load += new System.EventHandler(this.FriendSocialPage1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
