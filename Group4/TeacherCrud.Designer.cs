@@ -173,7 +173,7 @@ namespace Group4
             // 
             this.NameTitle.AutoSize = true;
             this.NameTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NameTitle.Location = new System.Drawing.Point(117, 43);
+            this.NameTitle.Location = new System.Drawing.Point(156, 43);
             this.NameTitle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.NameTitle.Name = "NameTitle";
             this.NameTitle.Size = new System.Drawing.Size(117, 42);
@@ -233,7 +233,7 @@ namespace Group4
             this.Controls.Add(this.UpdateBTN);
             this.Controls.Add(this.NameTitle);
             this.Name = "TeacherCrud";
-            this.Text = "TeacherCrud";
+            this.Text = "Teacher page";
             this.Load += new System.EventHandler(this.TeacherCrud_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
