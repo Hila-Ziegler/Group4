@@ -46,19 +46,21 @@
             // 
             // menuStrip1
             // 
+            this.menuStrip1.BackColor = System.Drawing.Color.Lavender;
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.homePageToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1150, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(1150, 31);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // homePageToolStripMenuItem
             // 
+            this.homePageToolStripMenuItem.Font = new System.Drawing.Font("Trebuchet MS", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.homePageToolStripMenuItem.Name = "homePageToolStripMenuItem";
-            this.homePageToolStripMenuItem.Size = new System.Drawing.Size(100, 24);
+            this.homePageToolStripMenuItem.Size = new System.Drawing.Size(107, 27);
             this.homePageToolStripMenuItem.Text = "Home Page";
             this.homePageToolStripMenuItem.Click += new System.EventHandler(this.homePageToolStripMenuItem_Click);
             // 
@@ -109,11 +111,11 @@
             // BookCrudTitle
             // 
             this.BookCrudTitle.AutoSize = true;
-            this.BookCrudTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BookCrudTitle.Font = new System.Drawing.Font("Trebuchet MS", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BookCrudTitle.Location = new System.Drawing.Point(218, 58);
             this.BookCrudTitle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.BookCrudTitle.Name = "BookCrudTitle";
-            this.BookCrudTitle.Size = new System.Drawing.Size(305, 42);
+            this.BookCrudTitle.Size = new System.Drawing.Size(303, 46);
             this.BookCrudTitle.TabIndex = 2;
             this.BookCrudTitle.Text = "Available Events:";
             this.BookCrudTitle.Click += new System.EventHandler(this.BookCrudTitle_Click);
@@ -121,20 +123,21 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(128, 419);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(516, 25);
+            this.label2.Size = new System.Drawing.Size(548, 26);
             this.label2.TabIndex = 6;
             this.label2.Text = "The library is a brand, when you\'ve got a card in your hand";
             // 
             // CreateNewEvent
             // 
+            this.CreateNewEvent.Font = new System.Drawing.Font("Trebuchet MS", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CreateNewEvent.Location = new System.Drawing.Point(158, 350);
             this.CreateNewEvent.Margin = new System.Windows.Forms.Padding(4);
             this.CreateNewEvent.Name = "CreateNewEvent";
-            this.CreateNewEvent.Size = new System.Drawing.Size(133, 28);
+            this.CreateNewEvent.Size = new System.Drawing.Size(177, 41);
             this.CreateNewEvent.TabIndex = 7;
             this.CreateNewEvent.Text = "Create New Event";
             this.CreateNewEvent.UseVisualStyleBackColor = true;
@@ -142,10 +145,11 @@
             // 
             // ShowPastEvents
             // 
+            this.ShowPastEvents.Font = new System.Drawing.Font("Trebuchet MS", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ShowPastEvents.Location = new System.Drawing.Point(407, 350);
             this.ShowPastEvents.Margin = new System.Windows.Forms.Padding(4);
             this.ShowPastEvents.Name = "ShowPastEvents";
-            this.ShowPastEvents.Size = new System.Drawing.Size(131, 28);
+            this.ShowPastEvents.Size = new System.Drawing.Size(163, 41);
             this.ShowPastEvents.TabIndex = 8;
             this.ShowPastEvents.Text = "Show Past Events";
             this.ShowPastEvents.UseVisualStyleBackColor = true;
@@ -153,10 +157,11 @@
             // 
             // btnFutureEvents
             // 
+            this.btnFutureEvents.Font = new System.Drawing.Font("Trebuchet MS", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnFutureEvents.Location = new System.Drawing.Point(653, 350);
             this.btnFutureEvents.Margin = new System.Windows.Forms.Padding(4);
             this.btnFutureEvents.Name = "btnFutureEvents";
-            this.btnFutureEvents.Size = new System.Drawing.Size(175, 28);
+            this.btnFutureEvents.Size = new System.Drawing.Size(175, 41);
             this.btnFutureEvents.TabIndex = 9;
             this.btnFutureEvents.Text = "Show Future Events";
             this.btnFutureEvents.UseVisualStyleBackColor = true;
@@ -166,6 +171,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Lavender;
             this.ClientSize = new System.Drawing.Size(1150, 492);
             this.Controls.Add(this.btnFutureEvents);
             this.Controls.Add(this.ShowPastEvents);

@@ -50,11 +50,11 @@ namespace Group4
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Trebuchet MS", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(67, 90);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(269, 42);
+            this.label1.Size = new System.Drawing.Size(249, 46);
             this.label1.TabIndex = 0;
             this.label1.Text = "Manage Books";
             this.label1.Click += new System.EventHandler(this.label1_Click);
@@ -123,10 +123,11 @@ namespace Group4
             // 
             // AddNewBook
             // 
-            this.AddNewBook.Location = new System.Drawing.Point(1015, 101);
+            this.AddNewBook.Font = new System.Drawing.Font("Trebuchet MS", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AddNewBook.Location = new System.Drawing.Point(504, 161);
             this.AddNewBook.Margin = new System.Windows.Forms.Padding(4);
             this.AddNewBook.Name = "AddNewBook";
-            this.AddNewBook.Size = new System.Drawing.Size(140, 28);
+            this.AddNewBook.Size = new System.Drawing.Size(184, 28);
             this.AddNewBook.TabIndex = 3;
             this.AddNewBook.Text = "Add New Book";
             this.AddNewBook.UseVisualStyleBackColor = true;
@@ -135,38 +136,42 @@ namespace Group4
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(380, 690);
+            this.label2.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(198, 570);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(516, 25);
+            this.label2.Size = new System.Drawing.Size(548, 26);
             this.label2.TabIndex = 4;
             this.label2.Text = "The library is a brand, when you\'ve got a card in your hand";
             this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // menuStrip1
             // 
+            this.menuStrip1.BackColor = System.Drawing.Color.Lavender;
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ManageBooksHomePagemenu});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1389, 28);
+            this.menuStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
+            this.menuStrip1.Size = new System.Drawing.Size(992, 31);
             this.menuStrip1.TabIndex = 5;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // ManageBooksHomePagemenu
             // 
+            this.ManageBooksHomePagemenu.Font = new System.Drawing.Font("Trebuchet MS", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ManageBooksHomePagemenu.Name = "ManageBooksHomePagemenu";
-            this.ManageBooksHomePagemenu.Size = new System.Drawing.Size(100, 24);
+            this.ManageBooksHomePagemenu.Size = new System.Drawing.Size(107, 27);
             this.ManageBooksHomePagemenu.Text = "Home Page";
             this.ManageBooksHomePagemenu.Click += new System.EventHandler(this.ManageBooksHomePagemenu_Click);
             // 
             // BookManagmentGoToArchieve
             // 
-            this.BookManagmentGoToArchieve.Location = new System.Drawing.Point(795, 101);
+            this.BookManagmentGoToArchieve.Font = new System.Drawing.Font("Trebuchet MS", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BookManagmentGoToArchieve.Location = new System.Drawing.Point(504, 159);
             this.BookManagmentGoToArchieve.Name = "BookManagmentGoToArchieve";
-            this.BookManagmentGoToArchieve.Size = new System.Drawing.Size(117, 23);
+            this.BookManagmentGoToArchieve.Size = new System.Drawing.Size(184, 28);
             this.BookManagmentGoToArchieve.TabIndex = 6;
             this.BookManagmentGoToArchieve.Text = "View Archive";
             this.BookManagmentGoToArchieve.UseVisualStyleBackColor = true;
@@ -174,9 +179,10 @@ namespace Group4
             // 
             // btnShowActiveBooks
             // 
-            this.btnShowActiveBooks.Location = new System.Drawing.Point(556, 101);
+            this.btnShowActiveBooks.Font = new System.Drawing.Font("Trebuchet MS", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnShowActiveBooks.Location = new System.Drawing.Point(730, 156);
             this.btnShowActiveBooks.Name = "btnShowActiveBooks";
-            this.btnShowActiveBooks.Size = new System.Drawing.Size(184, 23);
+            this.btnShowActiveBooks.Size = new System.Drawing.Size(184, 31);
             this.btnShowActiveBooks.TabIndex = 7;
             this.btnShowActiveBooks.Text = "Show active books";
             this.btnShowActiveBooks.UseVisualStyleBackColor = true;
@@ -186,7 +192,8 @@ namespace Group4
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1389, 772);
+            this.BackColor = System.Drawing.Color.Lavender;
+            this.ClientSize = new System.Drawing.Size(992, 613);
             this.Controls.Add(this.btnShowActiveBooks);
             this.Controls.Add(this.BookManagmentGoToArchieve);
             this.Controls.Add(this.label2);

@@ -298,6 +298,9 @@
     <EmbeddedResource Include="EventReviews.resx">
       <DependentUpon>EventReviews.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FriendSocialPage1.resx">
+      <DependentUpon>FriendSocialPage1.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="IncorrectInformation.resx">
       <DependentUpon>IncorrectInformation.cs</DependentUpon>
     </EmbeddedResource>

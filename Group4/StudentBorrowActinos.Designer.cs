@@ -57,6 +57,21 @@
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
+
+            // RequestTimeExtention
+            // 
+
+            RequestTimeExtention.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            RequestTimeExtention.Location = new System.Drawing.Point(115, 403);
+            RequestTimeExtention.Margin = new System.Windows.Forms.Padding(4);
+            RequestTimeExtention.Name = "RequestTimeExtention";
+            RequestTimeExtention.Size = new System.Drawing.Size(167, 70);
+
+            RequestTimeExtention.TabIndex = 39;
+            RequestTimeExtention.Text = "Request Time Extention";
+            RequestTimeExtention.UseVisualStyleBackColor = true;
+            RequestTimeExtention.Click += new System.EventHandler(this.RequestTimeExtention_Click);
+            // 
             // BookCrudTitle
             // 
             this.BookCrudTitle.AutoSize = true;
@@ -70,103 +85,156 @@
             // Titlelbl
             // 
             this.Titlelbl.AutoSize = true;
-            this.Titlelbl.Location = new System.Drawing.Point(155, 72);
+
+            this.Titlelbl.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Titlelbl.Location = new System.Drawing.Point(197, 144);
+            this.Titlelbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Titlelbl.Name = "Titlelbl";
-            this.Titlelbl.Size = new System.Drawing.Size(27, 13);
+            this.Titlelbl.Size = new System.Drawing.Size(54, 26);
+
             this.Titlelbl.TabIndex = 38;
             this.Titlelbl.Text = "Title";
             // 
             // lb_ISBN_value
             // 
             this.lb_ISBN_value.AutoSize = true;
-            this.lb_ISBN_value.Location = new System.Drawing.Point(278, 92);
+
+            this.lb_ISBN_value.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_ISBN_value.ForeColor = System.Drawing.Color.Black;
+            this.lb_ISBN_value.Location = new System.Drawing.Point(414, 186);
+            this.lb_ISBN_value.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lb_ISBN_value.Name = "lb_ISBN_value";
-            this.lb_ISBN_value.Size = new System.Drawing.Size(0, 13);
+            this.lb_ISBN_value.Size = new System.Drawing.Size(0, 26);
+
             this.lb_ISBN_value.TabIndex = 37;
             // 
             // lb_RatingValue
             // 
             this.lb_RatingValue.AutoSize = true;
-            this.lb_RatingValue.Location = new System.Drawing.Point(278, 202);
+
+            this.lb_RatingValue.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_RatingValue.ForeColor = System.Drawing.Color.Black;
+            this.lb_RatingValue.Location = new System.Drawing.Point(403, 349);
+            this.lb_RatingValue.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lb_RatingValue.Name = "lb_RatingValue";
-            this.lb_RatingValue.Size = new System.Drawing.Size(0, 13);
+            this.lb_RatingValue.Size = new System.Drawing.Size(25, 26);
+
             this.lb_RatingValue.TabIndex = 36;
+            this.lb_RatingValue.Text = "H";
             // 
             // lb_LangueageValue
             // 
             this.lb_LangueageValue.AutoSize = true;
-            this.lb_LangueageValue.Location = new System.Drawing.Point(278, 174);
+
+            this.lb_LangueageValue.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_LangueageValue.ForeColor = System.Drawing.Color.Black;
+            this.lb_LangueageValue.Location = new System.Drawing.Point(417, 304);
+            this.lb_LangueageValue.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lb_LangueageValue.Name = "lb_LangueageValue";
-            this.lb_LangueageValue.Size = new System.Drawing.Size(0, 13);
+            this.lb_LangueageValue.Size = new System.Drawing.Size(0, 26);
+
             this.lb_LangueageValue.TabIndex = 35;
             // 
             // lb_PublishYearValue
             // 
             this.lb_PublishYearValue.AutoSize = true;
-            this.lb_PublishYearValue.Location = new System.Drawing.Point(278, 144);
+
+            this.lb_PublishYearValue.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_PublishYearValue.ForeColor = System.Drawing.Color.Black;
+            this.lb_PublishYearValue.Location = new System.Drawing.Point(414, 265);
+            this.lb_PublishYearValue.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lb_PublishYearValue.Name = "lb_PublishYearValue";
-            this.lb_PublishYearValue.Size = new System.Drawing.Size(0, 13);
+            this.lb_PublishYearValue.Size = new System.Drawing.Size(0, 26);
+
             this.lb_PublishYearValue.TabIndex = 34;
             // 
             // lb_AuthorValue
             // 
             this.lb_AuthorValue.AutoSize = true;
-            this.lb_AuthorValue.Location = new System.Drawing.Point(278, 119);
+
+            this.lb_AuthorValue.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_AuthorValue.ForeColor = System.Drawing.Color.Black;
+            this.lb_AuthorValue.Location = new System.Drawing.Point(414, 223);
+            this.lb_AuthorValue.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lb_AuthorValue.Name = "lb_AuthorValue";
-            this.lb_AuthorValue.Size = new System.Drawing.Size(0, 13);
+            this.lb_AuthorValue.Size = new System.Drawing.Size(0, 26);
+
             this.lb_AuthorValue.TabIndex = 33;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(155, 96);
+
+            this.label7.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(197, 186);
+            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(32, 13);
+            this.label7.Size = new System.Drawing.Size(52, 26);
+
+
             this.label7.TabIndex = 32;
             this.label7.Text = "ISBN";
             // 
             // Ratinglbl
             // 
             this.Ratinglbl.AutoSize = true;
-            this.Ratinglbl.Location = new System.Drawing.Point(156, 202);
+
+            this.Ratinglbl.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Ratinglbl.Location = new System.Drawing.Point(197, 345);
+            this.Ratinglbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Ratinglbl.Name = "Ratinglbl";
-            this.Ratinglbl.Size = new System.Drawing.Size(38, 13);
+            this.Ratinglbl.Size = new System.Drawing.Size(70, 26);
+
             this.Ratinglbl.TabIndex = 31;
             this.Ratinglbl.Text = "Rating";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(155, 174);
+
+            this.label5.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(197, 304);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(55, 13);
+            this.label5.Size = new System.Drawing.Size(97, 26);
+
             this.label5.TabIndex = 30;
             this.label5.Text = "Language";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(155, 144);
+
+            this.label4.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(197, 265);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(66, 13);
+            this.label4.Size = new System.Drawing.Size(121, 26);
+
             this.label4.TabIndex = 29;
             this.label4.Text = "Publish Year";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(155, 119);
+
+            this.label3.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(197, 223);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(38, 13);
+            this.label3.Size = new System.Drawing.Size(73, 26);
+
             this.label3.TabIndex = 28;
             this.label3.Text = "Author";
             // 
             // SuggestAlternativeBook
-            // 
-            this.SuggestAlternativeBook.Location = new System.Drawing.Point(407, 323);
-            this.SuggestAlternativeBook.Margin = new System.Windows.Forms.Padding(2);
+
+
+            this.SuggestAlternativeBook.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SuggestAlternativeBook.Location = new System.Drawing.Point(439, 403);
             this.SuggestAlternativeBook.Name = "SuggestAlternativeBook";
-            this.SuggestAlternativeBook.Size = new System.Drawing.Size(160, 23);
+            this.SuggestAlternativeBook.Size = new System.Drawing.Size(209, 70);
+
             this.SuggestAlternativeBook.TabIndex = 41;
             this.SuggestAlternativeBook.Text = "Suggest Alternative Book";
             this.SuggestAlternativeBook.UseVisualStyleBackColor = true;
@@ -174,43 +242,56 @@
             // 
             // menuStrip1
             // 
+            this.menuStrip1.BackColor = System.Drawing.Color.Lavender;
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.homeToolStripMenuItem,
             this.bookHistoryToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(684, 24);
+
+            this.menuStrip1.Size = new System.Drawing.Size(798, 31);
+
+
             this.menuStrip1.TabIndex = 43;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // homeToolStripMenuItem
             // 
+            this.homeToolStripMenuItem.Font = new System.Drawing.Font("Trebuchet MS", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.homeToolStripMenuItem.Name = "homeToolStripMenuItem";
-            this.homeToolStripMenuItem.Size = new System.Drawing.Size(81, 20);
+
+            this.homeToolStripMenuItem.Size = new System.Drawing.Size(107, 27);
+
             this.homeToolStripMenuItem.Text = "Home Page";
             this.homeToolStripMenuItem.Click += new System.EventHandler(this.homeToolStripMenuItem_Click);
             // 
             // bookHistoryToolStripMenuItem
             // 
+            this.bookHistoryToolStripMenuItem.Font = new System.Drawing.Font("Trebuchet MS", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bookHistoryToolStripMenuItem.Name = "bookHistoryToolStripMenuItem";
-            this.bookHistoryToolStripMenuItem.Size = new System.Drawing.Size(87, 20);
+
+            this.bookHistoryToolStripMenuItem.Size = new System.Drawing.Size(121, 27);
+
             this.bookHistoryToolStripMenuItem.Text = "Book History";
             this.bookHistoryToolStripMenuItem.Click += new System.EventHandler(this.bookHistoryToolStripMenuItem_Click);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(154, 375);
+
+            this.label2.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(130, 508);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(413, 20);
+            this.label2.Size = new System.Drawing.Size(548, 26);
+
             this.label2.TabIndex = 44;
             this.label2.Text = "The library is a brand, when you\'ve got a card in your hand";
             // 
             // RatingCB
             // 
+            this.RatingCB.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.RatingCB.FormattingEnabled = true;
             this.RatingCB.Items.AddRange(new object[] {
             "1",
@@ -218,56 +299,73 @@
             "3",
             "4",
             "5"});
-            this.RatingCB.Location = new System.Drawing.Point(232, 202);
-            this.RatingCB.Margin = new System.Windows.Forms.Padding(2);
+
+
+            this.RatingCB.Location = new System.Drawing.Point(322, 349);
             this.RatingCB.Name = "RatingCB";
-            this.RatingCB.Size = new System.Drawing.Size(97, 21);
+            this.RatingCB.Size = new System.Drawing.Size(128, 34);
+
             this.RatingCB.TabIndex = 50;
             this.RatingCB.SelectedIndexChanged += new System.EventHandler(this.RatingCB_SelectedIndexChanged);
             // 
             // PublishYearLB
             // 
             this.PublishYearLB.AutoSize = true;
-            this.PublishYearLB.Location = new System.Drawing.Point(230, 144);
-            this.PublishYearLB.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+
+            this.PublishYearLB.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PublishYearLB.ForeColor = System.Drawing.Color.Black;
+            this.PublishYearLB.Location = new System.Drawing.Point(329, 265);
             this.PublishYearLB.Name = "PublishYearLB";
-            this.PublishYearLB.Size = new System.Drawing.Size(0, 13);
+            this.PublishYearLB.Size = new System.Drawing.Size(0, 26);
+
             this.PublishYearLB.TabIndex = 51;
             // 
             // AuthorLB
             // 
             this.AuthorLB.AutoSize = true;
-            this.AuthorLB.Location = new System.Drawing.Point(230, 119);
-            this.AuthorLB.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+
+            this.AuthorLB.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AuthorLB.ForeColor = System.Drawing.Color.Black;
+            this.AuthorLB.Location = new System.Drawing.Point(329, 223);
             this.AuthorLB.Name = "AuthorLB";
-            this.AuthorLB.Size = new System.Drawing.Size(0, 13);
+            this.AuthorLB.Size = new System.Drawing.Size(0, 26);
+
             this.AuthorLB.TabIndex = 52;
             // 
             // ISBNLB
             // 
             this.ISBNLB.AutoSize = true;
-            this.ISBNLB.Location = new System.Drawing.Point(230, 96);
-            this.ISBNLB.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+
+            this.ISBNLB.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ISBNLB.ForeColor = System.Drawing.Color.Black;
+            this.ISBNLB.Location = new System.Drawing.Point(329, 186);
             this.ISBNLB.Name = "ISBNLB";
-            this.ISBNLB.Size = new System.Drawing.Size(0, 13);
+            this.ISBNLB.Size = new System.Drawing.Size(0, 26);
+
             this.ISBNLB.TabIndex = 53;
             // 
             // TitleLB
             // 
             this.TitleLB.AutoSize = true;
-            this.TitleLB.Location = new System.Drawing.Point(230, 72);
-            this.TitleLB.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+
+            this.TitleLB.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TitleLB.ForeColor = System.Drawing.Color.Black;
+            this.TitleLB.Location = new System.Drawing.Point(329, 144);
             this.TitleLB.Name = "TitleLB";
-            this.TitleLB.Size = new System.Drawing.Size(0, 13);
+            this.TitleLB.Size = new System.Drawing.Size(0, 26);
+
             this.TitleLB.TabIndex = 54;
             // 
             // LanguageLB
             // 
             this.LanguageLB.AutoSize = true;
-            this.LanguageLB.Location = new System.Drawing.Point(230, 174);
-            this.LanguageLB.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+
+            this.LanguageLB.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LanguageLB.ForeColor = System.Drawing.Color.Black;
+            this.LanguageLB.Location = new System.Drawing.Point(329, 304);
             this.LanguageLB.Name = "LanguageLB";
-            this.LanguageLB.Size = new System.Drawing.Size(0, 13);
+            this.LanguageLB.Size = new System.Drawing.Size(0, 26);
+
             this.LanguageLB.TabIndex = 55;
             // 
             // RequestTimebtn
@@ -304,10 +402,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(684, 441);
-            this.Controls.Add(this.CancelAltbtn);
-            this.Controls.Add(this.CancelTimeExtbtn);
-            this.Controls.Add(this.RequestTimebtn);
+            this.BackColor = System.Drawing.Color.Lavender;
+            this.ClientSize = new System.Drawing.Size(798, 542);
             this.Controls.Add(this.LanguageLB);
             this.Controls.Add(this.TitleLB);
             this.Controls.Add(this.ISBNLB);
@@ -332,7 +428,7 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "StudentBorrowActinos";
-            this.Text = "StudentBorrow";
+            this.Text = "My Book Borrow";
             this.Load += new System.EventHandler(this.StudentBorrow_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
