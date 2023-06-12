@@ -164,9 +164,9 @@ namespace Group4
             // 
             // BookManagmentGoToArchieve
             // 
-            this.BookManagmentGoToArchieve.Location = new System.Drawing.Point(795, 101);
+            this.BookManagmentGoToArchieve.Location = new System.Drawing.Point(739, 101);
             this.BookManagmentGoToArchieve.Name = "BookManagmentGoToArchieve";
-            this.BookManagmentGoToArchieve.Size = new System.Drawing.Size(117, 23);
+            this.BookManagmentGoToArchieve.Size = new System.Drawing.Size(184, 23);
             this.BookManagmentGoToArchieve.TabIndex = 6;
             this.BookManagmentGoToArchieve.Text = "View Archive";
             this.BookManagmentGoToArchieve.UseVisualStyleBackColor = true;
@@ -174,7 +174,7 @@ namespace Group4
             // 
             // btnShowActiveBooks
             // 
-            this.btnShowActiveBooks.Location = new System.Drawing.Point(556, 101);
+            this.btnShowActiveBooks.Location = new System.Drawing.Point(739, 101);
             this.btnShowActiveBooks.Name = "btnShowActiveBooks";
             this.btnShowActiveBooks.Size = new System.Drawing.Size(184, 23);
             this.btnShowActiveBooks.TabIndex = 7;
