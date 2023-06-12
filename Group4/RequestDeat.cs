@@ -40,8 +40,11 @@ namespace Group4
         {
             foreach (Status status in Enum.GetValues(typeof(Status)))
             {
+                if (EnumHelper.GetDescription(status) != "Open" && EnumHelper.GetDescription(status) != "Closed")
+                { 
                 string description = EnumHelper.GetDescription(status);
                 StatusCombo.Items.Add(description);
+            }
             }
 
         }
@@ -92,15 +95,6 @@ namespace Group4
 
         private void RequestDeat_Load(object sender, EventArgs e)
         {
-/*            if (this.r.get_photoAddress() == "")
-            {
-                AttachedPhotolbl.Hide();
-                AttachedPhotobox.Hide();
-            }
-            else
-            {
-                //show picture 
-            }*/
             if (this.student == null)
             {
                 Sdtxt.Text = this.r.get_startDT().ToString();
@@ -110,7 +104,6 @@ namespace Group4
                 Cntxt.Text = this.r.get_copy().get_copyNum().ToString();
                 EndDTtxt.Hide();
                 CancelBTN.Hide();
-                Uploadbtn.Hide();
                 CreateReqbtn.Hide();
                 loadEnum();
             }
