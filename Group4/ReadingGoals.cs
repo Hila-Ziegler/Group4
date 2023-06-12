@@ -40,5 +40,12 @@ namespace Group4
             }
             else numericYearlyGoal.Value = 20;
         }
+
+        private void homePageToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            StudentChooseAction formStudentChooseAction = new StudentChooseAction(s);
+            formStudentChooseAction.Show();
+            this.Hide();
+        }
     }
 }

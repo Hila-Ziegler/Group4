@@ -45,6 +45,7 @@ namespace Group4
 
         private void BookCrud_Load(object sender, EventArgs e)
         {
+            btnShowActiveBooks.Hide();
             this.dataGridView1.DataSource = books.ToArray();
             int i = 0;
             foreach (Book b in books) {
@@ -91,7 +92,8 @@ namespace Group4
 
         private void BookManagmentGoToArchieve_Click(object sender, EventArgs e)
         {
-           // BookManagmentGoToArchieve.Hide();
+            BookManagmentGoToArchieve.Hide();
+            btnShowActiveBooks.Show();
             this.dataGridView1.DataSource = null;
             this.dataGridView1.DataSource = books.ToArray();
             int i = 0;
@@ -113,7 +115,8 @@ namespace Group4
 
         private void btnShowActiveBooks_Click(object sender, EventArgs e)
         {
-
+            BookManagmentGoToArchieve.Show();
+            btnShowActiveBooks.Hide();
             this.dataGridView1.DataSource = null;
             this.dataGridView1.DataSource = books.ToArray();
             int i = 0;

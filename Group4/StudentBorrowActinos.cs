@@ -16,7 +16,6 @@ namespace Group4
         Copy c;
         Student student;
         public System.Collections.Generic.List<Librarian> librarians;
-        public System.Collections.Generic.List<Request> requests;
         Random rnd = new Random();
 
         public StudentBorrowActinos(BookHistory bhRecord)
@@ -24,8 +23,7 @@ namespace Group4
             this.bhRecord = bhRecord;
             this.c = Program.seekCopy(bhRecord.get_book(), bhRecord.get_copyNum());
             this.student = bhRecord.get_student();
-            this.librarians = Program.librarians;
-            this.requests = Program.requests;
+            librarians = Program.librarians;
             InitializeComponent();
         }
 
@@ -44,27 +42,9 @@ namespace Group4
             PublishYearLB.Text = c.get_book().get_PYear().ToString();
             LanguageLB.Text = c.get_book().get_lang().ToString();
             lb_RatingValue.Text = c.get_book().get_rating().ToString();
-            CancelAltbtn.Hide();
-            CancelTimeExtbtn.Hide();
-
-            foreach (Request r in this.requests)
-            {
-                if (r.get_Student() == this.student && r.get_copy() == this.c && r.get_status().ToString() == "Open")
-                {
-                    if (r.get_type().ToString() == "TimeExtention")
-                    {
-                        RequestTimebtn.Hide();
-                        CancelTimeExtbtn.Show();
-                    }
-                    if (r.get_type().ToString() == "AlternativeBook")
-                    {
-                        SuggestAlternativeBook.Hide();
-                        CancelAltbtn.Show();
-                    }
-                    
-                }
-            }
         }
+        //yes
+        //very
 
         private void bookHistoryToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -83,13 +63,13 @@ namespace Group4
 
         private void RequestTimeExtention_Click(object sender, EventArgs e)
         {
-/*            RequestType rt = ((RequestType)Enum.Parse(typeof(RequestType), "TimeExtention"));
+            RequestType rt = ((RequestType)Enum.Parse(typeof(RequestType), "TimeExtention"));
             int randomNum = rnd.Next(0, librarians.Count);
             Librarian l = librarians[randomNum];
             RequestDeat formRequestDeat = new RequestDeat(this.student, this.c, rt, l, this.bhRecord);
             formRequestDeat.Show();
             this.Hide(); 
-*/        }
+        }
 
         private void SuggestAlternativeBook_Click(object sender, EventArgs e)
         {

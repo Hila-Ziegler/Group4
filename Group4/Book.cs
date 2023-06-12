@@ -169,6 +169,8 @@ namespace Group4
 
 
 
+
+
         public void create_Book()
         {
             SqlCommand c = new SqlCommand();
@@ -204,7 +206,7 @@ namespace Group4
             return this.Copies.Count();
         }
 
-        public float calculateAverageRating()
+        public void calculateAverageRating()
         {
             float count=0;
             float ratingSum=0;
@@ -218,7 +220,8 @@ namespace Group4
                 }
             }
 
-            return ratingSum/count;
+            float a = ratingSum / count;
+            this.set_rating(a) ;
         }
 
 

@@ -159,7 +159,7 @@ namespace Group4
             // 
             this.DeleteBTN.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DeleteBTN.Location = new System.Drawing.Point(514, 374);
-            this.DeleteBTN.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.DeleteBTN.Margin = new System.Windows.Forms.Padding(4);
             this.DeleteBTN.Name = "DeleteBTN";
             this.DeleteBTN.Size = new System.Drawing.Size(123, 52);
             this.DeleteBTN.TabIndex = 59;
@@ -171,7 +171,7 @@ namespace Group4
             // 
             this.UpdateBTN.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.UpdateBTN.Location = new System.Drawing.Point(87, 372);
-            this.UpdateBTN.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.UpdateBTN.Margin = new System.Windows.Forms.Padding(4);
             this.UpdateBTN.Name = "UpdateBTN";
             this.UpdateBTN.Size = new System.Drawing.Size(133, 53);
             this.UpdateBTN.TabIndex = 58;
@@ -183,7 +183,7 @@ namespace Group4
             // 
             this.NameTitle.AutoSize = true;
             this.NameTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NameTitle.Location = new System.Drawing.Point(318, 36);
+            this.NameTitle.Location = new System.Drawing.Point(210, 36);
             this.NameTitle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.NameTitle.Name = "NameTitle";
             this.NameTitle.Size = new System.Drawing.Size(117, 42);
@@ -289,6 +289,7 @@ namespace Group4
             // 
             // menuStrip1
             // 
+            this.menuStrip1.BackColor = System.Drawing.Color.Lavender;
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.homepageToolStripMenuItem,
