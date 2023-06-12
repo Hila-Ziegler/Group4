@@ -44,6 +44,8 @@ namespace Group4
             LanguageLB.Text = c.get_book().get_lang().ToString();
             lb_RatingValue.Text = c.get_book().get_rating().ToString();
         }
+        //yes
+        //very
 
         private void bookHistoryToolStripMenuItem_Click(object sender, EventArgs e)
         {
