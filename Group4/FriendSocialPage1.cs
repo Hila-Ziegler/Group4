@@ -163,6 +163,7 @@ namespace Group4
         private void FriendSocialPage1_Load(object sender, EventArgs e)
         {
             update_FriendSocialPage1();
+            label4.Text = $"{this.student.get_name().Split(' ')[0]}'s Club Members:";
             labName.Text = student.get_name().ToString();
             labAge.Text = student.get_age().ToString();
             labDate.Text = DateTime.Now.ToString("dd/MM/yyyy");

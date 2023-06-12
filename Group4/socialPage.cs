@@ -241,5 +241,20 @@ namespace Group4
             formStudentChooseAction.Show();
             this.Hide();
         }
+
+        private void progressBarClub_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void progressBarThisYear_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void progressBarAllTheTome_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

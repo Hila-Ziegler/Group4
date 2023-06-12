@@ -131,8 +131,19 @@ namespace Group4
         private void BookCrud_Load(object sender, EventArgs e)
         {
 
-            if (sn != "update" && sn != null )
+            if (sn != "update" && sn != null)
             {
+                if (Program.seekBook(sn).isAvailable())
+                {
+                    Avilabletxt.Text = "Available";
+                    Avilabletxt.ForeColor = Color.Green;
+                }
+                else
+                {
+                    Avilabletxt.Text = "Unavailable";
+                    Avilabletxt.ForeColor = Color.Red;
+
+                }
                 BringBackFromArchieve.Hide();
                 ISBNTextBox.Hide();
                 AuthorTextBox.Hide();
@@ -250,7 +261,9 @@ namespace Group4
         {
             if (this.b != null)
             {
-                Copy c = new Copy(copies.Count()+1, b, false, true);
+                Func<Copy, int> fieldSelector = copy => copy.get_copyNum();
+                int maxFieldValue = this.copies.Max(fieldSelector);
+                Copy c = new Copy(maxFieldValue+1, b, false, true);
                 b.addCopy(c);
                 this.copies.Add(c);
                 Program.copies.Add(c);

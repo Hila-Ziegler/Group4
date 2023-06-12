@@ -40,8 +40,11 @@ namespace Group4
         {
             foreach (Status status in Enum.GetValues(typeof(Status)))
             {
+                if (EnumHelper.GetDescription(status) != "Open" && EnumHelper.GetDescription(status) != "Closed")
+                { 
                 string description = EnumHelper.GetDescription(status);
                 StatusCombo.Items.Add(description);
+            }
             }
 
         }
@@ -81,6 +84,7 @@ namespace Group4
             Status st = (Status)Enum.Parse(typeof(Status), "Closed");
             this.r.set_status(st);
             this.r.update_Request();
+            this.backToolStripMenuItem_Click(sender, e);
         }
 
         private void BookCrudUpdateBTN_Click(object sender, EventArgs e)
@@ -88,19 +92,12 @@ namespace Group4
             this.r.set_status((Status)Enum.Parse(typeof(Status), StatusCombo.Text));
             this.r.set_endDT(DateTime.Now);
             this.r.update_Request();
+            this.backToolStripMenuItem_Click(sender, e);
+
         }
 
         private void RequestDeat_Load(object sender, EventArgs e)
         {
-/*            if (this.r.get_photoAddress() == "")
-            {
-                AttachedPhotolbl.Hide();
-                AttachedPhotobox.Hide();
-            }
-            else
-            {
-                //show picture 
-            }*/
             if (this.student == null)
             {
                 Sdtxt.Text = this.r.get_startDT().ToString();
@@ -110,7 +107,6 @@ namespace Group4
                 Cntxt.Text = this.r.get_copy().get_copyNum().ToString();
                 EndDTtxt.Hide();
                 CancelBTN.Hide();
-                Uploadbtn.Hide();
                 CreateReqbtn.Hide();
                 loadEnum();
             }
@@ -193,7 +189,8 @@ namespace Group4
 
         private void CreateReqbtn_Click(object sender, EventArgs e)
         {
-            Request NewR = new Request(this.requestType, DateTime.Now, this.student, this.librarian, DateTime.Now, (Status)Enum.Parse(typeof(Status), "Open"), "", this.copy, true);
+            Request NewR = new Request(this.requestType, DateTime.Now, this.student, this.librarian, DateTime.Now, (Status)Enum.Parse(typeof(Status), "Open"), this.copy, true);
+            this.backToolStripMenuItem_Click(sender, e);
         }
     }
 }
