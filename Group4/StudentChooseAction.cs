@@ -55,9 +55,7 @@ namespace Group4
 
         private void btnMessages_Click(object sender, EventArgs e)
         {
-            studentAllMessagescs  formstudentAllMessagescs = new studentAllMessagescs(student);
-            formstudentAllMessagescs.Show();
-            this.Hide();
+
         }
 
         private void readingGoalsbtn_Click(object sender, EventArgs e)

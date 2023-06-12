@@ -149,20 +149,20 @@ INSERT INTO Requests
 	VALUES
 	('TimeExtention', CONVERT(datetime, '14/09/2022 10:10:40', 103), '275733109', '216678793', CONVERT(datetime, '16/09/2022 14:10:30', 103), 'Approved', '', 'R5gL6ZaC', '1'),
 	('TimeExtention', CONVERT(datetime, '15/09/2022 15:10:35', 103), '336015350', '216678793', CONVERT(datetime, '17/09/2022 15:10:35', 103), 'Declined', '', '2zbXhPWG', '1'),
-	('TimeExtention', CONVERT(datetime, '11/11/2022 13:21:41', 103), '275733109', '216678793', '', 'In process', '', 'axMxHwGW', '1'),
-	('TimeExtention', CONVERT(datetime, '11/12/2022 12:11:10', 103), '336015350', '216678793', '', 'In process', '', 'vhR6uwAn', '2'),
-	('TimeExtention', CONVERT(datetime, '18/09/2022 14:14:23', 103), '204539542', '216678793', '', 'In process', '', 'R5gL6ZaC', '2'),
+	('TimeExtention', CONVERT(datetime, '11/11/2022 13:21:41', 103), '275733109', '216678793', '', 'Open', '', 'axMxHwGW', '1'),
+	('TimeExtention', CONVERT(datetime, '11/12/2022 12:11:10', 103), '336015350', '216678793', '', 'Open', '', 'vhR6uwAn', '2'),
+	('TimeExtention', CONVERT(datetime, '18/09/2022 14:14:23', 103), '204539542', '216678793', '', 'Open', '', 'R5gL6ZaC', '2'),
 	('AlternativeBook', CONVERT(datetime, '17/10/2022 11:11:40', 103), '275733109', '216678793', CONVERT(datetime, '23/10/2022 11:11:40', 103), 'Declined', 'C:\Documents\Requests\Summer2022.pdf', 'rXbp43Rh', '4'),
-	('TimeExtention', CONVERT(datetime, '22/12/2022 09:10:33', 103), '275733109', '216678793', '', 'In process', '', 'vhR6uwAn', '1'),
-	('TimeExtention', CONVERT(datetime, '28/01/2022 09:34:12', 103), '336015350', '216678793', '', 'In process', '', 'R5gL6ZaC', '3'),
-	('AlternativeBook', CONVERT(datetime, '22/03/2022 11:10:10', 103), '275733109', '216678793', '', 'In process', 'C:\Documents\Newsletters\Summer2018.pdf', 'vhR6uwAn', '3'),
+	('TimeExtention', CONVERT(datetime, '22/12/2022 09:10:33', 103), '275733109', '216678793', '', 'Open', '', 'vhR6uwAn', '1'),
+	('TimeExtention', CONVERT(datetime, '28/01/2022 09:34:12', 103), '336015350', '216678793', '', 'Open', '', 'R5gL6ZaC', '3'),
+	('AlternativeBook', CONVERT(datetime, '22/03/2022 11:10:10', 103), '275733109', '216678793', '', 'Open', 'C:\Documents\Newsletters\Summer2018.pdf', 'vhR6uwAn', '3'),
 	('TimeExtention', CONVERT(datetime, '29/03/2022 14:10:47', 103), '204539542', '216678793', CONVERT(datetime, '03/04/2022 11:11:35', 103), 'Approved', '', 'SUoFHA92', '1'),
-	('TimeExtention', CONVERT(datetime, '19/10/2022 10:10:40', 103), '336015350', '216678793', '', 'In process', '', '5kReQmoD', '1'),
-	('TimeExtention', CONVERT(datetime, '23/05/2022 14:33:23', 103), '275733109', '216678793', '', 'In process', '', 'vhR6uwAn', '5'),
-	('TimeExtention', CONVERT(datetime, '20/03/2022 11:45:45', 103), '336015350', '216678793', '', 'In process', '', '2zbXhPWG', '2'),
-	('TimeExtention', CONVERT(datetime, '23/12/2022 08:10:00', 103), '204539542', '216678793', '', 'In process', '', 'rXbp43Rh', '1'),
+	('TimeExtention', CONVERT(datetime, '19/10/2022 10:10:40', 103), '336015350', '216678793', '', 'Open', '', '5kReQmoD', '1'),
+	('TimeExtention', CONVERT(datetime, '23/05/2022 14:33:23', 103), '275733109', '216678793', '', 'Open', '', 'vhR6uwAn', '5'),
+	('TimeExtention', CONVERT(datetime, '20/03/2022 11:45:45', 103), '336015350', '216678793', '', 'Open', '', '2zbXhPWG', '2'),
+	('TimeExtention', CONVERT(datetime, '23/12/2022 08:10:00', 103), '204539542', '216678793', '', 'Open', '', 'rXbp43Rh', '1'),
 	('AlternativeBook', CONVERT(datetime, '12/12/2022 11:05:32', 103), '217392528', '216678793', CONVERT(datetime, '12/12/2022 18:05:32', 103), 'Approved', '','rXbp43Rh', '2'),
-	('TimeExtention', CONVERT(datetime, '02/02/2022 12:45:13', 103), '480945291', '216678793', '', 'In process', '', 'rXbp43Rh', '3');
+	('TimeExtention', CONVERT(datetime, '02/02/2022 12:45:13', 103), '480945291', '216678793', '', 'Open', '', 'rXbp43Rh', '3');
 
 
 -- insert into BookInWaitlist

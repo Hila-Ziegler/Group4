@@ -110,17 +110,11 @@ namespace Group4
             c.Parameters.AddWithValue("@copyNumber", this.CopyNum);
             c.Parameters.AddWithValue("@serialNumber", this.Book.get_sNumber());
             c.Parameters.AddWithValue("@id", this.Student.get_ID());
-            c.Parameters.AddWithValue("@startDate", this.StartDate.ToString());
-            c.Parameters.AddWithValue("@endDate", this.EndDate.ToString());
+            c.Parameters.AddWithValue("@startDate", this.StartDate.ToString("yyyy/MM/dd HH:mm:ss"));
+            c.Parameters.AddWithValue("@endDate", this.EndDate.ToString("yyyy/MM/dd HH:mm:ss"));
             c.Parameters.AddWithValue("@rate", this.Rate); 
             SQL_CON SC = new SQL_CON();
             SC.execute_non_query(c);
         }
-
-        //public void rateABook()
-       // {
-
-       // }
-
     }
 }

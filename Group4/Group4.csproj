@@ -210,12 +210,6 @@
     <Compile Include="SQL_CON.cs" />
     <Compile Include="Status.cs" />
     <Compile Include="Student.cs" />
-    <Compile Include="studentAllMessagescs.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="studentAllMessagescs.Designer.cs">
-      <DependentUpon>studentAllMessagescs.cs</DependentUpon>
-    </Compile>
     <Compile Include="StudentBookHistory.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -251,6 +245,12 @@
     </Compile>
     <Compile Include="StudentRateEvent.Designer.cs">
       <DependentUpon>StudentRateEvent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StudentRequests.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StudentRequests.Designer.cs">
+      <DependentUpon>StudentRequests.cs</DependentUpon>
     </Compile>
     <Compile Include="Teacher.cs" />
     <Compile Include="TeacherCrud.cs">
@@ -333,9 +333,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="socialPage.resx">
       <DependentUpon>socialPage.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="studentAllMessagescs.resx">
-      <DependentUpon>studentAllMessagescs.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="StudentBookHistory.resx">
       <DependentUpon>StudentBookHistory.cs</DependentUpon>
