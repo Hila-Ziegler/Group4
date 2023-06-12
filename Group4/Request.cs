@@ -15,7 +15,7 @@ namespace Group4
         private Copy Copy;
        
 
-        public Request(RequestType type, DateTime startDT, Student stud, Librarian lib, DateTime endDT, Status status, string photoAddress , Copy c, bool is_new)
+        public Request(RequestType type, DateTime startDT, Student stud, Librarian lib, DateTime endDT, Status status, string photoAddress ,Copy c, bool is_new)
         {
             this.Type = type;
             this.StartDT = startDT;

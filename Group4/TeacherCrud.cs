@@ -191,5 +191,15 @@ namespace Group4
             form25.Show();
             this.Hide();
         }
+
+        private void IDlbl_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
     }
 }

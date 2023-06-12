@@ -12,6 +12,21 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -31,6 +46,9 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <NoWin32Manifest>true</NoWin32Manifest>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -192,12 +210,6 @@
     <Compile Include="SQL_CON.cs" />
     <Compile Include="Status.cs" />
     <Compile Include="Student.cs" />
-    <Compile Include="studentAllMessagescs.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="studentAllMessagescs.Designer.cs">
-      <DependentUpon>studentAllMessagescs.cs</DependentUpon>
-    </Compile>
     <Compile Include="StudentBookHistory.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -227,6 +239,12 @@
     </Compile>
     <Compile Include="StudentCrud.Designer.cs">
       <DependentUpon>StudentCrud.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StudentRateEvent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StudentRateEvent.Designer.cs">
+      <DependentUpon>StudentRateEvent.cs</DependentUpon>
     </Compile>
     <Compile Include="Teacher.cs" />
     <Compile Include="TeacherCrud.cs">
@@ -271,10 +289,8 @@
     <EmbeddedResource Include="EventDateChangedMessage.resx">
       <DependentUpon>EventDateChangedMessage.cs</DependentUpon>
     </EmbeddedResource>
-
     <EmbeddedResource Include="EventReviews.resx">
       <DependentUpon>EventReviews.cs</DependentUpon>
-
     </EmbeddedResource>
     <EmbeddedResource Include="IncorrectInformation.resx">
       <DependentUpon>IncorrectInformation.cs</DependentUpon>
@@ -312,9 +328,6 @@
     <EmbeddedResource Include="socialPage.resx">
       <DependentUpon>socialPage.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="studentAllMessagescs.resx">
-      <DependentUpon>studentAllMessagescs.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="StudentBookHistory.resx">
       <DependentUpon>StudentBookHistory.cs</DependentUpon>
     </EmbeddedResource>
@@ -329,6 +342,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="StudentCrud.resx">
       <DependentUpon>StudentCrud.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StudentRateEvent.resx">
+      <DependentUpon>StudentRateEvent.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TeacherCrud.resx">
       <DependentUpon>TeacherCrud.cs</DependentUpon>
@@ -348,6 +364,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

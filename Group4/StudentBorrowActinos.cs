@@ -15,12 +15,15 @@ namespace Group4
         BookHistory bhRecord;
         Copy c;
         Student student;
+        public System.Collections.Generic.List<Librarian> librarians;
+        Random rnd = new Random();
 
         public StudentBorrowActinos(BookHistory bhRecord)
         {
             this.bhRecord = bhRecord;
             this.c = Program.seekCopy(bhRecord.get_book(), bhRecord.get_copyNum());
             this.student = bhRecord.get_student();
+            librarians = Program.librarians;
             InitializeComponent();
         }
 
@@ -59,8 +62,27 @@ namespace Group4
 
         private void RequestTimeExtention_Click(object sender, EventArgs e)
         {
-            //RequestDeat formRequestDeat = new RequestDeat(this.student, this.c);
-            // להוריד את ההערה אחריי העדכון
+            RequestType rt = ((RequestType)Enum.Parse(typeof(RequestType), "TimeExtention"));
+            int randomNum = rnd.Next(0, librarians.Count);
+            Librarian l = librarians[randomNum];
+            RequestDeat formRequestDeat = new RequestDeat(this.student, this.c, rt, l, this.bhRecord);
+            formRequestDeat.Show();
+            this.Hide(); 
+        }
+
+        private void SuggestAlternativeBook_Click(object sender, EventArgs e)
+        {
+            RequestType rt = ((RequestType)Enum.Parse(typeof(RequestType), "AlternativeBook"));
+            int randomNum =  rnd.Next(0, librarians.Count);
+            Librarian l = librarians[randomNum];
+            RequestDeat formRequestDeat = new RequestDeat(this.student, this.c, rt, l, this.bhRecord);
+            formRequestDeat.Show();
+            this.Hide();
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
