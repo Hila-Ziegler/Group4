@@ -39,7 +39,6 @@
             this.labSchoolName = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.colorDialog1 = new System.Windows.Forms.ColorDialog();
             this.labGoal = new System.Windows.Forms.Label();
             this.labClub = new System.Windows.Forms.Label();
             this.labAge = new System.Windows.Forms.Label();
@@ -343,7 +342,6 @@
         private System.Windows.Forms.Label labSchoolName;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ColorDialog colorDialog1;
         private System.Windows.Forms.Label labGoal;
         private System.Windows.Forms.Label labClub;
         private System.Windows.Forms.Label labAge;
