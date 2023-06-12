@@ -355,6 +355,9 @@
     <EmbeddedResource Include="StudentRateEvent.resx">
       <DependentUpon>StudentRateEvent.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="StudentRequests.resx">
+      <DependentUpon>StudentRequests.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="TeacherCrud.resx">
       <DependentUpon>TeacherCrud.cs</DependentUpon>
     </EmbeddedResource>
