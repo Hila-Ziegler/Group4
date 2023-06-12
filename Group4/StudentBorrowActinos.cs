@@ -42,9 +42,38 @@ namespace Group4
             PublishYearLB.Text = c.get_book().get_PYear().ToString();
             LanguageLB.Text = c.get_book().get_lang().ToString();
             lb_RatingValue.Text = c.get_book().get_rating().ToString();
+
+            CancelTimeExtbtn.Show();
+            CancelAltbtn.Show();
+
+            foreach (Request r in getStudentRequests())
+            {
+                if(r.get_type().ToString() == "TimeExtention" && r.get_status().ToString() == "Open")
+                {
+                    RequestTimebtn.Show();
+                    CancelTimeExtbtn.Hide();
+                }
+                if (r.get_type().ToString() == "AlternativeBook" && r.get_status().ToString() == "Open")
+                {
+                    SuggestAlternativeBook.Show();
+                    CancelAltbtn.Hide();
+                }
+
+            }
         }
-        //yes
-        //very
+
+        private List<Request> getStudentRequests()
+        {
+            List<Request> li = new List<Request>();
+            foreach(Request r in Program.requests)
+            {
+                if (this.student.get_ID() == r.get_Student().get_ID())
+                {
+                    li.Add(r);
+                }
+            }
+            return li;
+        }
 
         private void bookHistoryToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -100,7 +129,7 @@ namespace Group4
         {
             foreach (Request r in Program.requests)
             {
-                if (r.get_Student() == this.student && r.get_copy() == this.c && r.get_status().ToString() == "Open")
+                if (r.get_Student() == this.student && r.get_copy().get_copyNum() == this.c.get_copyNum() && r.get_status().ToString() == "Open")
                 {
                     if (r.get_type().ToString() == "TimeExtention")
                     {
@@ -117,7 +146,7 @@ namespace Group4
         {
             foreach (Request r in Program.requests)
             {
-                if (r.get_Student() == this.student && r.get_copy() == this.c && r.get_status().ToString() == "Open")
+                if (r.get_Student() == this.student && r.get_copy().get_copyNum() == this.c.get_copyNum() && r.get_status().ToString() == "Open")
                 {
                     if (r.get_type().ToString() == "AlternativeBook")
                     {
@@ -130,10 +159,6 @@ namespace Group4
             }
         }
 
-        private void button1_Click_1(object sender, EventArgs e)
-        {
-
-        }
     }
 }
 
