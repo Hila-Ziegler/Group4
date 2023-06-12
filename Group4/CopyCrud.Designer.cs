@@ -105,6 +105,7 @@ namespace Group4
             this.button3.TabIndex = 5;
             this.button3.Text = "Delete Copy";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // dataGridView1
             // 
@@ -121,7 +122,6 @@ namespace Group4
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.Size = new System.Drawing.Size(725, 185);
             this.dataGridView1.TabIndex = 6;
-            //this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // StartDate
             // 
@@ -169,7 +169,6 @@ namespace Group4
             this.label3.Size = new System.Drawing.Size(177, 29);
             this.label3.TabIndex = 7;
             this.label3.Text = "Borrow History ";
-            //this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // StName
             // 
@@ -178,7 +177,6 @@ namespace Group4
             this.StName.Name = "StName";
             this.StName.Size = new System.Drawing.Size(132, 22);
             this.StName.TabIndex = 8;
-            //this.StName.TextChanged += new System.EventHandler(this.StName_TextChanged);
             // 
             // StID
             // 
@@ -187,7 +185,6 @@ namespace Group4
             this.StID.Name = "StID";
             this.StID.Size = new System.Drawing.Size(132, 22);
             this.StID.TabIndex = 9;
-            //this.StID.TextChanged += new System.EventHandler(this.StID_TextChanged);
             // 
             // label4
             // 
@@ -195,10 +192,9 @@ namespace Group4
             this.label4.Location = new System.Drawing.Point(400, 533);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(102, 17);
+            this.label4.Size = new System.Drawing.Size(95, 16);
             this.label4.TabIndex = 10;
             this.label4.Text = "Student Name:";
-            //this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // label5
             // 
@@ -206,10 +202,9 @@ namespace Group4
             this.label5.Location = new System.Drawing.Point(572, 533);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(78, 17);
+            this.label5.Size = new System.Drawing.Size(71, 16);
             this.label5.TabIndex = 11;
             this.label5.Text = "Student ID:";
-            //this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // copyCrudMenu
             // 
@@ -222,7 +217,6 @@ namespace Group4
             this.copyCrudMenu.Size = new System.Drawing.Size(1584, 28);
             this.copyCrudMenu.TabIndex = 13;
             this.copyCrudMenu.Text = "menuStrip1";
-            //this.copyCrudMenu.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.copyCrudMenu_ItemClicked);
             // 
             // MenuHomePage
             // 
