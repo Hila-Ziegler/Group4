@@ -124,7 +124,7 @@ namespace Group4
             // AddNewBook
             // 
             this.AddNewBook.Font = new System.Drawing.Font("Trebuchet MS", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AddNewBook.Location = new System.Drawing.Point(504, 161);
+            this.AddNewBook.Location = new System.Drawing.Point(511, 166);
             this.AddNewBook.Margin = new System.Windows.Forms.Padding(4);
             this.AddNewBook.Name = "AddNewBook";
             this.AddNewBook.Size = new System.Drawing.Size(184, 28);
@@ -169,7 +169,7 @@ namespace Group4
             // BookManagmentGoToArchieve
             // 
             this.BookManagmentGoToArchieve.Font = new System.Drawing.Font("Trebuchet MS", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BookManagmentGoToArchieve.Location = new System.Drawing.Point(504, 159);
+            this.BookManagmentGoToArchieve.Location = new System.Drawing.Point(730, 166);
             this.BookManagmentGoToArchieve.Name = "BookManagmentGoToArchieve";
             this.BookManagmentGoToArchieve.Size = new System.Drawing.Size(184, 28);
             this.BookManagmentGoToArchieve.TabIndex = 6;
@@ -180,9 +180,9 @@ namespace Group4
             // btnShowActiveBooks
             // 
             this.btnShowActiveBooks.Font = new System.Drawing.Font("Trebuchet MS", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnShowActiveBooks.Location = new System.Drawing.Point(730, 156);
+            this.btnShowActiveBooks.Location = new System.Drawing.Point(730, 166);
             this.btnShowActiveBooks.Name = "btnShowActiveBooks";
-            this.btnShowActiveBooks.Size = new System.Drawing.Size(184, 31);
+            this.btnShowActiveBooks.Size = new System.Drawing.Size(184, 28);
             this.btnShowActiveBooks.TabIndex = 7;
             this.btnShowActiveBooks.Text = "Show active books";
             this.btnShowActiveBooks.UseVisualStyleBackColor = true;

@@ -250,7 +250,7 @@ namespace Group4
         {
             if (this.b != null)
             {
-                Copy c = new Copy(copies.Count()+1, b, false, true);
+                Copy c = new Copy(b.countCopies()+1, b, false, true);
                 b.addCopy(c);
                 this.copies.Add(c);
                 Program.copies.Add(c);
