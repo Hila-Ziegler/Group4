@@ -224,6 +224,18 @@ namespace Group4
             this.set_rating(a) ;
         }
 
+        public bool isAvailable()
+        {
+            foreach (Copy c in this.Copies)
+            {
+                if (!c.get_status())
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+
 
     }
 }

@@ -84,6 +84,7 @@ namespace Group4
             Status st = (Status)Enum.Parse(typeof(Status), "Closed");
             this.r.set_status(st);
             this.r.update_Request();
+            this.backToolStripMenuItem_Click(sender, e);
         }
 
         private void BookCrudUpdateBTN_Click(object sender, EventArgs e)
@@ -91,6 +92,8 @@ namespace Group4
             this.r.set_status((Status)Enum.Parse(typeof(Status), StatusCombo.Text));
             this.r.set_endDT(DateTime.Now);
             this.r.update_Request();
+            this.backToolStripMenuItem_Click(sender, e);
+
         }
 
         private void RequestDeat_Load(object sender, EventArgs e)
@@ -186,7 +189,8 @@ namespace Group4
 
         private void CreateReqbtn_Click(object sender, EventArgs e)
         {
-            Request NewR = new Request(this.requestType, DateTime.Now, this.student, this.librarian, DateTime.Now, (Status)Enum.Parse(typeof(Status), "Open"), "", this.copy, true);
+            Request NewR = new Request(this.requestType, DateTime.Now, this.student, this.librarian, DateTime.Now, (Status)Enum.Parse(typeof(Status), "Open"), this.copy, true);
+            this.backToolStripMenuItem_Click(sender, e);
         }
     }
 }
