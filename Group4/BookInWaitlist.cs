@@ -60,7 +60,18 @@ namespace Group4
         {
             SqlCommand c = new SqlCommand();
             c.CommandText = "EXECUTE dbo.SP_add_BookInWaitlist @startDate ,@id , @serialNumber";
-            c.Parameters.AddWithValue("@startDate", this.StartDT);
+            c.Parameters.AddWithValue("@startDate", this.StartDT.ToString("yyyy/MM/dd HH:mm:ss"));
+            c.Parameters.AddWithValue("@id", this.student.get_ID());
+            c.Parameters.AddWithValue("@serialNumber", this.book.get_sNumber());
+            SQL_CON SC = new SQL_CON();
+            SC.execute_non_query(c);
+        }
+
+        public void update_BookInWaitlist()
+        {
+            SqlCommand c = new SqlCommand();
+            c.CommandText = "EXECUTE dbo.SP_add_BookInWaitlist @startDate ,@id , @serialNumber";
+            c.Parameters.AddWithValue("@startDate", this.StartDT.ToString("yyyy/MM/dd HH:mm:ss"));
             c.Parameters.AddWithValue("@id", this.student.get_ID());
             c.Parameters.AddWithValue("@serialNumber", this.book.get_sNumber());
             SQL_CON SC = new SQL_CON();
