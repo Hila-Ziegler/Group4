@@ -152,7 +152,7 @@ namespace Group4
             // 
             this.DeleteBTN.Font = new System.Drawing.Font("Trebuchet MS", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DeleteBTN.Location = new System.Drawing.Point(446, 307);
-            this.DeleteBTN.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.DeleteBTN.Margin = new System.Windows.Forms.Padding(4);
             this.DeleteBTN.Name = "DeleteBTN";
             this.DeleteBTN.Size = new System.Drawing.Size(106, 28);
             this.DeleteBTN.TabIndex = 35;
@@ -164,7 +164,7 @@ namespace Group4
             // 
             this.UpdateBTN.Font = new System.Drawing.Font("Trebuchet MS", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.UpdateBTN.Location = new System.Drawing.Point(171, 307);
-            this.UpdateBTN.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.UpdateBTN.Margin = new System.Windows.Forms.Padding(4);
             this.UpdateBTN.Name = "UpdateBTN";
             this.UpdateBTN.Size = new System.Drawing.Size(106, 28);
             this.UpdateBTN.TabIndex = 34;
@@ -176,7 +176,7 @@ namespace Group4
             // 
             this.NameTitle.AutoSize = true;
             this.NameTitle.Font = new System.Drawing.Font("Trebuchet MS", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NameTitle.Location = new System.Drawing.Point(334, 28);
+            this.NameTitle.Location = new System.Drawing.Point(200, 28);
             this.NameTitle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.NameTitle.Name = "NameTitle";
             this.NameTitle.Size = new System.Drawing.Size(114, 46);
@@ -233,7 +233,7 @@ namespace Group4
             this.Controls.Add(this.UpdateBTN);
             this.Controls.Add(this.NameTitle);
             this.Name = "LibrarianCrud";
-            this.Text = "LibrarianCrud";
+            this.Text = "Librarian page";
             this.Load += new System.EventHandler(this.LibrarianCrud_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
