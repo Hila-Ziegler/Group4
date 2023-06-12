@@ -246,5 +246,15 @@ namespace Group4
         {
 
         }
+
+        private void progressBarThisYear_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void progressBarAllTheTome_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

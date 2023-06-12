@@ -220,6 +220,7 @@
             this.progressBarAllTheTome.Size = new System.Drawing.Size(367, 26);
             this.progressBarAllTheTome.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
             this.progressBarAllTheTome.TabIndex = 30;
+            this.progressBarAllTheTome.Click += new System.EventHandler(this.progressBarAllTheTome_Click);
             // 
             // label1
             // 
@@ -248,6 +249,7 @@
             this.progressBarThisYear.Name = "progressBarThisYear";
             this.progressBarThisYear.Size = new System.Drawing.Size(367, 25);
             this.progressBarThisYear.TabIndex = 35;
+            this.progressBarThisYear.Click += new System.EventHandler(this.progressBarThisYear_Click);
             // 
             // progressBarClub
             // 
