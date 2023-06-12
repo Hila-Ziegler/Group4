@@ -114,7 +114,7 @@ namespace Group4
         {
             foreach (Copy c in copies)
             {
-                if (c.get_book() == b && c.get_copyNum() == copynum)
+                if (c.get_book().get_sNumber() == b.get_sNumber() && c.get_copyNum() == copynum)
                     return c;
             }
             return null;
@@ -180,6 +180,10 @@ namespace Group4
 
             while (rdr.Read())
             {
+/*                string s = "";
+                s += rdr.GetValue(0).ToString() + ", ";
+                s += rdr.GetValue(1).ToString() + ", ";
+                s += rdr.GetValue(2).ToString() + ", ";*/
                 Book b = seekBook(rdr.GetValue(1).ToString());
                 Copy co = new Copy(int.Parse(rdr.GetValue(0).ToString()), b, bool.Parse(rdr.GetValue(2).ToString()),  false);
                 copies.Add(co);
