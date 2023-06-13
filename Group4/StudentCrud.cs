@@ -120,8 +120,7 @@ namespace Group4
             {
                 if (PasswordTextBox.Text != "")
                 {
-                    string newPassword = Hash.GetHash(PasswordTextBox.Text);
-                    st.set_password(newPassword);
+                    st.set_password(PasswordTextBox.Text);
                 }
                 st.set_name(NameTextBox.Text);
                 st.set_age(int.Parse(AgeComboBox.Text));
