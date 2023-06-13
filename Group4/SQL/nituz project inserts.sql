@@ -26,21 +26,22 @@ INSERT INTO Books
 -- insert into Copies
 INSERT INTO Copies
 	VALUES
-	('1', 'R5gL6ZaC', '1'),
-	('2', 'R5gL6ZaC', '0'),
-	('3', 'R5gL6ZaC', '1'),
-	('1', '2zbXhPWG', '1'),
-	('2', '2zbXhPWG', '1'),
-	('1', 'axMxHwGW', '1'),
-	('1', 'rCbp43Rh', '1'),
-	('2', 'rCbp43Rh', '1'),
-	('3', 'rCbp43Rh', '0'),
-	('4', 'rCbp43Rh', '1'),
-	('1', 'SUoFHA92', '1'),
-	('1', '5kReQmoD', '1'),
-	('1', 'vhR6uwAn', '1'),
-	('2', 'vhR6uwAn', '0'),
-	('3', 'vhR6uwAn', '1');
+	('1', 'R5gL6ZaC', '1','0'),
+	('2', 'R5gL6ZaC', '0','0'),
+	('3', 'R5gL6ZaC', '1','0'),
+	('1', '2zbXhPWG', '1','0'),
+	('2', '2zbXhPWG', '1','0'),
+	('1', 'axMxHwGW', '1','0'),
+	('1', 'rCbp43Rh', '1','0'),
+	('2', 'rCbp43Rh', '1','0'),
+	('3', 'rCbp43Rh', '0','0'),
+	('4', 'rCbp43Rh', '1','0'),
+	('1', 'SUoFHA92', '1','0'),
+	('1', '5kReQmoD', '1','0'),
+	('1', 'vhR6uwAn', '1','0'),
+	('2', 'vhR6uwAn', '0','0'),
+	('3', 'vhR6uwAn', '1','0'),
+	('1', 'AV1995', '0','0');
 
 
 -- insert into Teachers

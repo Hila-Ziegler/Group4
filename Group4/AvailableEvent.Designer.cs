@@ -52,7 +52,7 @@
             this.homePageToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1150, 31);
+            this.menuStrip1.Size = new System.Drawing.Size(912, 31);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -72,7 +72,7 @@
             this.Date,
             this.CurrentlyRegistered,
             this.MaxGuests});
-            this.dataGridView1.Location = new System.Drawing.Point(158, 156);
+            this.dataGridView1.Location = new System.Drawing.Point(95, 152);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
@@ -112,10 +112,10 @@
             // 
             this.BookCrudTitle.AutoSize = true;
             this.BookCrudTitle.Font = new System.Drawing.Font("Trebuchet MS", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BookCrudTitle.Location = new System.Drawing.Point(218, 58);
+            this.BookCrudTitle.Location = new System.Drawing.Point(155, 54);
             this.BookCrudTitle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.BookCrudTitle.Name = "BookCrudTitle";
-            this.BookCrudTitle.Size = new System.Drawing.Size(303, 46);
+            this.BookCrudTitle.Size = new System.Drawing.Size(312, 49);
             this.BookCrudTitle.TabIndex = 2;
             this.BookCrudTitle.Text = "Available Events:";
             this.BookCrudTitle.Click += new System.EventHandler(this.BookCrudTitle_Click);
@@ -124,7 +124,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(128, 419);
+            this.label2.Location = new System.Drawing.Point(159, 420);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(548, 26);
@@ -134,7 +134,7 @@
             // CreateNewEvent
             // 
             this.CreateNewEvent.Font = new System.Drawing.Font("Trebuchet MS", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CreateNewEvent.Location = new System.Drawing.Point(158, 350);
+            this.CreateNewEvent.Location = new System.Drawing.Point(95, 346);
             this.CreateNewEvent.Margin = new System.Windows.Forms.Padding(4);
             this.CreateNewEvent.Name = "CreateNewEvent";
             this.CreateNewEvent.Size = new System.Drawing.Size(177, 41);
@@ -146,7 +146,7 @@
             // ShowPastEvents
             // 
             this.ShowPastEvents.Font = new System.Drawing.Font("Trebuchet MS", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ShowPastEvents.Location = new System.Drawing.Point(407, 350);
+            this.ShowPastEvents.Location = new System.Drawing.Point(344, 346);
             this.ShowPastEvents.Margin = new System.Windows.Forms.Padding(4);
             this.ShowPastEvents.Name = "ShowPastEvents";
             this.ShowPastEvents.Size = new System.Drawing.Size(163, 41);
@@ -158,7 +158,7 @@
             // btnFutureEvents
             // 
             this.btnFutureEvents.Font = new System.Drawing.Font("Trebuchet MS", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFutureEvents.Location = new System.Drawing.Point(653, 350);
+            this.btnFutureEvents.Location = new System.Drawing.Point(590, 346);
             this.btnFutureEvents.Margin = new System.Windows.Forms.Padding(4);
             this.btnFutureEvents.Name = "btnFutureEvents";
             this.btnFutureEvents.Size = new System.Drawing.Size(175, 41);
@@ -172,7 +172,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Lavender;
-            this.ClientSize = new System.Drawing.Size(1150, 492);
+            this.ClientSize = new System.Drawing.Size(912, 492);
             this.Controls.Add(this.btnFutureEvents);
             this.Controls.Add(this.ShowPastEvents);
             this.Controls.Add(this.CreateNewEvent);
