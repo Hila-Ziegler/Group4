@@ -112,7 +112,7 @@
             this.SpeakerName.Location = new System.Drawing.Point(293, 37);
             this.SpeakerName.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.SpeakerName.Name = "SpeakerName";
-            this.SpeakerName.Size = new System.Drawing.Size(119, 49);
+            this.SpeakerName.Size = new System.Drawing.Size(114, 46);
             this.SpeakerName.TabIndex = 8;
             this.SpeakerName.Text = "Name";
             this.SpeakerName.Click += new System.EventHandler(this.BookCrudTitle_Click);
@@ -125,6 +125,7 @@
             this.GuestNameTextBox.Name = "GuestNameTextBox";
             this.GuestNameTextBox.Size = new System.Drawing.Size(169, 27);
             this.GuestNameTextBox.TabIndex = 45;
+            this.GuestNameTextBox.TextChanged += new System.EventHandler(this.GuestNameTextBox_TextChanged);
             // 
             // MaxAttendance
             // 
@@ -261,7 +262,7 @@
             // RegisterBTN
             // 
             this.RegisterBTN.Font = new System.Drawing.Font("Trebuchet MS", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RegisterBTN.Location = new System.Drawing.Point(326, 464);
+            this.RegisterBTN.Location = new System.Drawing.Point(326, 428);
             this.RegisterBTN.Margin = new System.Windows.Forms.Padding(5);
             this.RegisterBTN.Name = "RegisterBTN";
             this.RegisterBTN.Size = new System.Drawing.Size(145, 65);
@@ -385,7 +386,7 @@
             this.finalRatingScore.Font = new System.Drawing.Font("Trebuchet MS", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.finalRatingScore.Location = new System.Drawing.Point(620, 62);
             this.finalRatingScore.Name = "finalRatingScore";
-            this.finalRatingScore.Size = new System.Drawing.Size(111, 24);
+            this.finalRatingScore.Size = new System.Drawing.Size(103, 23);
             this.finalRatingScore.TabIndex = 63;
             this.finalRatingScore.Text = "Final Rating";
             this.finalRatingScore.Click += new System.EventHandler(this.finalRatingScore_Click);

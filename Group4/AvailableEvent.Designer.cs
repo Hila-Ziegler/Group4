@@ -40,6 +40,7 @@
             this.CreateNewEvent = new System.Windows.Forms.Button();
             this.ShowPastEvents = new System.Windows.Forms.Button();
             this.btnFutureEvents = new System.Windows.Forms.Button();
+            this.Status = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -71,12 +72,13 @@
             this.GuestName,
             this.Date,
             this.CurrentlyRegistered,
-            this.MaxGuests});
-            this.dataGridView1.Location = new System.Drawing.Point(95, 152);
+            this.MaxGuests,
+            this.Status});
+            this.dataGridView1.Location = new System.Drawing.Point(60, 150);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(670, 140);
+            this.dataGridView1.Size = new System.Drawing.Size(738, 140);
             this.dataGridView1.TabIndex = 1;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
@@ -115,7 +117,7 @@
             this.BookCrudTitle.Location = new System.Drawing.Point(155, 54);
             this.BookCrudTitle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.BookCrudTitle.Name = "BookCrudTitle";
-            this.BookCrudTitle.Size = new System.Drawing.Size(312, 49);
+            this.BookCrudTitle.Size = new System.Drawing.Size(303, 46);
             this.BookCrudTitle.TabIndex = 2;
             this.BookCrudTitle.Text = "Available Events:";
             this.BookCrudTitle.Click += new System.EventHandler(this.BookCrudTitle_Click);
@@ -137,7 +139,7 @@
             this.CreateNewEvent.Location = new System.Drawing.Point(95, 346);
             this.CreateNewEvent.Margin = new System.Windows.Forms.Padding(4);
             this.CreateNewEvent.Name = "CreateNewEvent";
-            this.CreateNewEvent.Size = new System.Drawing.Size(177, 41);
+            this.CreateNewEvent.Size = new System.Drawing.Size(208, 49);
             this.CreateNewEvent.TabIndex = 7;
             this.CreateNewEvent.Text = "Create New Event";
             this.CreateNewEvent.UseVisualStyleBackColor = true;
@@ -146,10 +148,10 @@
             // ShowPastEvents
             // 
             this.ShowPastEvents.Font = new System.Drawing.Font("Trebuchet MS", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ShowPastEvents.Location = new System.Drawing.Point(344, 346);
+            this.ShowPastEvents.Location = new System.Drawing.Point(335, 346);
             this.ShowPastEvents.Margin = new System.Windows.Forms.Padding(4);
             this.ShowPastEvents.Name = "ShowPastEvents";
-            this.ShowPastEvents.Size = new System.Drawing.Size(163, 41);
+            this.ShowPastEvents.Size = new System.Drawing.Size(207, 49);
             this.ShowPastEvents.TabIndex = 8;
             this.ShowPastEvents.Text = "Show Past Events";
             this.ShowPastEvents.UseVisualStyleBackColor = true;
@@ -158,14 +160,21 @@
             // btnFutureEvents
             // 
             this.btnFutureEvents.Font = new System.Drawing.Font("Trebuchet MS", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFutureEvents.Location = new System.Drawing.Point(590, 346);
+            this.btnFutureEvents.Location = new System.Drawing.Point(572, 346);
             this.btnFutureEvents.Margin = new System.Windows.Forms.Padding(4);
             this.btnFutureEvents.Name = "btnFutureEvents";
-            this.btnFutureEvents.Size = new System.Drawing.Size(175, 41);
+            this.btnFutureEvents.Size = new System.Drawing.Size(193, 49);
             this.btnFutureEvents.TabIndex = 9;
             this.btnFutureEvents.Text = "Show Future Events";
             this.btnFutureEvents.UseVisualStyleBackColor = true;
             this.btnFutureEvents.Click += new System.EventHandler(this.btnFutureEvents_Click);
+            // 
+            // Status
+            // 
+            this.Status.HeaderText = "Status";
+            this.Status.MinimumWidth = 6;
+            this.Status.Name = "Status";
+            this.Status.Width = 125;
             // 
             // AvailableEvent
             // 
@@ -206,5 +215,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn MaxGuests;
         private System.Windows.Forms.Button btnFutureEvents;
         private System.Windows.Forms.Button ShowPastEvents;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Status;
     }
 }
