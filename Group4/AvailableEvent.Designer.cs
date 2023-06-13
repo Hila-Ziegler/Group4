@@ -35,12 +35,12 @@
             this.Date = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CurrentlyRegistered = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MaxGuests = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Status = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.BookCrudTitle = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.CreateNewEvent = new System.Windows.Forms.Button();
             this.ShowPastEvents = new System.Windows.Forms.Button();
             this.btnFutureEvents = new System.Windows.Forms.Button();
-            this.Status = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -78,7 +78,7 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(738, 140);
+            this.dataGridView1.Size = new System.Drawing.Size(776, 140);
             this.dataGridView1.TabIndex = 1;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
@@ -109,6 +109,13 @@
             this.MaxGuests.MinimumWidth = 6;
             this.MaxGuests.Name = "MaxGuests";
             this.MaxGuests.Width = 125;
+            // 
+            // Status
+            // 
+            this.Status.HeaderText = "Status";
+            this.Status.MinimumWidth = 6;
+            this.Status.Name = "Status";
+            this.Status.Width = 125;
             // 
             // BookCrudTitle
             // 
@@ -169,13 +176,6 @@
             this.btnFutureEvents.UseVisualStyleBackColor = true;
             this.btnFutureEvents.Click += new System.EventHandler(this.btnFutureEvents_Click);
             // 
-            // Status
-            // 
-            this.Status.HeaderText = "Status";
-            this.Status.MinimumWidth = 6;
-            this.Status.Name = "Status";
-            this.Status.Width = 125;
-            // 
             // AvailableEvent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -191,7 +191,7 @@
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "AvailableEvent";
-            this.Text = "StudentEvent";
+            this.Text = "Available Events";
             this.Load += new System.EventHandler(this.AvailableEvent_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
