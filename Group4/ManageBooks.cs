@@ -55,7 +55,7 @@ namespace Group4
                     this.dataGridView1.Rows[i].Cells[1].Value = b.get_title();
                     this.dataGridView1.Rows[i].Cells[2].Value = b.get_author();
                     this.dataGridView1.Rows[i].Cells[3].Value = b.get_lang();
-                    this.dataGridView1.Rows[i].Cells[4].Value = b.Copies.Count();
+                    this.dataGridView1.Rows[i].Cells[4].Value = b.countCopiesNotDeleted();
                     this.dataGridView1.Rows[i].Cells[5].Value = b.get_PYear();
                     i++;
                 }
@@ -64,7 +64,6 @@ namespace Group4
 
 
         }
-
 
         private void AddNewBook_Click(object sender, EventArgs e)
         {

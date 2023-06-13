@@ -52,18 +52,18 @@ namespace Group4
                         if (bh.get_StartDate() == bh.get_EndDate() && this.copy.get_status() == true)
                         {
                             this.dataGridView1.Rows[i].Cells[1].Value = DBNull.Value;
-                            StartBorrow.Visible = false;
-                            StID.Visible = false;
-                            label5.Visible = false;
-                            endBorrow1.Visible = true;
+                            StartBorrow.Hide();
+                            StID.Hide();
+                            label5.Hide();
+                            endBorrow1.Show();
                         }
                         else
                         {
                             this.dataGridView1.Rows[i].Cells[1].Value = bh.get_EndDate();
-                            StartBorrow.Visible = true;
-                            StID.Visible = true;
-                            label5.Visible = true;
-                            endBorrow1.Visible = false;
+                            StartBorrow.Show();
+                            StID.Show();
+                            label5.Show();
+                            endBorrow1.Hide();
                         }
                         this.dataGridView1.Rows[i].Cells[2].Value = bh.get_student().get_name();
                         this.dataGridView1.Rows[i].Cells[3].Value = bh.get_student().get_ID();
@@ -166,7 +166,7 @@ namespace Group4
 
             int number;
             bool isNumeric = int.TryParse(StID.Text, out number);
-            if (isNumeric)
+            if (!isNumeric)
             {
                 String s = $"ID should not contain letters";
                 ep = new ErrorPage(s);
