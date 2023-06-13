@@ -90,13 +90,17 @@ namespace Group4
         private void EventCrud_Load(object sender, EventArgs e)
         {
             this.Load_Enum();
+            finalRatingScore.Hide();
+            WatchReviews.Hide();
             if (this.ev != null)
             {
-                if (this.ev.get_date() > DateTime.Now)
+                if (this.ev.get_date() < DateTime.Now)
                 {
-                    finalRatingScore.Hide();
-                    WatchReviews.Hide();
+                    this.setFinalRatingScore();
+                    finalRatingScore.Show();
+                    WatchReviews.Show();
                 }
+/*                }
                 else if (this.ev.get_date().ToShortDateString() == DateTime.Now.ToShortDateString())
                 {
                     finalRatingScore.Hide();
@@ -106,7 +110,7 @@ namespace Group4
                 {
                      this.setFinalRatingScore();
                 
-                }
+                }*/
             }
             else
             {

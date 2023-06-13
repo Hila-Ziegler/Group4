@@ -15,11 +15,6 @@ namespace Group4
         SequelChasers,
         [Description("None")]
         None
-        /*        TheBookies,
-                TheBookMarks,
-                BookBesties,
-                SequelChasers*/
-
     }
 
 }
