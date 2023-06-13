@@ -53,7 +53,7 @@ namespace Group4
             this.BringBackFromArchieve.Font = new System.Drawing.Font("Trebuchet MS", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BringBackFromArchieve.Location = new System.Drawing.Point(548, 95);
             this.BringBackFromArchieve.Name = "BringBackFromArchieve";
-            this.BringBackFromArchieve.Size = new System.Drawing.Size(129, 81);
+            this.BringBackFromArchieve.Size = new System.Drawing.Size(177, 122);
             this.BringBackFromArchieve.TabIndex = 56;
             this.BringBackFromArchieve.Text = "Return From Archieve";
             this.BringBackFromArchieve.UseVisualStyleBackColor = true;
@@ -179,7 +179,7 @@ namespace Group4
             this.NameTitle.Location = new System.Drawing.Point(200, 28);
             this.NameTitle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.NameTitle.Name = "NameTitle";
-            this.NameTitle.Size = new System.Drawing.Size(114, 46);
+            this.NameTitle.Size = new System.Drawing.Size(119, 49);
             this.NameTitle.TabIndex = 33;
             this.NameTitle.Text = "Name";
             // 
