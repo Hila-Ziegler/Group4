@@ -12,9 +12,6 @@ namespace Group4
 {
     public partial class FriendSocialPage1 : Form
     {
-        List<Student> students;
-        List<BookHistory> allClubHistory;
-        List<BookHistory> MyBooklHistory;
         List<Book> allBook;
         List<Student> clubStudents;// לספור כמה תלמידים במועדון שלי , לעשות בר כמה המועדון שלי קרא ביחס לשאר בית הספר וביחס לשאר המועדונים
         Student student;
@@ -22,10 +19,7 @@ namespace Group4
         {
             this.student = stud;
            // filterStudent();
-            MyBooklHistory = Program.bookHistories;
             allBook = Program.books;
-            clubStudents = Program.students;
-            this.allClubHistory = this.filterClubHistory();
             this.clubStudents = this.filterClubMembers();
             InitializeComponent();
             
