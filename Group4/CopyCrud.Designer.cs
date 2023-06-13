@@ -40,9 +40,7 @@ namespace Group4
             this.StudentID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Rating = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label3 = new System.Windows.Forms.Label();
-            this.StName = new System.Windows.Forms.TextBox();
             this.StID = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.copyCrudMenu = new System.Windows.Forms.MenuStrip();
             this.MenuHomePage = new System.Windows.Forms.ToolStripMenuItem();
@@ -56,10 +54,9 @@ namespace Group4
             // 
             this.CopyCrudTitle.AutoSize = true;
             this.CopyCrudTitle.Font = new System.Drawing.Font("Trebuchet MS", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CopyCrudTitle.Location = new System.Drawing.Point(71, 54);
-            this.CopyCrudTitle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.CopyCrudTitle.Location = new System.Drawing.Point(53, 44);
             this.CopyCrudTitle.Name = "CopyCrudTitle";
-            this.CopyCrudTitle.Size = new System.Drawing.Size(100, 49);
+            this.CopyCrudTitle.Size = new System.Drawing.Size(79, 38);
             this.CopyCrudTitle.TabIndex = 1;
             this.CopyCrudTitle.Text = "Title";
             // 
@@ -67,20 +64,18 @@ namespace Group4
             // 
             this.CopyCrudCopyNum.AutoSize = true;
             this.CopyCrudCopyNum.Font = new System.Drawing.Font("Trebuchet MS", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CopyCrudCopyNum.Location = new System.Drawing.Point(81, 100);
-            this.CopyCrudCopyNum.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.CopyCrudCopyNum.Location = new System.Drawing.Point(61, 81);
             this.CopyCrudCopyNum.Name = "CopyCrudCopyNum";
-            this.CopyCrudCopyNum.Size = new System.Drawing.Size(250, 49);
+            this.CopyCrudCopyNum.Size = new System.Drawing.Size(197, 38);
             this.CopyCrudCopyNum.TabIndex = 2;
             this.CopyCrudCopyNum.Text = "Copy Number";
             // 
             // StartBorrow
             // 
             this.StartBorrow.Font = new System.Drawing.Font("Trebuchet MS", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.StartBorrow.Location = new System.Drawing.Point(168, 639);
-            this.StartBorrow.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.StartBorrow.Location = new System.Drawing.Point(117, 497);
             this.StartBorrow.Name = "StartBorrow";
-            this.StartBorrow.Size = new System.Drawing.Size(145, 49);
+            this.StartBorrow.Size = new System.Drawing.Size(109, 40);
             this.StartBorrow.TabIndex = 3;
             this.StartBorrow.Text = "Start Borrow";
             this.StartBorrow.UseVisualStyleBackColor = true;
@@ -89,10 +84,9 @@ namespace Group4
             // endBorrow1
             // 
             this.endBorrow1.Font = new System.Drawing.Font("Trebuchet MS", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.endBorrow1.Location = new System.Drawing.Point(499, 492);
-            this.endBorrow1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.endBorrow1.Location = new System.Drawing.Point(374, 400);
             this.endBorrow1.Name = "endBorrow1";
-            this.endBorrow1.Size = new System.Drawing.Size(145, 49);
+            this.endBorrow1.Size = new System.Drawing.Size(109, 40);
             this.endBorrow1.TabIndex = 4;
             this.endBorrow1.Text = "End Borrow";
             this.endBorrow1.UseVisualStyleBackColor = true;
@@ -107,11 +101,10 @@ namespace Group4
             this.StudentName,
             this.StudentID,
             this.Rating});
-            this.dataGridView1.Location = new System.Drawing.Point(92, 278);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGridView1.Location = new System.Drawing.Point(69, 226);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.Size = new System.Drawing.Size(852, 185);
+            this.dataGridView1.Size = new System.Drawing.Size(639, 150);
             this.dataGridView1.TabIndex = 6;
             // 
             // StartDate
@@ -154,50 +147,27 @@ namespace Group4
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Trebuchet MS", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(403, 235);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Location = new System.Drawing.Point(302, 191);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(180, 29);
+            this.label3.Size = new System.Drawing.Size(141, 24);
             this.label3.TabIndex = 7;
             this.label3.Text = "Borrow History ";
-            // 
-            // StName
-            // 
-            this.StName.Font = new System.Drawing.Font("Trebuchet MS", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.StName.Location = new System.Drawing.Point(89, 581);
-            this.StName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.StName.Name = "StName";
-            this.StName.Size = new System.Drawing.Size(132, 27);
-            this.StName.TabIndex = 8;
             // 
             // StID
             // 
             this.StID.Font = new System.Drawing.Font("Trebuchet MS", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.StID.Location = new System.Drawing.Point(261, 581);
-            this.StID.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.StID.Location = new System.Drawing.Point(117, 454);
             this.StID.Name = "StID";
-            this.StID.Size = new System.Drawing.Size(132, 27);
+            this.StID.Size = new System.Drawing.Size(100, 23);
             this.StID.TabIndex = 9;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Trebuchet MS", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(89, 540);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(122, 23);
-            this.label4.TabIndex = 10;
-            this.label4.Text = "Student Name:";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Trebuchet MS", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(261, 540);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Location = new System.Drawing.Point(114, 411);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(94, 23);
+            this.label5.Size = new System.Drawing.Size(81, 18);
             this.label5.TabIndex = 11;
             this.label5.Text = "Student ID:";
             // 
@@ -210,8 +180,8 @@ namespace Group4
             this.MenuManageBooks});
             this.copyCrudMenu.Location = new System.Drawing.Point(0, 0);
             this.copyCrudMenu.Name = "copyCrudMenu";
-            this.copyCrudMenu.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
-            this.copyCrudMenu.Size = new System.Drawing.Size(1160, 31);
+            this.copyCrudMenu.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
+            this.copyCrudMenu.Size = new System.Drawing.Size(870, 26);
             this.copyCrudMenu.TabIndex = 13;
             this.copyCrudMenu.Text = "menuStrip1";
             // 
@@ -219,7 +189,7 @@ namespace Group4
             // 
             this.MenuHomePage.Font = new System.Drawing.Font("Trebuchet MS", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MenuHomePage.Name = "MenuHomePage";
-            this.MenuHomePage.Size = new System.Drawing.Size(107, 27);
+            this.MenuHomePage.Size = new System.Drawing.Size(89, 22);
             this.MenuHomePage.Text = "Home Page";
             this.MenuHomePage.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
             // 
@@ -227,7 +197,7 @@ namespace Group4
             // 
             this.MenuManageBooks.Font = new System.Drawing.Font("Trebuchet MS", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MenuManageBooks.Name = "MenuManageBooks";
-            this.MenuManageBooks.Size = new System.Drawing.Size(131, 27);
+            this.MenuManageBooks.Size = new System.Drawing.Size(109, 22);
             this.MenuManageBooks.Text = "Manage Books";
             this.MenuManageBooks.Click += new System.EventHandler(this.MenuManageBooks_Click);
             // 
@@ -235,24 +205,21 @@ namespace Group4
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(281, 725);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(211, 569);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(548, 26);
+            this.label2.Size = new System.Drawing.Size(433, 22);
             this.label2.TabIndex = 14;
             this.label2.Text = "The library is a brand, when you\'ve got a card in your hand";
             // 
             // CopyCrud
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Lavender;
-            this.ClientSize = new System.Drawing.Size(1160, 775);
+            this.ClientSize = new System.Drawing.Size(870, 613);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
             this.Controls.Add(this.StID);
-            this.Controls.Add(this.StName);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.endBorrow1);
@@ -261,7 +228,6 @@ namespace Group4
             this.Controls.Add(this.CopyCrudTitle);
             this.Controls.Add(this.copyCrudMenu);
             this.MainMenuStrip = this.copyCrudMenu;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "CopyCrud";
             this.Text = "CopyCrud";
             this.Load += new System.EventHandler(this.CopyCrud_Load);
@@ -281,9 +247,7 @@ namespace Group4
         private System.Windows.Forms.Button endBorrow1;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox StName;
         private System.Windows.Forms.TextBox StID;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.MenuStrip copyCrudMenu;
         private System.Windows.Forms.ToolStripMenuItem MenuHomePage;
