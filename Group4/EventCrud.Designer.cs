@@ -112,7 +112,7 @@
             this.SpeakerName.Location = new System.Drawing.Point(293, 37);
             this.SpeakerName.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.SpeakerName.Name = "SpeakerName";
-            this.SpeakerName.Size = new System.Drawing.Size(114, 46);
+            this.SpeakerName.Size = new System.Drawing.Size(119, 49);
             this.SpeakerName.TabIndex = 8;
             this.SpeakerName.Text = "Name";
             this.SpeakerName.Click += new System.EventHandler(this.BookCrudTitle_Click);
@@ -121,7 +121,7 @@
             // 
             this.GuestNameTextBox.Font = new System.Drawing.Font("Trebuchet MS", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.GuestNameTextBox.Location = new System.Drawing.Point(413, 122);
-            this.GuestNameTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.GuestNameTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.GuestNameTextBox.Name = "GuestNameTextBox";
             this.GuestNameTextBox.Size = new System.Drawing.Size(169, 27);
             this.GuestNameTextBox.TabIndex = 45;
@@ -226,7 +226,7 @@
             // 
             this.UpdateEvent.Font = new System.Drawing.Font("Trebuchet MS", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.UpdateEvent.Location = new System.Drawing.Point(117, 463);
-            this.UpdateEvent.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.UpdateEvent.Margin = new System.Windows.Forms.Padding(5);
             this.UpdateEvent.Name = "UpdateEvent";
             this.UpdateEvent.Size = new System.Drawing.Size(137, 63);
             this.UpdateEvent.TabIndex = 46;
@@ -238,7 +238,7 @@
             // 
             this.CreateNewEvent.Font = new System.Drawing.Font("Trebuchet MS", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CreateNewEvent.Location = new System.Drawing.Point(326, 463);
-            this.CreateNewEvent.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.CreateNewEvent.Margin = new System.Windows.Forms.Padding(4);
             this.CreateNewEvent.Name = "CreateNewEvent";
             this.CreateNewEvent.Size = new System.Drawing.Size(145, 67);
             this.CreateNewEvent.TabIndex = 47;
@@ -250,7 +250,7 @@
             // 
             this.DeleteEvent.Font = new System.Drawing.Font("Trebuchet MS", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DeleteEvent.Location = new System.Drawing.Point(545, 463);
-            this.DeleteEvent.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.DeleteEvent.Margin = new System.Windows.Forms.Padding(5);
             this.DeleteEvent.Name = "DeleteEvent";
             this.DeleteEvent.Size = new System.Drawing.Size(100, 63);
             this.DeleteEvent.TabIndex = 49;
@@ -261,8 +261,8 @@
             // RegisterBTN
             // 
             this.RegisterBTN.Font = new System.Drawing.Font("Trebuchet MS", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RegisterBTN.Location = new System.Drawing.Point(326, 465);
-            this.RegisterBTN.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.RegisterBTN.Location = new System.Drawing.Point(326, 464);
+            this.RegisterBTN.Margin = new System.Windows.Forms.Padding(5);
             this.RegisterBTN.Name = "RegisterBTN";
             this.RegisterBTN.Size = new System.Drawing.Size(145, 65);
             this.RegisterBTN.TabIndex = 50;
@@ -274,7 +274,7 @@
             // 
             this.EventDatePicker.Font = new System.Drawing.Font("Trebuchet MS", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.EventDatePicker.Location = new System.Drawing.Point(413, 163);
-            this.EventDatePicker.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.EventDatePicker.Margin = new System.Windows.Forms.Padding(4);
             this.EventDatePicker.Name = "EventDatePicker";
             this.EventDatePicker.Size = new System.Drawing.Size(308, 27);
             this.EventDatePicker.TabIndex = 51;
@@ -294,7 +294,7 @@
             // 
             this.numericMaxAttendance.Font = new System.Drawing.Font("Trebuchet MS", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.numericMaxAttendance.Location = new System.Drawing.Point(413, 241);
-            this.numericMaxAttendance.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.numericMaxAttendance.Margin = new System.Windows.Forms.Padding(4);
             this.numericMaxAttendance.Name = "numericMaxAttendance";
             this.numericMaxAttendance.Size = new System.Drawing.Size(160, 27);
             this.numericMaxAttendance.TabIndex = 53;
@@ -304,7 +304,7 @@
             this.numericPrice.DecimalPlaces = 2;
             this.numericPrice.Font = new System.Drawing.Font("Trebuchet MS", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.numericPrice.Location = new System.Drawing.Point(411, 345);
-            this.numericPrice.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.numericPrice.Margin = new System.Windows.Forms.Padding(4);
             this.numericPrice.Maximum = new decimal(new int[] {
             20000,
             0,
@@ -340,7 +340,7 @@
             this.OpenForRegistrationCheckBox.AutoSize = true;
             this.OpenForRegistrationCheckBox.Font = new System.Drawing.Font("Trebuchet MS", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.OpenForRegistrationCheckBox.Location = new System.Drawing.Point(413, 279);
-            this.OpenForRegistrationCheckBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.OpenForRegistrationCheckBox.Margin = new System.Windows.Forms.Padding(4);
             this.OpenForRegistrationCheckBox.Name = "OpenForRegistrationCheckBox";
             this.OpenForRegistrationCheckBox.Size = new System.Drawing.Size(18, 17);
             this.OpenForRegistrationCheckBox.TabIndex = 58;
@@ -351,7 +351,7 @@
             this.GuestTypeComboBox.Font = new System.Drawing.Font("Trebuchet MS", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.GuestTypeComboBox.FormattingEnabled = true;
             this.GuestTypeComboBox.Location = new System.Drawing.Point(411, 197);
-            this.GuestTypeComboBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.GuestTypeComboBox.Margin = new System.Windows.Forms.Padding(4);
             this.GuestTypeComboBox.Name = "GuestTypeComboBox";
             this.GuestTypeComboBox.Size = new System.Drawing.Size(160, 31);
             this.GuestTypeComboBox.TabIndex = 60;
@@ -361,7 +361,7 @@
             // 
             this.updateEventbtn.Font = new System.Drawing.Font("Trebuchet MS", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.updateEventbtn.Location = new System.Drawing.Point(673, 247);
-            this.updateEventbtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.updateEventbtn.Margin = new System.Windows.Forms.Padding(4);
             this.updateEventbtn.Name = "updateEventbtn";
             this.updateEventbtn.Size = new System.Drawing.Size(100, 49);
             this.updateEventbtn.TabIndex = 61;
@@ -382,20 +382,21 @@
             // finalRatingScore
             // 
             this.finalRatingScore.AutoSize = true;
-            this.finalRatingScore.Font = new System.Drawing.Font("Trebuchet MS", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.finalRatingScore.Location = new System.Drawing.Point(639, 62);
+            this.finalRatingScore.Font = new System.Drawing.Font("Trebuchet MS", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.finalRatingScore.Location = new System.Drawing.Point(620, 62);
             this.finalRatingScore.Name = "finalRatingScore";
-            this.finalRatingScore.Size = new System.Drawing.Size(101, 23);
+            this.finalRatingScore.Size = new System.Drawing.Size(111, 24);
             this.finalRatingScore.TabIndex = 63;
             this.finalRatingScore.Text = "Final Rating";
+            this.finalRatingScore.Click += new System.EventHandler(this.finalRatingScore_Click);
             // 
             // WatchReviews
             // 
             this.WatchReviews.Font = new System.Drawing.Font("Trebuchet MS", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.WatchReviews.Location = new System.Drawing.Point(633, 89);
-            this.WatchReviews.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.WatchReviews.Location = new System.Drawing.Point(624, 90);
+            this.WatchReviews.Margin = new System.Windows.Forms.Padding(4);
             this.WatchReviews.Name = "WatchReviews";
-            this.WatchReviews.Size = new System.Drawing.Size(140, 53);
+            this.WatchReviews.Size = new System.Drawing.Size(182, 53);
             this.WatchReviews.TabIndex = 64;
             this.WatchReviews.Text = "Watch Reviews";
             this.WatchReviews.UseVisualStyleBackColor = true;
