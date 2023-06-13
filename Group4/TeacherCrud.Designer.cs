@@ -53,7 +53,7 @@ namespace Group4
             this.BringBackFromArchieve.Font = new System.Drawing.Font("Trebuchet MS", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BringBackFromArchieve.Location = new System.Drawing.Point(544, 119);
             this.BringBackFromArchieve.Name = "BringBackFromArchieve";
-            this.BringBackFromArchieve.Size = new System.Drawing.Size(158, 88);
+            this.BringBackFromArchieve.Size = new System.Drawing.Size(201, 134);
             this.BringBackFromArchieve.TabIndex = 69;
             this.BringBackFromArchieve.Text = "Return From Archieve";
             this.BringBackFromArchieve.UseVisualStyleBackColor = true;

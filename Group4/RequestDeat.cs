@@ -109,6 +109,7 @@ namespace Group4
                 CancelBTN.Hide();
                 CreateReqbtn.Hide();
                 loadEnum();
+                StatusCombo.SelectedIndex = 0;
             }
             else
             {

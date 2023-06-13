@@ -80,24 +80,6 @@ namespace Group4
                 e.set_Teacher(this);
             }
         }
-        public void removeEvent(Event e)
-        {
-            if (e == null)
-                return;
-            if (this.Events != null)
-                if (this.Events.Contains(e))
-                {
-                    this.Events.Remove(e);
-                }
-        }
-
-        public void removeAllEvents()
-        {
-            if (this.Events != null)
-            {
-                this.Events.Clear();
-            }
-        }
 
         public void create_teacher()
         {
