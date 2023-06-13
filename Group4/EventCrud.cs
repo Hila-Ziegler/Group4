@@ -234,7 +234,9 @@ namespace Group4
             }
             else
             {
-
+                string str = "Invalid Guest Name.";
+                IncorrectInformation inin = new IncorrectInformation(str);
+                inin.Show();
             }
         }
 
