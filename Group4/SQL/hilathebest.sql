@@ -52,10 +52,10 @@ AS
 INSERT INTO dbo.Books
 Values (@serialNumber, @title, @author, @publishYear,@language, @rating, @arcive)
 
-CREATE PROCEDURE dbo.SP_add_Copies @copyNumber	INTEGER ,@serialNumber	VARCHAR(50), @status BIT 
+CREATE PROCEDURE dbo.SP_add_Copies @copyNumber	INTEGER ,@serialNumber	VARCHAR(50), @status BIT, @deleted BIT
 AS
 INSERT INTO dbo.Copies
-Values (@copyNumber	,@serialNumber, @status )
+Values (@copyNumber	,@serialNumber, @status, @deleted)
 
 CREATE PROCEDURE dbo.SP_add_Teachers @id VARCHAR(50), @name VARCHAR(50),@password VARCHAR(100),@archive BIT
 AS
@@ -108,11 +108,11 @@ SET
 serialNumber=@serialNumber, title=@title, author=@author, language=@language, rating=@rating ,archive=@arcive, publishYear=@publishYear
 WHERE serialNumber=@serialNumber
 
-CREATE PROCEDURE dbo.SP_Update_Copy @copyNumber	INTEGER ,@serialNumber	VARCHAR(50), @status BIT 
+CREATE PROCEDURE dbo.SP_Update_Copy @copyNumber	INTEGER ,@serialNumber	VARCHAR(50), @status BIT, @deleted BIT
 AS
 Update dbo.Copies
 SET
-status=@status
+status=@status, deleted=@deleted 
 WHERE copyNumber=@copyNumber AND serialNumber=@serialNumber
 
 CREATE PROCEDURE dbo.SP_Update_Teacher @id VARCHAR(50), @name VARCHAR(50),@password VARCHAR(100),@archive BIT
@@ -162,20 +162,20 @@ WHERE startDT=@startDT AND sid=@sid AND lid=@lid
 CREATE PROCEDURE dbo.SP_delete_Event @guestSpeakerName	VARCHAR(50),@date DATETIME
 AS
 DELETE FROM dbo.Events
-WHERE @guestSpeakerName=@guestSpeakerName AND date=@date
+WHERE guestSpeakerName=@guestSpeakerName AND date=@date
 
 
 
 --DROP PROCEDURE dbo.SP_delete_Books
-CREATE PROCEDURE dbo.SP_delete_Books
+CREATE PROCEDURE dbo.SP_delete_Books --@serialNumber VARCHAR(50), @title VARCHAR(50), @author VARCHAR(50), @publishYear INT ,@language VARCHAR(50) , @rating FLOAT , @arcive BIT
 AS
 DELETE FROM dbo.Books
 WHERE serialNumber IS NOT NULL
 --DROP PROCEDURE dbo.SP_delete_Copies
-CREATE PROCEDURE dbo.SP_delete_Copies
+CREATE PROCEDURE dbo.SP_delete_Copies @copyNumber	INTEGER, @serialNumber	VARCHAR(50), @status BIT, @deleted BIT
 AS
 DELETE FROM dbo.Copies
-WHERE serialNumber IS NOT NULL
+WHERE serialNumber=@serialNumber AND copyNumber=@copyNumber
 --DROP PROCEDURE dbo.SP_delete_Librarians
 CREATE PROCEDURE dbo.SP_delete_Librarians
 AS
