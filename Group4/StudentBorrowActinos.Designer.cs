@@ -193,10 +193,10 @@
             // SuggestAlternativeBook
             // 
             this.SuggestAlternativeBook.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SuggestAlternativeBook.Location = new System.Drawing.Point(466, 456);
-            this.SuggestAlternativeBook.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.SuggestAlternativeBook.Location = new System.Drawing.Point(457, 420);
+            this.SuggestAlternativeBook.Margin = new System.Windows.Forms.Padding(4);
             this.SuggestAlternativeBook.Name = "SuggestAlternativeBook";
-            this.SuggestAlternativeBook.Size = new System.Drawing.Size(235, 26);
+            this.SuggestAlternativeBook.Size = new System.Drawing.Size(258, 38);
             this.SuggestAlternativeBook.TabIndex = 41;
             this.SuggestAlternativeBook.Text = "Suggest Alternative Book";
             this.SuggestAlternativeBook.UseVisualStyleBackColor = true;
@@ -253,7 +253,7 @@
             "4",
             "5"});
             this.RatingCB.Location = new System.Drawing.Point(334, 357);
-            this.RatingCB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.RatingCB.Margin = new System.Windows.Forms.Padding(4);
             this.RatingCB.Name = "RatingCB";
             this.RatingCB.Size = new System.Drawing.Size(169, 34);
             this.RatingCB.TabIndex = 50;
@@ -316,10 +316,11 @@
             // 
             // RequestTimebtn
             // 
-            this.RequestTimebtn.Location = new System.Drawing.Point(154, 454);
-            this.RequestTimebtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.RequestTimebtn.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.RequestTimebtn.Location = new System.Drawing.Point(145, 418);
+            this.RequestTimebtn.Margin = new System.Windows.Forms.Padding(4);
             this.RequestTimebtn.Name = "RequestTimebtn";
-            this.RequestTimebtn.Size = new System.Drawing.Size(184, 28);
+            this.RequestTimebtn.Size = new System.Drawing.Size(236, 40);
             this.RequestTimebtn.TabIndex = 56;
             this.RequestTimebtn.Text = "Request Time Extention";
             this.RequestTimebtn.UseVisualStyleBackColor = true;
@@ -327,10 +328,11 @@
             // 
             // CancelTimeExtbtn
             // 
-            this.CancelTimeExtbtn.Location = new System.Drawing.Point(154, 418);
-            this.CancelTimeExtbtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.CancelTimeExtbtn.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CancelTimeExtbtn.Location = new System.Drawing.Point(145, 418);
+            this.CancelTimeExtbtn.Margin = new System.Windows.Forms.Padding(4);
             this.CancelTimeExtbtn.Name = "CancelTimeExtbtn";
-            this.CancelTimeExtbtn.Size = new System.Drawing.Size(227, 28);
+            this.CancelTimeExtbtn.Size = new System.Drawing.Size(236, 40);
             this.CancelTimeExtbtn.TabIndex = 57;
             this.CancelTimeExtbtn.Text = "Cancel Time Extention Request";
             this.CancelTimeExtbtn.UseVisualStyleBackColor = true;
@@ -338,10 +340,11 @@
             // 
             // CancelAltbtn
             // 
-            this.CancelAltbtn.Location = new System.Drawing.Point(466, 418);
-            this.CancelAltbtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.CancelAltbtn.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CancelAltbtn.Location = new System.Drawing.Point(457, 418);
+            this.CancelAltbtn.Margin = new System.Windows.Forms.Padding(4);
             this.CancelAltbtn.Name = "CancelAltbtn";
-            this.CancelAltbtn.Size = new System.Drawing.Size(235, 28);
+            this.CancelAltbtn.Size = new System.Drawing.Size(258, 40);
             this.CancelAltbtn.TabIndex = 58;
             this.CancelAltbtn.Text = "Cancel Alternative Book Request";
             this.CancelAltbtn.UseVisualStyleBackColor = true;
@@ -351,6 +354,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Lavender;
             this.ClientSize = new System.Drawing.Size(912, 543);
             this.Controls.Add(this.CancelAltbtn);
             this.Controls.Add(this.CancelTimeExtbtn);
