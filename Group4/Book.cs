@@ -206,6 +206,19 @@ namespace Group4
             return this.Copies.Count();
         }
 
+        public int countCopiesNotDeleted()
+        {
+            int count = 0;
+            foreach(Copy c in this.Copies)
+            {
+                if (!c.get_deleted())
+                {
+                    count++;
+                }
+            }
+            return count;
+        }
+
         public void calculateAverageRating()
         {
             float count=0;
