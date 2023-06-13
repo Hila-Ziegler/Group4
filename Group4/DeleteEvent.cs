@@ -26,6 +26,7 @@ namespace Group4
         private void button1_Click(object sender, EventArgs e)
         {
             this.e.delete_Event();
+            Program.events.Remove(this.e);
             this.ec.Hide();
             AvailableEvent ae = new AvailableEvent(t);
             ae.Show();

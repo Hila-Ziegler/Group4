@@ -97,9 +97,15 @@ namespace Group4
                     finalRatingScore.Hide();
                     WatchReviews.Hide();
                 }
-                else
+                else if (this.ev.get_date().ToShortDateString() == DateTime.Now.ToShortDateString())
                 {
-                    this.setFinalRatingScore();
+                    finalRatingScore.Hide();
+                    WatchReviews.Hide();
+                }
+                else 
+                {
+                     this.setFinalRatingScore();
+                
                 }
             }
             else
@@ -262,29 +268,41 @@ namespace Group4
 
         private void updateEventbtn_Click(object sender, EventArgs e)
         {
-            if (DateTime.Parse(EventDatePicker.Value.ToString()) != this.ev.get_date())
+            if (GuestNameTextBox.Text != "")
             {
-                foreach (Registration re in Program.registrations)
+
+
+                if (DateTime.Parse(EventDatePicker.Value.ToString()) != this.ev.get_date())
                 {
-                    if(this.ev.getNum() == re.GetEvent().getNum())
+                    foreach (Registration re in Program.registrations)
                     {
-                        re.set_oldDate(this.ev.get_date().ToShortDateString());
-                        re.update_Registration();
+                        if (this.ev.getNum() == re.GetEvent().getNum())
+                        {
+                            re.set_oldDate(this.ev.get_date().ToShortDateString());
+                            re.update_Registration();
+                        }
                     }
                 }
-            }
-            this.ev.set_guestName(GuestNameTextBox.Text);
-            this.ev.set_date(DateTime.Parse(EventDatePicker.Value.ToString()));
-            this.ev.set_guestType((GuestType)Enum.Parse(typeof(GuestType), GuestTypeComboBox.Text));
-            this.ev.set_maxGuests(int.Parse(numericMaxAttendance.Value.ToString()));
-            this.ev.set_price(float.Parse(numericPrice.Value.ToString()));
-            this.ev.set_Status(OpenForRegistrationCheckBox.Checked ? (Status)Enum.Parse(typeof(Status), "Open") : (Status)Enum.Parse(typeof(Status), "Closed"));
-            this.ev.update_Event();
+                this.ev.set_guestName(GuestNameTextBox.Text);
+                this.ev.set_date(DateTime.Parse(EventDatePicker.Value.ToString()));
+                this.ev.set_guestType((GuestType)Enum.Parse(typeof(GuestType), GuestTypeComboBox.Text));
+                this.ev.set_maxGuests(int.Parse(numericMaxAttendance.Value.ToString()));
+                this.ev.set_price(float.Parse(numericPrice.Value.ToString()));
+                this.ev.set_Status(OpenForRegistrationCheckBox.Checked ? (Status)Enum.Parse(typeof(Status), "Open") : (Status)Enum.Parse(typeof(Status), "Closed"));
+                this.ev.update_Event();
 
-            EventCrud form24 = new EventCrud("", this.t, this.ev);
-            form24.Show();
-            this.Hide();
+                EventCrud form24 = new EventCrud("", this.t, this.ev);
+                form24.Show();
+                this.Hide();
+            }
+            else
+            {
+                string str = "Invalid Guest Name.";
+                IncorrectInformation inin = new IncorrectInformation(str);
+                inin.Show();
+            }
         }
+
 
         private void RegisterBTN_Click(object sender, EventArgs e)
         {
@@ -332,7 +350,7 @@ namespace Group4
                     }
                 }
             }
-            finalRatingScore.Text = $"Event's Final Rating: {(float)(score/counter)}";
+            finalRatingScore.Text = $"Event's Final Rating: {(counter!=0 ? ((float)(score/counter)):0)}";
 
         }
 
@@ -342,6 +360,11 @@ namespace Group4
         }
 
         private void finalRatingScore_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void GuestNameTextBox_TextChanged(object sender, EventArgs e)
         {
 
         }

@@ -82,9 +82,12 @@ namespace Group4
                     this.dataGridView1.Rows[i].Cells[1].Value = e.get_date();
                     this.dataGridView1.Rows[i].Cells[2].Value = e.get_currentlyRegistered();
                     this.dataGridView1.Rows[i].Cells[3].Value = e.get_maxGuests();
+                    this.dataGridView1.Rows[i].Cells[4].Value = e.get_Status().ToString();
 
-
-
+                }
+                else
+                {
+                    dataGridView1.Rows.Add(e.get_guestName(), e.get_date(), e.get_currentlyRegistered(), e.get_maxGuests());
                 }
 
                 i++;
@@ -174,7 +177,12 @@ namespace Group4
                     this.dataGridView1.Rows[i].Cells[1].Value = e.get_date();
                     this.dataGridView1.Rows[i].Cells[2].Value = e.get_currentlyRegistered();
                     this.dataGridView1.Rows[i].Cells[3].Value = e.get_maxGuests();
+                    this.dataGridView1.Rows[i].Cells[4].Value = e.get_Status().ToString();
 
+                }
+                else
+                {
+                    dataGridView1.Rows.Add(e.get_guestName(), e.get_date(), e.get_currentlyRegistered(), e.get_maxGuests());
                 }
 
                 i++;
