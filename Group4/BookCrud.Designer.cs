@@ -34,6 +34,9 @@ namespace Group4
             this.BookCrudUpdateBTN = new System.Windows.Forms.Button();
             this.BookCrudDeleteBTN = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.CopyNum = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.Borrowed = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Actions = new System.Windows.Forms.DataGridViewButtonColumn();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -59,9 +62,7 @@ namespace Group4
             this.BringBackFromArchieve = new System.Windows.Forms.Button();
             this.LngCombo = new System.Windows.Forms.ComboBox();
             this.Avilabletxt = new System.Windows.Forms.Label();
-            this.CopyNum = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.Borrowed = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Actions = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.ManageWaitlist1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -93,7 +94,7 @@ namespace Group4
             // 
             this.BookCrudUpdateBTN.Font = new System.Drawing.Font("Trebuchet MS", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BookCrudUpdateBTN.Location = new System.Drawing.Point(147, 350);
-            this.BookCrudUpdateBTN.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.BookCrudUpdateBTN.Margin = new System.Windows.Forms.Padding(4);
             this.BookCrudUpdateBTN.Name = "BookCrudUpdateBTN";
             this.BookCrudUpdateBTN.Size = new System.Drawing.Size(97, 46);
             this.BookCrudUpdateBTN.TabIndex = 6;
@@ -105,7 +106,7 @@ namespace Group4
             // 
             this.BookCrudDeleteBTN.Font = new System.Drawing.Font("Trebuchet MS", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BookCrudDeleteBTN.Location = new System.Drawing.Point(403, 350);
-            this.BookCrudDeleteBTN.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.BookCrudDeleteBTN.Margin = new System.Windows.Forms.Padding(4);
             this.BookCrudDeleteBTN.Name = "BookCrudDeleteBTN";
             this.BookCrudDeleteBTN.Size = new System.Drawing.Size(100, 46);
             this.BookCrudDeleteBTN.TabIndex = 7;
@@ -121,13 +122,38 @@ namespace Group4
             this.Borrowed,
             this.Actions});
             this.dataGridView1.Location = new System.Drawing.Point(147, 423);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.Size = new System.Drawing.Size(428, 158);
             this.dataGridView1.TabIndex = 8;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick_1);
             this.dataGridView1.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
+            // CopyNum
+            // 
+            this.CopyNum.HeaderText = "Copy Number";
+            this.CopyNum.MinimumWidth = 6;
+            this.CopyNum.Name = "CopyNum";
+            this.CopyNum.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.CopyNum.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.CopyNum.Text = "";
+            this.CopyNum.Width = 125;
+            // 
+            // Borrowed
+            // 
+            this.Borrowed.HeaderText = "Borrowed";
+            this.Borrowed.MinimumWidth = 6;
+            this.Borrowed.Name = "Borrowed";
+            this.Borrowed.Width = 125;
+            // 
+            // Actions
+            // 
+            this.Actions.HeaderText = "Actions";
+            this.Actions.MinimumWidth = 6;
+            this.Actions.Name = "Actions";
+            this.Actions.Text = "";
+            this.Actions.Width = 125;
             // 
             // label3
             // 
@@ -384,7 +410,7 @@ namespace Group4
             this.LngCombo.Font = new System.Drawing.Font("Trebuchet MS", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LngCombo.FormattingEnabled = true;
             this.LngCombo.Location = new System.Drawing.Point(283, 231);
-            this.LngCombo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.LngCombo.Margin = new System.Windows.Forms.Padding(4);
             this.LngCombo.Name = "LngCombo";
             this.LngCombo.Size = new System.Drawing.Size(128, 31);
             this.LngCombo.TabIndex = 33;
@@ -399,30 +425,15 @@ namespace Group4
             this.Avilabletxt.Size = new System.Drawing.Size(0, 17);
             this.Avilabletxt.TabIndex = 34;
             // 
-            // CopyNum
+            // ManageWaitlist1
             // 
-            this.CopyNum.HeaderText = "Copy Number";
-            this.CopyNum.MinimumWidth = 6;
-            this.CopyNum.Name = "CopyNum";
-            this.CopyNum.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.CopyNum.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.CopyNum.Text = "";
-            this.CopyNum.Width = 125;
-            // 
-            // Borrowed
-            // 
-            this.Borrowed.HeaderText = "Borrowed";
-            this.Borrowed.MinimumWidth = 6;
-            this.Borrowed.Name = "Borrowed";
-            this.Borrowed.Width = 125;
-            // 
-            // Actions
-            // 
-            this.Actions.HeaderText = "Actions";
-            this.Actions.MinimumWidth = 6;
-            this.Actions.Name = "Actions";
-            this.Actions.Text = "";
-            this.Actions.Width = 125;
+            this.ManageWaitlist1.Location = new System.Drawing.Point(603, 191);
+            this.ManageWaitlist1.Name = "ManageWaitlist1";
+            this.ManageWaitlist1.Size = new System.Drawing.Size(127, 49);
+            this.ManageWaitlist1.TabIndex = 35;
+            this.ManageWaitlist1.Text = "Manage Waitlist";
+            this.ManageWaitlist1.UseVisualStyleBackColor = true;
+            this.ManageWaitlist1.Click += new System.EventHandler(this.ManageWaitlist_Click);
             // 
             // BookCrud
             // 
@@ -430,6 +441,7 @@ namespace Group4
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Lavender;
             this.ClientSize = new System.Drawing.Size(839, 658);
+            this.Controls.Add(this.ManageWaitlist1);
             this.Controls.Add(this.Avilabletxt);
             this.Controls.Add(this.LngCombo);
             this.Controls.Add(this.BringBackFromArchieve);
@@ -460,7 +472,7 @@ namespace Group4
             this.Controls.Add(this.BookCrudTitle);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "BookCrud";
             this.Text = "BookCrud";
             this.Load += new System.EventHandler(this.BookCrud_Load);
@@ -507,5 +519,6 @@ namespace Group4
         private System.Windows.Forms.DataGridViewButtonColumn CopyNum;
         private System.Windows.Forms.DataGridViewTextBoxColumn Borrowed;
         private System.Windows.Forms.DataGridViewButtonColumn Actions;
+        private System.Windows.Forms.Button ManageWaitlist1;
     }
 }

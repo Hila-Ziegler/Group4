@@ -133,6 +133,11 @@ namespace Group4
 
             if (sn != "update" && sn != null)
             {
+                ManageWaitlist1.Hide();
+                if (this.librarian != null)
+                {
+                    ManageWaitlist1.Show();
+                }
                 if (Program.seekBook(sn).isAvailable())
                 {
                     Avilabletxt.Text = "Available";
@@ -142,7 +147,6 @@ namespace Group4
                 {
                     Avilabletxt.Text = "Unavailable";
                     Avilabletxt.ForeColor = Color.Red;
-
                 }
                 BringBackFromArchieve.Hide();
                 ISBNTextBox.Hide();
@@ -261,24 +265,12 @@ namespace Group4
         {
             if (this.b != null)
             {
-/*                if (Program.seekCopy(this.b, 1) == null)
-                {
-                    Copy firstCopy = new Copy(1, b, false, false, true);
-                    b.addCopy(firstCopy);
-                    this.copies.Add(firstCopy);
-                    //Program.copies.Add(c);
-                    this.update_CopyList();
-                }*/
-/*                else
-                {*/
                     Func<Copy, int> fieldSelector = copy => copy.get_copyNum();
                     int maxFieldValue = this.copies.Max(fieldSelector);
                     Copy c = new Copy(maxFieldValue + 1, b, false, false, true);
                     b.addCopy(c);
                     this.copies.Add(c);
-                    //Program.copies.Add(c);
                     this.update_CopyList();
-/*                }*/
              
 
             }
@@ -327,24 +319,6 @@ namespace Group4
                 bc.Show();
                 return false;
             }
-            /*            string ans = languageTextBox.Text.Substring(0, 1).ToUpper() + languageTextBox.Text.Substring(1).ToLower();
-                        languageTextBox.Text = ans;
-                        string langOptions = "";
-                        foreach (Language lang in Enum.GetValues(typeof(Language)))
-                        {
-                            langOptions = langOptions + lang.ToString() + ", ";
-                            if (ans == lang.ToString())
-                            {
-                                return true;
-                            }
-
-                        }
-                        langOptions = langOptions.Substring(0, langOptions.Length - 2) + ".";
-                        //Error Window
-                        String st = $"Unavailable language, \nPlease try again,\nAvailable langueges: {langOptions}";
-                        bc = new BookCrudErrorWindow(st,this);
-                        bc.Show();
-                        return false;*/
             return true;
         }
 
@@ -409,6 +383,13 @@ namespace Group4
                 c.update_Copy();
                 this.BookCrud_Load(sender, e);
             }
+        }
+
+        private void ManageWaitlist_Click(object sender, EventArgs e)
+        {
+            ManageWaitList mwl = new ManageWaitList(this.b);
+            mwl.Show();
+
         }
     }
 }
