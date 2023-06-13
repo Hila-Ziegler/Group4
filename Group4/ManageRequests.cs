@@ -50,6 +50,8 @@ namespace Group4
             int i = 0;
             foreach (Request r in requests)
             {
+                if (r.get_Librarian().get_ID() == librarian.get_ID())
+                {
                 if (r.get_type().ToString() == "TimeExtention")
                 {
                     this.dataGridView1.Rows[i].Cells[0].Value = r.get_startDT();
@@ -57,18 +59,24 @@ namespace Group4
                     this.dataGridView1.Rows[i].Cells[2].Value = "View";
                     i++;
                 }
+
+                }
             }
             this.dataGridView2.DataSource = requests.ToArray();
             int j = 0;
             foreach (Request r in requests)
             {
-                if (r.get_type().ToString() == "AlternativeBook")
+                if (r.get_Librarian().get_ID() == librarian.get_ID())
+                {
+                    if (r.get_type().ToString() == "AlternativeBook")
                 {
                     this.dataGridView2.Rows[j].Cells[0].Value = r.get_startDT();
                     this.dataGridView2.Rows[j].Cells[1].Value = r.get_Student().get_ID();
                     this.dataGridView2.Rows[j].Cells[2].Value = "View";
                     j++;
                 }
+                }
+
 
             }
             SizeAllColumns(sender, e);
