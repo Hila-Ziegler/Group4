@@ -83,6 +83,10 @@ namespace Group4
 
         private void CopyCrud_Load(object sender, EventArgs e)
         {
+            if (this.copy.get_deleted() == true)
+            {
+                StartBorrow.Visible = false;
+            }
             if (this.copy.get_status() == false)
             {
                 endBorrow1.Visible = false;
@@ -136,11 +140,6 @@ namespace Group4
                 this.copy.update_Copy();
                 this.updateBookHistory();
             }
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

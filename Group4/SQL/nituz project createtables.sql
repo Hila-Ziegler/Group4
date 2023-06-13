@@ -23,6 +23,7 @@ CREATE TABLE dbo.Copies (
 	copyNumber		INTEGER NOT NULL,
 	serialNumber	VARCHAR(50) NOT NULL, 
 	status			BIT NOT NULL,
+	deleted			BIT NOT NULL
 	CONSTRAINT FK_Copy_To_Book FOREIGN KEY (serialNumber) 
 		REFERENCES Books(serialNumber), -- CHECK WITH LIEL IF FOREIGN KEYS ARE ALLOWED
 	CONSTRAINT PK_Copy PRIMARY KEY (copyNumber, serialNumber) 
