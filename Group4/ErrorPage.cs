@@ -22,7 +22,7 @@ namespace Group4
 
         private void ErrorPage_Load(object sender, EventArgs e)
         {
-
+            ErrorText.Text = message;
         }
 
         private void Accept_Click(object sender, EventArgs e)
