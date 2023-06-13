@@ -97,20 +97,20 @@ namespace Group4
             int i = 0;
             foreach (Copy c in this.copies)
             {
-                if (c.get_book().get_sNumber() == sn)
+                if (c.get_book().get_sNumber() == sn && c.get_deleted() == false)
                 {
                     if (i < dataGridView1.Rows.Count)
                     {
-                        this.dataGridView1.Rows[i].Cells[0].Value = c.get_copyNum();
-                        this.dataGridView1.Rows[i].Cells[1].Value = c.get_status();
+                    this.dataGridView1.Rows[i].Cells[0].Value = c.get_copyNum();
+                    this.dataGridView1.Rows[i].Cells[1].Value = c.get_status();
+                    this.dataGridView1.Rows[i].Cells[2].Value = "Delete";
                     }
                     else
                     {
-                        dataGridView1.Rows.Add(c.get_copyNum(), c.get_status());
+                    dataGridView1.Rows.Add(c.get_copyNum(), c.get_status());
                     }
-                    i++;
+                    i++;  
                 }
-
             }
             dataGridView1.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
         }
@@ -261,13 +261,25 @@ namespace Group4
         {
             if (this.b != null)
             {
-                Func<Copy, int> fieldSelector = copy => copy.get_copyNum();
-                int maxFieldValue = this.copies.Max(fieldSelector);
-                Copy c = new Copy(maxFieldValue+1, b, false, true);
-                b.addCopy(c);
-                this.copies.Add(c);
-                Program.copies.Add(c);
-                this.update_CopyList();
+/*                if (Program.seekCopy(this.b, 1) == null)
+                {
+                    Copy firstCopy = new Copy(1, b, false, false, true);
+                    b.addCopy(firstCopy);
+                    this.copies.Add(firstCopy);
+                    //Program.copies.Add(c);
+                    this.update_CopyList();
+                }*/
+/*                else
+                {*/
+                    Func<Copy, int> fieldSelector = copy => copy.get_copyNum();
+                    int maxFieldValue = this.copies.Max(fieldSelector);
+                    Copy c = new Copy(maxFieldValue + 1, b, false, false, true);
+                    b.addCopy(c);
+                    this.copies.Add(c);
+                    //Program.copies.Add(c);
+                    this.update_CopyList();
+/*                }*/
+             
 
             }
         }
@@ -278,7 +290,7 @@ namespace Group4
             {
                 Language l = (Language)Enum.Parse(typeof(Language), LngCombo.Text);
                 Book b = new Book(ISBNTextBox.Text, TitleTextBox.Text, AuthorTextBox.Text, int.Parse(PublishYearTextBox.Text), l, 0, false, true);
-                Copy c = new Copy(1, b, false, true);
+                Copy c = new Copy(1, b, false, true, false);
                 b.Copies.Add(c);
 
                 BookCrud form12 = new BookCrud(b.get_sNumber(), librarian);
@@ -386,9 +398,17 @@ namespace Group4
             //Language v = (Language)this.LngCombo.SelectedValue;
         }
 
-        private void dataGridView1_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        private void dataGridView1_CellContentClick_1(object sender, DataGridViewCellEventArgs e) // change this dahof
         {
-
+            if (e.ColumnIndex == dataGridView1.Columns["Actions"].Index)
+            {
+                int i = e.RowIndex;
+                int cNum = int.Parse(dataGridView1.Rows[i].Cells[0].Value.ToString());
+                Copy c = Program.seekCopy(this.b, cNum);
+                c.set_deleted(true);
+                c.update_Copy();
+                this.BookCrud_Load(sender, e);
+            }
         }
     }
 }
