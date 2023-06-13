@@ -130,10 +130,9 @@ namespace Group4
 
         private void BookCrud_Load(object sender, EventArgs e)
         {
-
+            ManageWaitlist1.Hide();
             if (sn != "update" && sn != null)
             {
-                ManageWaitlist1.Hide();
                 if (this.librarian != null)
                 {
                     ManageWaitlist1.Show();
