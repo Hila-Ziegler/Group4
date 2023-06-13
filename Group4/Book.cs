@@ -234,7 +234,7 @@ namespace Group4
             }
 
             float a = ratingSum / count;
-            this.set_rating(a) ;
+            this.set_rating((float)Math.Round(a,2)) ;
         }
 
         public bool isAvailable()

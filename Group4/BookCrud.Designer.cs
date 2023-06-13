@@ -427,9 +427,10 @@ namespace Group4
             // 
             // ManageWaitlist1
             // 
-            this.ManageWaitlist1.Location = new System.Drawing.Point(603, 191);
+            this.ManageWaitlist1.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ManageWaitlist1.Location = new System.Drawing.Point(465, 174);
             this.ManageWaitlist1.Name = "ManageWaitlist1";
-            this.ManageWaitlist1.Size = new System.Drawing.Size(127, 49);
+            this.ManageWaitlist1.Size = new System.Drawing.Size(128, 69);
             this.ManageWaitlist1.TabIndex = 35;
             this.ManageWaitlist1.Text = "Manage Waitlist";
             this.ManageWaitlist1.UseVisualStyleBackColor = true;
