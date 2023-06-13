@@ -52,7 +52,7 @@ namespace Group4
                         if (bh.get_StartDate() == bh.get_EndDate() && this.copy.get_status() == true)
                         {
                             this.dataGridView1.Rows[i].Cells[1].Value = DBNull.Value;
-                            StartBorrow.Visible = false;
+                            StartBorrow.Hide();
                             StID.Visible = false;
                             label5.Visible = false;
                             endBorrow1.Visible = true;
@@ -166,7 +166,7 @@ namespace Group4
 
             int number;
             bool isNumeric = int.TryParse(StID.Text, out number);
-            if (isNumeric)
+            if (!isNumeric)
             {
                 String s = $"ID should not contain letters";
                 ep = new ErrorPage(s);
