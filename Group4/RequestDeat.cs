@@ -194,6 +194,7 @@ namespace Group4
             if (this.canAutoConfirm(b) && NewR.get_type().ToString() == "TimeExtention")
             {
                 NewR.set_status((Status)Enum.Parse(typeof(Status), "Approved"));
+                NewR.update_Request();
             }
             this.backToolStripMenuItem_Click(sender, e);
         }
