@@ -15,6 +15,8 @@ namespace Group4
         private Copy copy;
         private System.Collections.Generic.List<BookHistory> history;
         private Librarian librarian;
+        private int IDLength = 9;
+
         public CopyCrud(Copy c, Librarian libr)
         {
             librarian = libr;
@@ -50,9 +52,7 @@ namespace Group4
                         if (bh.get_StartDate() == bh.get_EndDate() && this.copy.get_status() == true)
                         {
                             this.dataGridView1.Rows[i].Cells[1].Value = DBNull.Value;
-                            StartBorrow.Visible = false;
-                            StName.Visible = false;
-                            label4.Visible = false;
+                            StartBorrow.Hide();
                             StID.Visible = false;
                             label5.Visible = false;
                             endBorrow1.Visible = true;
@@ -61,8 +61,6 @@ namespace Group4
                         {
                             this.dataGridView1.Rows[i].Cells[1].Value = bh.get_EndDate();
                             StartBorrow.Visible = true;
-                            StName.Visible = true;
-                            label4.Visible = true;
                             StID.Visible = true;
                             label5.Visible = true;
                             endBorrow1.Visible = false;
@@ -116,16 +114,20 @@ namespace Group4
 
         private void StartBorrow_Click(object sender, EventArgs e)
         {
-            Student st = Program.seekStudent(StID.Text);
-            DateTime startDate = DateTime.Now;
-            DateTime endDate = DateTime.Now;
-            BookHistory bh = new BookHistory(this.copy.get_copyNum(), this.copy.get_book(), st, startDate, endDate, 0, true);
-            this.history.Add(bh);
-            st.addBookHistory(bh);
-            copy.get_book().addBookHistory(bh);
-            this.copy.set_status(true);
-            this.copy.update_Copy();
-            this.updateBookHistory();
+            if (checkIfValid())
+            {
+                Student st = Program.seekStudent(StID.Text);
+                DateTime startDate = DateTime.Now;
+                DateTime endDate = DateTime.Now;
+                BookHistory bh = new BookHistory(this.copy.get_copyNum(), this.copy.get_book(), st, startDate, endDate, 0, true);
+                this.history.Add(bh);
+                st.addBookHistory(bh);
+                copy.get_book().addBookHistory(bh);
+                this.copy.set_status(true);
+                this.copy.update_Copy();
+                this.updateBookHistory();
+            }
+
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -141,5 +143,38 @@ namespace Group4
                 this.updateBookHistory();
             }
         }
+
+        private bool checkIfValid()
+        {
+            ErrorPage ep;
+            if (StID.Text == "")
+            {
+                String s = $"Not all required information entered, \nPlease try again";
+                ep = new ErrorPage(s);
+                ep.Show();
+                return false;
+            }
+
+            if (StID.Text.Length != IDLength)
+            {
+                // Error Window
+                String s = $"ID is not in the expected length, \nPlease enter a valid number of characters";
+                ep = new ErrorPage(s);
+                ep.Show();
+                return false;
+            }
+
+            int number;
+            bool isNumeric = int.TryParse(StID.Text, out number);
+            if (!isNumeric)
+            {
+                String s = $"ID should not contain letters";
+                ep = new ErrorPage(s);
+                ep.Show();
+                return false;
+            }
+            return true;
+        }
+
     }
 }

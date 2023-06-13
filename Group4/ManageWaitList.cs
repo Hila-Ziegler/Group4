@@ -52,7 +52,7 @@ namespace Group4
         {
             if(StudentIDComboBox.Text != "" || StudentIDComboBox.Text != null)
             {
-                BookInWaitlist newWaitList = new BookInWaitlist(DateTime.Now,Program.seekStudent(StudentIDComboBox.Text), this.b, true );
+                BookInWaitlist newWaitList = new BookInWaitlist(DateTime.Now,Program.seekStudent(StudentIDComboBox.Text), this.b, true, true );
                 this.loadDataGrid();
             }
         }

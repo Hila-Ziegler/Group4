@@ -379,9 +379,22 @@ namespace Group4
                 int i = e.RowIndex;
                 int cNum = int.Parse(dataGridView1.Rows[i].Cells[0].Value.ToString());
                 Copy c = Program.seekCopy(this.b, cNum);
-                c.set_deleted(true);
-                c.update_Copy();
-                this.BookCrud_Load(sender, e);
+                if (this.b.countCopies() == 1)
+                {
+                    c.set_deleted(true);
+                    c.update_Copy();
+                    this.b.set_archive(true);
+                    this.b.update_Book();
+                    this.Hide();
+                    ManageBooks form16 = new ManageBooks(librarian);
+                    form16.Show();
+                }
+                else
+                {
+                    c.set_deleted(true);
+                    c.update_Copy();
+                    this.BookCrud_Load(sender, e);
+                }
             }
         }
 

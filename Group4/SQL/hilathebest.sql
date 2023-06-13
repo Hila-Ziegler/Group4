@@ -87,10 +87,10 @@ AS
 INSERT INTO dbo.Requests
 Values (@type,@startDT,@sid,@lid,@endDT,@status ,@photoAddress, @serialNum, @copyNum)
 
-CREATE PROCEDURE dbo.SP_add_BookInWaitlist @startDate DATETIME ,@id VARCHAR(50), @serialNumber VARCHAR(50) 
+CREATE PROCEDURE dbo.SP_add_BookInWaitlist @startDate DATETIME ,@id VARCHAR(50), @serialNumber VARCHAR(50), @inList BIT
 AS
 INSERT INTO dbo.BookInWaitlist
-Values (@startDate ,@id , @serialNumber)
+Values (@startDate ,@id , @serialNumber, @inList)
 
 --Update records
 
@@ -128,6 +128,7 @@ Update dbo.Students
 SET
 name=@name, age=@age, club=@club, yearlyGoal=@yearlyGoal, password=@password, archive=@archive
 WHERE id=@id
+
 --DROP PROCEDURE dbo.SP_Update_BookHistory
 CREATE PROCEDURE dbo.SP_Update_BookHistory @copyNumber	INTEGER,@serialNumber VARCHAR(50), @id	VARCHAR(50), @startDate	DATETIME,@endDate DATETIME,@rate INTEGER
 AS
@@ -135,6 +136,7 @@ Update dbo.BookHistory
 SET
 endDate=@endDate, rate=@rate
 WHERE copyNumber=@copyNumber AND serialNumber=@serialNumber AND id=@id AND startDate=@startDate
+
 --DROP PROCEDURE dbo.SP_Update_Event
 CREATE PROCEDURE dbo.SP_Update_Event @guestType	VARCHAR(50),@date DATETIME,	@price	DECIMAL,@guestSpeakerName VARCHAR(50),@status VARCHAR(50), @maxGuests INTEGER,@currentlyRegistered INTEGER, @number INTEGER
 AS
@@ -156,6 +158,13 @@ Update dbo.Requests
 SET
 type=@type, endDT=@endDT, status=@status, photoAddress=@photoAddress, serialNumber=@serialNum, copyNumber=@copyNum
 WHERE startDT=@startDT AND sid=@sid AND lid=@lid
+
+CREATE PROCEDURE dbo.SP_Update_BookInWaitlist @startDate DATETIME, @id VARCHAR(50), @serialNumber VARCHAR(50), @inList BIT
+AS
+Update dbo.BookInWaitlist
+SET
+startDate=@startDate, id=@id, serialNumber=@serialNumber, inList=@inList
+WHERE id=@id AND serialNumber=@serialNumber
 
 --Delete record
 --DROP PROCEDURE dbo.SP_delete_Event
