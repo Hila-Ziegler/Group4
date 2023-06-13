@@ -137,7 +137,6 @@
     <Compile Include="EventReviews.Designer.cs">
       <DependentUpon>EventReviews.cs</DependentUpon>
     </Compile>
-    <Compile Include="forthELOL.cs" />
     <Compile Include="FriendSocialPage1.cs">
       <SubType>Form</SubType>
     </Compile>

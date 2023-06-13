@@ -91,7 +91,7 @@ namespace Group4
 
         private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.ColumnIndex == dataGridView2.Columns["Actions"].Index)
+            if (e.ColumnIndex == dataGridView2.Columns["Actions1"].Index)
             {
                 int i = e.RowIndex;
 
