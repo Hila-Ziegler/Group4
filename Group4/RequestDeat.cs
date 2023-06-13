@@ -190,7 +190,24 @@ namespace Group4
         private void CreateReqbtn_Click(object sender, EventArgs e)
         {
             Request NewR = new Request(this.requestType, DateTime.Now, this.student, this.librarian, DateTime.Now, (Status)Enum.Parse(typeof(Status), "Open"), this.copy, true);
+            Book b = NewR.get_copy().get_book();
+            if (this.canAutoConfirm(b) && NewR.get_type().ToString() == "TimeExtention")
+            {
+                NewR.set_status((Status)Enum.Parse(typeof(Status), "Approved"));
+            }
             this.backToolStripMenuItem_Click(sender, e);
+        }
+
+        private bool canAutoConfirm(Book b)
+        {
+            foreach (BookInWaitlist bw in Program.booksInWaitlist)
+            {
+                if (bw.get_Book() == b && bw.getInList())
+                {
+                    return false;
+                }
+            }
+            return true;
         }
     }
 }
