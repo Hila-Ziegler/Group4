@@ -318,7 +318,7 @@ namespace Group4
             {
                 Student s = seekStudent(rdr.GetValue(1).ToString());
                 Book bo = seekBook(rdr.GetValue(2).ToString());
-                BookInWaitlist b = new BookInWaitlist(DateTime.Parse(rdr.GetValue(0).ToString()), s, bo, false);
+                BookInWaitlist b = new BookInWaitlist(DateTime.Parse(rdr.GetValue(0).ToString()), s, bo,bool.Parse(rdr.GetValue(3).ToString()) ,false);
                 booksInWaitlist.Add(b);
             }
         }
