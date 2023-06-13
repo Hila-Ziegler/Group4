@@ -135,9 +135,9 @@
             // 
             this.labSchoolName.AutoSize = true;
             this.labSchoolName.Font = new System.Drawing.Font("Trebuchet MS", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labSchoolName.Location = new System.Drawing.Point(51, 59);
+            this.labSchoolName.Location = new System.Drawing.Point(34, 59);
             this.labSchoolName.Name = "labSchoolName";
-            this.labSchoolName.Size = new System.Drawing.Size(122, 23);
+            this.labSchoolName.Size = new System.Drawing.Size(130, 24);
             this.labSchoolName.TabIndex = 21;
             this.labSchoolName.Text = "School\'s Name";
             // 

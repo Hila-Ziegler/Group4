@@ -90,15 +90,22 @@ namespace Group4
         private void EventCrud_Load(object sender, EventArgs e)
         {
             this.Load_Enum();
-            if (this.ev.get_date()> DateTime.Now)
+            if (this.ev != null)
             {
-                finalRatingScore.Hide();
-                WatchReviews.Hide();
+                if (this.ev.get_date() > DateTime.Now)
+                {
+                    finalRatingScore.Hide();
+                    WatchReviews.Hide();
+                }
+                else
+                {
+                    this.setFinalRatingScore();
+                }
             }
             else
             {
-                this.setFinalRatingScore();
-
+                WatchReviews.Hide();
+                finalRatingScore.Hide();
             }
             if(s != null)
             {
@@ -213,15 +220,22 @@ namespace Group4
 
         private void CreateNewEvent_Click(object sender, EventArgs e)
         {
-            GuestType gt = (GuestType)Enum.Parse(typeof(GuestType),GuestTypeComboBox.Text);
-            DateTime dt = DateTime.Parse(EventDatePicker.Value.ToString());
-            Status st = OpenForRegistrationCheckBox.Checked ? (Status)Enum.Parse(typeof(Status),"Open"): (Status)Enum.Parse(typeof(Status), "Closed");
-            int num = Program.events.Count + 1;
-            Event newE = new Event(gt, dt, float.Parse(numericPrice.Value.ToString()), GuestNameTextBox.Text, st, int.Parse(numericMaxAttendance.Value.ToString()),0,num , true);
-            t.addEvent(newE);
-            EventCrud form24 = new EventCrud("",this.t,newE);
-            form24.Show();
-            this.Hide();
+            if (GuestNameTextBox.Text != "")
+            {
+                GuestType gt = (GuestType)Enum.Parse(typeof(GuestType), GuestTypeComboBox.Text);
+                DateTime dt = DateTime.Parse(EventDatePicker.Value.ToString());
+                Status st = OpenForRegistrationCheckBox.Checked ? (Status)Enum.Parse(typeof(Status), "Open") : (Status)Enum.Parse(typeof(Status), "Closed");
+                int num = Program.events.Count + 1;
+                Event newE = new Event(gt, dt, float.Parse(numericPrice.Value.ToString()), GuestNameTextBox.Text, st, int.Parse(numericMaxAttendance.Value.ToString()), 0, num, true);
+                t.addEvent(newE);
+                EventCrud form24 = new EventCrud("", this.t, newE);
+                form24.Show();
+                this.Hide();
+            }
+            else
+            {
+
+            }
         }
 
         private void DeleteEvent_Click(object sender, EventArgs e)
@@ -321,6 +335,11 @@ namespace Group4
         }
 
         private void GuestTypeComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void finalRatingScore_Click(object sender, EventArgs e)
         {
 
         }
