@@ -44,12 +44,12 @@
             this.labGoal = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.StudentName = new System.Windows.Forms.DataGridViewButtonColumn();
             this.labSchoolName = new System.Windows.Forms.Label();
             this.labDate = new System.Windows.Forms.Label();
             this.labName = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.butClose = new System.Windows.Forms.Button();
+            this.StudentName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -207,18 +207,11 @@
             this.dataGridView1.TabIndex = 50;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
-            // StudentName
-            // 
-            this.StudentName.HeaderText = "Student Name";
-            this.StudentName.MinimumWidth = 6;
-            this.StudentName.Name = "StudentName";
-            this.StudentName.Width = 125;
-            // 
             // labSchoolName
             // 
             this.labSchoolName.AutoSize = true;
             this.labSchoolName.Font = new System.Drawing.Font("Trebuchet MS", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labSchoolName.Location = new System.Drawing.Point(12, 9);
+            this.labSchoolName.Location = new System.Drawing.Point(36, 9);
             this.labSchoolName.Name = "labSchoolName";
             this.labSchoolName.Size = new System.Drawing.Size(130, 24);
             this.labSchoolName.TabIndex = 53;
@@ -264,6 +257,15 @@
             this.butClose.Text = "Close";
             this.butClose.UseVisualStyleBackColor = true;
             this.butClose.Click += new System.EventHandler(this.butClose_Click);
+            // 
+            // StudentName
+            // 
+            this.StudentName.HeaderText = "Student Name";
+            this.StudentName.MinimumWidth = 6;
+            this.StudentName.Name = "StudentName";
+            this.StudentName.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.StudentName.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.StudentName.Width = 125;
             // 
             // FriendSocialPage1
             // 
@@ -322,8 +324,8 @@
         private System.Windows.Forms.Label labSchoolName;
         private System.Windows.Forms.Label labDate;
         private System.Windows.Forms.Label labName;
-        private System.Windows.Forms.DataGridViewButtonColumn StudentName;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button butClose;
+        private System.Windows.Forms.DataGridViewTextBoxColumn StudentName;
     }
 }
