@@ -120,24 +120,6 @@ namespace Group4
                 this.Copies.Add(c);
             }
         }
-        public void removeCopy(Copy c)
-        {
-            if (c == null)
-                return;
-            if (this.Copies != null)
-                if (this.Copies.Contains(c))
-                {
-                    this.Copies.Remove(c);
-                }
-        }
-
-        public void removeAllCopies()
-        {
-            if (Copies != null)
-            {
-                Copies.Clear();
-            }
-        }
 
         public void addBookHistory(BookHistory bh)
         {
@@ -148,26 +130,6 @@ namespace Group4
                 this.History.Add(bh);
             }
         }
-        public void removeBookHistory(BookHistory bh)
-        {
-            if (bh == null)
-                return;
-            if (this.History != null)
-                if (this.History.Contains(bh))
-                {
-                    this.History.Remove(bh);
-                }
-        }
-
-        public void removeAllBookHistories()
-        {
-            if (History != null)
-            {
-                History.Clear();
-            }
-        }
-
-
 
 
 

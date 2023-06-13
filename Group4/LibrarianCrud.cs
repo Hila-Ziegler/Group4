@@ -160,8 +160,7 @@ namespace Group4
             {
                 if (PasswordTextBox.Text != "")
                 {
-                    string newPassword = Hash.GetHash(PasswordTextBox.Text);
-                    l.set_password(newPassword);
+                    l.set_password(PasswordTextBox.Text);
                 }
                 l.set_name(NameTextBox.Text);
                 l.update_librarian();
