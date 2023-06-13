@@ -159,8 +159,7 @@ namespace Group4
             {
                 if (PasswordTextBox.Text != "")
                 {
-                    string newPassword = Hash.GetHash(PasswordTextBox.Text);
-                    t.set_password(newPassword);
+                    t.set_password(PasswordTextBox.Text);
                 }
                 t.set_name(NameTextBox.Text);
                 t.Update_teacher();

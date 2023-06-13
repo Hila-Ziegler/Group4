@@ -128,7 +128,7 @@ namespace Group4
 
 
         public void create_Event()
-        {//@guestType, @date, @price, @guestSpeakerName, @status, @maxGuests, @currentlyRegistered, @number
+        {
             SqlCommand c = new SqlCommand();
             c.CommandText = "EXECUTE dbo.SP_add_Events @guestType, @date, @price, @guestSpeakerName, @status, @maxGuests, @currentlyRegistered, @number";
             c.Parameters.AddWithValue("@guestType", this.GuestType.ToString());

@@ -94,6 +94,7 @@ namespace Group4
                 string description = EnumHelper.GetDescription(club);
                 ClubComboBox.Items.Add(description);
             }
+            ClubComboBox.Text = "--Select--";
 
         }
 
@@ -119,8 +120,7 @@ namespace Group4
             {
                 if (PasswordTextBox.Text != "")
                 {
-                    string newPassword = Hash.GetHash(PasswordTextBox.Text);
-                    st.set_password(newPassword);
+                    st.set_password(PasswordTextBox.Text);
                 }
                 st.set_name(NameTextBox.Text);
                 st.set_age(int.Parse(AgeComboBox.Text));
@@ -139,6 +139,14 @@ namespace Group4
         {
             if (this.s == null && this.st == null)
             {
+                if(ClubComboBox.Text == "--Select--")
+                {
+                    string s = "Please select a club for this user.";
+                    IncorrectInformation form23 = new IncorrectInformation(s);
+                    form23.Show();
+                    return false;
+
+                }
                 if (PasswordTextBox.Text == "")
                 {
                     string s = "Please enter a password for this user.";

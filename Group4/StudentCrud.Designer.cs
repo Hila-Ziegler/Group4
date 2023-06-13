@@ -63,7 +63,7 @@ namespace Group4
             this.BringBackFromArchieve.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BringBackFromArchieve.Location = new System.Drawing.Point(578, 100);
             this.BringBackFromArchieve.Name = "BringBackFromArchieve";
-            this.BringBackFromArchieve.Size = new System.Drawing.Size(130, 80);
+            this.BringBackFromArchieve.Size = new System.Drawing.Size(152, 96);
             this.BringBackFromArchieve.TabIndex = 69;
             this.BringBackFromArchieve.Text = "Return From Archieve";
             this.BringBackFromArchieve.UseVisualStyleBackColor = true;
@@ -94,7 +94,7 @@ namespace Group4
             this.Namelbl.Location = new System.Drawing.Point(127, 102);
             this.Namelbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Namelbl.Name = "Namelbl";
-            this.Namelbl.Size = new System.Drawing.Size(71, 28);
+            this.Namelbl.Size = new System.Drawing.Size(74, 29);
             this.Namelbl.TabIndex = 66;
             this.Namelbl.Text = "Name";
             // 
@@ -140,7 +140,7 @@ namespace Group4
             this.IDlbl.Location = new System.Drawing.Point(127, 138);
             this.IDlbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.IDlbl.Name = "IDlbl";
-            this.IDlbl.Size = new System.Drawing.Size(32, 28);
+            this.IDlbl.Size = new System.Drawing.Size(35, 29);
             this.IDlbl.TabIndex = 61;
             this.IDlbl.Text = "ID";
             // 
@@ -151,7 +151,7 @@ namespace Group4
             this.Passwordlbl.Location = new System.Drawing.Point(127, 292);
             this.Passwordlbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Passwordlbl.Name = "Passwordlbl";
-            this.Passwordlbl.Size = new System.Drawing.Size(105, 28);
+            this.Passwordlbl.Size = new System.Drawing.Size(111, 29);
             this.Passwordlbl.TabIndex = 60;
             this.Passwordlbl.Text = "Password";
             // 
@@ -197,7 +197,7 @@ namespace Group4
             this.StudentCrudClublb.Location = new System.Drawing.Point(127, 210);
             this.StudentCrudClublb.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.StudentCrudClublb.Name = "StudentCrudClublb";
-            this.StudentCrudClublb.Size = new System.Drawing.Size(59, 28);
+            this.StudentCrudClublb.Size = new System.Drawing.Size(60, 29);
             this.StudentCrudClublb.TabIndex = 70;
             this.StudentCrudClublb.Text = "Club";
             // 
@@ -208,7 +208,7 @@ namespace Group4
             this.StudentCrudAgelb.Location = new System.Drawing.Point(127, 167);
             this.StudentCrudAgelb.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.StudentCrudAgelb.Name = "StudentCrudAgelb";
-            this.StudentCrudAgelb.Size = new System.Drawing.Size(51, 28);
+            this.StudentCrudAgelb.Size = new System.Drawing.Size(52, 29);
             this.StudentCrudAgelb.TabIndex = 72;
             this.StudentCrudAgelb.Text = "Age";
             // 
@@ -219,7 +219,7 @@ namespace Group4
             this.YearlyGoallbl.Location = new System.Drawing.Point(127, 256);
             this.YearlyGoallbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.YearlyGoallbl.Name = "YearlyGoallbl";
-            this.YearlyGoallbl.Size = new System.Drawing.Size(129, 28);
+            this.YearlyGoallbl.Size = new System.Drawing.Size(134, 29);
             this.YearlyGoallbl.TabIndex = 74;
             this.YearlyGoallbl.Text = "Yearly Goal";
             // 
