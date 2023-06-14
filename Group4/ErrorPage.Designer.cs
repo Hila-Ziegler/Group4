@@ -35,9 +35,11 @@ namespace Group4
             // 
             // Accept
             // 
-            this.Accept.Location = new System.Drawing.Point(258, 183);
+            this.Accept.Font = new System.Drawing.Font("Trebuchet MS", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Accept.Location = new System.Drawing.Point(230, 241);
+            this.Accept.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Accept.Name = "Accept";
-            this.Accept.Size = new System.Drawing.Size(75, 23);
+            this.Accept.Size = new System.Drawing.Size(107, 44);
             this.Accept.TabIndex = 0;
             this.Accept.Text = "Accept";
             this.Accept.UseVisualStyleBackColor = true;
@@ -46,20 +48,23 @@ namespace Group4
             // ErrorText
             // 
             this.ErrorText.AutoSize = true;
-            this.ErrorText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ErrorText.Location = new System.Drawing.Point(255, 77);
+            this.ErrorText.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ErrorText.Location = new System.Drawing.Point(119, 61);
+            this.ErrorText.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.ErrorText.Name = "ErrorText";
-            this.ErrorText.Size = new System.Drawing.Size(78, 20);
+            this.ErrorText.Size = new System.Drawing.Size(103, 26);
             this.ErrorText.TabIndex = 1;
             this.ErrorText.Text = "Error Text";
             // 
             // ErrorPage
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(639, 274);
+            this.BackColor = System.Drawing.Color.Lavender;
+            this.ClientSize = new System.Drawing.Size(618, 339);
             this.Controls.Add(this.ErrorText);
             this.Controls.Add(this.Accept);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "ErrorPage";
             this.Text = "ErrorPage";
             this.Load += new System.EventHandler(this.ErrorPage_Load);

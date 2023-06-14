@@ -52,7 +52,14 @@ namespace Group4
                         if (bh.get_StartDate() == bh.get_EndDate() && this.copy.get_status() == true)
                         {
                             this.dataGridView1.Rows[i].Cells[1].Value = DBNull.Value;
-                            StartBorrow.Hide();
+                            try
+                            {
+                                StartBorrow.Hide();
+                                    }
+                            catch (Exception)
+                            {
+                                //
+                            }
                             StID.Hide();
                             label5.Hide();
                             endBorrow1.Show();
@@ -63,7 +70,14 @@ namespace Group4
                             StartBorrow.Show();
                             StID.Show();
                             label5.Show();
-                            endBorrow1.Hide();
+                            try
+                            {
+                                endBorrow1.Hide();
+                            }
+                            catch (Exception)
+                            {
+                                //
+                            }
                         }
                         this.dataGridView1.Rows[i].Cells[2].Value = bh.get_student().get_name();
                         this.dataGridView1.Rows[i].Cells[3].Value = bh.get_student().get_ID();
@@ -149,8 +163,8 @@ namespace Group4
             ErrorPage ep;
             if (StID.Text == "")
             {
-                String s = $"Not all required information entered, \nPlease try again";
-                ep = new ErrorPage(s);
+                String str = $"Not all required information entered, \nPlease try again";
+                ep = new ErrorPage(str);
                 ep.Show();
                 return false;
             }
@@ -158,22 +172,35 @@ namespace Group4
             if (StID.Text.Length != IDLength)
             {
                 // Error Window
-                String s = $"ID is not in the expected length, \nPlease enter a valid number of characters";
-                ep = new ErrorPage(s);
+                String stri = $"ID is not in the expected length, \nPlease enter a valid number of characters";
+                ep = new ErrorPage(stri);
                 ep.Show();
                 return false;
             }
+
 
             int number;
             bool isNumeric = int.TryParse(StID.Text, out number);
             if (!isNumeric)
             {
-                String s = $"ID should not contain letters";
-                ep = new ErrorPage(s);
+                String strt = $"ID should not contain letters";
+                ep = new ErrorPage(strt);
                 ep.Show();
                 return false;
             }
-            return true;
+            foreach (Student stu in Program.students)
+            {
+                if (StID.Text == stu.get_ID())
+                {
+                    return true;
+                }
+
+            }
+            // Error Window
+            String strq = $"ID is not in the system, \nPlease enter a valid ID number";
+            ep = new ErrorPage(strq);
+            ep.Show();
+            return false;
         }
 
     }
