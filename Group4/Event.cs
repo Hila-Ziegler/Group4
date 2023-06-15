@@ -128,11 +128,11 @@ namespace Group4
 
 
         public void create_Event()
-        {//@guestType, @date, @price, @guestSpeakerName, @status, @maxGuests, @currentlyRegistered, @number
+        {
             SqlCommand c = new SqlCommand();
             c.CommandText = "EXECUTE dbo.SP_add_Events @guestType, @date, @price, @guestSpeakerName, @status, @maxGuests, @currentlyRegistered, @number";
             c.Parameters.AddWithValue("@guestType", this.GuestType.ToString());
-            c.Parameters.AddWithValue("@date", this.Date);
+            c.Parameters.AddWithValue("@date", this.Date.ToString("yyyy/MM/dd HH:mm:ss"));
             c.Parameters.AddWithValue("@price", this.Price);
             c.Parameters.AddWithValue("@guestSpeakerName", this.GuestName);
             c.Parameters.AddWithValue("@status", this.status.ToString());
@@ -148,7 +148,7 @@ namespace Group4
             SqlCommand c = new SqlCommand();
             c.CommandText = "EXECUTE dbo.SP_Update_Event @guestType, @date, @price, @guestSpeakerName, @status, @maxGuests, @currentlyRegistered, @number";
             c.Parameters.AddWithValue("@guestType", this.GuestType.ToString());
-            c.Parameters.AddWithValue("@date", this.Date);
+            c.Parameters.AddWithValue("@date", this.Date.ToString("yyyy/MM/dd HH:mm:ss"));
             c.Parameters.AddWithValue("@price", this.Price);
             c.Parameters.AddWithValue("@guestSpeakerName", this.GuestName);
             c.Parameters.AddWithValue("@status", this.status.ToString());
@@ -164,14 +164,14 @@ namespace Group4
             SqlCommand c = new SqlCommand();
             c.CommandText = "EXECUTE dbo.SP_delete_Event @guestSpeakerName ,@date";
             c.Parameters.AddWithValue("@guestSpeakerName", this.GuestName);
-            c.Parameters.AddWithValue("@date", this.Date);
+            c.Parameters.AddWithValue("@date", this.Date.ToString("yyyy/MM/dd HH:mm:ss"));
             SQL_CON SC = new SQL_CON();
             SC.execute_non_query(c);
         }
 
         public int checkCurrentlyRegistered()
         {
-            return this.Registered.Count();// האם מפה לעשות  UPDET לכמות המשתתפים?
+            return this.Registered.Count();
 
         }
         public bool isQuantityExceeded()

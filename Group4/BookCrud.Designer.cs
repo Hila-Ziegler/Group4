@@ -74,7 +74,7 @@ namespace Group4
             this.BookCrudTitle.Location = new System.Drawing.Point(268, 28);
             this.BookCrudTitle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.BookCrudTitle.Name = "BookCrudTitle";
-            this.BookCrudTitle.Size = new System.Drawing.Size(100, 49);
+            this.BookCrudTitle.Size = new System.Drawing.Size(96, 46);
             this.BookCrudTitle.TabIndex = 0;
             this.BookCrudTitle.Text = "Title";
             this.BookCrudTitle.Click += new System.EventHandler(this.label1_Click);
@@ -306,7 +306,7 @@ namespace Group4
             // ISBNTextBox
             // 
             this.ISBNTextBox.Font = new System.Drawing.Font("Trebuchet MS", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ISBNTextBox.Location = new System.Drawing.Point(283, 130);
+            this.ISBNTextBox.Location = new System.Drawing.Point(283, 127);
             this.ISBNTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ISBNTextBox.Name = "ISBNTextBox";
             this.ISBNTextBox.Size = new System.Drawing.Size(128, 27);
@@ -356,7 +356,7 @@ namespace Group4
             // TitleTextBox
             // 
             this.TitleTextBox.Font = new System.Drawing.Font("Trebuchet MS", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TitleTextBox.Location = new System.Drawing.Point(283, 97);
+            this.TitleTextBox.Location = new System.Drawing.Point(283, 96);
             this.TitleTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TitleTextBox.Name = "TitleTextBox";
             this.TitleTextBox.Size = new System.Drawing.Size(128, 27);
@@ -365,7 +365,7 @@ namespace Group4
             // btnUpdateBook
             // 
             this.btnUpdateBook.Font = new System.Drawing.Font("Trebuchet MS", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUpdateBook.Location = new System.Drawing.Point(275, 290);
+            this.btnUpdateBook.Location = new System.Drawing.Point(261, 397);
             this.btnUpdateBook.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnUpdateBook.Name = "btnUpdateBook";
             this.btnUpdateBook.Size = new System.Drawing.Size(91, 62);
@@ -378,7 +378,7 @@ namespace Group4
             // 
             this.updateScreenratinglbl.AutoSize = true;
             this.updateScreenratinglbl.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.updateScreenratinglbl.Location = new System.Drawing.Point(371, 262);
+            this.updateScreenratinglbl.Location = new System.Drawing.Point(352, 263);
             this.updateScreenratinglbl.Name = "updateScreenratinglbl";
             this.updateScreenratinglbl.Size = new System.Drawing.Size(0, 26);
             this.updateScreenratinglbl.TabIndex = 30;
@@ -388,7 +388,7 @@ namespace Group4
             // 
             this.ISBNUpdateScreen.AutoSize = true;
             this.ISBNUpdateScreen.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ISBNUpdateScreen.Location = new System.Drawing.Point(371, 126);
+            this.ISBNUpdateScreen.Location = new System.Drawing.Point(292, 127);
             this.ISBNUpdateScreen.Name = "ISBNUpdateScreen";
             this.ISBNUpdateScreen.Size = new System.Drawing.Size(0, 26);
             this.ISBNUpdateScreen.TabIndex = 31;
@@ -422,14 +422,15 @@ namespace Group4
             this.Avilabletxt.Location = new System.Drawing.Point(35, 52);
             this.Avilabletxt.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Avilabletxt.Name = "Avilabletxt";
-            this.Avilabletxt.Size = new System.Drawing.Size(0, 17);
+            this.Avilabletxt.Size = new System.Drawing.Size(0, 16);
             this.Avilabletxt.TabIndex = 34;
             // 
             // ManageWaitlist1
             // 
-            this.ManageWaitlist1.Location = new System.Drawing.Point(603, 191);
+            this.ManageWaitlist1.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ManageWaitlist1.Location = new System.Drawing.Point(465, 174);
             this.ManageWaitlist1.Name = "ManageWaitlist1";
-            this.ManageWaitlist1.Size = new System.Drawing.Size(127, 49);
+            this.ManageWaitlist1.Size = new System.Drawing.Size(128, 69);
             this.ManageWaitlist1.TabIndex = 35;
             this.ManageWaitlist1.Text = "Manage Waitlist";
             this.ManageWaitlist1.UseVisualStyleBackColor = true;

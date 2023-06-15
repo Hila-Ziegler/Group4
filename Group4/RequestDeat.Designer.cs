@@ -117,10 +117,10 @@ namespace Group4
             // CancelBTN
             // 
             this.CancelBTN.Font = new System.Drawing.Font("Trebuchet MS", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CancelBTN.Location = new System.Drawing.Point(332, 349);
+            this.CancelBTN.Location = new System.Drawing.Point(370, 349);
             this.CancelBTN.Margin = new System.Windows.Forms.Padding(4);
             this.CancelBTN.Name = "CancelBTN";
-            this.CancelBTN.Size = new System.Drawing.Size(138, 41);
+            this.CancelBTN.Size = new System.Drawing.Size(153, 47);
             this.CancelBTN.TabIndex = 36;
             this.CancelBTN.Text = "Cancel Request";
             this.CancelBTN.UseVisualStyleBackColor = true;
@@ -132,7 +132,7 @@ namespace Group4
             this.AcceptBTN.Location = new System.Drawing.Point(53, 349);
             this.AcceptBTN.Margin = new System.Windows.Forms.Padding(4);
             this.AcceptBTN.Name = "AcceptBTN";
-            this.AcceptBTN.Size = new System.Drawing.Size(113, 41);
+            this.AcceptBTN.Size = new System.Drawing.Size(128, 47);
             this.AcceptBTN.TabIndex = 35;
             this.AcceptBTN.Text = "Update";
             this.AcceptBTN.UseVisualStyleBackColor = true;
@@ -158,7 +158,7 @@ namespace Group4
             this.backToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(586, 31);
+            this.menuStrip1.Size = new System.Drawing.Size(629, 31);
             this.menuStrip1.TabIndex = 62;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -274,10 +274,10 @@ namespace Group4
             // CreateReqbtn
             // 
             this.CreateReqbtn.Font = new System.Drawing.Font("Trebuchet MS", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CreateReqbtn.Location = new System.Drawing.Point(174, 349);
+            this.CreateReqbtn.Location = new System.Drawing.Point(190, 349);
             this.CreateReqbtn.Margin = new System.Windows.Forms.Padding(4);
             this.CreateReqbtn.Name = "CreateReqbtn";
-            this.CreateReqbtn.Size = new System.Drawing.Size(146, 41);
+            this.CreateReqbtn.Size = new System.Drawing.Size(161, 47);
             this.CreateReqbtn.TabIndex = 73;
             this.CreateReqbtn.Text = "Create Request";
             this.CreateReqbtn.UseVisualStyleBackColor = true;
@@ -288,7 +288,7 @@ namespace Group4
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Lavender;
-            this.ClientSize = new System.Drawing.Size(586, 451);
+            this.ClientSize = new System.Drawing.Size(629, 473);
             this.Controls.Add(this.CreateReqbtn);
             this.Controls.Add(this.StatusCombo);
             this.Controls.Add(this.UpdateStlbl);

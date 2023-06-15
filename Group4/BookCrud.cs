@@ -130,10 +130,9 @@ namespace Group4
 
         private void BookCrud_Load(object sender, EventArgs e)
         {
-
+            ManageWaitlist1.Hide();
             if (sn != "update" && sn != null)
             {
-                ManageWaitlist1.Hide();
                 if (this.librarian != null)
                 {
                     ManageWaitlist1.Show();
@@ -265,13 +264,14 @@ namespace Group4
         {
             if (this.b != null)
             {
-                    Func<Copy, int> fieldSelector = copy => copy.get_copyNum();
-                    int maxFieldValue = this.copies.Max(fieldSelector);
-                    Copy c = new Copy(maxFieldValue + 1, b, false, false, true);
+                    Copy c = new Copy(this.b.countCopies() + 1, b, false, false, true);
                     b.addCopy(c);
                     this.copies.Add(c);
                     this.update_CopyList();
-             
+                    Avilabletxt.Text = "Available";
+                    Avilabletxt.ForeColor = Color.Green;
+
+
 
             }
         }
@@ -282,7 +282,7 @@ namespace Group4
             {
                 Language l = (Language)Enum.Parse(typeof(Language), LngCombo.Text);
                 Book b = new Book(ISBNTextBox.Text, TitleTextBox.Text, AuthorTextBox.Text, int.Parse(PublishYearTextBox.Text), l, 0, false, true);
-                Copy c = new Copy(1, b, false, true, false);
+                Copy c = new Copy(1, b, false, false, true);
                 b.Copies.Add(c);
 
                 BookCrud form12 = new BookCrud(b.get_sNumber(), librarian);

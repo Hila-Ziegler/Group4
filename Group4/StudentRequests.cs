@@ -76,5 +76,10 @@ namespace Group4
         {
 
         }
+
+        private void homePageToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            homePageToolStripMenuItem_Click(sender, e);
+        }
     }
 }
